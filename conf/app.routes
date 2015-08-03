@@ -1,0 +1,4 @@
+->     /template                       template.Routes
+GET    /help/cookies                   controllers.help.HelpController.cookies
+GET    /help/privacy                   controllers.help.HelpController.privacyPolicy
+GET    /help/terms-and-conditions      controllers.help.HelpController.termsAndConditions
