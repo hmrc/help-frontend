@@ -16,26 +16,15 @@
 
 package config
 
-import uk.gov.hmrc.crypto.{ApplicationCrypto, PlainText}
 import uk.gov.hmrc.play.audit.http.config.LoadAuditingConfig
 import uk.gov.hmrc.play.audit.http.connector.{AuditConnector => Auditing}
 import uk.gov.hmrc.play.config.{AppName, RunMode}
 import uk.gov.hmrc.play.http.ws.{WSDelete, WSGet, WSPost, WSPut}
-import uk.gov.hmrc.play.partials.FormPartial
 
 object AuditConnector extends Auditing with AppName with RunMode {
   override lazy val auditingConfig = LoadAuditingConfig("auditing")
 }
 
-object WSHttp extends WSGet with WSPut with WSPost with WSDelete with AppName with RunMode {
+object WSHttp extends WSGet with WSPut with WSPost with WSDelete with AppName {
   override val auditConnector = AuditConnector
-}
-
-object FormPartialProvider extends FormPartial with CookieCryptoWrapper {
-  override val httpGet = WSHttp
-  override val crypto = encryptCookieString _
-}
-
-trait CookieCryptoWrapper {
-  def encryptCookieString(cookie: String) : String = ApplicationCrypto.SessionCookieCrypto.encrypt(PlainText(cookie)).value
 }
