@@ -24,7 +24,6 @@ trait MicroService {
     .settings(publishingSettings: _*)
     .settings(defaultSettings(): _*)
     .settings(
-      targetJvm := "jvm-1.8",
       libraryDependencies ++= appDependencies,
       parallelExecution in Test := false,
       fork in Test := false,
