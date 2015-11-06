@@ -16,11 +16,8 @@
 
 package config
 
-import java.io.File
-
 import com.typesafe.config.Config
 import net.ceedubs.ficus.Ficus._
-import play.api.Mode._
 import play.api.mvc.Request
 import play.api.{Application, Configuration, Play}
 import play.twirl.api.Html
@@ -36,14 +33,9 @@ object ApplicationGlobal extends DefaultFrontendGlobal with RunMode {
   override val loggingFilter = HFLoggingFilter
   override val frontendAuditFilter = HelpFrontendAuditFilter
 
-
   override def onStart(app: Application) {
     super.onStart(app)
     ApplicationCrypto.verifyConfiguration()
-  }
-
-  override def onLoadConfig(config: Configuration, path: File, classloader: ClassLoader, mode: Mode): Configuration = {
-    super.onLoadConfig(config, path, classloader, mode)
   }
 
   override def standardErrorTemplate(pageTitle: String, heading: String, message: String)(implicit request: Request[_]): Html =
