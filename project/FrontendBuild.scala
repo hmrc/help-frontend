@@ -45,7 +45,7 @@ private object AppDependencies {
       )
     }.test
   }
-ª
+
   def apply() = compile ++ IntegrationTest()
 }
 
