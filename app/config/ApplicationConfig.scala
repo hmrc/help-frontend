@@ -32,7 +32,7 @@ object ApplicationConfig extends AppConfig with ServicesConfig {
 
   private val contactHost = configuration.getString(s"contact-frontend.host").getOrElse("")
 
-  override lazy val assetsPrefix: String = loadConfig("assets.url") + loadConfig("assets.version")
+  override lazy val assetsPrefix: String = loadConfig("assets.url") + loadConfig("frontend.assets.version")
   override lazy val analyticsToken: Option[String] = configuration.getString("google-analytics.token")
   override lazy val analyticsHost: String = configuration.getString("google-analytics.host").getOrElse("auto")
   override lazy val reportAProblemPartialUrl = s"$contactHost/contact/problem_reports_ajax"
