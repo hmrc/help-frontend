@@ -1,6 +1,7 @@
+@import config.ApplicationConfig
 @(title: String,
   mainContentHeader: Html = HtmlFormat.empty,
-  appConfig: config.AppConfig = config.ApplicationConfig)(mainContent: Html)(implicit request: Request[_])
+  appConfig: config.AppConfig = config.ApplicationConfig)(mainContent: Html)(implicit request: Request[_], lang : Lang)
 
 @import uk.gov.hmrc.play.views.html.{helpers => uiHelpers}
 @import uk.gov.hmrc.play.views.html.layouts
@@ -37,5 +38,5 @@
   insideHeader = HtmlFormat.empty,
   afterHeader = HtmlFormat.empty,
   footerTop = HtmlFormat.empty,
-  footerLinks = Some(layouts.footer_links()),
+  footerLinks = Some(layouts.footer_links(Some(partials.language_selection(ApplicationConfig.enableLanguageSwitching)))),
   nav = false)(content)
