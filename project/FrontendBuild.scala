@@ -35,12 +35,15 @@ private object AppDependencies {
   object IntegrationTest {
     def apply() = new TestDependencies {
 
-      override lazy val scope = "it"
+      override lazy val scope = "test, it"
 
       override lazy val test = Seq(
+        "uk.gov.hmrc" %% "hmrctest" % "1.4.0" % scope,
         "org.scalatest" %% "scalatest" % "2.2.2" % scope,
+        "org.scalatestplus" %% "play" % "1.2.0" % scope,
         "org.pegdown" % "pegdown" % "1.4.2" % scope,
         "org.jsoup" % "jsoup" % "1.7.3" % scope,
+        "com.github.tomakehurst" % "wiremock" % "1.58" % scope,
         "com.typesafe.play" %% "play-test" % PlayVersion.current % scope
       )
     }.test
