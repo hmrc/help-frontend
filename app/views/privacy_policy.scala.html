@@ -1,4 +1,4 @@
-@()(implicit request: Request[_])
+@()(implicit request: Request[_], lang : Lang)
 @import uk.gov.hmrc.urls.Link
 
 @main(title = Messages("help.privacy_policy.title")) {
@@ -7,7 +7,7 @@
     </header>
 
 <h2>@Messages("help.privacy_policy.personal_info.heading")</h2>
-<p>@Messages("help.privacy_policy.personal_info.paragraph.1")</p>
+<p id="privacy-personal-info">@Messages("help.privacy_policy.personal_info.paragraph.1")</p>
 <p>@Html(
         Messages(
             "help.privacy_policy.personal_info.paragraph.2",

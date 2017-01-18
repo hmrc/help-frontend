@@ -1,11 +1,11 @@
-@()(implicit request: Request[_])
+@()(implicit request: Request[_], lang : Lang)
 @import uk.gov.hmrc.urls.Link
 
 @main(title = Messages("help.cookies.title")) {
 <header class="page-header">
         <h1>@Messages("help.cookies.title")</h1>
 </header>
-<p>@Messages("help.cookies.info")</p>
+<p id="cookies-info">@Messages("help.cookies.info")</p>
 <p>@Messages("help.cookies.usages.list_info")</p>
 <ul class="bullets">
     <li>@Messages("help.cookies.usages.list_item.1")</li>

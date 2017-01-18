@@ -14,22 +14,11 @@
  * limitations under the License.
  */
 
-package controllers.help
+package util
 
-import uk.gov.hmrc.play.frontend.controller.{FrontendController, UnauthorisedAction}
+import play.api.mvc.Flash
 
-object HelpController extends FrontendController {
-
-  val cookies = UnauthorisedAction { implicit request =>
-    Ok(views.html.cookies())
-  }
-
-  val termsAndConditions = UnauthorisedAction { implicit request =>
-    Ok(views.html.t_and_c())
-  }
-
-  val privacyPolicy = UnauthorisedAction { implicit request =>
-    Ok(views.html.privacy_policy())
-  }
-
+object LanguageUtils {
+  val switchIndicatorKey = "switching-language"
+  val flashWithSwitchIndicator = Flash(Map(switchIndicatorKey -> "true"))
 }
