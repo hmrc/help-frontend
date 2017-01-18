@@ -1,15 +1,11 @@
 import sbt.Keys._
-import sbt.Tests.{SubProcess, Group}
 import sbt._
-import uk.gov.hmrc.sbtdistributables.SbtDistributablesPlugin
 import uk.gov.hmrc.sbtdistributables.SbtDistributablesPlugin._
 
 trait MicroService {
 
   import uk.gov.hmrc._
   import DefaultBuildSettings._
-
-  import TestPhases._
 
   val appName: String
   val appDependencies : Seq[ModuleID]
@@ -35,7 +31,6 @@ trait MicroService {
       Keys.fork in IntegrationTest := false,
       unmanagedSourceDirectories in IntegrationTest <<= (baseDirectory in IntegrationTest)(base => Seq(base / "it")),
       addTestReportOption(IntegrationTest, "int-test-reports"),
-      testGrouping in IntegrationTest := oneForkedJvmPerTest((definedTests in IntegrationTest).value),
       parallelExecution in IntegrationTest := false)
     .settings(
       resolvers := Seq(
@@ -44,12 +39,4 @@ trait MicroService {
       )
     )
     .disablePlugins(sbt.plugins.JUnitXmlReportPlugin)
-}
-
-private object TestPhases {
-
-  def oneForkedJvmPerTest(tests: Seq[TestDefinition]) =
-    tests map {
-      test => new Group(test.name, Seq(test), SubProcess(ForkOptions(runJVMOptions = Seq("-Dtest.name=" + test.name))))
-    }
 }
