@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 HM Revenue & Customs
+ * Copyright 2017 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,8 @@ trait AppConfig {
   val analyticsHost: String
   val reportAProblemPartialUrl: String
   val reportAProblemNonJSUrl: String
+  def fallbackURLForLanguageSwitcher: String
+  def enableLanguageSwitching: Boolean
 }
 
 object ApplicationConfig extends AppConfig with ServicesConfig {
@@ -37,5 +39,6 @@ object ApplicationConfig extends AppConfig with ServicesConfig {
   override lazy val analyticsHost: String = configuration.getString("google-analytics.host").getOrElse("auto")
   override lazy val reportAProblemPartialUrl = s"$contactHost/contact/problem_reports_ajax"
   override lazy val reportAProblemNonJSUrl = s"$contactHost/contact/problem_reports_nonjs"
-
+  override def fallbackURLForLanguageSwitcher: String = loadConfig(s"$env.languageSwitcher.fallback.url")
+  override def enableLanguageSwitching: Boolean = configuration.getBoolean(s"$env.enableLanguageSwitching").getOrElse(false)
 }
