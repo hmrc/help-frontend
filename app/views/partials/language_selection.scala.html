@@ -2,8 +2,8 @@
 
 @if(enableLanguageSwitching) {
     @if(lang.code == "cy") {
-        <a href="@controllers.routes.LanguageController.switchToEnglish" data-journey-click="Language:Select:English">@Messages("language-switcher.english")</a>
+        <a title="@Messages("language-switcher.english.hover")" href="@controllers.routes.LanguageController.switchToEnglish" data-journey-click="Language:Click:English">@Messages("language-switcher.english")</a>
     } else {
-        <a href="@controllers.routes.LanguageController.switchToWelsh" data-journey-click="Language:Select:Welsh">@Messages("language-switcher.welsh")</a>
+        <a title="@Messages("language-switcher.welsh.hover")" href="@controllers.routes.LanguageController.switchToWelsh" data-journey-click="Language:Click:Welsh">@Messages("language-switcher.welsh")</a>
     }
 }
