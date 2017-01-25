@@ -3,5 +3,5 @@ GET    /help/cookies                   controllers.help.HelpController.cookies
 GET    /help/privacy                   controllers.help.HelpController.privacyPolicy
 GET    /help/terms-and-conditions      controllers.help.HelpController.termsAndConditions
 
-GET    /switch-to-welsh                controllers.LanguageController.switchToWelsh()
-GET    /switch-to-english              controllers.LanguageController.switchToEnglish()
+GET    /help/switch-to-welsh           controllers.LanguageController.switchToWelsh()
+GET    /help/switch-to-english         controllers.LanguageController.switchToEnglish()
