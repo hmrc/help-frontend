@@ -20,11 +20,12 @@ import config.ApplicationConfig
 import play.api.Logger
 import play.api.Play.current
 import play.api.i18n.Lang
-import play.api.mvc.Action
+import play.api.mvc.{Action, LegacyI18nSupport}
 import uk.gov.hmrc.play.frontend.controller.FrontendController
 import util.LanguageUtils
+import play.api.i18n.Messages.Implicits._
 
-trait LanguageController extends FrontendController {
+trait LanguageController extends FrontendController  with LegacyI18nSupport {
 
   val english = Lang("en")
   val welsh = Lang("cy")
