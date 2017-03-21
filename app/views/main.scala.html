@@ -1,7 +1,7 @@
 @import config.ApplicationConfig
 @(title: String,
   mainContentHeader: Html = HtmlFormat.empty,
-  appConfig: config.AppConfig = config.ApplicationConfig)(mainContent: Html)(implicit request: Request[_], lang : Lang)
+  appConfig: config.AppConfig = config.ApplicationConfig)(mainContent: Html)(implicit request: Request[_], lang : Lang, messages: Messages)
 
 @import uk.gov.hmrc.play.views.html.{helpers => uiHelpers}
 @import uk.gov.hmrc.play.views.html.layouts
