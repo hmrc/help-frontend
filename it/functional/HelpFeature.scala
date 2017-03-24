@@ -6,10 +6,9 @@ import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import support.StubbedFeatureSpec
 import support.page.{CookiesPage, PrivacyPage, TermsAndConditionsPage}
-import uk.gov.hmrc.play.test.WithFakeApplication
 
 @RunWith(classOf[JUnitRunner])
-class HelpFeature extends StubbedFeatureSpec with WithFakeApplication {
+class HelpFeature extends StubbedFeatureSpec {
   feature("Help") {
     scenario("Navigate to the cookies page") {
       WireMock.stubFor(post(urlEqualTo("/write/audit")).willReturn(aResponse().withStatus(200)))

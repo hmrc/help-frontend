@@ -4,14 +4,14 @@ import com.github.tomakehurst.wiremock.WireMockServer
 import com.github.tomakehurst.wiremock.client.WireMock
 import com.github.tomakehurst.wiremock.core.WireMockConfiguration._
 import org.scalatest._
-import org.scalatestplus.play.OneServerPerSuite
+import org.scalatestplus.play.OneServerPerTest
 import support.behaviour.NavigationSugar
 
 trait StubbedFeatureSpec
   extends FeatureSpec
     with GivenWhenThen
     with ShouldMatchers
-    with OneServerPerSuite
+    with OneServerPerTest
     with BeforeAndAfter
     with BeforeAndAfterEach
     with BeforeAndAfterAll
