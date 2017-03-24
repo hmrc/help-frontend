@@ -3,20 +3,25 @@ package functional
 import com.github.tomakehurst.wiremock.client.WireMock
 import com.github.tomakehurst.wiremock.client.WireMock.{aResponse, post, urlEqualTo}
 import org.junit.runner.RunWith
+import org.scalatest.TestData
 import org.scalatest.junit.JUnitRunner
-import play.api.test.FakeApplication
+import play.api.inject.guice.GuiceApplicationBuilder
+import play.api.{Application, Mode}
 import support.StubbedFeatureSpec
 import support.page.CookiesPage
-import uk.gov.hmrc.play.test.WithFakeApplication
 
 @RunWith(classOf[JUnitRunner])
-class LanguageSwitchingFeature extends StubbedFeatureSpec with WithFakeApplication {
-  override lazy val app = FakeApplication(
-    additionalConfiguration = Map(
-      "application.langs" -> "en,cy",
-      "Test.enableLanguageSwitching" -> true
-    )
-  )
+class LanguageSwitchingFeature extends StubbedFeatureSpec {
+  implicit override def newAppForTest(testData: TestData): Application =
+    new GuiceApplicationBuilder()
+      .configure(
+        Map(
+          "application.langs" -> "en,cy",
+          "Test.enableLanguageSwitching" -> true
+        )
+      )
+      .in(Mode.Test)
+      .build()
 
   feature("Language Switching") {
     scenario("Switch from English to Welsh in the cookies page") {
@@ -45,13 +50,24 @@ class LanguageSwitchingFeature extends StubbedFeatureSpec with WithFakeApplicati
 
 
 @RunWith(classOf[JUnitRunner])
-class LanguageSwitchingDisabledFeature extends StubbedFeatureSpec with WithFakeApplication {
-  override lazy val app = FakeApplication(
-    additionalConfiguration = Map(
-      "application.langs" -> "en,cy",
-      "Test.enableLanguageSwitching" -> false
-    )
-  )
+class LanguageSwitchingDisabledFeature extends StubbedFeatureSpec {
+  implicit override def newAppForTest(testData: TestData): Application =
+    new GuiceApplicationBuilder()
+      .configure(
+        Map(
+          "application.langs" -> "en,cy",
+          "Test.enableLanguageSwitching" -> false
+        )
+      )
+      .in(Mode.Test)
+      .build()
+
+  //  override lazy val app = FakeApplication(
+  //    additionalConfiguration = Map(
+  //      "application.langs" -> "en,cy",
+  //      "Test.enableLanguageSwitching" -> false
+  //    )
+  //  )
 
   feature("Language Switching disabled") {
     scenario("Navigate to the cookies page with language switching disabled") {
