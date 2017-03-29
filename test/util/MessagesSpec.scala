@@ -16,9 +16,10 @@
 
 package util
 
-import play.api.i18n.{DefaultMessagesPlugin, Lang, MessagesApi}
+import play.api.i18n.{Lang, Messages, MessagesApi}
 import play.api.test.FakeApplication
 import uk.gov.hmrc.play.test.{UnitSpec, WithFakeApplication}
+import play.api.i18n.Messages.Implicits._
 
 import scala.util.matching.Regex
 
@@ -29,12 +30,13 @@ class MessagesSpec extends UnitSpec with WithFakeApplication {
       "govuk-tax.Test.enableLanguageSwitching" -> true)
   )
 
-  val messagesAPI: MessagesApi = new DefaultMessagesPlugin(fakeApplication).api
+  val messagesAPI: MessagesApi = Messages.Implicits.applicationMessagesApi(fakeApplication)
   val languageEnglish: Lang = Lang.get("en").getOrElse(throw new Exception())
   val languageWelsh: Lang = Lang.get("cy").getOrElse(throw new Exception())
   val MatchSingleQuoteOnly: Regex = """\w+'{1}\w+""".r
   val MatchBacktickQuoteOnly: Regex = """`+""".r
   val MatchForwardTickQuoteOnly: Regex = """’+""".r
+
 
   "Application" should {
     "have the correct message configs" in {
@@ -46,7 +48,7 @@ class MessagesSpec extends UnitSpec with WithFakeApplication {
       messagesAPI.messages("en").size shouldBe 0
       val englishMessageCount = messagesAPI.messages("default").size - frameworkProvidedKeys.size
       messagesAPI.messages("cy").size shouldBe englishMessageCount
-      messagesAPI.messages("default.play").size shouldBe 38
+      messagesAPI.messages("default.play").size shouldBe 46
     }
   }
 

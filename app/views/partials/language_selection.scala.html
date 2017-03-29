@@ -1,4 +1,4 @@
-@(enableLanguageSwitching: Boolean)(implicit lang : Lang)
+@(enableLanguageSwitching: Boolean)(implicit lang : Lang, messages: Messages)
 
 @if(enableLanguageSwitching) {
     @if(lang.code == "cy") {
