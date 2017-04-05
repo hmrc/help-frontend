@@ -5,7 +5,7 @@ import com.github.tomakehurst.wiremock.client.WireMock.{aResponse, post, urlEqua
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import support.StubbedFeatureSpec
-import support.page.{CookiesPage, PrivacyPage, TermsAndConditionsPage}
+import support.page.{EnglishCookiesPage, PrivacyPage, TermsAndConditionsPage}
 
 @RunWith(classOf[JUnitRunner])
 class HelpFeature extends StubbedFeatureSpec {
@@ -13,11 +13,11 @@ class HelpFeature extends StubbedFeatureSpec {
     scenario("Navigate to the cookies page") {
       WireMock.stubFor(post(urlEqualTo("/write/audit")).willReturn(aResponse().withStatus(200)))
 
-      Given("I go to the cookies page")
-      goOn(CookiesPage)
+      Given("I go to the English version of the cookies page")
+      goOn(EnglishCookiesPage)
 
       Then("I am shown the cookies page")
-      CookiesPage.cookiesInfoText shouldBe "Small files (known as 'cookies') are put onto your computer to collect information about how you browse the site."
+      EnglishCookiesPage.cookiesInfoText shouldBe "Small files (known as 'cookies') are put onto your computer to collect information about how you browse the site."
     }
 
     scenario("Navigate to the privacy policy page") {
