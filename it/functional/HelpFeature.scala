@@ -9,7 +9,7 @@ import support.page.{EnglishCookiesPage, PrivacyPage, TermsAndConditionsPage}
 
 @RunWith(classOf[JUnitRunner])
 class HelpFeature extends StubbedFeatureSpec {
-  ignore("Help") {
+  feature("Help") {
     scenario("Navigate to the cookies page") {
       WireMock.stubFor(post(urlEqualTo("/write/audit")).willReturn(aResponse().withStatus(200)))
 
