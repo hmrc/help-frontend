@@ -23,7 +23,7 @@ class LanguageSwitchingFeature extends StubbedFeatureSpec {
       .in(Mode.Test)
       .build()
 
-  feature("Language Switching") {
+  ignore("Language Switching") {
     scenario("Switch from English to Welsh in the cookies page") {
       WireMock.stubFor(post(urlEqualTo("/write/audit")).willReturn(aResponse().withStatus(200)))
 
@@ -71,7 +71,7 @@ class LanguageSwitchingDisabledFeature extends StubbedFeatureSpec {
   //    )
   //  )
 
-  feature("Language Switching disabled") {
+  ignore("Language Switching disabled") {
     scenario("Navigate to the cookies page with language switching disabled") {
       WireMock.stubFor(post(urlEqualTo("/write/audit")).willReturn(aResponse().withStatus(200)))
 
