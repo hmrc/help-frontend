@@ -64,6 +64,31 @@
 </table>
 <p>@Html(Messages("help.cookies.how_used.measuring_usage.opt_out.info", Link.toExternalPage(url = Messages("help.cookies.how_used.measuring_usage.opt_out.link.url"), value = Some(Messages("help.cookies.how_used.measuring_usage.opt_out.link.text"))).toHtml))</p>
 
+<h3>@Messages("help.cookies.how_used.optimizely.heading")</h3>
+<p>@Messages("help.cookies.how_used.optimizely.info")</p>
+<p>@Messages("help.cookies.how_used.measuring_usage.cookies_used.table.caption")</p>
+<table>
+    <thead>
+        <tr>
+            <th scope="col">@Messages("help.cookies.table.header.name")</th>
+            <th scope="col">@Messages("help.cookies.table.header.purpose")</th>
+            <th scope="col">@Messages("help.cookies.table.header.expires")</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Messages("help.cookies.how_used.optimizely.table.optimizelyEndUserId.name")</td>
+            <td>@Messages("help.cookies.how_used.optimizely.table.optimizelyEndUserId.purpose")</td>
+            <td>@Messages("help.cookies.how_used.optimizely.table.optimizelyEndUserId.expires")</td>
+        </tr>
+        <tr>
+            <td>@Messages("help.cookies.how_used.optimizely.table.optimizelyRedirectData.name")</td>
+            <td>@Messages("help.cookies.how_used.optimizely.table.optimizelyRedirectData.purpose")</td>
+            <td>@Messages("help.cookies.how_used.optimizely.table.optimizelyRedirectData.expires")</td>
+        </tr>
+    </tbody>
+</table>
+
 <h3>@Messages("help.cookies.how_used.sessions.heading")</h3>
 <p>@Messages("help.cookies.how_used.sessions.info")</p>
 <table>
