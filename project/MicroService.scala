@@ -11,6 +11,8 @@ trait MicroService {
 
   val appName: String
   val appDependencies : Seq[ModuleID]
+  lazy val appOverrides: Set[ModuleID] = AppDependencies.overrideDependencies
+
 
   lazy val plugins : Seq[Plugins] = Seq.empty
   lazy val playSettings : Seq[Setting[_]] = Seq.empty
@@ -23,6 +25,7 @@ trait MicroService {
     .settings(defaultSettings(): _*)
     .settings(
       libraryDependencies ++= appDependencies,
+      dependencyOverrides ++= appOverrides,
       parallelExecution in Test := false,
       fork in Test := false,
       retrieveManaged := true,

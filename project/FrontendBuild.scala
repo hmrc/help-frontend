@@ -49,6 +49,11 @@ private object AppDependencies {
     }.test
   }
 
+  val overrideDependencies = Set(
+    "org.seleniumhq.selenium" % "selenium-java" % "2.53.1" % "test,it",
+    "org.seleniumhq.selenium" % "selenium-htmlunit-driver" % "2.53.1" % "test,it"
+  )
+
   def apply() = compile ++ IntegrationTest()
 }
 
