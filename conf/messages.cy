@@ -95,6 +95,7 @@ help.cookies.paragraph.1=Fel arfer, gwelwch neges ar y wefan cyn i gwci gael ei 
 help.cookies.paragraph.2=Rhagor o wybodaeth am {0}.
 help.cookies.link.manage_cookies.text=sut i reoli cwcis
 help.cookies.link.manage_cookies.url=http://www.aboutcookies.org/
+
 help.cookies.how_used.heading=Sut y mae cwcis yn cael eu defnyddio
 help.cookies.how_used.measuring_usage.heading=Yn mesur defnydd o''r wefan (Google Analytics)
 help.cookies.how_used.measuring_usage.info=Mae meddalwedd Google Analytics yn casglu gwybodaeth am sut yr ydych yn defnyddio''r wefan. Caiff hyn ei wneud er mwyn helpu i sicrhau bod y wefan yn diwallu anghenion ei defnyddwyr, ac er mwyn helpu i''w gwella.
@@ -108,6 +109,7 @@ help.cookies.how_used.measuring_usage.cookies_used.table.caption=Caiff y cwcis c
 help.cookies.table.header.name=Enw
 help.cookies.table.header.purpose=Pwrpas
 help.cookies.table.header.expires=Yn dod i ben
+
 help.cookies.how_used.measuring_usage.cookies_used.table.ga.name=_ga
 help.cookies.how_used.measuring_usage.cookies_used.table.ga.purpose=Mae hyn yn ein helpu i ddarganfod sut yr ydych yn defnyddio GOV.UK er mwyn i ni allu gwella''r wefan
 help.cookies.how_used.measuring_usage.cookies_used.table.ga.expires=2 flynedd
@@ -131,6 +133,7 @@ help.cookies.how_used.optimizely.table.optimizelyEndUserId.expires=10 mlynedd
 help.cookies.how_used.optimizely.table.optimizelyRedirectData.name=optimizelyRedirectData
 help.cookies.how_used.optimizely.table.optimizelyRedirectData.purpose=Mae hyn yn ein helpu i weld sut yr ydych yn defnyddio GOV.UK er mwyn i ni allu gwella''r wefan
 help.cookies.how_used.optimizely.table.optimizelyRedirectData.expires=5 eiliad
+
 help.cookies.how_used.sessions.heading=Sesiynau
 help.cookies.how_used.sessions.info=Caiff cwci ei osod i gofnodi eich gweithgarwch yn ystod y sesiwn.
 help.cookies.how_used.sessions.table.mdtp.name=mdtp
@@ -145,6 +148,13 @@ help.cookies.how_used.sessions.table.mdtpdf.expires=Pan fyddwch yn cau eich porw
 help.cookies.how_used.sessions.table.PLAY_FLASH.name=PLAY_FLASH
 help.cookies.how_used.sessions.table.PLAY_FLASH.purpose=Yn storio data''r sesiwn
 help.cookies.how_used.sessions.table.PLAY_FLASH.expires=Pan fyddwch yn cau eich porwr
+
+help.cookies.how_used.user.research.banner.heading=Baner ymchwil defnyddwyr
+help.cookies.how_used.user.research.banner.info=Efallai y gwelwch faner am ymchwil defnyddwyr pan fyddwch yn ymweld. Er mwyn i’ch cyfrifiadur wybod eich bod wedi dewis peidio â’i weld eto, caiff cwci ei storio.
+help.cookies.how_used.user.research.banner.table.mdtpurr.name=mdtpurr
+help.cookies.how_used.user.research.banner.table.mdtpurr.purpose=Yn cadw neges er mwyn rhoi gwybod i ni nad ydych am ei weld eto.
+help.cookies.how_used.user.research.banner.table.mdtpurr.expires=1 mis
+
 help.cookies.how_used.intro_message.heading=Ein neges ragarweiniol
 help.cookies.how_used.intro_message.info=Efallai y gwelwch neges naid sy''n eich croesawu pan fyddwch yn ymweld â''r wefan am y tro cyntaf. Er mwyn i''ch cyfrifiadur wybod eich bod wedi gweld y neges, a gwybod peidio â''i dangos eto, caiff cwci ei storio.
 help.cookies.how_used.intro_message.table.seen_message.name=seen_cookie_message

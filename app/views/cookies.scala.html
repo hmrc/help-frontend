@@ -3,35 +3,35 @@
 
 @main(title = Messages("help.cookies.title")) {
 <header class="page-header">
-        <h1>@Messages("help.cookies.title")</h1>
+        <h1 id="cookies-heading">@Messages("help.cookies.title")</h1>
 </header>
 <p id="cookies-info">@Messages("help.cookies.info")</p>
-<p>@Messages("help.cookies.usages.list_info")</p>
-<ul class="bullets">
-    <li>@Messages("help.cookies.usages.list_item.1")</li>
-    <li>@Messages("help.cookies.usages.list_item.2")</li>
+<p id="cookies-usages">@Messages("help.cookies.usages.list_info")</p>
+<ul id="cookies-usages-bullets" class="bullets">
+    <li id="cookies-usages-bullets1" >@Messages("help.cookies.usages.list_item.1")</li>
+    <li id="cookies-usages-bullets2">@Messages("help.cookies.usages.list_item.2")</li>
 </ul>
 <div class="application-notice info-notice">
     <p>@Messages("help.cookies.notice")</p>
 </div>
-<p>@Messages("help.cookies.paragraph.1")</p>
-<p>@Html(Messages("help.cookies.paragraph.2", Link.toExternalPage(url = Messages("help.cookies.link.manage_cookies.url"), value = Some(Messages("help.cookies.link.manage_cookies.text"))).toHtml))</p>
+<p id="cookies-paragraph-1">@Messages("help.cookies.paragraph.1")</p>
+<p id="cookies-more-about">@Html(Messages("help.cookies.paragraph.2", Link.toExternalPage(url = Messages("help.cookies.link.manage_cookies.url"), value = Some(Messages("help.cookies.link.manage_cookies.text"))).toHtml))</p>
 
-<h2>@Messages("help.cookies.how_used.heading")</h2>
-<h3>@Messages("help.cookies.how_used.measuring_usage.heading")</h3>
-<p>@Messages("help.cookies.how_used.measuring_usage.info")</p>
-<p>@Messages("help.cookies.how_used.measuring_usage.list_info")</p>
-<ul class="bullets">
-    <li>@Messages("help.cookies.how_used.measuring_usage.list_item.1")</li>
-    <li>@Messages("help.cookies.how_used.measuring_usage.list_item.2")</li>
-    <li>@Messages("help.cookies.how_used.measuring_usage.list_item.3")</li>
+<h2 id="cookies-are-used">@Messages("help.cookies.how_used.heading")</h2>
+<h3 id="cookies-website-usage">@Messages("help.cookies.how_used.measuring_usage.heading")</h3>
+<p id="cookies-analytics-paragraph-1">@Messages("help.cookies.how_used.measuring_usage.info")</p>
+<p id="cookies-analytics-paragraph-2">@Messages("help.cookies.how_used.measuring_usage.list_info")</p>
+<ul id="cookies-analytics-bullets" class="bullets">
+    <li id="cookies-analytics-bullets1">@Messages("help.cookies.how_used.measuring_usage.list_item.1")</li>
+    <li id="cookies-analytics-bullets2">@Messages("help.cookies.how_used.measuring_usage.list_item.2")</li>
+    <li id="cookies-analytics-bullets3">@Messages("help.cookies.how_used.measuring_usage.list_item.3")</li>
 </ul>
-<p>@Messages("help.cookies.how_used.measuring_usage.paragraph.1")</p>
+<p id="cookies-analytics-paragraph-3">@Messages("help.cookies.how_used.measuring_usage.paragraph.1")</p>
 <div class="application-notice info-notice">
     <p>@Messages("help.cookies.how_used.measuring_usage.notice")</p>
 </div>
-<p>@Messages("help.cookies.how_used.measuring_usage.cookies_used.table.caption")</p>
-<table>
+<p id="cookies-analytics-used">@Messages("help.cookies.how_used.measuring_usage.cookies_used.table.caption")</p>
+<table id="cookies-analytics-table">
     <thead>
         <tr>
             <th scope="col">@Messages("help.cookies.table.header.name")</th>
@@ -62,12 +62,12 @@
         </tr>
     </tbody>
 </table>
-<p>@Html(Messages("help.cookies.how_used.measuring_usage.opt_out.info", Link.toExternalPage(url = Messages("help.cookies.how_used.measuring_usage.opt_out.link.url"), value = Some(Messages("help.cookies.how_used.measuring_usage.opt_out.link.text"))).toHtml))</p>
+<p id="cookies-analytics-opt-out">@Html(Messages("help.cookies.how_used.measuring_usage.opt_out.info", Link.toExternalPage(url = Messages("help.cookies.how_used.measuring_usage.opt_out.link.url"), value = Some(Messages("help.cookies.how_used.measuring_usage.opt_out.link.text"))).toHtml))</p>
 
-<h3>@Messages("help.cookies.how_used.optimizely.heading")</h3>
-<p>@Messages("help.cookies.how_used.optimizely.info")</p>
-<p>@Messages("help.cookies.how_used.measuring_usage.cookies_used.table.caption")</p>
-<table>
+<h3 id="cookies-versions-heading">@Messages("help.cookies.how_used.optimizely.heading")</h3>
+<p id="cookies-versions-paragraph-1">@Messages("help.cookies.how_used.optimizely.info")</p>
+<p id="cookies-versions-paragraph-2">@Messages("help.cookies.how_used.measuring_usage.cookies_used.table.caption")</p>
+<table id="cookies-versions-table">
     <thead>
         <tr>
             <th scope="col">@Messages("help.cookies.table.header.name")</th>
@@ -89,9 +89,9 @@
     </tbody>
 </table>
 
-<h3>@Messages("help.cookies.how_used.sessions.heading")</h3>
-<p>@Messages("help.cookies.how_used.sessions.info")</p>
-<table>
+<h3 id="cookies-sessions-heading">@Messages("help.cookies.how_used.sessions.heading")</h3>
+<p id="cookies-sessions-paragraph">@Messages("help.cookies.how_used.sessions.info")</p>
+<table id="cookies-sessions-table">
     <thead>
     <tr>
         <th scope="col">@Messages("help.cookies.table.header.name")</th>
@@ -123,9 +123,9 @@
     </tbody>
 </table>
 
-<h3>@Messages("help.cookies.how_used.intro_message.heading")</h3>
-<p>@Messages("help.cookies.how_used.intro_message.info")</p>
-<table>
+<h3 id="cookies-introductory-heading">@Messages("help.cookies.how_used.intro_message.heading")</h3>
+<p id="cookies-introductory-paragraph">@Messages("help.cookies.how_used.intro_message.info")</p>
+<table id="cookies-introductory-table">
     <thead>
     <tr>
         <th scope="col">@Messages("help.cookies.table.header.name")</th>
@@ -142,9 +142,28 @@
     </tbody>
 </table>
 
-<h3>@Messages("help.cookies.how_used.satisfaction_survey.heading")</h3>
-<p>@Html(Messages("help.cookies.how_used.satisfaction_survey.info", Link.toExternalPage(url = Messages("help.cookies.how_used.satisfaction_survey.link.url"), value = Some(Messages("help.cookies.how_used.satisfaction_survey.link.text"))).toHtml))</p>
-<table>
+<h3 id="cookies-user-research-heading">@Messages("help.cookies.how_used.user.research.banner.heading")</h3>
+<p id="cookies-user-research-paragraph">@Messages("help.cookies.how_used.user.research.banner.info")</p>
+<table id="cookies-user-research-table">
+    <thead>
+    <tr>
+        <th scope="col">@Messages("help.cookies.table.header.name")</th>
+        <th scope="col">@Messages("help.cookies.table.header.purpose")</th>
+        <th scope="col">@Messages("help.cookies.table.header.expires")</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>@Messages("help.cookies.how_used.user.research.banner.table.mdtpurr.name")</td>
+        <td>@Messages("help.cookies.how_used.user.research.banner.table.mdtpurr.purpose")</td>
+        <td>@Messages("help.cookies.how_used.user.research.banner.table.mdtpurr.expires")</td>
+    </tr>
+    </tbody>
+</table>
+
+<h3 id="cookies-satisfaction-survey-heading">@Messages("help.cookies.how_used.satisfaction_survey.heading")</h3>
+<p id="cookies-satisfaction-survey-paragraph">@Html(Messages("help.cookies.how_used.satisfaction_survey.info", Link.toExternalPage(url = Messages("help.cookies.how_used.satisfaction_survey.link.url"), value = Some(Messages("help.cookies.how_used.satisfaction_survey.link.text"))).toHtml))</p>
+<table id="cookies-satisfaction-survey-table">
     <thead>
     <tr>
         <th scope="col">@Messages("help.cookies.table.header.name")</th>
