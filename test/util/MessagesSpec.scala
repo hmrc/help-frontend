@@ -35,7 +35,6 @@ class MessagesSpec extends UnitSpec with WithFakeApplication {
   val languageWelsh: Lang = Lang.get("cy").getOrElse(throw new Exception())
   val MatchSingleQuoteOnly: Regex = """\w+'{1}\w+""".r
   val MatchBacktickQuoteOnly: Regex = """`+""".r
-  val MatchForwardTickQuoteOnly: Regex = """’+""".r
 
 
   "Application" should {
@@ -91,7 +90,6 @@ class MessagesSpec extends UnitSpec with WithFakeApplication {
     withClue(s"In $label, there is an unescaped or invalid quote:[$key][$value]") {
       MatchSingleQuoteOnly.findFirstIn(value).isDefined shouldBe false
       MatchBacktickQuoteOnly.findFirstIn(value).isDefined shouldBe false
-      MatchForwardTickQuoteOnly.findFirstIn(value).isDefined shouldBe false
     }
   }
 
