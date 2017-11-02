@@ -18,7 +18,7 @@ private object AppDependencies {
   import play.core.PlayVersion
 
   val compile = Seq(
-    "uk.gov.hmrc" %% "frontend-bootstrap" % "8.8.0",
+    "uk.gov.hmrc" %% "frontend-bootstrap" % "8.10.0",
     "uk.gov.hmrc" %% "url-builder" % "2.1.0"
   )
 
