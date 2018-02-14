@@ -154,6 +154,9 @@ help.cookies.how_used.sessions.table.mdtpdf.expires=When you close your browser
 help.cookies.how_used.sessions.table.PLAY_FLASH.name=PLAY_FLASH
 help.cookies.how_used.sessions.table.PLAY_FLASH.purpose=Stores session data
 help.cookies.how_used.sessions.table.PLAY_FLASH.expires=When you close your browser
+help.cookies.how_used.sessions.table.remme.name=remme
+help.cookies.how_used.sessions.table.remme.purpose=This is used to uniquely identify a user on a device trying to go through the 2SV challenge
+help.cookies.how_used.sessions.table.remme.expires=7 days
 
 help.cookies.how_used.user.research.banner.heading=User research banner
 help.cookies.how_used.user.research.banner.info=You may see a banner about user research when you visit. A cookie is stored so that your computer knows when you have chosen not to see it again.

@@ -222,6 +222,14 @@ class CookiesSpec extends GenericTestHelper {
 
         verifyTableRowText("cookies-sessions-table", expectedTableAnswersText, rowNumber = 4)
       }
+      "have the following table answers in the table 'remme', 'This is used to uniquely identify a user on a device trying to go through the 2SV challenge.', '7 days'" in new ViewFixture {
+        val expectedTableAnswersText: List[String] = List(
+          "remme",
+          "This is used to uniquely identify a user on a device trying to go through the 2SV challenge.",
+          "7 days")
+
+        verifyTableRowText("cookies-sessions-table", expectedTableAnswersText, rowNumber = 5)
+      }
     }
     "Our introductory message" should {
       "have the following heading" in new ViewFixture {
