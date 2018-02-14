@@ -149,7 +149,7 @@ help.cookies.how_used.sessions.table.PLAY_FLASH.name=PLAY_FLASH
 help.cookies.how_used.sessions.table.PLAY_FLASH.purpose=Yn storio data''r sesiwn
 help.cookies.how_used.sessions.table.PLAY_FLASH.expires=Pan fyddwch yn cau eich porwr
 help.cookies.how_used.sessions.table.remme.name=remme
-help.cookies.how_used.sessions.table.remme.purpose=Mae hwn yn cael ei ddefnyddio i adnabod defnyddiwr ar ddyfais sy'n ceisio mynd drwy her y Dull Gwirio 2-gam
+help.cookies.how_used.sessions.table.remme.purpose=Mae hwn yn cael ei ddefnyddio i adnabod defnyddiwr ar ddyfais sy''n ceisio mynd drwy her y Dull Gwirio 2-gam
 help.cookies.how_used.sessions.table.remme.expires=7 diwrnod
 
 help.cookies.how_used.user.research.banner.heading=Baner ymchwil defnyddwyr
