@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 HM Revenue & Customs
+ * Copyright 2018 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -222,6 +222,14 @@ class CookiesSpec extends GenericTestHelper {
 
         verifyTableRowText("cookies-sessions-table", expectedTableAnswersText, rowNumber = 4)
       }
+      "have the following table answers in the table 'remme', 'This is used to uniquely identify a user on a device trying to go through the 2SV challenge', '7 days'" in new ViewFixture {
+        val expectedTableAnswersText: List[String] = List(
+          "remme",
+          "This is used to uniquely identify a user on a device trying to go through the 2SV challenge",
+          "7 days")
+
+        verifyTableRowText("cookies-sessions-table", expectedTableAnswersText, rowNumber = 5)
+      }
     }
     "Our introductory message" should {
       "have the following heading" in new ViewFixture {
@@ -328,4 +336,3 @@ class CookiesSpec extends GenericTestHelper {
     }
   }
 }
-
