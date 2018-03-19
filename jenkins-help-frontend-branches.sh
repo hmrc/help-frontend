@@ -3,8 +3,6 @@
 echo "Starting ASSETS"
 
 cd $WORKSPACE
-rm -rf service-manager-config
-git clone git@github.tools.tax.service.gov.uk:HMRC/service-manager-config.git
 
 sm --stop ALL
 sm --cleanlogs
