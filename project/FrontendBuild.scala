@@ -18,12 +18,7 @@ private object AppDependencies {
   import play.core.PlayVersion
 
   val compile = Seq(
-    "uk.gov.hmrc" %% "frontend-bootstrap" % "7.14.0",
-    "uk.gov.hmrc" %% "play-config" % "4.3.0",
-    "uk.gov.hmrc" %% "logback-json-logger" % "3.1.0",
-    "uk.gov.hmrc" %% "play-health" % "2.1.0",
-    "uk.gov.hmrc" %% "govuk-template" % "5.1.0",
-    "uk.gov.hmrc" %% "play-ui" % "7.0.0",
+    "uk.gov.hmrc" %% "frontend-bootstrap" % "8.10.0",
     "uk.gov.hmrc" %% "url-builder" % "2.1.0"
   )
 
@@ -38,16 +33,22 @@ private object AppDependencies {
       override lazy val scope = "test, it"
 
       override lazy val test = Seq(
-        "uk.gov.hmrc" %% "hmrctest" % "2.3.0" % scope,
+        "org.mockito" % "mockito-all" % "2.0.2-beta" % scope,
+        "com.typesafe.play" %% "play-test" % PlayVersion.current % "test",
+        "uk.gov.hmrc" %% "hmrctest" % "2.4.0" excludeAll ExclusionRule(organization = "org.mockito"),
         "org.scalatest" %% "scalatest" % "2.2.6" % scope,
         "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.1" % scope,
         "org.pegdown" % "pegdown" % "1.6.0" % scope,
-        "org.jsoup" % "jsoup" % "1.8.1" % scope,
-        "com.github.tomakehurst" % "wiremock" % "1.58" % scope,
-        "com.typesafe.play" %% "play-test" % PlayVersion.current % scope
+        "org.jsoup" % "jsoup" % "1.8.3" % scope,
+        "com.github.tomakehurst" % "wiremock" % "1.58" % scope
       )
     }.test
   }
+
+  val overrideDependencies = Set(
+    "org.seleniumhq.selenium" % "selenium-java" % "2.53.1" % "test,it",
+    "org.seleniumhq.selenium" % "selenium-htmlunit-driver" % "2.53.1" % "test,it"
+  )
 
   def apply() = compile ++ IntegrationTest()
 }

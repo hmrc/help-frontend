@@ -14,11 +14,9 @@
  * limitations under the License.
  */
 
-package util
+package testutil
 
-import play.api.mvc.Flash
-
-object LanguageUtils {
-  val switchIndicatorKey = "switching-language"
-  val flashWithSwitchIndicator = Flash(Map(switchIndicatorKey -> "true"))
+case class Link(href: String, dataSso: Option[String], dataJourneyClick: String, text: String, rel: Option[String] = None, target: Option[String] = None) {
+  def isExternal : Boolean = rel.contains("external")
+  def opensInNewTab : Boolean = target.contains("_blank")
 }
