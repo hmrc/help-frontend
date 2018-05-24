@@ -24,11 +24,9 @@ class HelpFeature extends StubbedFeatureSpec {
       WireMock.stubFor(post(urlEqualTo("/write/audit")).willReturn(aResponse().withStatus(200)))
 
       Given("I go to the privacy policy page")
-      go(PrivacyPage)
+      goOn(PrivacyPage)
       Then("I am shown the privacy policy page")
-      on(PrivacyPage)
-      //      Temporary
-      //      PrivacyPage.personalInfoText shouldBe "This page explains what kind of personal information HM Revenue and Customs (HMRC) holds about you, how it's protected and how you can find out about it."
+      PrivacyPage.personalInfoText shouldBe "This page explains what kind of personal information HM Revenue and Customs (HMRC) holds about you, how it's protected and how you can find out about it."
     }
 
     scenario("Navigate to the terms and conditions page") {
