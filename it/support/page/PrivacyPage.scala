@@ -4,7 +4,7 @@ import org.openqa.selenium.By
 import support.Env
 
 object PrivacyPage extends WebPage {
-  override val url: String = Env.host + "/help/privacy"
+  override val url: String = "https://www.gov.uk/government/publications/data-protection-act-dpa-information-hm-revenue-and-customs-hold-about-you"
   override def isCurrentPage: Boolean = if(heading == "HMRC Privacy Notice") true else false
 
   // Temporary
