@@ -33,5 +33,4 @@ object HelpController extends FrontendController {
   val privacyPolicy = UnauthorisedAction { implicit request =>
     Redirect("https://www.gov.uk/government/publications/data-protection-act-dpa-information-hm-revenue-and-customs-hold-about-you")
   }
-
 }
