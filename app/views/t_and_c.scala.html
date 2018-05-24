@@ -55,7 +55,7 @@
     <p>@Messages("help.terms_and_conditions.virus_protection.paragraph.1")</p>
 
     <h2>@Messages("help.terms_and_conditions.privacy_policy.heading")</h2>
-    <p>@Html(Messages("help.terms_and_conditions.privacy_policy.paragraph.1", Link.toInternalPage(url = Messages("help.links.privacy_policy.url"), value = Some(Messages("help.links.privacy_policy.text.lower_case"))).toHtml))</p>
+    <p>@Html(Messages("help.terms_and_conditions.privacy_policy.paragraph.1", Link.toExternalPage(url = Messages("help.links.privacy_policy.url"), value = Some(Messages("help.links.privacy_policy.text.lower_case"))).toHtml))</p>
 
     <h2>@Messages("help.terms_and_conditions.governing_law.heading")</h2>
     <p>@Messages("help.terms_and_conditions.governing_law.paragraph.1")</p>
