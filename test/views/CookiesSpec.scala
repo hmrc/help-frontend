@@ -173,10 +173,10 @@ class CookiesSpec extends GenericTestHelper {
       }
 
       "have the following answers in the table 'optimizelyEndUserId', " +
-        "'This helps us identify how you use GOV.UK so we can make the site better', '10 years'" in new ViewFixture {
+        "'This helps us identify how you use GOV.UK so we can make the site better', '6 months'" in new ViewFixture {
         val expectedTableAnswersText: List[String] = List("optimizelyEndUserId",
                                                           "This helps us identify how you use GOV.UK so we can make the site better",
-                                                          "10 years")
+                                                          "6 months")
 
         verifyTableRowText(tableId = "cookies-versions-table", expectedTableAnswersText, rowNumber = 1)
       }
