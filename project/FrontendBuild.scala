@@ -18,7 +18,7 @@ private object AppDependencies {
   import play.core.PlayVersion
 
   val compile = Seq(
-    "uk.gov.hmrc" %% "frontend-bootstrap" % "8.22.0",
+    "uk.gov.hmrc" %% "frontend-bootstrap" % "10.3.0",
     "uk.gov.hmrc" %% "url-builder" % "2.1.0"
   )
 
@@ -35,7 +35,6 @@ private object AppDependencies {
       override lazy val test = Seq(
         "org.mockito" % "mockito-all" % "2.0.2-beta" % scope,
         "com.typesafe.play" %% "play-test" % PlayVersion.current % "test",
-        "uk.gov.hmrc" %% "hmrctest" % "2.4.0" excludeAll ExclusionRule(organization = "org.mockito"),
         "org.scalatest" %% "scalatest" % "2.2.6" % scope,
         "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.1" % scope,
         "org.pegdown" % "pegdown" % "1.6.0" % scope,

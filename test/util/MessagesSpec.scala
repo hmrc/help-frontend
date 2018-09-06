@@ -18,19 +18,18 @@ package util
 
 import play.api.i18n.{Lang, Messages, MessagesApi}
 import play.api.test.FakeApplication
-import uk.gov.hmrc.play.test.{UnitSpec, WithFakeApplication}
-import play.api.i18n.Messages.Implicits._
+import testutil.GenericTestHelper
 
 import scala.util.matching.Regex
 
-class MessagesSpec extends UnitSpec with WithFakeApplication {
+class MessagesSpec extends GenericTestHelper {
 
-  override lazy val fakeApplication = FakeApplication(
+  override lazy val app = FakeApplication(
     additionalConfiguration = Map("application.langs" -> "en,cy",
       "govuk-tax.Test.enableLanguageSwitching" -> true)
   )
 
-  val messagesAPI: MessagesApi = Messages.Implicits.applicationMessagesApi(fakeApplication)
+  val messagesAPI: MessagesApi = Messages.Implicits.applicationMessagesApi(app)
   val languageEnglish: Lang = Lang.get("en").getOrElse(throw new Exception())
   val languageWelsh: Lang = Lang.get("cy").getOrElse(throw new Exception())
   val MatchSingleQuoteOnly: Regex = """\w+'{1}\w+""".r
@@ -39,22 +38,22 @@ class MessagesSpec extends UnitSpec with WithFakeApplication {
 
   "Application" should {
     "have the correct message configs" in {
-      messagesAPI.messages.size shouldBe 4
-      messagesAPI.messages.keys should contain theSameElementsAs Vector("en", "cy", "default", "default.play")
+      messagesAPI.messages.size mustBe 4
+      messagesAPI.messages.keys must contain theSameElementsAs Vector("en", "cy", "default", "default.play")
     }
 
     "have messages for default and cy only" in {
-      messagesAPI.messages("en").size shouldBe 0
+      messagesAPI.messages("en").size mustBe 0
       val englishMessageCount = messagesAPI.messages("default").size - frameworkProvidedKeys.size
-      messagesAPI.messages("cy").size shouldBe englishMessageCount
-      messagesAPI.messages("default.play").size shouldBe 46
+      messagesAPI.messages("cy").size mustBe englishMessageCount
+      messagesAPI.messages("default.play").size mustBe 46
     }
   }
 
   "All message files" should {
     "have the same set of keys" in {
       withClue(describeMismatch(defaultMessages.keySet, welshMessages.keySet)) {
-        welshMessages.keySet shouldBe defaultMessages.keySet
+        welshMessages.keySet mustBe defaultMessages.keySet
       }
     }
     "have a non-empty message for each key" in {
@@ -66,7 +65,7 @@ class MessagesSpec extends UnitSpec with WithFakeApplication {
       assertCorrectUseOfQuotesForWelshMessages()
     }
     "have a resolvable message for keys which take args" in {
-      countMessagesWithArgs(welshMessages).size shouldBe countMessagesWithArgs(defaultMessages).size
+      countMessagesWithArgs(welshMessages).size mustBe countMessagesWithArgs(defaultMessages).size
     }
   }
 
@@ -82,14 +81,14 @@ class MessagesSpec extends UnitSpec with WithFakeApplication {
 
   private def assertNonEmptyNonTemporaryValues(label: String, messages: Map[String, String]) = messages.foreach { case (key: String, value: String) =>
     withClue(s"In $label, there is an empty value for the key:[$key][$value]") {
-      value.trim.isEmpty shouldBe false
+      value.trim.isEmpty mustBe false
     }
   }
 
   private def assertCorrectUseOfQuotes(label: String, messages: Map[String, String]) = messages.foreach { case (key: String, value: String) =>
     withClue(s"In $label, there is an unescaped or invalid quote:[$key][$value]") {
-      MatchSingleQuoteOnly.findFirstIn(value).isDefined shouldBe false
-      MatchBacktickQuoteOnly.findFirstIn(value).isDefined shouldBe false
+      MatchSingleQuoteOnly.findFirstIn(value).isDefined mustBe false
+      MatchBacktickQuoteOnly.findFirstIn(value).isDefined mustBe false
     }
   }
 
