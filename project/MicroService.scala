@@ -2,6 +2,7 @@ import play.routes.compiler.StaticRoutesGenerator
 import sbt.Keys._
 import sbt._
 import uk.gov.hmrc.sbtdistributables.SbtDistributablesPlugin._
+import uk.gov.hmrc.versioning.SbtGitVersioning.autoImport.majorVersion
 
 trait MicroService {
 
@@ -31,6 +32,7 @@ trait MicroService {
       retrieveManaged := true,
       routesGenerator := StaticRoutesGenerator
     )
+      .settings(majorVersion:= 3)
     .configs(IntegrationTest)
     .settings(inConfig(IntegrationTest)(Defaults.testSettings) : _*)
     .settings(
