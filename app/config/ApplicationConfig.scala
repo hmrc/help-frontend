@@ -39,6 +39,6 @@ object ApplicationConfig extends AppConfig with ServicesConfig {
   override lazy val analyticsHost: String = configuration.getString("google-analytics.host").getOrElse("auto")
   override lazy val reportAProblemPartialUrl = s"$contactHost/contact/problem_reports_ajax"
   override lazy val reportAProblemNonJSUrl = s"$contactHost/contact/problem_reports_nonjs"
-  override def fallbackURLForLanguageSwitcher: String = loadConfig(s"$env.languageSwitcher.fallback.url")
-  override def enableLanguageSwitching: Boolean = configuration.getBoolean(s"$env.enableLanguageSwitching").getOrElse(false)
+  override def fallbackURLForLanguageSwitcher: String = loadConfig(s"languageSwitcher.fallback.url")
+  override def enableLanguageSwitching: Boolean = configuration.getBoolean(s"enableLanguageSwitching").getOrElse(false)
 }
