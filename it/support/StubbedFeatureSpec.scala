@@ -10,7 +10,6 @@ import support.behaviour.NavigationSugar
 trait StubbedFeatureSpec
   extends FeatureSpec
     with GivenWhenThen
-    with ShouldMatchers
     with OneServerPerTest
     with BeforeAndAfter
     with BeforeAndAfterEach

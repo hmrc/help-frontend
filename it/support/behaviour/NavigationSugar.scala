@@ -2,15 +2,15 @@ package support.behaviour
 
 import org.openqa.selenium.support.ui.{ExpectedCondition, WebDriverWait}
 import org.openqa.selenium.{By, WebDriver, WebElement}
+import org.scalatest.{Assertions, Matchers}
 import org.scalatest.concurrent.{Eventually, IntegrationPatience}
 import org.scalatest.selenium.WebBrowser
 import org.scalatest.selenium.WebBrowser.{go => goo}
-import org.scalatest.{Assertions, ShouldMatchers}
-import support.page.WebPage
 import support.Env
+import support.page.WebPage
 
 
-trait NavigationSugar extends WebBrowser with Eventually with Assertions with ShouldMatchers with IntegrationPatience {
+trait NavigationSugar extends WebBrowser with Eventually with Matchers with Assertions with IntegrationPatience {
   implicit def webDriver: WebDriver = Env.driver
 
   def goOn(page: WebPage): Unit = {
@@ -39,6 +39,6 @@ trait NavigationSugar extends WebBrowser with Eventually with Assertions with Sh
   }
 
   def anotherTabIsOpened(): Unit = {
-    webDriver.getWindowHandles.size() should be(2)
+    webDriver.getWindowHandles.size() shouldBe 2
   }
 }
