@@ -2,16 +2,12 @@ package functional
 
 import com.github.tomakehurst.wiremock.client.WireMock
 import com.github.tomakehurst.wiremock.client.WireMock.{aResponse, post, urlEqualTo}
-import org.junit.runner.RunWith
 import org.scalatest.TestData
-import org.scalatest.junit.JUnitRunner
 import play.api.inject.guice.GuiceApplicationBuilder
-import play.api.test.FakeApplication
 import play.api.{Application, Mode}
 import support.StubbedFeatureSpec
 import support.page.{EnglishCookiesPage, WelshCookiesPage}
 
-@RunWith(classOf[JUnitRunner])
 class LanguageSwitchingFeature extends StubbedFeatureSpec {
   implicit override def newAppForTest(testData: TestData): Application =
     new GuiceApplicationBuilder()
@@ -51,8 +47,6 @@ class LanguageSwitchingFeature extends StubbedFeatureSpec {
   }
 }
 
-
-@RunWith(classOf[JUnitRunner])
 class LanguageSwitchingDisabledFeature extends StubbedFeatureSpec {
   implicit override def newAppForTest(testData: TestData): Application =
     new GuiceApplicationBuilder()

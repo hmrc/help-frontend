@@ -16,6 +16,7 @@ lazy val microservice = Project(appName, file("."))
     retrieveManaged := true,
     routesGenerator := StaticRoutesGenerator,
     majorVersion:= 3,
+    PlayKeys.playDefaultPort := 9240,
     resolvers := Seq(
       Resolver.bintrayRepo("hmrc", "releases"),
       Resolver.typesafeRepo("releases"),
