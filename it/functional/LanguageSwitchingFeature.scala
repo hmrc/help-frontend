@@ -6,6 +6,7 @@ import org.junit.runner.RunWith
 import org.scalatest.TestData
 import org.scalatest.junit.JUnitRunner
 import play.api.inject.guice.GuiceApplicationBuilder
+import play.api.test.FakeApplication
 import play.api.{Application, Mode}
 import support.StubbedFeatureSpec
 import support.page.{EnglishCookiesPage, WelshCookiesPage}
@@ -17,7 +18,7 @@ class LanguageSwitchingFeature extends StubbedFeatureSpec {
       .configure(
         Map(
           "application.langs" -> "en,cy",
-          "Test.enableLanguageSwitching" -> true
+          "enableLanguageSwitching" -> true
         )
       )
       .in(Mode.Test)
@@ -58,18 +59,11 @@ class LanguageSwitchingDisabledFeature extends StubbedFeatureSpec {
       .configure(
         Map(
           "application.langs" -> "en,cy",
-          "Test.enableLanguageSwitching" -> false
+          "enableLanguageSwitching" -> false
         )
       )
       .in(Mode.Test)
       .build()
-
-  //  override lazy val app = FakeApplication(
-  //    additionalConfiguration = Map(
-  //      "application.langs" -> "en,cy",
-  //      "Test.enableLanguageSwitching" -> false
-  //    )
-  //  )
 
   feature("Language Switching disabled") {
     scenario("Navigate to the cookies page with language switching disabled") {
