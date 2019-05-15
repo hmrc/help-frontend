@@ -23,7 +23,7 @@ object AppDependencies {
 
   val overrideDependencies: Set[ModuleID] = Set(
     "org.seleniumhq.selenium" % "selenium-java" % "3.141.59",
-    
+
     //selenium expected conditions need a higher version of guava
     "com.google.guava" % "guava" % "23.0",
 
