@@ -10,7 +10,7 @@ object Env {
     case _ => Option(System.getProperty("host")).getOrElse("http://localhost:9000")
   }
 
-  lazy val driver: WebDriver = System.getProperty("browser", "firefox").toLowerCase match  {
+  lazy val driver: WebDriver = System.getProperty("browser", "chrome").toLowerCase match  {
     case "firefox" =>
       val profile = new FirefoxProfile
       profile.setAcceptUntrustedCertificates(true)

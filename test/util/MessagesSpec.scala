@@ -26,7 +26,7 @@ class MessagesSpec extends GenericTestHelper {
 
   override lazy val app = FakeApplication(
     additionalConfiguration = Map("application.langs" -> "en,cy",
-      "govuk-tax.Test.enableLanguageSwitching" -> true)
+      "enableLanguageSwitching" -> true)
   )
 
   val messagesAPI: MessagesApi = Messages.Implicits.applicationMessagesApi(app)
