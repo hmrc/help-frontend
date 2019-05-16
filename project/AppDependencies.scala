@@ -5,7 +5,7 @@ object AppDependencies {
 
   //wiremock jetty dependency for 2.23.2
   val jettyVersion = "9.4.15.v20190215"
-  
+
   val compile: Seq[ModuleID] = Seq(
     "uk.gov.hmrc" %% "frontend-bootstrap" % "12.7.0",
     "uk.gov.hmrc" %% "url-builder" % "3.1.0"

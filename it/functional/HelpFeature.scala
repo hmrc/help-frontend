@@ -7,7 +7,6 @@ import org.scalatest.junit.JUnitRunner
 import support.StubbedFeatureSpec
 import support.page.{EnglishCookiesPage, PrivacyPage, TermsAndConditionsPage}
 
-@RunWith(classOf[JUnitRunner])
 class HelpFeature extends StubbedFeatureSpec {
   feature("Help") {
     scenario("Navigate to the cookies page") {
