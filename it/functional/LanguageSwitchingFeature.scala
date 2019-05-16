@@ -4,6 +4,7 @@ import com.github.tomakehurst.wiremock.client.WireMock
 import com.github.tomakehurst.wiremock.client.WireMock.{aResponse, post, urlEqualTo}
 import org.scalatest.TestData
 import play.api.inject.guice.GuiceApplicationBuilder
+import play.api.test.FakeApplication
 import play.api.{Application, Mode}
 import support.StubbedFeatureSpec
 import support.page.{EnglishCookiesPage, WelshCookiesPage}
