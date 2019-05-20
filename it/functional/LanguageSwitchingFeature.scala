@@ -17,7 +17,7 @@ class LanguageSwitchingFeature extends StubbedFeatureSpec {
           "enableLanguageSwitching" -> true
         )
       )
-      .in(Mode.Test)
+      //.in(Mode.Test)
       .build()
 
   feature("Language Switching") {
@@ -56,7 +56,7 @@ class LanguageSwitchingDisabledFeature extends StubbedFeatureSpec {
           "enableLanguageSwitching" -> false
         )
       )
-      .in(Mode.Test)
+      //.in(Mode.Test)
       .build()
 
   feature("Language Switching disabled") {

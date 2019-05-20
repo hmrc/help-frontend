@@ -12,7 +12,9 @@ import org.openqa.selenium.remote.{CapabilityType, DesiredCapabilities, RemoteWe
 
 object Env {
   var host: String = Option(System.getProperty("environment")) match {
-    case _ => Option(System.getProperty("host")).getOrElse("http://localhost:9000")
+    case _ => {
+      Option(System.getProperty("host")).getOrElse("http://localhost:6001")
+    }
   }
 
   lazy val driver: WebDriver = System.getProperty("browser", "chrome-local").toLowerCase match  {
