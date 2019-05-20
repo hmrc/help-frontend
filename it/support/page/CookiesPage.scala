@@ -7,11 +7,6 @@ sealed trait CookiesPage extends WebPage {
   override val url: String = Env.host + "/help/cookies"
 
   override def isCurrentPage: Boolean = {
-    println("******************************** ")
-    println("******************************** B4 heading: " + heading)
-    println("******************************** cookiesHeading: " + cookiesHeading)
-    println("******************************** url: " + url)
-    println("******************************** ")
     heading == cookiesHeading
   }
 

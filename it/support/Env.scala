@@ -13,9 +13,6 @@ import org.openqa.selenium.remote.{CapabilityType, DesiredCapabilities, RemoteWe
 object Env {
   var host: String = Option(System.getProperty("environment")) match {
     case _ => {
-      println("*************************************")
-      println("************************************* host: " + System.getProperty("host"))
-      println("*************************************")
       Option(System.getProperty("host")).getOrElse("http://localhost:6001")
     }
   }
