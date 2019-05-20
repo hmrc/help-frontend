@@ -17,7 +17,7 @@ trait StubbedFeatureSpec
     with NavigationSugar
     with OptionValues {
 
-  override lazy val port = 9000
+  override lazy val port = 9240
 
   val stubPort = 11111
   val stubHost = "localhost"

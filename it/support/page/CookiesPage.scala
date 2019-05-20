@@ -8,8 +8,9 @@ sealed trait CookiesPage extends WebPage {
 
   override def isCurrentPage: Boolean = {
     println("******************************** ")
-    println("******************************** heading: " + heading)
+    println("******************************** B4 heading: " + heading)
     println("******************************** cookiesHeading: " + cookiesHeading)
+    println("******************************** url: " + url)
     println("******************************** ")
     heading == cookiesHeading
   }
