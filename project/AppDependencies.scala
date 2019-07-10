@@ -8,7 +8,8 @@ object AppDependencies {
 
   val compile: Seq[ModuleID] = Seq(
     "uk.gov.hmrc" %% "frontend-bootstrap" % "12.7.0",
-    "uk.gov.hmrc" %% "url-builder" % "3.1.0"
+    "uk.gov.hmrc" %% "url-builder" % "3.1.0",
+    "uk.gov.hmrc" %% "play-graphite" % "4.7.0"
   )
  
   val test: Seq[ModuleID] = Seq(
