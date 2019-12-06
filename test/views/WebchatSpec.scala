@@ -24,7 +24,7 @@ class WebchatSpec extends GenericTestHelper {
 
   trait ViewFixture extends Fixture {
     implicit val lang: Lang = mock[Lang]
-    override def view: HtmlFormat.Appendable = views.html.cookies()(request, lang, messages)
+    override def view: HtmlFormat.Appendable = views.html.webchat()(request, lang, messages)
   }
 
   "Webchat" should {

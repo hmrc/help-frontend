@@ -191,3 +191,6 @@ language-switcher.english=English
 language-switcher.english.hover=Use this account in English
 language-switcher.welsh=Cymraeg
 language-switcher.welsh.hover=Defnyddio''r cyfrif hwn yn Cymraeg
+
+#Welsh text needs to be added
+help.webchat.title=Webchat
