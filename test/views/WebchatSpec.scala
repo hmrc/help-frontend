@@ -14,27 +14,22 @@
  * limitations under the License.
  */
 
-package controllers.help
+package views
 
-import uk.gov.hmrc.play.frontend.controller.{FrontendController, UnauthorisedAction}
-import play.api.i18n.Messages.Implicits._
-import play.api.Play.current
+import play.api.i18n.Lang
+import play.twirl.api.HtmlFormat
+import testutil.{Fixture, GenericTestHelper}
 
-object HelpController extends FrontendController {
+class WebchatSpec extends GenericTestHelper {
 
-  val cookies = UnauthorisedAction { implicit request =>
-    Ok(views.html.cookies())
+  trait ViewFixture extends Fixture {
+    implicit val lang: Lang = mock[Lang]
+    override def view: HtmlFormat.Appendable = views.html.cookies()(request, lang, messages)
   }
 
-  val termsAndConditions = UnauthorisedAction { implicit request =>
-    Ok(views.html.t_and_c())
-  }
-
-  val privacyPolicy = UnauthorisedAction { implicit request =>
-    Ok(views.html.privacy_policy())
-  }
-
-  val webchat = UnauthorisedAction { implicit request =>
-    Ok(views.html.webchat())
+  "Webchat" should {
+    "have a header of 'Webchat'" in new ViewFixture {
+      getElementTextById("page-header") mustBe "Webchat"
+    }
   }
 }
