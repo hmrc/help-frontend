@@ -193,4 +193,4 @@ language-switcher.welsh=Cymraeg
 language-switcher.welsh.hover=Defnyddio''r cyfrif hwn yn Cymraeg
 
 #Welsh text needs to be added
-help.webchat.title=Webchat
+help.webchat.title=Accessibility for webchat
