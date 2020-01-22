@@ -1,4 +1,4 @@
-@*
+/*
  * Copyright 2020 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,16 +12,24 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *@
+ */
 
-@(pageTitle: String, heading: String, message: String)(implicit request: Request[_], lang : Lang, messages: Messages)
+package views
 
-@contentHeader = {
-    <h1>@heading</h1>
+import play.api.i18n.Lang
+import play.twirl.api.HtmlFormat
+import testutil.{Fixture, GenericTestHelper}
+
+class WebchatSpec extends GenericTestHelper {
+
+  trait ViewFixture extends Fixture {
+    implicit val lang: Lang = mock[Lang]
+    override def view: HtmlFormat.Appendable = views.html.webchat()(request, lang, messages)
+  }
+
+  "Webchat" should {
+    "have a header of 'Webchat'" in new ViewFixture {
+      getElementTextById("page-header") mustBe "Accessibility for webchat"
+    }
+  }
 }
-
-@mainContent = {
-    <p>@message</p>
-}
-
-@main(pageTitle, contentHeader)(mainContent)

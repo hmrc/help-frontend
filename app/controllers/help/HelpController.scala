@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 HM Revenue & Customs
+ * Copyright 2020 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package controllers.help
 import uk.gov.hmrc.play.frontend.controller.{FrontendController, UnauthorisedAction}
 import play.api.i18n.Messages.Implicits._
 import play.api.Play.current
-import views.html.privacy_policy
 
 object HelpController extends FrontendController {
 
@@ -33,5 +32,9 @@ object HelpController extends FrontendController {
 
   val privacyPolicy = UnauthorisedAction { implicit request =>
     Ok(views.html.privacy_policy())
+  }
+
+  val webchat = UnauthorisedAction { implicit request =>
+    Ok(views.html.webchat())
   }
 }
