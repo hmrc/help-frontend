@@ -1,8 +1,8 @@
 ->     /template                       template.Routes
-GET    /help/cookies                   controllers.help.HelpController.cookies
-GET    /help/privacy                   controllers.help.HelpController.privacyPolicy
-GET    /help/terms-and-conditions      controllers.help.HelpController.termsAndConditions
-GET    /help/webchat                   controllers.help.HelpController.webchat
+GET    /help/cookies                            controllers.help.HelpController.cookies
+GET    /help/privacy                            controllers.help.HelpController.privacyPolicy
+GET    /help/terms-and-conditions               controllers.help.HelpController.termsAndConditions
+GET    /help/webchat/accessibility-statement    controllers.help.HelpController.webchat
 
-GET    /help/switch-to-welsh           controllers.LanguageController.switchToWelsh()
-GET    /help/switch-to-english         controllers.LanguageController.switchToEnglish()
+GET    /help/switch-to-welsh                    controllers.LanguageController.switchToWelsh()
+GET    /help/switch-to-english                  controllers.LanguageController.switchToEnglish()
