@@ -194,3 +194,64 @@ language-switcher.welsh.hover=Defnyddio''r cyfrif hwn yn Cymraeg
 
 #Welsh text needs to be added
 help.webchat.title=Accessibility for webchat
+help.webchat.askhmrcwebchat.p1=The Ask HMRC webchat is a service that enables you to communicate with an HMRC adviser over the internet.
+help.webchat.askhmrcwebchat.p2=Ask HMRC webchat is built and run by Nuance, a provider of customer engagement software. We want as many people as possible to be able to use this website and webchat. For example, that means you should be able to:
+help.webchat.askhmrcwebchat.li1=zoom in up to 200% without the text spilling off the screen
+help.webchat.askhmrcwebchat.li2=navigate most of the webchat using just a keyboard
+help.webchat.askhmrcwebchat.li3=navigate most of the webchat using speech recognition software
+help.webchat.askhmrcwebchat.li4=listen to most of the webchat using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver)
+help.webchat.askhmrcwebchat.p3={0} has advice on making your device easier to use if you have a disability.
+help.webchat.askhmrcwebchat.url=https://mcmw.abilitynet.org.uk/
+help.webchat.askhmrcwebchat.p4=AbilityNet
+
+help.webchat.howaccessible.h2=How accessible this webchat is
+help.webchat.howaccessible.p1=We know some parts of this webchat are not fully accessible:
+help.webchat.howaccessible.li1=At one point you have to hit the Done button twice to dismiss the keyboard and send a message
+help.webchat.howaccessible.li2=At the top of the webchat window is a print-end chat menu which screen readers may read out twice. The second instance is given the role of a button which is unresponsive
+help.webchat.howaccessible.li3=If you’re using a screen reader you may need to tab past the footer of the webpage to find the webchat
+help.webchat.howaccessible.li4=When the browser window is zoomed in, webchat may spill off the page
+help.webchat.howaccessible.li5=There are some error messages in this service that may not be descriptive enough for some users with visual impairments, although they are compatible with common assistive technology tools
+help.webchat.howaccessible.li6=Users may find that when the chat is finished, they cannot tab backwards through the chat
+help.webchat.howaccessible.li7=To find the privacy and accessibility links, users should tab beyond the message input box
+help.webchat.howaccessible.li8=Some screen readers may fail to tell the user whether the print-end chat menu is open or not
+help.webchat.howaccessible.li9=Jaws stops reading out the chat conversation when the user is in the chat textbox. Users should click ‘tab button’ and click up arrow
+help.webchat.howaccessible.li10=Users of Jaws may find they receive no notification that the agent has sent a message
+
+help.webchat.reportingproblems.h2=Reporting accessibility problems with this webchat
+help.webchat.reportingproblems.p1=We’re always looking to improve the accessibility of the webchat. If you find any problems not listed on this page or think we’re not meeting accessibility requirements, contact {0}
+help.webchat.reportingproblems.email=mailto:ash.chadwick@hmrc.gov.uk
+help.webchat.reportingproblems.emailtext=ash.chadwick@hmrc.gov.uk
+
+help.webchat.Enforcementprocedure.h2=Enforcement procedure
+help.webchat.Enforcementprocedure.p1=The Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No.2) Accessibility Regulations 2018 (the ‘accessibility regulations’). If you’re not happy with how we respond to your complaint, {0}
+help.webchat.Enforcementprocedure.url=https://www.equalityadvisoryservice.com/
+help.webchat.Enforcementprocedure.p2=contact the Equality Advisory and Support Services (EASS)
+
+help.webchat.technicalinformation.h2=Technical information about this webchat''s accessibility
+help.webchat.technicalinformation.p1=HMRC is committed to making this service accessible, in accordance with the Public Sector Bodies (Websites and Mobile Applications) (No.2) Accessibility Regulations 2018.
+help.webchat.technicalinformation.p2=This service is partially compliant with the {0}
+help.webchat.technicalinformation.url= https://www.w3.org/TR/WCAG21/
+help.webchat.technicalinformation.urltext=Web Content Accessibility Guidelines version 2.1
+help.webchat.technicalinformation.p3=AA standard, due to the non-compliances listed below.
+
+help.webchat.nonaccessiblecontent.h2=Non accessible content
+help.webchat.nonaccessiblecontent.p1=The content listed below is non-accessible for the following reasons:
+help.webchat.nonaccessiblecontent.h2bullets=Non compliance with the accessibility regulations
+help.webchat.nonaccessiblecontent.li1=If you''re using a screen reader you may need to tab past the footer of the webpage to find the webchat. This fails WCAG section 1.3.2 Meaningful Sequence
+help.webchat.nonaccessiblecontent.li2=When the browser window is zoomed in, webchat may spill off the page. This fails WCAG section 1.4.4 Resize Text. Scroll to the side to view webchat if this happens
+help.webchat.nonaccessiblecontent.li3=There are some error messages in this service that may not be descriptive enough for some users with visual impairments, although they are compatible with common assistive technology tools. This fails WCAG section 3.3.3 Error Suggestion
+help.webchat.nonaccessiblecontent.li4=Users may find that when the chat is finished, they cannot tab backwards through the chat. This fails WCAG section 2.1.1 Keyboard
+help.webchat.nonaccessiblecontent.li5=To find the privacy and accessibility links, users should tab beyond the message input box. This fails WCAG section 2.4.3 Focus Order
+help.webchat.nonaccessiblecontent.li6=Some screen readers may fail to tell the user whether the print-end chat menu is open or not. This fails WCAG section 4.1.2 Name, Role, Value
+help.webchat.nonaccessiblecontent.li7=Jaws stops reading out the chat conversation when the user is in the message input box. Users should click ‘tab button’ and click up arrow
+help.webchat.nonaccessiblecontent.li8=Users of Jaws may find they receive no notification that the agent has sent a message. This fails WCAG section 4.1.2 Name, Role, Value
+
+help.webchat.howwetested.h2=How we tested this webchat
+help.webchat.howwetested.p1=The service was last tested on 21/01/2020 and was checked for compliance with the WCAG 2.1 AA standard.
+help.webchat.howwetested.p2=The service was built using parts that will be tested by the Digital Accessibility Centre. The full service was tested by HMRC and included a disabled user.
+help.webchat.howwetested.p3=This page was prepared on 21/01/2020.
+
+help.webchat.whatweredoing.h2=What we''re doing to improve accessibility
+help.webchat.whatweredoing.p1=We''re working with Nuance, the new provider of our webchat, to continuously improve the quality and accessibility of this service. Our accessibility experts also regularly review the webchat and make recommendations which we then pass to our supplier Nuance. We acknowledge that some adjustments are simple and immediate, but others require deeper analysis and development and will be slower to take effect.
+help.webchat.whatweredoing.p2=The accessibility of our webchat is therefore under constant scrutiny as we strive to move from partially to fully compliant with the WCAG 2.1 AA standard by September 2020.
+
