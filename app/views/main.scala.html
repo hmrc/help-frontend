@@ -17,7 +17,8 @@
 @import config.ApplicationConfig
 @(title: String,
   mainContentHeader: Html = HtmlFormat.empty,
-  appConfig: config.AppConfig = config.ApplicationConfig)(mainContent: Html)(implicit request: Request[_], lang : Lang, messages: Messages)
+  appConfig: config.AppConfig = config.ApplicationConfig,
+  bodyClass: Option[String] = None)(mainContent: Html)(implicit request: Request[_], lang : Lang, messages: Messages)
 
 @import uk.gov.hmrc.play.views.html.{helpers => uiHelpers}
 @import uk.gov.hmrc.play.views.html.layouts
@@ -48,7 +49,7 @@
 
 @views.html.layouts.govuk_template(
   title = Some(title),
-  bodyClasses = None)(
+  bodyClasses = bodyClass)(
   head = layouts.head(linkElem = None, headScripts = None),
   bodyEnd = bodyEnd,
   insideHeader = HtmlFormat.empty,

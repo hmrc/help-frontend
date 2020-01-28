@@ -14,7 +14,9 @@
  * limitations under the License.
  *@
 
-@()(implicit request: Request[_], lang : Lang, messages: Messages)
+@import config.ApplicationConfig
+
+@()(implicit request: Request[_], lang : Lang, messages: play.api.i18n.Messages)
 @import uk.gov.hmrc.urls.Link
 
 @main(title = Messages("help.webchat.title")) {
@@ -37,7 +39,7 @@
         @Html(
             Messages(
                 "help.webchat.askhmrcwebchat.p3",
-                Link.toExternalPage(url = Messages("help.webchat.askhmrcwebchat.url"),
+                Link.toExternalPage(url = {ApplicationConfig.abilityNetUrl},
                     value = Some(Messages("help.webchat.askhmrcwebchat.p4"))).toHtml
             )
         )
@@ -63,14 +65,11 @@
     <h2 class="heading-large">@Messages("help.webchat.reportingproblems.h2")</h2>
 
     <p>
-        @Html(
-            Messages(
-                "help.webchat.reportingproblems.p1",
-                Link.toExternalPage(url = Messages("help.webchat.reportingproblems.email"),
-                    value = Some(Messages("help.webchat.reportingproblems.emailtext"))).toHtml
-            )
-        )
+        @Messages("help.webchat.reportingproblems.p1")
+        <a href="mailto:@{ApplicationConfig.reportingProblemsEmail}">
+            @Some(Messages("help.webchat.reportingproblems.emailtext"))</a>
     </p>
+
 
     <h2 class="heading-large">@Messages("help.webchat.Enforcementprocedure.h2")</h2>
 
@@ -78,7 +77,7 @@
         @Html(
             Messages(
                 "help.webchat.Enforcementprocedure.p1",
-                Link.toExternalPage(url = Messages("help.webchat.Enforcementprocedure.url"),
+                Link.toExternalPage(url = "mailto:" + {ApplicationConfig.equalityAdvisoryServiceUrl},
                     value = Some(Messages("help.webchat.Enforcementprocedure.p2"))).toHtml
             )
         )
@@ -92,7 +91,7 @@
         @Html(
             Messages(
                 "help.webchat.technicalinformation.p2",
-                Link.toExternalPage(url = Messages("help.webchat.technicalinformation.url"),
+                Link.toExternalPage(url = {ApplicationConfig.technicalInformationUrl},
                     value = Some(Messages("help.webchat.technicalinformation.urltext"))).toHtml
             )
         )

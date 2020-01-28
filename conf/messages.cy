@@ -201,7 +201,6 @@ help.webchat.askhmrcwebchat.li2=navigate most of the webchat using just a keyboa
 help.webchat.askhmrcwebchat.li3=navigate most of the webchat using speech recognition software
 help.webchat.askhmrcwebchat.li4=listen to most of the webchat using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver)
 help.webchat.askhmrcwebchat.p3={0} has advice on making your device easier to use if you have a disability.
-help.webchat.askhmrcwebchat.url=https://mcmw.abilitynet.org.uk/
 help.webchat.askhmrcwebchat.p4=AbilityNet
 
 help.webchat.howaccessible.h2=How accessible this webchat is
@@ -218,19 +217,16 @@ help.webchat.howaccessible.li9=Jaws stops reading out the chat conversation when
 help.webchat.howaccessible.li10=Users of Jaws may find they receive no notification that the agent has sent a message
 
 help.webchat.reportingproblems.h2=Reporting accessibility problems with this webchat
-help.webchat.reportingproblems.p1=We’re always looking to improve the accessibility of the webchat. If you find any problems not listed on this page or think we’re not meeting accessibility requirements, contact {0}
-help.webchat.reportingproblems.email=mailto:ash.chadwick@hmrc.gov.uk
+help.webchat.reportingproblems.p1=We’re always looking to improve the accessibility of the webchat. If you find any problems not listed on this page or think we’re not meeting accessibility requirements, contact
 help.webchat.reportingproblems.emailtext=ash.chadwick@hmrc.gov.uk
 
 help.webchat.Enforcementprocedure.h2=Enforcement procedure
 help.webchat.Enforcementprocedure.p1=The Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No.2) Accessibility Regulations 2018 (the ‘accessibility regulations’). If you’re not happy with how we respond to your complaint, {0}
-help.webchat.Enforcementprocedure.url=https://www.equalityadvisoryservice.com/
 help.webchat.Enforcementprocedure.p2=contact the Equality Advisory and Support Services (EASS)
 
 help.webchat.technicalinformation.h2=Technical information about this webchat''s accessibility
 help.webchat.technicalinformation.p1=HMRC is committed to making this service accessible, in accordance with the Public Sector Bodies (Websites and Mobile Applications) (No.2) Accessibility Regulations 2018.
 help.webchat.technicalinformation.p2=This service is partially compliant with the {0}
-help.webchat.technicalinformation.url= https://www.w3.org/TR/WCAG21/
 help.webchat.technicalinformation.urltext=Web Content Accessibility Guidelines version 2.1
 help.webchat.technicalinformation.p3=AA standard, due to the non-compliances listed below.
 
