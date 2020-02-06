@@ -18,8 +18,8 @@
 
 @if(enableLanguageSwitching) {
     @if(lang.code == "cy") {
-        <a title="@Messages("language-switcher.english.hover")" href="@controllers.routes.LanguageController.switchToEnglish" data-journey-click="Language:Click:English">@Messages("language-switcher.english")</a>
+        <a title="@messages("language-switcher.english.hover")" href="@controllers.routes.LanguageController.switchToEnglish" data-journey-click="Language:Click:English">@messages("language-switcher.english")</a>
     } else {
-        <a title="@Messages("language-switcher.welsh.hover")" href="@controllers.routes.LanguageController.switchToWelsh" data-journey-click="Language:Click:Welsh">@Messages("language-switcher.welsh")</a>
+        <a title="@messages("language-switcher.welsh.hover")" href="@controllers.routes.LanguageController.switchToWelsh" data-journey-click="Language:Click:Welsh">@messages("language-switcher.welsh")</a>
     }
 }
