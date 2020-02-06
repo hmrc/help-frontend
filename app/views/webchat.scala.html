@@ -16,113 +16,113 @@
 
 @import config.ApplicationConfig
 
-@()(implicit request: Request[_], lang : Lang, messages: play.api.i18n.Messages)
+@()(implicit request: Request[_], lang : Lang, messages: Messages)
 @import uk.gov.hmrc.urls.Link
 
-@main(title = Messages("help.webchat.title")) {
+@main(title = messages("help.webchat.title")) {
   <header class="page-header">
-      <h1 id="page-header">@Messages("help.webchat.title")</h1>
+      <h1 id="page-header">@messages("help.webchat.title")</h1>
   </header>
 
-    <p>@Messages("help.webchat.askhmrcwebchat.p1")<p>
+    <p>@messages("help.webchat.askhmrcwebchat.p1")<p>
 
-    <p>@Messages("help.webchat.askhmrcwebchat.p2")</p>
+    <p>@messages("help.webchat.askhmrcwebchat.p2")</p>
 
     <ul class="bullets">
-     <li>@Messages("help.webchat.askhmrcwebchat.li1")</li>
-     <li>@Messages("help.webchat.askhmrcwebchat.li2")</li>
-     <li>@Messages("help.webchat.askhmrcwebchat.li3")</li>
-     <li>@Messages("help.webchat.askhmrcwebchat.li4")</li>
+     <li>@messages("help.webchat.askhmrcwebchat.li1")</li>
+     <li>@messages("help.webchat.askhmrcwebchat.li2")</li>
+     <li>@messages("help.webchat.askhmrcwebchat.li3")</li>
+     <li>@messages("help.webchat.askhmrcwebchat.li4")</li>
     </ul>
 
     <p>
         @Html(
-            Messages(
+            messages(
                 "help.webchat.askhmrcwebchat.p3",
                 Link.toExternalPage(url = {ApplicationConfig.abilityNetUrl},
-                    value = Some(Messages("help.webchat.askhmrcwebchat.p4"))).toHtml
+                    value = Some(messages("help.webchat.askhmrcwebchat.p4"))).toHtml
             )
         )
     </p>
 
-    <h2 class="heading-large">@Messages("help.webchat.howaccessible.h2")</h2>
+    <h2 class="heading-large">@messages("help.webchat.howaccessible.h2")</h2>
 
-    <p>@Messages("help.webchat.howaccessible.p1")</p>
+    <p>@messages("help.webchat.howaccessible.p1")</p>
 
     <ul class="bullets">
-     <li>@Messages("help.webchat.howaccessible.li1")</li>
-     <li>@Messages("help.webchat.howaccessible.li2")</li>
-     <li>@Messages("help.webchat.howaccessible.li3")</li>
-     <li>@Messages("help.webchat.howaccessible.li4")</li>
-     <li>@Messages("help.webchat.howaccessible.li5")</li>
-     <li>@Messages("help.webchat.howaccessible.li6")</li>
-     <li>@Messages("help.webchat.howaccessible.li7")</li>
-     <li>@Messages("help.webchat.howaccessible.li8")</li>
-     <li>@Messages("help.webchat.howaccessible.li9")</li>
-     <li>@Messages("help.webchat.howaccessible.li10")</li>
+     <li>@messages("help.webchat.howaccessible.li1")</li>
+     <li>@messages("help.webchat.howaccessible.li2")</li>
+     <li>@messages("help.webchat.howaccessible.li3")</li>
+     <li>@messages("help.webchat.howaccessible.li4")</li>
+     <li>@messages("help.webchat.howaccessible.li5")</li>
+     <li>@messages("help.webchat.howaccessible.li6")</li>
+     <li>@messages("help.webchat.howaccessible.li7")</li>
+     <li>@messages("help.webchat.howaccessible.li8")</li>
+     <li>@messages("help.webchat.howaccessible.li9")</li>
+     <li>@messages("help.webchat.howaccessible.li10")</li>
     </ul>
 
-    <h2 class="heading-large">@Messages("help.webchat.reportingproblems.h2")</h2>
+    <h2 class="heading-large">@messages("help.webchat.reportingproblems.h2")</h2>
 
     <p>
-        @Messages("help.webchat.reportingproblems.p1")
+        @messages("help.webchat.reportingproblems.p1")
         <a href="mailto:@{ApplicationConfig.reportingProblemsEmail}">
-            @Some(Messages("help.webchat.reportingproblems.emailtext"))</a>
+            @Some(messages("help.webchat.reportingproblems.emailtext"))</a>
     </p>
 
 
-    <h2 class="heading-large">@Messages("help.webchat.Enforcementprocedure.h2")</h2>
+    <h2 class="heading-large">@messages("help.webchat.Enforcementprocedure.h2")</h2>
 
     <p>
         @Html(
-            Messages(
+            messages(
                 "help.webchat.Enforcementprocedure.p1",
                 Link.toExternalPage(url = "mailto:" + {ApplicationConfig.equalityAdvisoryServiceUrl},
-                    value = Some(Messages("help.webchat.Enforcementprocedure.p2"))).toHtml
+                    value = Some(messages("help.webchat.Enforcementprocedure.p2"))).toHtml
             )
         )
     </p>
 
-    <h2 class="heading-large">@Messages("help.webchat.technicalinformation.h2")</h2>
+    <h2 class="heading-large">@messages("help.webchat.technicalinformation.h2")</h2>
 
-    <p>@Messages("help.webchat.technicalinformation.p1")</p>
+    <p>@messages("help.webchat.technicalinformation.p1")</p>
 
     <p>
         @Html(
-            Messages(
+            messages(
                 "help.webchat.technicalinformation.p2",
                 Link.toExternalPage(url = {ApplicationConfig.technicalInformationUrl},
-                    value = Some(Messages("help.webchat.technicalinformation.urltext"))).toHtml
+                    value = Some(messages("help.webchat.technicalinformation.urltext"))).toHtml
             )
         )
-        @Messages("help.webchat.technicalinformation.p3")
+        @messages("help.webchat.technicalinformation.p3")
     </p>
 
-    <h2 class="heading-large">@Messages("help.webchat.nonaccessiblecontent.h2")</h2>
+    <h2 class="heading-large">@messages("help.webchat.nonaccessiblecontent.h2")</h2>
 
-    <p>@Messages("help.webchat.nonaccessiblecontent.p1")</p>
+    <p>@messages("help.webchat.nonaccessiblecontent.p1")</p>
 
-    <h2 class="bullets">@Messages("help.webchat.nonaccessiblecontent.h2bullets")</h2>
+    <h2 class="bullets">@messages("help.webchat.nonaccessiblecontent.h2bullets")</h2>
 
     <ul class="bullets">
-     <li>@Messages("help.webchat.nonaccessiblecontent.li1")</li>
-     <li>@Messages("help.webchat.nonaccessiblecontent.li2")</li>
-     <li>@Messages("help.webchat.nonaccessiblecontent.li3")</li>
-     <li>@Messages("help.webchat.nonaccessiblecontent.li4")</li>
-     <li>@Messages("help.webchat.nonaccessiblecontent.li5")</li>
-     <li>@Messages("help.webchat.nonaccessiblecontent.li6")</li>
-     <li>@Messages("help.webchat.nonaccessiblecontent.li7")</li>
-     <li>@Messages("help.webchat.nonaccessiblecontent.li8")</li>
+     <li>@messages("help.webchat.nonaccessiblecontent.li1")</li>
+     <li>@messages("help.webchat.nonaccessiblecontent.li2")</li>
+     <li>@messages("help.webchat.nonaccessiblecontent.li3")</li>
+     <li>@messages("help.webchat.nonaccessiblecontent.li4")</li>
+     <li>@messages("help.webchat.nonaccessiblecontent.li5")</li>
+     <li>@messages("help.webchat.nonaccessiblecontent.li6")</li>
+     <li>@messages("help.webchat.nonaccessiblecontent.li7")</li>
+     <li>@messages("help.webchat.nonaccessiblecontent.li8")</li>
     </ul>
 
-    <h2 class="heading-large">@Messages("help.webchat.howwetested.h2")</h2>
+    <h2 class="heading-large">@messages("help.webchat.howwetested.h2")</h2>
 
-    <p>@Messages("help.webchat.howwetested.p1")</p>
-    <p>@Messages("help.webchat.howwetested.p2")</p>
-    <p>@Messages("help.webchat.howwetested.p3")</p>
+    <p>@messages("help.webchat.howwetested.p1")</p>
+    <p>@messages("help.webchat.howwetested.p2")</p>
+    <p>@messages("help.webchat.howwetested.p3")</p>
 
-    <h2 class="heading-large">@Messages("help.webchat.whatweredoing.h2")</h2>
+    <h2 class="heading-large">@messages("help.webchat.whatweredoing.h2")</h2>
 
-    <p>@Messages("help.webchat.whatweredoing.p1")</p>
-    <p>@Messages("help.webchat.whatweredoing.p2")</p>
+    <p>@messages("help.webchat.whatweredoing.p1")</p>
+    <p>@messages("help.webchat.whatweredoing.p2")</p>
 }

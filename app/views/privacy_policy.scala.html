@@ -17,62 +17,62 @@
 @()(implicit request: Request[_], lang : Lang, messages: Messages)
 @import uk.gov.hmrc.urls.Link
 
-@main(title = Messages("help.privacy_policy.title")) {
+@main(title = messages("help.privacy_policy.title")) {
     <header class="page-header">
-        <h1>@Messages("help.privacy_policy.title")</h1>
+        <h1>@messages("help.privacy_policy.title")</h1>
     </header>
 
-<h2>@Messages("help.privacy_policy.personal_info.heading")</h2>
-<p id="privacy-personal-info">@Messages("help.privacy_policy.personal_info.paragraph.1")</p>
+<h2>@messages("help.privacy_policy.personal_info.heading")</h2>
+<p id="privacy-personal-info">@messages("help.privacy_policy.personal_info.paragraph.1")</p>
 <p>@Html(
-        Messages(
+        messages(
             "help.privacy_policy.personal_info.paragraph.2",
-            Link.toExternalPage(url = Messages("help.links.hmrc_privacy_policy.url"), value = Some(Messages("help.links.hmrc_privacy_policy.text"))).toHtml
+            Link.toExternalPage(url = messages("help.links.hmrc_privacy_policy.url"), value = Some(messages("help.links.hmrc_privacy_policy.text"))).toHtml
         )
     )
 </p>
-<h2>@Messages("help.privacy_policy.personal_info.hmrc_holds.heading")</h2>
-<p>@Messages("help.privacy_policy.personal_info.hmrc_holds.list_info")</p>
+<h2>@messages("help.privacy_policy.personal_info.hmrc_holds.heading")</h2>
+<p>@messages("help.privacy_policy.personal_info.hmrc_holds.list_info")</p>
 <ul class="bullets">
-<li>@Messages("help.privacy_policy.personal_info.hmrc_holds.list_item.1")</li>
-<li>@Messages("help.privacy_policy.personal_info.hmrc_holds.list_item.2")</li>
-<li>@Messages("help.privacy_policy.personal_info.hmrc_holds.list_item.3")</li>
+<li>@messages("help.privacy_policy.personal_info.hmrc_holds.list_item.1")</li>
+<li>@messages("help.privacy_policy.personal_info.hmrc_holds.list_item.2")</li>
+<li>@messages("help.privacy_policy.personal_info.hmrc_holds.list_item.3")</li>
 </ul>
-<h2>@Messages("help.privacy_policy.personal_info.hmrc_protection.heading")</h2>
-<p>@Messages("help.privacy_policy.personal_info.hmrc_protection.text")</p>
-<p>@Messages("help.privacy_policy.personal_info.hmrc_protection.hmrc.list_info")</p>
+<h2>@messages("help.privacy_policy.personal_info.hmrc_protection.heading")</h2>
+<p>@messages("help.privacy_policy.personal_info.hmrc_protection.text")</p>
+<p>@messages("help.privacy_policy.personal_info.hmrc_protection.hmrc.list_info")</p>
 <ul class="bullets">
-    <li>@Messages("help.privacy_policy.personal_info.hmrc_protection.hmrc.list_item.1")</li>
-    <li>@Messages("help.privacy_policy.personal_info.hmrc_protection.hmrc.list_item.2")</li>
-    <li>@Messages("help.privacy_policy.personal_info.hmrc_protection.hmrc.list_item.3")</li>
-    <li>@Messages("help.privacy_policy.personal_info.hmrc_protection.hmrc.list_item.4")</li>
-    <li>@Messages("help.privacy_policy.personal_info.hmrc_protection.hmrc.list_item.5")</li>
+    <li>@messages("help.privacy_policy.personal_info.hmrc_protection.hmrc.list_item.1")</li>
+    <li>@messages("help.privacy_policy.personal_info.hmrc_protection.hmrc.list_item.2")</li>
+    <li>@messages("help.privacy_policy.personal_info.hmrc_protection.hmrc.list_item.3")</li>
+    <li>@messages("help.privacy_policy.personal_info.hmrc_protection.hmrc.list_item.4")</li>
+    <li>@messages("help.privacy_policy.personal_info.hmrc_protection.hmrc.list_item.5")</li>
 </ul>
-<p>@Messages("help.privacy_policy.personal_info.hmrc_protection.you.list_info")</p>
+<p>@messages("help.privacy_policy.personal_info.hmrc_protection.you.list_info")</p>
 <ul class="bullets">
-    <li>@Messages("help.privacy_policy.personal_info.hmrc_protection.you.list_item.1")</li>
-    <li>@Messages("help.privacy_policy.personal_info.hmrc_protection.you.list_item.2")</li>
+    <li>@messages("help.privacy_policy.personal_info.hmrc_protection.you.list_item.1")</li>
+    <li>@messages("help.privacy_policy.personal_info.hmrc_protection.you.list_item.2")</li>
 </ul>
-<h2>@Messages("help.privacy_policy.personal_info.sharing.heading")</h2>
-<p>@Messages("help.privacy_policy.personal_info.sharing.paragraph.1")</p>
-<p>@Messages("help.privacy_policy.personal_info.sharing.paragraph.2")</p>
-<h2>@Messages("help.privacy_policy.personal_info.staff.heading")</h2>
-<p>@Messages("help.privacy_policy.personal_info.staff.paragraph.1")</p>
-<h2>@Messages("help.privacy_policy.personal_info.asking_to_see.heading")</h2>
-<p>@Messages("help.privacy_policy.personal_info.asking_to_see.paragraph.1")</p>
-<p>@Messages("help.privacy_policy.personal_info.asking_to_see.paragraph.2")</p>
-<p>@Messages("help.privacy_policy.personal_info.asking_to_see.paragraph.3")</p>
-<h2>@Messages("help.privacy_policy.make_a_complaint.heading")</h2>
-<p>@Messages("help.privacy_policy.make_a_complaint.paragraph.1")</p>
-<p>@Messages("help.privacy_policy.make_a_complaint.paragraph.2")</p>
-<p>@Messages("help.privacy_policy.make_a_complaint.paragraph.3")</p>
+<h2>@messages("help.privacy_policy.personal_info.sharing.heading")</h2>
+<p>@messages("help.privacy_policy.personal_info.sharing.paragraph.1")</p>
+<p>@messages("help.privacy_policy.personal_info.sharing.paragraph.2")</p>
+<h2>@messages("help.privacy_policy.personal_info.staff.heading")</h2>
+<p>@messages("help.privacy_policy.personal_info.staff.paragraph.1")</p>
+<h2>@messages("help.privacy_policy.personal_info.asking_to_see.heading")</h2>
+<p>@messages("help.privacy_policy.personal_info.asking_to_see.paragraph.1")</p>
+<p>@messages("help.privacy_policy.personal_info.asking_to_see.paragraph.2")</p>
+<p>@messages("help.privacy_policy.personal_info.asking_to_see.paragraph.3")</p>
+<h2>@messages("help.privacy_policy.make_a_complaint.heading")</h2>
+<p>@messages("help.privacy_policy.make_a_complaint.paragraph.1")</p>
+<p>@messages("help.privacy_policy.make_a_complaint.paragraph.2")</p>
+<p>@messages("help.privacy_policy.make_a_complaint.paragraph.3")</p>
 <p>
     @Html(
-        Messages(
+        messages(
             "help.privacy_policy.make_a_complaint.paragraph.4",
-            Link.toExternalPage(url = Messages("help.links.ico.url"), value = Some(Messages("help.links.ico.text"))).toHtml
+            Link.toExternalPage(url = messages("help.links.ico.url"), value = Some(messages("help.links.ico.text"))).toHtml
         )
     )
 </p>
-<p>@Messages("help.privacy_policy.make_a_complaint.paragraph.5")</p>
+<p>@messages("help.privacy_policy.make_a_complaint.paragraph.5")</p>
 }

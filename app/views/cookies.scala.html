@@ -17,206 +17,206 @@
 @()(implicit request: Request[_], lang : Lang, messages: Messages)
 @import uk.gov.hmrc.urls.Link
 
-@main(title = Messages("help.cookies.title")) {
+@main(title = messages("help.cookies.title")) {
 <header class="page-header">
-        <h1 id="cookies-heading">@Messages("help.cookies.title")</h1>
+        <h1 id="cookies-heading">@messages("help.cookies.title")</h1>
 </header>
-<p id="cookies-info">@Messages("help.cookies.info")</p>
-<p id="cookies-usages">@Messages("help.cookies.usages.list_info")</p>
+<p id="cookies-info">@messages("help.cookies.info")</p>
+<p id="cookies-usages">@messages("help.cookies.usages.list_info")</p>
 <ul id="cookies-usages-bullets" class="bullets">
-    <li id="cookies-usages-bullets1" >@Messages("help.cookies.usages.list_item.1")</li>
-    <li id="cookies-usages-bullets2">@Messages("help.cookies.usages.list_item.2")</li>
+    <li id="cookies-usages-bullets1" >@messages("help.cookies.usages.list_item.1")</li>
+    <li id="cookies-usages-bullets2">@messages("help.cookies.usages.list_item.2")</li>
 </ul>
 <div class="application-notice info-notice">
-    <p>@Messages("help.cookies.notice")</p>
+    <p>@messages("help.cookies.notice")</p>
 </div>
-<p id="cookies-paragraph-1">@Messages("help.cookies.paragraph.1")</p>
-<p id="cookies-more-about">@Html(Messages("help.cookies.paragraph.2", Link.toExternalPage(url = Messages("help.cookies.link.manage_cookies.url"), value = Some(Messages("help.cookies.link.manage_cookies.text"))).toHtml))</p>
+<p id="cookies-paragraph-1">@messages("help.cookies.paragraph.1")</p>
+<p id="cookies-more-about">@Html(messages("help.cookies.paragraph.2", Link.toExternalPage(url = messages("help.cookies.link.manage_cookies.url"), value = Some(messages("help.cookies.link.manage_cookies.text"))).toHtml))</p>
 
-<h2 id="cookies-are-used">@Messages("help.cookies.how_used.heading")</h2>
-<h3 id="cookies-website-usage">@Messages("help.cookies.how_used.measuring_usage.heading")</h3>
-<p id="cookies-analytics-paragraph-1">@Messages("help.cookies.how_used.measuring_usage.info")</p>
-<p id="cookies-analytics-paragraph-2">@Messages("help.cookies.how_used.measuring_usage.list_info")</p>
+<h2 id="cookies-are-used">@messages("help.cookies.how_used.heading")</h2>
+<h3 id="cookies-website-usage">@messages("help.cookies.how_used.measuring_usage.heading")</h3>
+<p id="cookies-analytics-paragraph-1">@messages("help.cookies.how_used.measuring_usage.info")</p>
+<p id="cookies-analytics-paragraph-2">@messages("help.cookies.how_used.measuring_usage.list_info")</p>
 <ul id="cookies-analytics-bullets" class="bullets">
-    <li id="cookies-analytics-bullets1">@Messages("help.cookies.how_used.measuring_usage.list_item.1")</li>
-    <li id="cookies-analytics-bullets2">@Messages("help.cookies.how_used.measuring_usage.list_item.2")</li>
-    <li id="cookies-analytics-bullets3">@Messages("help.cookies.how_used.measuring_usage.list_item.3")</li>
+    <li id="cookies-analytics-bullets1">@messages("help.cookies.how_used.measuring_usage.list_item.1")</li>
+    <li id="cookies-analytics-bullets2">@messages("help.cookies.how_used.measuring_usage.list_item.2")</li>
+    <li id="cookies-analytics-bullets3">@messages("help.cookies.how_used.measuring_usage.list_item.3")</li>
 </ul>
-<p id="cookies-analytics-paragraph-3">@Messages("help.cookies.how_used.measuring_usage.paragraph.1")</p>
+<p id="cookies-analytics-paragraph-3">@messages("help.cookies.how_used.measuring_usage.paragraph.1")</p>
 <div class="application-notice info-notice">
-    <p>@Messages("help.cookies.how_used.measuring_usage.notice")</p>
+    <p>@messages("help.cookies.how_used.measuring_usage.notice")</p>
 </div>
-<p id="cookies-analytics-used">@Messages("help.cookies.how_used.measuring_usage.cookies_used.table.caption")</p>
+<p id="cookies-analytics-used">@messages("help.cookies.how_used.measuring_usage.cookies_used.table.caption")</p>
 <table id="cookies-analytics-table">
     <thead>
         <tr>
-            <th scope="col">@Messages("help.cookies.table.header.name")</th>
-            <th scope="col">@Messages("help.cookies.table.header.purpose")</th>
-            <th scope="col">@Messages("help.cookies.table.header.expires")</th>
+            <th scope="col">@messages("help.cookies.table.header.name")</th>
+            <th scope="col">@messages("help.cookies.table.header.purpose")</th>
+            <th scope="col">@messages("help.cookies.table.header.expires")</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>@Messages("help.cookies.how_used.measuring_usage.cookies_used.table.gat.name")</td>
-            <td>@Messages("help.cookies.how_used.measuring_usage.cookies_used.table.gat.purpose")</td>
-            <td>@Messages("help.cookies.how_used.measuring_usage.cookies_used.table.gat.expires")</td>
+            <td>@messages("help.cookies.how_used.measuring_usage.cookies_used.table.gat.name")</td>
+            <td>@messages("help.cookies.how_used.measuring_usage.cookies_used.table.gat.purpose")</td>
+            <td>@messages("help.cookies.how_used.measuring_usage.cookies_used.table.gat.expires")</td>
         </tr>
         <tr>
-            <td>@Messages("help.cookies.how_used.measuring_usage.cookies_used.table.gds.name")</td>
-            <td>@Messages("help.cookies.how_used.measuring_usage.cookies_used.table.gds.purpose")</td>
-            <td>@Messages("help.cookies.how_used.measuring_usage.cookies_used.table.gds.expires")</td>
+            <td>@messages("help.cookies.how_used.measuring_usage.cookies_used.table.gds.name")</td>
+            <td>@messages("help.cookies.how_used.measuring_usage.cookies_used.table.gds.purpose")</td>
+            <td>@messages("help.cookies.how_used.measuring_usage.cookies_used.table.gds.expires")</td>
         </tr>
         <tr>
-            <td>@Messages("help.cookies.how_used.measuring_usage.cookies_used.table.ga.name")</td>
-            <td>@Messages("help.cookies.how_used.measuring_usage.cookies_used.table.ga.purpose")</td>
-            <td>@Messages("help.cookies.how_used.measuring_usage.cookies_used.table.ga.expires")</td>
+            <td>@messages("help.cookies.how_used.measuring_usage.cookies_used.table.ga.name")</td>
+            <td>@messages("help.cookies.how_used.measuring_usage.cookies_used.table.ga.purpose")</td>
+            <td>@messages("help.cookies.how_used.measuring_usage.cookies_used.table.ga.expires")</td>
         </tr>
         <tr>
-            <td>@Messages("help.cookies.how_used.measuring_usage.cookies_used.table.nextpage.name")</td>
-            <td>@Messages("help.cookies.how_used.measuring_usage.cookies_used.table.nextpage.purpose")</td>
-            <td>@Messages("help.cookies.how_used.measuring_usage.cookies_used.table.nextpage.expires")</td>
+            <td>@messages("help.cookies.how_used.measuring_usage.cookies_used.table.nextpage.name")</td>
+            <td>@messages("help.cookies.how_used.measuring_usage.cookies_used.table.nextpage.purpose")</td>
+            <td>@messages("help.cookies.how_used.measuring_usage.cookies_used.table.nextpage.expires")</td>
         </tr>
     </tbody>
 </table>
-<p id="cookies-analytics-opt-out">@Html(Messages("help.cookies.how_used.measuring_usage.opt_out.info", Link.toExternalPage(url = Messages("help.cookies.how_used.measuring_usage.opt_out.link.url"), value = Some(Messages("help.cookies.how_used.measuring_usage.opt_out.link.text"))).toHtml))</p>
+<p id="cookies-analytics-opt-out">@Html(messages("help.cookies.how_used.measuring_usage.opt_out.info", Link.toExternalPage(url = messages("help.cookies.how_used.measuring_usage.opt_out.link.url"), value = Some(messages("help.cookies.how_used.measuring_usage.opt_out.link.text"))).toHtml))</p>
 
-<h3 id="cookies-versions-heading">@Messages("help.cookies.how_used.optimizely.heading")</h3>
-<p id="cookies-versions-paragraph-1">@Messages("help.cookies.how_used.optimizely.info")</p>
-<p id="cookies-versions-paragraph-2">@Messages("help.cookies.how_used.measuring_usage.cookies_used.table.caption")</p>
+<h3 id="cookies-versions-heading">@messages("help.cookies.how_used.optimizely.heading")</h3>
+<p id="cookies-versions-paragraph-1">@messages("help.cookies.how_used.optimizely.info")</p>
+<p id="cookies-versions-paragraph-2">@messages("help.cookies.how_used.measuring_usage.cookies_used.table.caption")</p>
 <table id="cookies-versions-table">
     <thead>
         <tr>
-            <th scope="col">@Messages("help.cookies.table.header.name")</th>
-            <th scope="col">@Messages("help.cookies.table.header.purpose")</th>
-            <th scope="col">@Messages("help.cookies.table.header.expires")</th>
+            <th scope="col">@messages("help.cookies.table.header.name")</th>
+            <th scope="col">@messages("help.cookies.table.header.purpose")</th>
+            <th scope="col">@messages("help.cookies.table.header.expires")</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>@Messages("help.cookies.how_used.optimizely.table.optimizelyEndUserId.name")</td>
-            <td>@Messages("help.cookies.how_used.optimizely.table.optimizelyEndUserId.purpose")</td>
-            <td>@Messages("help.cookies.how_used.optimizely.table.optimizelyEndUserId.expires")</td>
+            <td>@messages("help.cookies.how_used.optimizely.table.optimizelyEndUserId.name")</td>
+            <td>@messages("help.cookies.how_used.optimizely.table.optimizelyEndUserId.purpose")</td>
+            <td>@messages("help.cookies.how_used.optimizely.table.optimizelyEndUserId.expires")</td>
         </tr>
         <tr>
-            <td>@Messages("help.cookies.how_used.optimizely.table.optimizelyRedirectData.name")</td>
-            <td>@Messages("help.cookies.how_used.optimizely.table.optimizelyRedirectData.purpose")</td>
-            <td>@Messages("help.cookies.how_used.optimizely.table.optimizelyRedirectData.expires")</td>
+            <td>@messages("help.cookies.how_used.optimizely.table.optimizelyRedirectData.name")</td>
+            <td>@messages("help.cookies.how_used.optimizely.table.optimizelyRedirectData.purpose")</td>
+            <td>@messages("help.cookies.how_used.optimizely.table.optimizelyRedirectData.expires")</td>
         </tr>
     </tbody>
 </table>
 
-<h3 id="cookies-sessions-heading">@Messages("help.cookies.how_used.sessions.heading")</h3>
-<p id="cookies-sessions-paragraph">@Messages("help.cookies.how_used.sessions.info")</p>
+<h3 id="cookies-sessions-heading">@messages("help.cookies.how_used.sessions.heading")</h3>
+<p id="cookies-sessions-paragraph">@messages("help.cookies.how_used.sessions.info")</p>
 <table id="cookies-sessions-table">
     <thead>
     <tr>
-        <th scope="col">@Messages("help.cookies.table.header.name")</th>
-        <th scope="col">@Messages("help.cookies.table.header.purpose")</th>
-        <th scope="col">@Messages("help.cookies.table.header.expires")</th>
+        <th scope="col">@messages("help.cookies.table.header.name")</th>
+        <th scope="col">@messages("help.cookies.table.header.purpose")</th>
+        <th scope="col">@messages("help.cookies.table.header.expires")</th>
     </tr>
     </thead>
     <tbody>
         <tr>
-            <td>@Messages("help.cookies.how_used.sessions.table.mdtp.name")</td>
-            <td>@Messages("help.cookies.how_used.sessions.table.mdtp.purpose")</td>
-            <td>@Messages("help.cookies.how_used.sessions.table.mdtp.expires")</td>
+            <td>@messages("help.cookies.how_used.sessions.table.mdtp.name")</td>
+            <td>@messages("help.cookies.how_used.sessions.table.mdtp.purpose")</td>
+            <td>@messages("help.cookies.how_used.sessions.table.mdtp.expires")</td>
         </tr>
         <tr>
-            <td>@Messages("help.cookies.how_used.sessions.table.mdtpp.name")</td>
-            <td>@Messages("help.cookies.how_used.sessions.table.mdtpp.purpose")</td>
-            <td>@Messages("help.cookies.how_used.sessions.table.mdtpp.expires")</td>
+            <td>@messages("help.cookies.how_used.sessions.table.mdtpp.name")</td>
+            <td>@messages("help.cookies.how_used.sessions.table.mdtpp.purpose")</td>
+            <td>@messages("help.cookies.how_used.sessions.table.mdtpp.expires")</td>
         </tr>
         <tr>
-            <td>@Messages("help.cookies.how_used.sessions.table.mdtpdf.name")</td>
-            <td>@Messages("help.cookies.how_used.sessions.table.mdtpdf.purpose")</td>
-            <td>@Messages("help.cookies.how_used.sessions.table.mdtpdf.expires")</td>
+            <td>@messages("help.cookies.how_used.sessions.table.mdtpdf.name")</td>
+            <td>@messages("help.cookies.how_used.sessions.table.mdtpdf.purpose")</td>
+            <td>@messages("help.cookies.how_used.sessions.table.mdtpdf.expires")</td>
         </tr>
         <tr>
-            <td>@Messages("help.cookies.how_used.sessions.table.PLAY_FLASH.name")</td>
-            <td>@Messages("help.cookies.how_used.sessions.table.PLAY_FLASH.purpose")</td>
-            <td>@Messages("help.cookies.how_used.sessions.table.PLAY_FLASH.expires")</td>
+            <td>@messages("help.cookies.how_used.sessions.table.PLAY_FLASH.name")</td>
+            <td>@messages("help.cookies.how_used.sessions.table.PLAY_FLASH.purpose")</td>
+            <td>@messages("help.cookies.how_used.sessions.table.PLAY_FLASH.expires")</td>
         </tr>
         <tr>
-            <td>@Messages("help.cookies.how_used.sessions.table.remme.name")</td>
-            <td>@Messages("help.cookies.how_used.sessions.table.remme.purpose")</td>
-            <td>@Messages("help.cookies.how_used.sessions.table.remme.expires")</td>
+            <td>@messages("help.cookies.how_used.sessions.table.remme.name")</td>
+            <td>@messages("help.cookies.how_used.sessions.table.remme.purpose")</td>
+            <td>@messages("help.cookies.how_used.sessions.table.remme.expires")</td>
         </tr>
     </tbody>
 </table>
 
-<h3 id="cookies-introductory-heading">@Messages("help.cookies.how_used.intro_message.heading")</h3>
-<p id="cookies-introductory-paragraph">@Messages("help.cookies.how_used.intro_message.info")</p>
+<h3 id="cookies-introductory-heading">@messages("help.cookies.how_used.intro_message.heading")</h3>
+<p id="cookies-introductory-paragraph">@messages("help.cookies.how_used.intro_message.info")</p>
 <table id="cookies-introductory-table">
     <thead>
     <tr>
-        <th scope="col">@Messages("help.cookies.table.header.name")</th>
-        <th scope="col">@Messages("help.cookies.table.header.purpose")</th>
-        <th scope="col">@Messages("help.cookies.table.header.expires")</th>
+        <th scope="col">@messages("help.cookies.table.header.name")</th>
+        <th scope="col">@messages("help.cookies.table.header.purpose")</th>
+        <th scope="col">@messages("help.cookies.table.header.expires")</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-        <td>@Messages("help.cookies.how_used.intro_message.table.seen_message.name")</td>
-        <td>@Messages("help.cookies.how_used.intro_message.table.seen_message.purpose")</td>
-        <td>@Messages("help.cookies.how_used.intro_message.table.seen_message.expires")</td>
+        <td>@messages("help.cookies.how_used.intro_message.table.seen_message.name")</td>
+        <td>@messages("help.cookies.how_used.intro_message.table.seen_message.purpose")</td>
+        <td>@messages("help.cookies.how_used.intro_message.table.seen_message.expires")</td>
     </tr>
     </tbody>
 </table>
 
-<h3 id="cookies-user-research-heading">@Messages("help.cookies.how_used.user.research.banner.heading")</h3>
-<p id="cookies-user-research-paragraph">@Messages("help.cookies.how_used.user.research.banner.info")</p>
+<h3 id="cookies-user-research-heading">@messages("help.cookies.how_used.user.research.banner.heading")</h3>
+<p id="cookies-user-research-paragraph">@messages("help.cookies.how_used.user.research.banner.info")</p>
 <table id="cookies-user-research-table">
     <thead>
     <tr>
-        <th scope="col">@Messages("help.cookies.table.header.name")</th>
-        <th scope="col">@Messages("help.cookies.table.header.purpose")</th>
-        <th scope="col">@Messages("help.cookies.table.header.expires")</th>
+        <th scope="col">@messages("help.cookies.table.header.name")</th>
+        <th scope="col">@messages("help.cookies.table.header.purpose")</th>
+        <th scope="col">@messages("help.cookies.table.header.expires")</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-        <td>@Messages("help.cookies.how_used.user.research.banner.table.mdtpurr.name")</td>
-        <td>@Messages("help.cookies.how_used.user.research.banner.table.mdtpurr.purpose")</td>
-        <td>@Messages("help.cookies.how_used.user.research.banner.table.mdtpurr.expires")</td>
+        <td>@messages("help.cookies.how_used.user.research.banner.table.mdtpurr.name")</td>
+        <td>@messages("help.cookies.how_used.user.research.banner.table.mdtpurr.purpose")</td>
+        <td>@messages("help.cookies.how_used.user.research.banner.table.mdtpurr.expires")</td>
     </tr>
     </tbody>
 </table>
 
-<h3 id="cookies-satisfaction-survey-heading">@Messages("help.cookies.how_used.satisfaction_survey.heading")</h3>
-<p id="cookies-satisfaction-survey-paragraph">@Html(Messages("help.cookies.how_used.satisfaction_survey.info", Link.toExternalPage(url = Messages("help.cookies.how_used.satisfaction_survey.link.url"), value = Some(Messages("help.cookies.how_used.satisfaction_survey.link.text"))).toHtml))</p>
+<h3 id="cookies-satisfaction-survey-heading">@messages("help.cookies.how_used.satisfaction_survey.heading")</h3>
+<p id="cookies-satisfaction-survey-paragraph">@Html(messages("help.cookies.how_used.satisfaction_survey.info", Link.toExternalPage(url = messages("help.cookies.how_used.satisfaction_survey.link.url"), value = Some(messages("help.cookies.how_used.satisfaction_survey.link.text"))).toHtml))</p>
 <table id="cookies-satisfaction-survey-table">
     <thead>
     <tr>
-        <th scope="col">@Messages("help.cookies.table.header.name")</th>
-        <th scope="col">@Messages("help.cookies.table.header.purpose")</th>
-        <th scope="col">@Messages("help.cookies.table.header.expires")</th>
+        <th scope="col">@messages("help.cookies.table.header.name")</th>
+        <th scope="col">@messages("help.cookies.table.header.purpose")</th>
+        <th scope="col">@messages("help.cookies.table.header.expires")</th>
     </tr>
     </thead>
     <tbody>
         <tr>
-            <td>@Messages("help.cookies.how_used.satisfaction_survey.table.mbox.name")</td>
-            <td>@Messages("help.cookies.how_used.satisfaction_survey.table.mbox.purpose")</td>
-            <td>@Messages("help.cookies.how_used.satisfaction_survey.table.mbox.expires")</td>
+            <td>@messages("help.cookies.how_used.satisfaction_survey.table.mbox.name")</td>
+            <td>@messages("help.cookies.how_used.satisfaction_survey.table.mbox.purpose")</td>
+            <td>@messages("help.cookies.how_used.satisfaction_survey.table.mbox.expires")</td>
         </tr>
         <tr>
-            <td>@Messages("help.cookies.how_used.satisfaction_survey.table.ssoe.name")</td>
-            <td>@Messages("help.cookies.how_used.satisfaction_survey.table.ssoe.purpose")</td>
-            <td>@Messages("help.cookies.how_used.satisfaction_survey.table.ssoe.expires")</td>
+            <td>@messages("help.cookies.how_used.satisfaction_survey.table.ssoe.name")</td>
+            <td>@messages("help.cookies.how_used.satisfaction_survey.table.ssoe.purpose")</td>
+            <td>@messages("help.cookies.how_used.satisfaction_survey.table.ssoe.expires")</td>
         </tr>
         <tr>
-            <td>@Messages("help.cookies.how_used.satisfaction_survey.table.ts.name")</td>
-            <td>@Messages("help.cookies.how_used.satisfaction_survey.table.ts.purpose")</td>
-            <td>@Messages("help.cookies.how_used.satisfaction_survey.table.ts.expires")</td>
+            <td>@messages("help.cookies.how_used.satisfaction_survey.table.ts.name")</td>
+            <td>@messages("help.cookies.how_used.satisfaction_survey.table.ts.purpose")</td>
+            <td>@messages("help.cookies.how_used.satisfaction_survey.table.ts.expires")</td>
         </tr>
         <tr>
-            <td>@Messages("help.cookies.how_used.satisfaction_survey.table.ep201.name")</td>
-            <td>@Messages("help.cookies.how_used.satisfaction_survey.table.ep201.purpose")</td>
-            <td>@Messages("help.cookies.how_used.satisfaction_survey.table.ep201.expires")</td>
+            <td>@messages("help.cookies.how_used.satisfaction_survey.table.ep201.name")</td>
+            <td>@messages("help.cookies.how_used.satisfaction_survey.table.ep201.purpose")</td>
+            <td>@messages("help.cookies.how_used.satisfaction_survey.table.ep201.expires")</td>
         </tr>
         <tr>
-            <td>@Messages("help.cookies.how_used.satisfaction_survey.table.ep202.name")</td>
-            <td>@Messages("help.cookies.how_used.satisfaction_survey.table.ep202.purpose")</td>
-            <td>@Messages("help.cookies.how_used.satisfaction_survey.table.ep202.expires")</td>
+            <td>@messages("help.cookies.how_used.satisfaction_survey.table.ep202.name")</td>
+            <td>@messages("help.cookies.how_used.satisfaction_survey.table.ep202.purpose")</td>
+            <td>@messages("help.cookies.how_used.satisfaction_survey.table.ep202.expires")</td>
         </tr>
     </tbody>
 </table>

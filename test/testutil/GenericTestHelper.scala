@@ -16,7 +16,7 @@
 
 package testutil
 
-import org.scalatest.mock.MockitoSugar
+import org.scalatest.mockito.MockitoSugar
 import org.scalatestplus.play.{OneAppPerSuite, PlaySpec}
 import play.api.{Application, Mode}
 import play.api.i18n.MessagesApi
@@ -25,7 +25,7 @@ import play.api.test.FakeRequest
 import play.filters.csrf.CSRF.Token
 import play.filters.csrf.{CSRFConfigProvider, CSRFFilter}
 
-trait GenericTestHelper extends PlaySpec with OneAppPerSuite with MockitoSugar{
+trait GenericTestHelper extends PlaySpec with OneAppPerSuite with MockitoSugar {
 
   protected val bindModules: Seq[GuiceableModule] = Seq()
 

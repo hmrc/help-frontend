@@ -17,49 +17,49 @@
 @()(implicit request: Request[_], lang : Lang, messages: Messages)
 @import uk.gov.hmrc.urls.Link
 
-@main(title = Messages("help.terms_and_conditions.title")) {
+@main(title = messages("help.terms_and_conditions.title")) {
     <header class="page-header">
-        <h1>@Messages("help.terms_and_conditions.title")</h1>
+        <h1>@messages("help.terms_and_conditions.title")</h1>
     </header>
 
-    <h2 id="disclaimer">@Messages("help.terms_and_conditions.disclaimer.heading")</h2>
-    <p>@Html(Messages("help.terms_and_conditions.disclaimer.paragraph.1", Link.toInternalPage(url = Messages("help.links.privacy_policy.url"), value = Some(Messages("help.links.privacy_policy.text.lower_case"))).toHtml))</p>
+    <h2 id="disclaimer">@messages("help.terms_and_conditions.disclaimer.heading")</h2>
+    <p>@Html(messages("help.terms_and_conditions.disclaimer.paragraph.1", Link.toInternalPage(url = messages("help.links.privacy_policy.url"), value = Some(messages("help.links.privacy_policy.text.lower_case"))).toHtml))</p>
 
-    <p>@Messages("help.terms_and_conditions.disclaimer.paragraph.2")</p>
-    <p>@Messages("help.terms_and_conditions.disclaimer.paragraph.3")</p>
-    <p>@Messages("help.terms_and_conditions.disclaimer.paragraph.4")</p>
+    <p>@messages("help.terms_and_conditions.disclaimer.paragraph.2")</p>
+    <p>@messages("help.terms_and_conditions.disclaimer.paragraph.3")</p>
+    <p>@messages("help.terms_and_conditions.disclaimer.paragraph.4")</p>
 
-    <h2 id="usage">@Messages("help.terms_and_conditions.usage.heading")</h2>
-    <p>@Messages("help.terms_and_conditions.usage.paragraph.1")</p>
-    <p>@Messages("help.terms_and_conditions.usage.paragraph.2")</p>
-    <p>@Messages("help.terms_and_conditions.usage.paragraph.3")</p>
-    <p>@Html(Messages("help.terms_and_conditions.usage.paragraph.4", Link.toInternalPage(url = Messages("help.terms_and_conditions.disclaimer.link.url"), value = Some(Messages("help.terms_and_conditions.disclaimer.link.text"))).toHtml))</p>
+    <h2 id="usage">@messages("help.terms_and_conditions.usage.heading")</h2>
+    <p>@messages("help.terms_and_conditions.usage.paragraph.1")</p>
+    <p>@messages("help.terms_and_conditions.usage.paragraph.2")</p>
+    <p>@messages("help.terms_and_conditions.usage.paragraph.3")</p>
+    <p>@Html(messages("help.terms_and_conditions.usage.paragraph.4", Link.toInternalPage(url = messages("help.terms_and_conditions.disclaimer.link.url"), value = Some(messages("help.terms_and_conditions.disclaimer.link.text"))).toHtml))</p>
 
-    <h2 id="online-services">@Messages("help.terms_and_conditions.online_services.heading")</h2>
-    <p>@Html(Messages("help.terms_and_conditions.online_services.paragraph.1", Link.toExternalPage(url = Messages("help.links.hmrc.terms_and_conditions.url"), value = Some(Messages("help.links.terms_and_conditions.text.lower_case"))).toHtml))</p>
-    <p>@Html(Messages("help.terms_and_conditions.online_services.paragraph.2", Link.toExternalPage(url = Messages("help.links.online_security.url"), value = Some(Messages("help.links.online_security.text"))).toHtml))</p>
+    <h2 id="online-services">@messages("help.terms_and_conditions.online_services.heading")</h2>
+    <p>@Html(messages("help.terms_and_conditions.online_services.paragraph.1", Link.toExternalPage(url = messages("help.links.hmrc.terms_and_conditions.url"), value = Some(messages("help.links.terms_and_conditions.text.lower_case"))).toHtml))</p>
+    <p>@Html(messages("help.terms_and_conditions.online_services.paragraph.2", Link.toExternalPage(url = messages("help.links.online_security.url"), value = Some(messages("help.links.online_security.text"))).toHtml))</p>
 
-    <h2 id="copyright">@Messages("help.terms_and_conditions.copyright.heading")</h2>
-    <p>@Html(Messages("help.terms_and_conditions.copyright.paragraph.1", Link.toExternalPage(url = Messages("help.links.copyright_notice.url"), value = Some(Messages("help.links.copyright_notice.text"))).toHtml))</p>
-    <p>@Messages("help.terms_and_conditions.copyright.paragraph.2")</p>
-    <p>@Messages("help.terms_and_conditions.copyright.paragraph.3")</p>
-    <p>@Link.toExternalPage(url = Messages("help.links.agents_as_authorised.url"), value = Some(Messages("help.links.agents_as_authorised.text"))).toHtml</p>
+    <h2 id="copyright">@messages("help.terms_and_conditions.copyright.heading")</h2>
+    <p>@Html(messages("help.terms_and_conditions.copyright.paragraph.1", Link.toExternalPage(url = messages("help.links.copyright_notice.url"), value = Some(messages("help.links.copyright_notice.text"))).toHtml))</p>
+    <p>@messages("help.terms_and_conditions.copyright.paragraph.2")</p>
+    <p>@messages("help.terms_and_conditions.copyright.paragraph.3")</p>
+    <p>@Link.toExternalPage(url = messages("help.links.agents_as_authorised.url"), value = Some(messages("help.links.agents_as_authorised.text"))).toHtml</p>
 
-    <h2 id="linking">@Messages("help.terms_and_conditions.linking.heading")</h2>
-    <p>@Messages("help.terms_and_conditions.linking.paragraph.1")</p>
+    <h2 id="linking">@messages("help.terms_and_conditions.linking.heading")</h2>
+    <p>@messages("help.terms_and_conditions.linking.paragraph.1")</p>
 
-    <h2>@Messages("help.terms_and_conditions.external_links.heading")</h2>
-    <p>@Messages("help.terms_and_conditions.external_links.paragraph.1")</p>
+    <h2>@messages("help.terms_and_conditions.external_links.heading")</h2>
+    <p>@messages("help.terms_and_conditions.external_links.paragraph.1")</p>
 
-    <h2>@Messages("help.terms_and_conditions.virus_protection.heading")</h2>
-    <p>@Messages("help.terms_and_conditions.virus_protection.paragraph.1")</p>
+    <h2>@messages("help.terms_and_conditions.virus_protection.heading")</h2>
+    <p>@messages("help.terms_and_conditions.virus_protection.paragraph.1")</p>
 
-    <h2>@Messages("help.terms_and_conditions.privacy_policy.heading")</h2>
-    <p>@Html(Messages("help.terms_and_conditions.privacy_policy.paragraph.1", Link.toInternalPage(url = Messages("help.links.privacy_policy.url"), value = Some(Messages("help.links.privacy_policy.text.lower_case"))).toHtml))</p>
+    <h2>@messages("help.terms_and_conditions.privacy_policy.heading")</h2>
+    <p>@Html(messages("help.terms_and_conditions.privacy_policy.paragraph.1", Link.toInternalPage(url = messages("help.links.privacy_policy.url"), value = Some(messages("help.links.privacy_policy.text.lower_case"))).toHtml))</p>
 
-    <h2>@Messages("help.terms_and_conditions.governing_law.heading")</h2>
-    <p>@Messages("help.terms_and_conditions.governing_law.paragraph.1")</p>
+    <h2>@messages("help.terms_and_conditions.governing_law.heading")</h2>
+    <p>@messages("help.terms_and_conditions.governing_law.paragraph.1")</p>
 
-    <p>@Messages("help.terms_and_conditions.updated.text")</p>
+    <p>@messages("help.terms_and_conditions.updated.text")</p>
 
 }
