@@ -220,8 +220,8 @@ help.webchat.howaccessible.li6=Jaws stops reading out the chat conversation when
 help.webchat.howaccessible.li7=Users of Jaws may find they receive no notification that the agent has sent a message
 
 help.webchat.reportingproblems.h2=Reporting accessibility problems with this webchat
-help.webchat.reportingproblems.p1=We’re always looking to improve the accessibility of the webchat. If you find any problems not listed on this page or think we’re not meeting accessibility requirements, contact
-help.webchat.reportingproblems.emailtext=ash.chadwick@hmrc.gov.uk
+help.webchat.reportingproblems.p1=We’re always looking to improve the accessibility of the webchat. If you find any problems not listed on this page or think we’re not meeting accessibility requirements, email the team at
+help.webchat.reportingproblems.emailtext=digitalengagementplatform@hmrc.gov.uk
 
 help.webchat.Enforcementprocedure.h2=Enforcement procedure
 help.webchat.Enforcementprocedure.p1=The Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No.2) Accessibility Regulations 2018 (the ‘accessibility regulations’). If you’re not happy with how we respond to your complaint, {0}
