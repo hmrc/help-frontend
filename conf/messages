@@ -241,7 +241,7 @@ help.webchat.howwetested.h2=How we tested this webchat
 help.webchat.howwetested.p1=The service was last tested on 05/03/2020 and was checked for compliance with the WCAG 2.1 AA standard.
 help.webchat.howwetested.p2=We have fixed and therefore deleted three items from the originallist.
 help.webchat.howwetested.p3=The service was built using parts that will be tested by the Digital Accessibility Centre. The full service was tested by HMRC and included a disabled user.
-help.webchat.howwetested.p4=This page was prepared on 05/03/2020.pass to our supplier
+help.webchat.howwetested.p4=This page was prepared on 05/03/2020.
 
 help.webchat.whatweredoing.h2=What we''re doing to improve accessibility
 help.webchat.whatweredoing.p1=We''re working with Nuance, the new provider of our webchat, to continuously improve the quality and accessibility of this service. Our accessibility experts also regularly review the webchat and make recommendations which we then pass to Nuance. We acknowledge that some adjustments are simple and immediate, but others require deeper analysis and development and will be slower to take effect.
