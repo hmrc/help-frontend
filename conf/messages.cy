@@ -87,12 +87,15 @@ help.privacy_policy.make_a_complaint.paragraph.5=Gall Swyddfa''r Comisiynydd Gwy
 
 help.cookies.title=Cwcis
 help.cookies.info=Caiff ffeiliau bach (a elwir yn ''cwcis'') eu gosod ar eich cyfrifiadur i gasglu gwybodaeth am sut yr ydych yn pori''r wefan.
+
 help.cookies.usages.list_info=Defnyddir cwcis i:
 help.cookies.usages.list_item.1=mesur sut yr ydych yn defnyddio''r wefan er mwyn iddi gael ei diweddaru a''i gwella ar sail eich anghenion
 help.cookies.usages.list_item.2=cofio''r negeseuon hysbysu yr ydych wedi''u gweld er mwyn i chi beidio â''u gweld eto
+
 help.cookies.notice=Ni ddefnyddir cwcis GOV.UK i''ch enwi''n bersonol.
 help.cookies.paragraph.1=Fel arfer, gwelwch neges ar y wefan cyn i gwci gael ei storio ar eich cyfrifiadur.
 help.cookies.paragraph.2=Rhagor o wybodaeth am {0}.
+
 help.cookies.link.manage_cookies.text=sut i reoli cwcis
 help.cookies.link.manage_cookies.url=http://www.aboutcookies.org/
 
@@ -106,6 +109,7 @@ help.cookies.how_used.measuring_usage.list_item.3=yr hyn yr ydych yn clicio arno
 help.cookies.how_used.measuring_usage.paragraph.1=Nid ydym yn casglu neu''n storio eich gwybodaeth bersonol (er enghraifft, eich enw neu''ch cyfeiriad). Felly, nid oes modd defnyddio''r wybodaeth hon i''ch enwi.
 help.cookies.how_used.measuring_usage.notice=Ni chaiff Google ddefnyddio neu rannu ein data dadansoddi.
 help.cookies.how_used.measuring_usage.cookies_used.table.caption=Caiff y cwcis canlynol eu defnyddio:
+
 help.cookies.table.header.name=Enw
 help.cookies.table.header.purpose=Pwrpas
 help.cookies.table.header.expires=Yn dod i ben
@@ -125,6 +129,7 @@ help.cookies.how_used.measuring_usage.cookies_used.table.gds.expires=4 mis
 help.cookies.how_used.measuring_usage.opt_out.info=Gallwch {0}.
 help.cookies.how_used.measuring_usage.opt_out.link.text=optio allan o gwcis Google Analytics
 help.cookies.how_used.measuring_usage.opt_out.link.url=https://tools.google.com/dlpage/gaoptout
+
 help.cookies.how_used.optimizely.heading=Cymharu fersiynau gwahanol o dudalen we (Optimizely)
 help.cookies.how_used.optimizely.info=Defnyddir meddalwedd Optimizely i brofi fersiynau gwahanol o dudalen we (neu dudalennau gwe) er mwyn gweld pa un sy''n perfformio orau. Caiff hyn ei wneud er mwyn helpu i wella''r wefan a sicrhau ei bod yn diwallu anghenion ei defnyddwyr.
 help.cookies.how_used.optimizely.table.optimizelyEndUserId.name=optimizelyEndUserId
@@ -163,6 +168,7 @@ help.cookies.how_used.intro_message.info=Efallai y gwelwch neges naid sy''n eich
 help.cookies.how_used.intro_message.table.seen_message.name=seen_cookie_message
 help.cookies.how_used.intro_message.table.seen_message.purpose=Yn cadw neges er mwyn rhoi gwybod i ni eich bod wedi gweld ein neges am gwcis
 help.cookies.how_used.intro_message.table.seen_message.expires=1 mis
+
 help.cookies.how_used.satisfaction_survey.heading=Ein harolwg boddhad
 help.cookies.how_used.satisfaction_survey.info=Defnyddir {0} i gasglu atebion i''r arolwg. Os cymerwch ran, bydd SurveyMonkey yn cadw cwcis ychwanegol ar eich cyfrifiadur i ddilyn eich cynnydd.
 help.cookies.how_used.satisfaction_survey.link.text=SurveyMonkey
@@ -192,7 +198,6 @@ language-switcher.english.hover=Use this account in English
 language-switcher.welsh=Cymraeg
 language-switcher.welsh.hover=Defnyddio''r cyfrif hwn yn Cymraeg
 
-#Welsh text needs to be added
 help.webchat.title=Accessibility for webchat
 help.webchat.askhmrcwebchat.p1=The Ask HMRC webchat is a service that enables you to communicate with an HMRC adviser over the internet.
 help.webchat.askhmrcwebchat.p2=Ask HMRC webchat is built and run by Nuance, a provider of customer engagement software. We want as many people as possible to be able to use this website and webchat. For example, that means you should be able to:
@@ -240,4 +245,3 @@ help.webchat.howwetested.p4=This page was prepared on 05/03/2020.
 help.webchat.whatweredoing.h2=What we''re doing to improve accessibility
 help.webchat.whatweredoing.p1=We''re working with Nuance, the new provider of our webchat, to continuously improve the quality and accessibility of this service. Our accessibility experts also regularly review the webchat and make recommendations which we then pass to Nuance. We acknowledge that some adjustments are simple and immediate, but others require deeper analysis and development and will be slower to take effect.
 help.webchat.whatweredoing.p2=The accessibility of our webchat is therefore under constant scrutiny as we strive to move from partially to fully compliant with the WCAG 2.1 AA standard by September 2020.
-
