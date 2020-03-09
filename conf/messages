@@ -215,9 +215,6 @@ help.webchat.howaccessible.li1=At one point you have to hit the Done button twic
 help.webchat.howaccessible.li2=If you’re using a screen reader you may need to tab past the footer of the webpage to find the webchat
 help.webchat.howaccessible.li3=There are some error messages in this service that may not be descriptive enough for some users with visual impairments, although they are compatible with common assistive technology tools
 help.webchat.howaccessible.li4=To find the privacy and accessibility links, users should tab beyond the message input box
-help.webchat.howaccessible.li5=Some screen readers may fail to tell the user whether the print-end chat menu is open or not
-help.webchat.howaccessible.li6=Jaws stops reading out the chat conversation when the user is in the chat textbox. Users should click ‘tab button’ and click up arrow
-help.webchat.howaccessible.li7=Users of Jaws may find they receive no notification that the agent has sent a message
 
 help.webchat.reportingproblems.h2=Reporting accessibility problems with this webchat
 help.webchat.reportingproblems.p1=We’re always looking to improve the accessibility of the webchat. If you find any problems not listed on this page or think we’re not meeting accessibility requirements, email the team at
@@ -239,15 +236,13 @@ help.webchat.nonaccessiblecontent.h2bullets=Non compliance with the accessibilit
 help.webchat.nonaccessiblecontent.li1=If you''re using a screen reader you may need to tab past the footer of the webpage to find the webchat. This fails WCAG section 1.3.2 Meaningful Sequence
 help.webchat.nonaccessiblecontent.li2=There are some error messages in this service that may not be descriptive enough for some users with visual impairments, although they are compatible with common assistive technology tools. This fails WCAG section 3.3.3 Error Suggestion
 help.webchat.nonaccessiblecontent.li3=To find the privacy and accessibility links, users should tab beyond the message input box. This fails WCAG section 2.4.3 Focus Order
-help.webchat.nonaccessiblecontent.li4=Some screen readers may fail to tell the user whether the print-end chat menu is open or not. This fails WCAG section 4.1.2 Name, Role, Value
-help.webchat.nonaccessiblecontent.li5=Jaws stops reading out the chat conversation when the user is in the message input box. Users should click ‘tab button’ and click up arrow
-help.webchat.nonaccessiblecontent.li6=Users of Jaws may find they receive no notification that the agent has sent a message. This fails WCAG section 4.1.2 Name, Role, Value
 
 help.webchat.howwetested.h2=How we tested this webchat
-help.webchat.howwetested.p1=The service was last tested on 18/02/2020 and was checked for compliance with the WCAG 2.1 AA standard.
-help.webchat.howwetested.p2=The service was built using parts that will be tested by the Digital Accessibility Centre. The full service was tested by HMRC and included a disabled user.
-help.webchat.howwetested.p3=This page was prepared on 18/02/2020.
+help.webchat.howwetested.p1=The service was last tested on 05/03/2020 and was checked for compliance with the WCAG 2.1 AA standard.
+help.webchat.howwetested.p2=We have fixed and therefore deleted three items from the originallist.
+help.webchat.howwetested.p3=The service was built using parts that will be tested by the Digital Accessibility Centre. The full service was tested by HMRC and included a disabled user.
+help.webchat.howwetested.p4=This page was prepared on 05/03/2020.pass to our supplier
 
 help.webchat.whatweredoing.h2=What we''re doing to improve accessibility
-help.webchat.whatweredoing.p1=We''re working with Nuance, the new provider of our webchat, to continuously improve the quality and accessibility of this service. Our accessibility experts also regularly review the webchat and make recommendations which we then pass to our supplier Nuance. We acknowledge that some adjustments are simple and immediate, but others require deeper analysis and development and will be slower to take effect.
+help.webchat.whatweredoing.p1=We''re working with Nuance, the new provider of our webchat, to continuously improve the quality and accessibility of this service. Our accessibility experts also regularly review the webchat and make recommendations which we then pass to Nuance. We acknowledge that some adjustments are simple and immediate, but others require deeper analysis and development and will be slower to take effect.
 help.webchat.whatweredoing.p2=The accessibility of our webchat is therefore under constant scrutiny as we strive to move from partially to fully compliant with the WCAG 2.1 AA standard by September 2020.
