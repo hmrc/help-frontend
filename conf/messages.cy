@@ -238,7 +238,7 @@ help.webchat.nonaccessiblecontent.li3=To find the privacy and accessibility link
 
 help.webchat.howwetested.h2=How we tested this webchat
 help.webchat.howwetested.p1=The service was last tested on 05/03/2020 and was checked for compliance with the WCAG 2.1 AA standard.
-help.webchat.howwetested.p2=We have fixed and therefore deleted three items from the originallist.
+help.webchat.howwetested.p2=We have fixed and therefore deleted three items from the original list.
 help.webchat.howwetested.p3=The service was built using parts that will be tested by the Digital Accessibility Centre. The full service was tested by HMRC and included a disabled user.
 help.webchat.howwetested.p4=This page was prepared on 05/03/2020.
 
