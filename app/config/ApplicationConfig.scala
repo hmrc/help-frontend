@@ -52,5 +52,5 @@ object ApplicationConfig extends AppConfig with ServicesConfig {
   val equalityAdvisoryServiceUrl: String = "https://www.equalityadvisoryservice.com/"
   val technicalInformationUrl: String = "https://www.w3.org/TR/WCAG21/"
 
-  val reportingProblemsEmail: String = "ash.chadwick@hmrc.gov.uk"
+  val reportingProblemsEmail: String = "digitalengagementplatform@hmrc.gov.uk"
 }
