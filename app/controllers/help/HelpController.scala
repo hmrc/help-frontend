@@ -33,8 +33,4 @@ object HelpController extends FrontendController {
   val privacyPolicy = UnauthorisedAction { implicit request =>
     Ok(views.html.privacy_policy())
   }
-
-  val webchat = UnauthorisedAction { implicit request =>
-    Ok(views.html.webchat())
-  }
 }
