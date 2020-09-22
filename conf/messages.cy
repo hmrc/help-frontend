@@ -197,3 +197,6 @@ language-switcher.english=English
 language-switcher.english.hover=Use this account in English
 language-switcher.welsh=Cymraeg
 language-switcher.welsh.hover=Defnyddio''r cyfrif hwn yn Cymraeg
+
+footer.links.support_links.text=Cysylltiadau cymorth
+footer.links.accessibility.text=Datganiad hygyrchedd
