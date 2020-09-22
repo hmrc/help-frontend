@@ -47,6 +47,11 @@
     gaCalls = None)
 }
 
+@footerLinks = {
+        @partials.FooterLinks("https://www.gov.uk/help/accessibility-statement", partials.language_selection(ApplicationConfig.enableLanguageSwitching))
+
+}
+
 @views.html.layouts.govuk_template(
   title = Some(title),
   bodyClasses = bodyClass)(
@@ -55,5 +60,5 @@
   insideHeader = HtmlFormat.empty,
   afterHeader = HtmlFormat.empty,
   footerTop = HtmlFormat.empty,
-  footerLinks = Some(layouts.footer_links(Some(partials.language_selection(ApplicationConfig.enableLanguageSwitching)))),
+  footerLinks = Some(footerLinks),
   nav = false)(content)
