@@ -1,9 +1,6 @@
 help-frontend
 =============
 
-
-[ ![Download](https://api.bintray.com/packages/hmrc/releases/help-frontend/images/download.svg) ](https://bintray.com/hmrc/releases/help-frontend/_latestVersion)
-
 A frontend service which provides help pages including cookies, T&amp;C's and privacy policy.
 
 ## Run the application
@@ -11,11 +8,7 @@ A frontend service which provides help pages including cookies, T&amp;C's and pr
 To run the application execute
 
 ```
-sbt "run 9240"
-```
-or from a developer machine execute
-```
-sbt -Dplay.filters.headers.contentSecurityPolicy="default-src 'self' 'unsafe-inline' 'unsafe-url' localhost:9032 www.google-analytics.com data:" "run 9240"
+sbt run
 ```
 
 and then access the application at
