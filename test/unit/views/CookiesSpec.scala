@@ -16,6 +16,7 @@
 
 package unit.views
 
+import org.jsoup.select.Elements
 import org.mockito.scalatest.MockitoSugar
 import org.scalatest.matchers.must.Matchers
 import org.scalatest.wordspec.AnyWordSpec
@@ -39,7 +40,6 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
       .build()
 
   "Cookies section" must {
-
     "have a heading of 'Cookies'" in new Fixture {
       view.select("#cookies-heading").text mustBe "Cookies"
     }
@@ -74,7 +74,7 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
       }
 
     "have a link of 'http://www.aboutcookies.org/'" in new Fixture {
-      view.findLinkByCssSelector("a[href*=\"aboutcookies\"]").get.href mustBe "http://www.aboutcookies.org/"
+      view.select("a[href*=\"aboutcookies\"]").first.attr("href") mustBe "http://www.aboutcookies.org/"
     }
   }
 
@@ -121,7 +121,8 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
         }
 
       "have a table of 'The following cookies are used:' with the table headings 'Name', 'Purpose', 'Expires'" in new Fixture {
-        view.select("#cookies-analytics-used").text mustBe "The following cookies are used:"
+        val table: Elements = view.select("#cookies-analytics-table")
+        table.select("caption").text mustBe "The following cookies are used:"
         view.verifyTableHeadings(tableId = "cookies-analytics-table", expectedTableHeadingsText)
       }
 
@@ -165,10 +166,7 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
           .text mustBe "You can opt out of Google Analytics cookies (opens in new tab)."
       }
       "have a link of 'https://tools.google.com/dlpage/gaoptout'" in new Fixture {
-        view
-          .findLinkByCssSelector("a[href*=\"tools.google\"]")
-          .get
-          .href mustBe "https://tools.google.com/dlpage/gaoptout"
+        view.select("a[href*=\"tools.google\"]").first.attr("href") mustBe "https://tools.google.com/dlpage/gaoptout"
       }
     }
     "Comparing different versions" should {
@@ -186,7 +184,9 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
           view.select("#cookies-versions-paragraph-1").text mustBe paragraph
         }
       "have a table of 'The following cookies are used:' and have the following headings" in new Fixture {
-        view.select("#cookies-versions-paragraph-2").text mustBe "The following cookies are used:"
+        val table: Elements = view.select("#cookies-versions-table")
+
+        table.select("caption").text mustBe "The following cookies are used:"
         view.verifyTableHeadings(tableId = "cookies-versions-table", expectedTableHeadingsText)
       }
 
@@ -305,7 +305,7 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
         view.select("#cookies-satisfaction-survey-heading").text mustBe "Our satisfaction survey"
       }
       "have a link of 'http://www.surveymonkey.com/'" in new Fixture {
-        view.findLinkByCssSelector("a[href*=\"surveymonkey\"]").get.href mustBe "http://www.surveymonkey.com/"
+        view.select("a[href*=\"surveymonkey\"]").first.attr("href") mustBe "http://www.surveymonkey.com/"
       }
       "have the following paragraph 'SurveyMonkey (opens in new tab) is used to collect responses to the survey." +
         "If you take part, SurveyMonkey will save extra cookies to your computer to track your progress through it.'" +
@@ -362,6 +362,17 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
 
           view.verifyTableRowText("cookies-satisfaction-survey-table", expectedTableAnswersText, rowNumber = 5)
         }
+    }
+  }
+
+  "The page footer" must {
+    "include a link to the 'Is this page not working properly?' form" in new Fixture {
+      val links: Elements =
+        view.select("a[href~=problem_reports_nonjs]")
+
+      links                    must have size 1
+      links.first.attr("href") must include("service=help-frontend")
+      links.first.text mustBe "Is this page not working properly? (opens in new tab)"
     }
   }
 

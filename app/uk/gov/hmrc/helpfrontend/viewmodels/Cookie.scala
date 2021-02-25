@@ -14,17 +14,6 @@
  * limitations under the License.
  */
 
-package unit
+package uk.gov.hmrc.helpfrontend.viewmodels
 
-case class Link(
-  href: String,
-  dataSso: Option[String],
-  dataJourneyClick: String,
-  text: String,
-  rel: Option[String] = None,
-  target: Option[String] = None
-) {
-  def isExternal: Boolean = rel.contains("external")
-
-  def opensInNewTab: Boolean = target.contains("_blank")
-}
+case class Cookie(name: String, purpose: String, expires: String)

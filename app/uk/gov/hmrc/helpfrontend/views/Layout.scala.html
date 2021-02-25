@@ -16,6 +16,7 @@
 
 @import uk.gov.hmrc.helpfrontend.config.AppConfig
 @import views.html.helper.CSPNonce
+@import uk.gov.hmrc.helpfrontend.views.html.LanguageSelect
 
 @this(
         govukLayout: GovukLayout,
@@ -23,9 +24,15 @@
         hmrcScripts: HmrcScripts,
         hmrcStandardHeader: HmrcStandardHeader,
         hmrcStandardFooter: HmrcStandardFooter,
-        languageSelect: LanguageSelect
+        languageSelect: LanguageSelect,
+        hmrcReportTechnicalIssueHelper: HmrcReportTechnicalIssueHelper
 )
 @(pageTitle: Option[String] = None)(contentBlock: Html)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
+
+@content = {
+  @contentBlock
+  @hmrcReportTechnicalIssueHelper()
+}
 
 @govukLayout(
   pageTitle = pageTitle,
@@ -36,4 +43,4 @@
   scriptsBlock = Some(hmrcScripts()),
   beforeContentBlock = Some(languageSelect()),
   footerBlock = Some(hmrcStandardFooter())
-)(contentBlock)
+)(content)

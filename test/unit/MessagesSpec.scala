@@ -36,7 +36,7 @@ class MessagesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite {
       )
       .build()
 
-  implicit val messagesApi = app.injector.instanceOf[MessagesApi]
+  implicit val messagesApi: MessagesApi = app.injector.instanceOf[MessagesApi]
 
   val languageEnglish: Lang         = Lang.get("en").getOrElse(throw new Exception())
   val languageWelsh: Lang           = Lang.get("cy").getOrElse(throw new Exception())
@@ -78,22 +78,23 @@ class MessagesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite {
 
   private def countMessagesWithArgs(messages: Map[String, String]) = messages.values.filter(_.contains("{0"))
 
-  private def assertNonEmptyValuesForDefaultMessages() = assertNonEmptyNonTemporaryValues("Default", defaultMessages)
+  private def assertNonEmptyValuesForDefaultMessages(): Unit =
+    assertNonEmptyNonTemporaryValues("Default", defaultMessages)
 
-  private def assertNonEmptyValuesForWelshMessages() = assertNonEmptyNonTemporaryValues("Welsh", welshMessages)
+  private def assertNonEmptyValuesForWelshMessages(): Unit = assertNonEmptyNonTemporaryValues("Welsh", welshMessages)
 
-  private def assertCorrectUseOfQuotesForDefaultMessages() = assertCorrectUseOfQuotes("Default", defaultMessages)
+  private def assertCorrectUseOfQuotesForDefaultMessages(): Unit = assertCorrectUseOfQuotes("Default", defaultMessages)
 
-  private def assertCorrectUseOfQuotesForWelshMessages() = assertCorrectUseOfQuotes("Welsh", welshMessages)
+  private def assertCorrectUseOfQuotesForWelshMessages(): Unit = assertCorrectUseOfQuotes("Welsh", welshMessages)
 
-  private def assertNonEmptyNonTemporaryValues(label: String, messages: Map[String, String]) = messages.foreach {
+  private def assertNonEmptyNonTemporaryValues(label: String, messages: Map[String, String]): Unit = messages.foreach {
     case (key: String, value: String) =>
       withClue(s"In $label, there is an empty value for the key:[$key][$value]") {
         value.trim.isEmpty mustBe false
       }
   }
 
-  private def assertCorrectUseOfQuotes(label: String, messages: Map[String, String]) = messages.foreach {
+  private def assertCorrectUseOfQuotes(label: String, messages: Map[String, String]): Unit = messages.foreach {
     case (key: String, value: String) =>
       withClue(s"In $label, there is an unescaped or invalid quote:[$key][$value]") {
         MatchSingleQuoteOnly.findFirstIn(value).isDefined mustBe false

@@ -17,11 +17,10 @@
 package uk.gov.hmrc.helpfrontend.config
 
 import javax.inject.{Inject, Singleton}
-import play.api.Configuration
 import play.api.i18n.Lang
 
 @Singleton
-class AppConfig @Inject() (config: Configuration) {
+class AppConfig @Inject() () {
   val en: String            = "en"
   val cy: String            = "cy"
   val defaultLanguage: Lang = Lang(en)

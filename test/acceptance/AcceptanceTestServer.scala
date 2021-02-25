@@ -25,7 +25,7 @@ import play.api.test.TestServer
 import acceptance.conf.TestConfiguration._
 
 trait AcceptanceTestServer extends TestSuiteMixin with GuiceFakeApplicationFactory { this: TestSuite =>
-  lazy val port = servicePort("help-frontend").toInt
+  lazy val port: Int = servicePort("help-frontend").toInt
 
   implicit lazy val app: Application = new GuiceApplicationBuilder()
     .configure(

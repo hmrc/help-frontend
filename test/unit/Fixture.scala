@@ -29,5 +29,4 @@ trait Fixture extends Matchers {
   lazy val form: Element          = doc.getElementsByTag("form").first()
   lazy val heading: Element       = doc.getElementsByTag("h1").first()
   lazy val subHeading: Element    = doc.getElementsByClass("heading-secondary").first()
-
 }

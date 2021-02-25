@@ -31,26 +31,6 @@ trait JsoupHelpers extends Matchers {
     def getElementById(id: String): Element =
       parseNoPrettyPrinting(html).getElementById(id)
 
-    def findLinkByCssSelector(cssSelector: String): Option[Link] = {
-      val fileLink: Element = html.select(cssSelector).first()
-      if (fileLink == null)
-        None
-      else
-        Some(
-          Link(
-            href = fileLink.attr("href"),
-            dataSso = Option(fileLink.attr("data-sso")) match {
-              case Some("") => None
-              case s        => s
-            },
-            dataJourneyClick = fileLink.attr("data-journey-click"),
-            text = fileLink.text(),
-            rel = Option(fileLink.attr("rel")),
-            target = Option(fileLink.attr("target"))
-          )
-        )
-    }
-
     def verifyTableRowText(tableId: String, expectedTableAnswersText: List[String], rowNumber: Int): Unit = {
       val actualTableAnswers = html.getElementById(tableId).getElementsByTag("tr").get(rowNumber).getElementsByTag("td")
 

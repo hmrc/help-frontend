@@ -15,6 +15,7 @@
  *@
 
 @import uk.gov.hmrc.helpfrontend.config.AppConfig
+@import uk.gov.hmrc.helpfrontend.views.html.{NewTabLink, Layout}
 
 @this(layout: Layout, newTabLink: NewTabLink)
 
@@ -32,7 +33,7 @@
  </p>
  <h2 class="govuk-heading-l">@messages("help.privacy_policy.personal_info.hmrc_holds.heading")</h2>
  <p class="govuk-body">@messages("help.privacy_policy.personal_info.hmrc_holds.list_info")</p>
- <ul class="govuk-list govuk-list--bullet" class="bullets">
+ <ul class="govuk-list govuk-list--bullet">
   <li>@messages("help.privacy_policy.personal_info.hmrc_holds.list_item.1")</li>
   <li>@messages("help.privacy_policy.personal_info.hmrc_holds.list_item.2")</li>
   <li>@messages("help.privacy_policy.personal_info.hmrc_holds.list_item.3")</li>
@@ -40,7 +41,7 @@
  <h2 class="govuk-heading-l">@messages("help.privacy_policy.personal_info.hmrc_protection.heading")</h2>
  <p class="govuk-body">@messages("help.privacy_policy.personal_info.hmrc_protection.text")</p>
  <p class="govuk-body">@messages("help.privacy_policy.personal_info.hmrc_protection.hmrc.list_info")</p>
- <ul class="govuk-list govuk-list--bullet" class="bullets">
+ <ul class="govuk-list govuk-list--bullet">
   <li>@messages("help.privacy_policy.personal_info.hmrc_protection.hmrc.list_item.1")</li>
   <li>@messages("help.privacy_policy.personal_info.hmrc_protection.hmrc.list_item.2")</li>
   <li>@messages("help.privacy_policy.personal_info.hmrc_protection.hmrc.list_item.3")</li>
@@ -48,7 +49,7 @@
   <li>@messages("help.privacy_policy.personal_info.hmrc_protection.hmrc.list_item.5")</li>
  </ul>
  <p class="govuk-body">@messages("help.privacy_policy.personal_info.hmrc_protection.you.list_info")</p>
- <ul class="govuk-list govuk-list--bullet" class="bullets">
+ <ul class="govuk-list govuk-list--bullet">
   <li>@messages("help.privacy_policy.personal_info.hmrc_protection.you.list_item.1")</li>
   <li>@messages("help.privacy_policy.personal_info.hmrc_protection.you.list_item.2")</li>
  </ul>
