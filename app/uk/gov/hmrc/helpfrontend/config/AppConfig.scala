@@ -17,11 +17,14 @@
 package uk.gov.hmrc.helpfrontend.config
 
 import javax.inject.{Inject, Singleton}
+import play.api.Configuration
 import play.api.i18n.Lang
 
 @Singleton
-class AppConfig @Inject() () {
+class AppConfig @Inject() (config: Configuration) {
   val en: String            = "en"
   val cy: String            = "cy"
   val defaultLanguage: Lang = Lang(en)
+
+  def accessibilityStatementUrl: Option[String] = config.getOptional[String]("urls.accessibility-statement")
 }

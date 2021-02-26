@@ -1,7 +1,7 @@
-import uk.gov.hmrc.DefaultBuildSettings.{addTestReportOption, integrationTestSettings}
+import uk.gov.hmrc.DefaultBuildSettings.addTestReportOption
 import uk.gov.hmrc.sbtdistributables.SbtDistributablesPlugin.publishingSettings
 
-val appName = "help-frontend-new"
+val appName = "help-frontend"
 
 val silencerVersion = "1.7.0"
 

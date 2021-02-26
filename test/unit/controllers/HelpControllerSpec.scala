@@ -16,6 +16,7 @@
 
 package unit.controllers
 
+import org.jsoup.Jsoup
 import org.scalatest.matchers.must.Matchers
 import play.api.http.Status
 import play.api.test.Helpers._
@@ -25,8 +26,9 @@ import play.api.Application
 import play.api.inject.guice.GuiceApplicationBuilder
 import play.api.test.FakeRequest
 import uk.gov.hmrc.helpfrontend.controllers.HelpController
+import unit.helpers.JsoupHelpers
 
-class HelpControllerSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite {
+class HelpControllerSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite with JsoupHelpers {
   override def fakeApplication(): Application =
     new GuiceApplicationBuilder()
       .configure(
@@ -49,6 +51,15 @@ class HelpControllerSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSu
       val result = controller.cookies(fakeRequest)
       contentType(result) mustBe Some("text/html")
       charset(result) mustBe Some("utf-8")
+    }
+
+    "return the correct content" in {
+      val result  = controller.cookies(fakeRequest)
+      val content = Jsoup.parse(contentAsString(result))
+
+      val headers = content.select("h1")
+      headers.size mustBe 1
+      headers.first.text mustBe "Cookies"
     }
   }
 }
