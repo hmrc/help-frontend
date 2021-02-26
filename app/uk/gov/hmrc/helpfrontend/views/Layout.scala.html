@@ -17,7 +17,6 @@
 @import uk.gov.hmrc.helpfrontend.config.AppConfig
 @import views.html.helper.CSPNonce
 @import uk.gov.hmrc.helpfrontend.views.html.LanguageSelect
-@import uk.gov.hmrc.hmrcfrontend.views.config.StandardBetaBanner
 
 @this(
         govukLayout: GovukLayout,
@@ -26,7 +25,6 @@
         hmrcStandardHeader: HmrcStandardHeader,
         hmrcStandardFooter: HmrcStandardFooter,
         languageSelect: LanguageSelect,
-        standardBetaBanner: StandardBetaBanner,
         hmrcReportTechnicalIssueHelper: HmrcReportTechnicalIssueHelper
 )
 @(pageTitle: Option[String] = None)(contentBlock: Html)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
