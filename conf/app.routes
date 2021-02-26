@@ -1,7 +1,8 @@
-->     /template                       template.Routes
-GET    /help/cookies                            controllers.help.HelpController.cookies
-GET    /help/privacy                            controllers.help.HelpController.privacyPolicy
-GET    /help/terms-and-conditions               controllers.help.HelpController.termsAndConditions
+# microservice specific routes
 
-GET    /help/switch-to-welsh                    controllers.LanguageController.switchToWelsh()
-GET    /help/switch-to-english                  controllers.LanguageController.switchToEnglish()
+->         /govuk-frontend            govuk.Routes
+->         /hmrc-frontend             hmrcfrontend.Routes
+GET        /cookies                   uk.gov.hmrc.helpfrontend.controllers.HelpController.cookies
+GET        /privacy                   uk.gov.hmrc.helpfrontend.controllers.HelpController.privacy
+GET        /terms-and-conditions      uk.gov.hmrc.helpfrontend.controllers.HelpController.termsAndConditions
+GET        /language/:lang            uk.gov.hmrc.helpfrontend.controllers.LanguageSwitchController.switchToLanguage(lang: String)

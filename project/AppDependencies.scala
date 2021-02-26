@@ -1,49 +1,28 @@
-import play.core.PlayVersion
+import play.core.PlayVersion.current
+import play.sbt.PlayImport._
+import sbt.Keys.libraryDependencies
 import sbt._
 
 object AppDependencies {
 
-  //wiremock jetty dependency for 2.23.2
-  val jettyVersion = "9.4.15.v20190215"
-
-  val compile: Seq[ModuleID] = Seq(
-    "uk.gov.hmrc" %% "frontend-bootstrap" % "12.7.0",
-    "uk.gov.hmrc" %% "url-builder" % "3.1.0",
-    "uk.gov.hmrc" %% "play-graphite" % "4.7.0"
+  val compile = Seq(
+    "uk.gov.hmrc" %% "bootstrap-frontend-play-27" % "4.0.0",
+    "uk.gov.hmrc" %% "play-frontend-hmrc"         % "0.49.0-play-27",
+    "uk.gov.hmrc" %% "play-language"              % "4.10.0-play-27"
   )
- 
-  val test: Seq[ModuleID] = Seq(
-    "org.mockito" % "mockito-all" % "2.0.2-beta",
-    "com.typesafe.play" %% "play-test" % PlayVersion.current,
-    "org.scalatestplus.play" %% "scalatestplus-play" % "2.0.1",
-    "org.pegdown" % "pegdown" % "1.6.0",
-    "org.jsoup" % "jsoup" % "1.11.3",
-    "com.github.tomakehurst" % "wiremock" % "2.23.2",
-    "org.seleniumhq.selenium" % "htmlunit-driver" % "2.35.1"
-  ).map(_ % "test, it")
 
-  val overrideDependencies: Set[ModuleID] = Set(
-    "org.seleniumhq.selenium" % "selenium-java" % "3.141.59",
-
-    //selenium expected conditions need a higher version of guava
-    "com.google.guava" % "guava" % "23.0",
-
-    //wiremock needs a specific version of jetty
-    "org.eclipse.jetty" % "jetty-server" % jettyVersion,
-    "org.eclipse.jetty" % "jetty-servlet" % jettyVersion,
-    "org.eclipse.jetty" % "jetty-security" % jettyVersion,
-    "org.eclipse.jetty" % "jetty-servlets" % jettyVersion,
-    "org.eclipse.jetty" % "jetty-continuation" % jettyVersion,
-    "org.eclipse.jetty" % "jetty-webapp" % jettyVersion,
-    "org.eclipse.jetty" % "jetty-xml" % jettyVersion,
-    "org.eclipse.jetty" % "jetty-client" % jettyVersion,
-    "org.eclipse.jetty" % "jetty-http" % jettyVersion,
-    "org.eclipse.jetty" % "jetty-io" % jettyVersion,
-    "org.eclipse.jetty" % "jetty-util" % jettyVersion,
-    "org.eclipse.jetty.websocket" % "websocket-api" % jettyVersion,
-    "org.eclipse.jetty.websocket" % "websocket-common" % jettyVersion,
-    "org.eclipse.jetty.websocket" % "websocket-client" % jettyVersion
-  ).map(_ % "test,it")
-
-  val all: Seq[ModuleID] = compile ++ test
+  val test = Seq(
+    "uk.gov.hmrc"            %% "bootstrap-test-play-27"  % "4.0.0"   % Test,
+    "org.scalatest"          %% "scalatest"               % "3.2.3"   % Test,
+    "org.scalatestplus"      %% "selenium-3-141"          % "3.2.0.0" % Test,
+    "org.jsoup"               % "jsoup"                   % "1.13.1"  % Test,
+    "com.typesafe.play"      %% "play-test"               % current   % Test,
+    "org.mockito"            %% "mockito-scala-scalatest" % "1.14.8"  % Test,
+    "uk.gov.hmrc"            %% "webdriver-factory"       % "0.15.0"  % Test,
+    "org.pegdown"             % "pegdown"                 % "1.2.1"   % Test,
+    "uk.gov.hmrc"            %% "zap-automation"          % "2.8.0"   % Test,
+    "com.typesafe"            % "config"                  % "1.3.2"   % Test,
+    "com.vladsch.flexmark"    % "flexmark-all"            % "0.36.8"  % Test,
+    "org.scalatestplus.play" %% "scalatestplus-play"      % "4.0.3"   % Test
+  )
 }

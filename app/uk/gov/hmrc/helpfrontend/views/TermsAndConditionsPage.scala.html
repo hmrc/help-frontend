@@ -1,0 +1,85 @@
+@*
+ * Copyright 2021 HM Revenue & Customs
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *@
+
+@import uk.gov.hmrc.helpfrontend.config.AppConfig
+@import uk.gov.hmrc.helpfrontend.controllers.routes
+@import uk.gov.hmrc.helpfrontend.views.html.{NewTabLink, Layout}
+
+@this(layout: Layout, newTabLink: NewTabLink)
+
+@()(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
+@privacyLink = { <a class="govuk-link" href="@routes.HelpController.privacy.url">@messages("help.links.privacy_policy.text.lower_case")</a> }
+@layout(pageTitle = Some(messages("help.terms_and_conditions.title"))) {
+ <h1 class="govuk-heading-xl">@messages("help.terms_and_conditions.title")</h1>
+ <h2 class="govuk-heading-l" id="disclaimer">@messages("help.terms_and_conditions.disclaimer.heading")</h2>
+ <p class="govuk-body">
+   @messages("help.terms_and_conditions.disclaimer.paragraph.1")
+   @privacyLink
+ </p>
+ <p class="govuk-body">@messages("help.terms_and_conditions.disclaimer.paragraph.2")</p>
+ <p class="govuk-body">@messages("help.terms_and_conditions.disclaimer.paragraph.3")</p>
+ <p class="govuk-body">@messages("help.terms_and_conditions.disclaimer.paragraph.4")</p>
+ <h2 class="govuk-heading-l" id="usage">@messages("help.terms_and_conditions.usage.heading")</h2>
+ <p class="govuk-body">@messages("help.terms_and_conditions.usage.paragraph.1")</p>
+ <p class="govuk-body">@messages("help.terms_and_conditions.usage.paragraph.2")</p>
+ <p class="govuk-body">@messages("help.terms_and_conditions.usage.paragraph.3")</p>
+ <p class="govuk-body">
+    @messages("help.terms_and_conditions.usage.paragraph.4")
+    <a href="#disclaimer" class="govuk-link">@messages("help.terms_and_conditions.disclaimer.link.text")</a>@messages("general.fullstop")
+ </p>
+ <h2 class="govuk-heading-l" id="online-services">@messages("help.terms_and_conditions.online_services.heading")</h2>
+ <p class="govuk-body">
+   @Html(messages("help.terms_and_conditions.online_services.paragraph.1", newTabLink(
+     url = messages("help.links.hmrc.terms_and_conditions.url"),
+     content = Text(messages("help.links.terms_and_conditions.text.lower_case"))
+   )))
+ </p>
+ <p class="govuk-body">
+   @messages("help.terms_and_conditions.online_services.paragraph.2")
+   @newTabLink(
+     url = messages("help.links.online_security.url"),
+     content = Text(messages("help.links.online_security.text"))
+   )@messages("general.fullstop")
+ <h2 class="govuk-heading-l" id="copyright">@messages("help.terms_and_conditions.copyright.heading")</h2>
+ <p class="govuk-body">
+   @messages("help.terms_and_conditions.copyright.paragraph.1")
+   @newTabLink(
+     url = messages("help.links.copyright_notice.url"),
+     content = Text(messages("help.links.copyright_notice.text"))
+   )@messages("general.fullstop")
+ </p>
+ <p class="govuk-body">@messages("help.terms_and_conditions.copyright.paragraph.2")</p>
+ <p class="govuk-body">@messages("help.terms_and_conditions.copyright.paragraph.3")</p>
+ <p class="govuk-body">
+   @newTabLink(
+     url = messages("help.links.agents_as_authorised.url"),
+     content = Text(messages("help.links.agents_as_authorised.text"))
+   )
+ </p>
+ <h2 class="govuk-heading-l" id="linking">@messages("help.terms_and_conditions.linking.heading")</h2>
+ <p class="govuk-body">@messages("help.terms_and_conditions.linking.paragraph.1")</p>
+ <h2 class="govuk-heading-l">@messages("help.terms_and_conditions.external_links.heading")</h2>
+ <p class="govuk-body">@messages("help.terms_and_conditions.external_links.paragraph.1")</p>
+ <h2 class="govuk-heading-l">@messages("help.terms_and_conditions.virus_protection.heading")</h2>
+ <p class="govuk-body">@messages("help.terms_and_conditions.virus_protection.paragraph.1")</p>
+ <h2 class="govuk-heading-l">@messages("help.terms_and_conditions.privacy_policy.heading")</h2>
+ <p class="govuk-body">
+   @Html(messages("help.terms_and_conditions.privacy_policy.paragraph.1", privacyLink))
+ </p>
+ <h2 class="govuk-heading-l">@messages("help.terms_and_conditions.governing_law.heading")</h2>
+ <p class="govuk-body">@messages("help.terms_and_conditions.governing_law.paragraph.1")</p>
+ <p class="govuk-body">@messages("help.terms_and_conditions.updated.text")</p>
+}
