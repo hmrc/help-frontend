@@ -44,6 +44,13 @@ class HelpController @Inject() (
   }
 
   val cookies: Action[AnyContent] = Action { implicit request =>
+    Redirect(
+      appConfig.cookieSettingsUrl,
+      MOVED_PERMANENTLY
+    )
+  }
+
+  val cookieDetails: Action[AnyContent] = Action { implicit request =>
     Ok(cookiesPage())
   }
 }

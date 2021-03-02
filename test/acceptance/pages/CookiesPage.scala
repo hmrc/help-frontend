@@ -21,7 +21,7 @@ import org.openqa.selenium.{By, WebDriver}
 
 sealed trait CookiesPage extends BasePage {
   override val url: String =
-    TestConfiguration.url("help-frontend") + "/cookies"
+    TestConfiguration.url("help-frontend") + "/cookie-details"
 
   def otherLanguage: String
 

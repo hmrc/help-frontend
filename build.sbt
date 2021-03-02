@@ -12,6 +12,14 @@ lazy val unitTestSettings =
       addTestReportOption(Test, "test-reports")
     )
 
+lazy val IntegrationTest         = config("it") extend Test
+lazy val integrationTestSettings =
+  inConfig(IntegrationTest)(Defaults.testTasks) ++
+    Seq(
+      (testOptions in IntegrationTest) := Seq(Tests.Filter(_ startsWith "it")),
+      addTestReportOption(IntegrationTest, "it-test-reports")
+    )
+
 lazy val AcceptanceTest         = config("acceptance") extend Test
 lazy val acceptanceTestSettings =
   inConfig(AcceptanceTest)(Defaults.testTasks) ++
@@ -34,7 +42,7 @@ lazy val zapTestSettings =
 lazy val microservice = Project(appName, file("."))
   .enablePlugins(play.sbt.PlayScala, SbtAutoBuildPlugin, SbtGitVersioning, SbtDistributablesPlugin)
   .disablePlugins(JUnitXmlReportPlugin) // Required to prevent https://github.com/scalatest/scalatest/issues/1427
-  .configs(AcceptanceTest, ZapTest)
+  .configs(AcceptanceTest, IntegrationTest, ZapTest)
   .settings(
     majorVersion := 4,
     PlayKeys.playDefaultPort := 9240,
@@ -60,6 +68,7 @@ lazy val microservice = Project(appName, file("."))
     // ***************
     publishingSettings,
     unitTestSettings,
+    integrationTestSettings,
     zapTestSettings,
     acceptanceTestSettings,
     resolvers += Resolver.jcenterRepo
