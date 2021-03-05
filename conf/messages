@@ -138,6 +138,12 @@ help.cookies.how_used.optimizely.table.optimizelyRedirectData.name=optimizelyRed
 help.cookies.how_used.optimizely.table.optimizelyRedirectData.purpose=This helps us identify how you use GOV.UK so we can make the site better
 help.cookies.how_used.optimizely.table.optimizelyRedirectData.expires=5 seconds
 
+help.cookies.how_used.userconsent.heading=Cookies message
+help.cookies.how_used.userconsent.info=You may see a banner when you visit HMRC inviting you to accept cookies or review your settings. We will set a cookie so that your computer knows you have seen it and not to show it again, and also to store your settings.
+help.cookies.how_used.userconsent.table.userConsent.name=userConsent
+help.cookies.how_used.userconsent.table.userConsent.purpose=Saves your cookie consent settings
+help.cookies.how_used.userconsent.table.userConsent.expires=1 year
+
 help.cookies.how_used.sessions.heading=Sessions
 help.cookies.how_used.sessions.info=A cookie is set to record your session activity.
 help.cookies.how_used.sessions.table.mdtp.name=mdtp

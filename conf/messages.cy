@@ -138,6 +138,12 @@ help.cookies.how_used.optimizely.table.optimizelyRedirectData.name=optimizelyRed
 help.cookies.how_used.optimizely.table.optimizelyRedirectData.purpose=Mae hyn yn ein helpu i weld sut yr ydych yn defnyddio GOV.UK er mwyn i ni allu gwella’r wefan
 help.cookies.how_used.optimizely.table.optimizelyRedirectData.expires=5 eiliad
 
+help.cookies.how_used.userconsent.heading=Neges ynghylch cwcis
+help.cookies.how_used.userconsent.info=Efallai y byddwch yn gweld baner wrth ymweld â thudalennau gwe CThEM yn gofyn i chi dderbyn cwcis neu adolygu’ch gosodiadau. Byddwn yn gosod cwci fel bod eich cyfrifiadur yn gwybod eich bod wedi gweld y faner ac na ddylid ei dangos eto, a hefyd er mwyn cadw’ch gosodiadau.
+help.cookies.how_used.userconsent.table.userConsent.name=userConsent
+help.cookies.how_used.userconsent.table.userConsent.purpose=Cadw’ch gosodiadau o ran caniatâd ar gyfer cwcis
+help.cookies.how_used.userconsent.table.userConsent.expires=1 flwyddyn
+
 help.cookies.how_used.sessions.heading=Sesiynau
 help.cookies.how_used.sessions.info=Caiff cwci ei osod i gofnodi eich gweithgarwch yn ystod y sesiwn.
 help.cookies.how_used.sessions.table.mdtp.name=mdtp

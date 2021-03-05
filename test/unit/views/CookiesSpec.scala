@@ -211,7 +211,36 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
           view.verifyTableRowText(tableId = "cookies-versions-table", expectedTableAnswersText, rowNumber = 2)
         }
     }
-    "Sessions"                     should {
+
+    "Allow additional cookies" should {
+      "have the expected heading" in new Fixture {
+        view.select("#cookies-consent-heading").text mustBe "Cookies message"
+      }
+
+      "have the expected paragraph of description" in new Fixture {
+        val paragraph: String =
+          "You may see a banner when you visit HMRC inviting you to accept cookies or review your " +
+            "settings. We will set a cookie so that your computer knows you have seen it and not to show it again, and also" +
+            " to store your settings."
+        view.select("#cookies-consent-paragraph-1").text mustBe paragraph
+      }
+
+      "have a table with expected headings" in new Fixture {
+        val table: Elements = view.select("#cookies-consent-table")
+        view.verifyTableHeadings(tableId = "cookies-consent-table", expectedTableHeadingsText)
+      }
+
+      "have the expected content in the table 'userConsent'" in new Fixture {
+        val expectedTableAnswersText: List[String] = List(
+          "userConsent",
+          "Saves your cookie consent settings",
+          "1 year"
+        )
+        view.verifyTableRowText(tableId = "cookies-consent-table", expectedTableAnswersText, rowNumber = 1)
+      }
+    }
+
+    "Sessions"                 should {
       val storesSession: String     = "Stores session data"
       val whenBrowserCloses: String = "When you close your browser"
 
@@ -254,7 +283,7 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
         view.verifyTableRowText("cookies-sessions-table", expectedTableAnswersText, rowNumber = 5)
       }
     }
-    "Our introductory message"     should {
+    "Our introductory message" should {
       "have the following heading" in new Fixture {
         view.select("#cookies-introductory-heading").text mustBe "Our introductory message"
       }
@@ -279,7 +308,7 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
           view.verifyTableRowText("cookies-introductory-table", expectedTableAnswersText, rowNumber = 1)
         }
     }
-    "User research banner"         should {
+    "User research banner"     should {
       "have the following heading" in new Fixture {
         view.select("#cookies-user-research-heading").text mustBe "User research banner"
       }
@@ -300,7 +329,7 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
           view.verifyTableRowText("cookies-user-research-table", expectedTableAnswersText, rowNumber = 1)
         }
     }
-    "Our satisfaction survey"      should {
+    "Our satisfaction survey"  should {
       "have the following heading 'Our satisfaction survey'" in new Fixture {
         view.select("#cookies-satisfaction-survey-heading").text mustBe "Our satisfaction survey"
       }
