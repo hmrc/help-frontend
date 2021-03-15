@@ -23,6 +23,8 @@ import uk.gov.hmrc.helpfrontend.config.AppConfig
 import uk.gov.hmrc.helpfrontend.views.html.TermsAndConditionsPage
 import uk.gov.hmrc.helpfrontend.views.html.PrivacyPage
 import uk.gov.hmrc.helpfrontend.views.html.CookiesPage
+import uk.gov.hmrc.trackingconsent.UserPreferences
+import scala.concurrent.duration._
 
 @Singleton
 class HelpController @Inject() (
@@ -30,13 +32,19 @@ class HelpController @Inject() (
   mcc: MessagesControllerComponents,
   termsAndConditionsPage: TermsAndConditionsPage,
   privacyPage: PrivacyPage,
-  cookiesPage: CookiesPage
+  cookiesPage: CookiesPage,
+  userPreferences: UserPreferences
 ) extends FrontendController(mcc) {
 
   implicit val config: AppConfig = appConfig
 
+  private val themeCookie = Cookie(name = "theme", value = "dark", maxAge = Some(365.days.toSeconds.toInt))
+
+  private def allowedCookies(implicit request: RequestHeader) =
+    if (userPreferences.preferences.settings) Seq(themeCookie) else Seq.empty
+
   val termsAndConditions: Action[AnyContent] = Action { implicit request =>
-    Ok(termsAndConditionsPage())
+    Ok(termsAndConditionsPage()).withCookies(allowedCookies: _*)
   }
 
   val privacy: Action[AnyContent] = Action { implicit request =>
