@@ -110,6 +110,18 @@
       )
     )
   )
+  <h3 class="govuk-heading-m" id="cookies-consent-heading">@messages("help.cookies.how_used.userconsent.heading")</h3>
+  <p class="govuk-body" id="cookies-consent-paragraph-1">@messages("help.cookies.how_used.userconsent.info")</p>
+  @cookiesTable(
+    id = "cookies-consent-table",
+    cookies = Seq(
+      Cookie(
+        messages("help.cookies.how_used.userconsent.table.userConsent.name"),
+        messages("help.cookies.how_used.userconsent.table.userConsent.purpose"),
+        messages("help.cookies.how_used.userconsent.table.userConsent.expires")
+      )
+    )
+  )
   <h3 class="govuk-heading-m" id="cookies-sessions-heading">@messages("help.cookies.how_used.sessions.heading")</h3>
   <p class="govuk-body" id="cookies-sessions-paragraph">@messages("help.cookies.how_used.sessions.info")</p>
   @cookiesTable(

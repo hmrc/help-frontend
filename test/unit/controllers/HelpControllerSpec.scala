@@ -43,18 +43,18 @@ class HelpControllerSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSu
 
   "GET /" should {
     "return 200" in {
-      val result = controller.cookies(fakeRequest)
+      val result = controller.cookieDetails(fakeRequest)
       status(result) mustBe Status.OK
     }
 
     "return HTML" in {
-      val result = controller.cookies(fakeRequest)
+      val result = controller.cookieDetails(fakeRequest)
       contentType(result) mustBe Some("text/html")
       charset(result) mustBe Some("utf-8")
     }
 
     "return the correct content" in {
-      val result  = controller.cookies(fakeRequest)
+      val result  = controller.cookieDetails(fakeRequest)
       val content = Jsoup.parse(contentAsString(result))
 
       val headers = content.select("h1")

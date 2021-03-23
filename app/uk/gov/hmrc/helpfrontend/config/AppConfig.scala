@@ -19,12 +19,21 @@ package uk.gov.hmrc.helpfrontend.config
 import javax.inject.{Inject, Singleton}
 import play.api.Configuration
 import play.api.i18n.Lang
+import uk.gov.hmrc.hmrcfrontend.config.TrackingConsentConfig
 
 @Singleton
-class AppConfig @Inject() (config: Configuration) {
+class AppConfig @Inject() (config: Configuration, trackingConsentConfig: TrackingConsentConfig) {
   val en: String            = "en"
   val cy: String            = "cy"
   val defaultLanguage: Lang = Lang(en)
 
-  def accessibilityStatementUrl: Option[String] = config.getOptional[String]("urls.accessibility-statement")
+  lazy val accessibilityStatementUrl: Option[String] = config.getOptional[String]("urls.accessibility-statement")
+
+  lazy val trackingConsentHost: String = trackingConsentConfig.trackingConsentHost.getOrElse("")
+
+  lazy val cookieSettingsPath: String =
+    config.get[String]("tracking-consent-frontend.cookie-settings-path")
+
+  lazy val cookieSettingsUrl: String =
+    s"$trackingConsentHost$cookieSettingsPath"
 }
