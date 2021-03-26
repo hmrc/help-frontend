@@ -23,10 +23,6 @@ import uk.gov.hmrc.hmrcfrontend.config.TrackingConsentConfig
 
 @Singleton
 class AppConfig @Inject() (config: Configuration, trackingConsentConfig: TrackingConsentConfig) {
-  val en: String            = "en"
-  val cy: String            = "cy"
-  val defaultLanguage: Lang = Lang(en)
-
   lazy val accessibilityStatementUrl: Option[String] = config.getOptional[String]("urls.accessibility-statement")
 
   lazy val trackingConsentHost: String = trackingConsentConfig.trackingConsentHost.getOrElse("")
