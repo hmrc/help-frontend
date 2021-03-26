@@ -6,4 +6,3 @@ GET        /cookies                   uk.gov.hmrc.helpfrontend.controllers.HelpC
 GET        /cookie-details            uk.gov.hmrc.helpfrontend.controllers.HelpController.cookieDetails
 GET        /privacy                   uk.gov.hmrc.helpfrontend.controllers.HelpController.privacy
 GET        /terms-and-conditions      uk.gov.hmrc.helpfrontend.controllers.HelpController.termsAndConditions
-GET        /language/:lang            uk.gov.hmrc.helpfrontend.controllers.LanguageSwitchController.switchToLanguage(lang: String)
