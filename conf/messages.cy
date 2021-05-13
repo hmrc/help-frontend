@@ -16,7 +16,8 @@ help.links.hmrc_online_services.helpdesk.url=https://online.hmrc.gov.uk/informat
 help.links.legal.conditions.text=amodau cyfreithiol
 help.links.legal.conditions.url=HMCE_PROD1_026374
 
-help.terms_and_conditions.title=Telerau ac amodau
+help.terms_and_conditions.title=Telerau ac amodau – GOV.UK
+help.terms_and_conditions.heading=Telerau ac amodau
 help.terms_and_conditions.disclaimer.heading=Ymwadiad
 help.terms_and_conditions.disclaimer.link.text=hysbysiad ymwadiad
 help.terms_and_conditions.disclaimer.link.url=#disclaimer
@@ -48,7 +49,8 @@ help.terms_and_conditions.governing_law.heading=Cyfraith sy’n rheoli
 help.terms_and_conditions.governing_law.paragraph.1=Bydd y telerau a’r amodau hyn yn cael eu rheoli gan gyfreithiau Cymru a Lloegr, a’u dehongli’n unol â nhw. Bydd unrhyw anghydfod sy’n codi o dan y telerau a’r amodau hyn yn dod o dan awdurdodaeth neilltuedig y llysoedd yng Nghymru a Lloegr.
 help.terms_and_conditions.updated.text=Cafodd y telerau a’r amodau hyn eu diweddaru ddiwethaf ym mis Ebrill 2005.
 
-help.privacy_policy.title=Polisi preifatrwydd
+help.privacy_policy.title=Polisi preifatrwydd – GOV.UK
+help.privacy_policy.heading=Polisi preifatrwydd
 help.privacy_policy.personal_info.heading=Eich gwybodaeth bersonol
 help.privacy_policy.personal_info.paragraph.1=Mae’r dudalen hon yn egluro pa fath o wybodaeth bersonol sydd ym meddiant CThEM amdanoch chi, sut y mae’n cael ei diogelu a sut y gallwch gael gwybod amdani.
 help.privacy_policy.personal_info.paragraph.2=Gallwch hefyd ddarllen
@@ -84,7 +86,8 @@ help.privacy_policy.make_a_complaint.paragraph.3=Cewch gadarnhâd bod eich cwyn 
 help.privacy_policy.make_a_complaint.paragraph.4=Os ydych yn anhapus gyda’r ateb, neu os oes angen cyngor arnoch,
 help.privacy_policy.make_a_complaint.paragraph.5=Gall Swyddfa’r Comisiynydd Gwybodaeth ymchwilio i’ch cwyn a chymryd camau yn erbyn unrhyw un sydd wedi camddefnyddio data personol.
 
-help.cookies.title=Cwcis
+help.cookies.title=Cwcis – GOV.UK
+help.cookies.heading=Cwcis
 help.cookies.info=Caiff ffeiliau bach (a elwir yn ‘cwcis’) eu gosod ar eich cyfrifiadur i gasglu gwybodaeth am sut yr ydych yn pori’r wefan.
 
 help.cookies.usages.list_info=Defnyddir cwcis i:

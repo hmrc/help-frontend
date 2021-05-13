@@ -16,7 +16,8 @@ help.links.hmrc_online_services.helpdesk.url=https://online.hmrc.gov.uk/informat
 help.links.legal.conditions.text=legal conditions
 help.links.legal.conditions.url=http://customs.hmrc.gov.uk/channelsPortalWebApp/channelsPortalWebApp.portal?_nfpb=true&_pageLabel=pageOnlineServices_FAQs&propertyType=document&columns=1&id=HMCE_PROD1_026374
 
-help.terms_and_conditions.title=Terms and conditions
+help.terms_and_conditions.title=Terms and conditions – GOV.UK
+help.terms_and_conditions.heading=Terms and conditions
 help.terms_and_conditions.disclaimer.heading=Disclaimer
 help.terms_and_conditions.disclaimer.link.text=disclaimer notice
 help.terms_and_conditions.disclaimer.link.url=#disclaimer
@@ -48,7 +49,8 @@ help.terms_and_conditions.governing_law.heading=Governing law
 help.terms_and_conditions.governing_law.paragraph.1=These terms and conditions shall be governed by and construed in accordance with the laws of England and Wales. Any dispute arising under these terms and conditions shall be subject to the exclusive jurisdiction of the courts of England and Wales.
 help.terms_and_conditions.updated.text=These Terms and Conditions were last updated April 2005.
 
-help.privacy_policy.title=Privacy policy
+help.privacy_policy.title=Privacy policy – GOV.UK
+help.privacy_policy.heading=Privacy policy
 help.privacy_policy.personal_info.heading=Your personal information
 help.privacy_policy.personal_info.paragraph.1=This page explains what kind of personal information HM Revenue and Customs (HMRC) holds about you, how it’s protected and how you can find out about it.
 help.privacy_policy.personal_info.paragraph.2=You can also read
@@ -84,7 +86,8 @@ help.privacy_policy.make_a_complaint.paragraph.3=You’ll get a confirmation tha
 help.privacy_policy.make_a_complaint.paragraph.4=If you’re unhappy with the answer or need any advice,
 help.privacy_policy.make_a_complaint.paragraph.5=The ICO can investigate your complaint and take action against anyone who has misused personal data.
 
-help.cookies.title=Cookies
+help.cookies.title=Cookies – GOV.UK
+help.cookies.heading=Cookies
 help.cookies.info=Small files (known as ‘cookies’) are put onto your computer to collect information about how you browse the site.
 
 help.cookies.usages.list_info=Cookies are used to:

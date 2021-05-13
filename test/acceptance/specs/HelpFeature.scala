@@ -26,7 +26,7 @@ class HelpFeature extends BaseSpec {
 
       Then("I am shown the cookies page")
       eventually {
-        pageTitle should be("Cookies")
+        pageTitle should be("Cookies – GOV.UK")
       }
 
       And("I am shown cookie related content")
@@ -39,7 +39,7 @@ class HelpFeature extends BaseSpec {
 
       Then("I am shown the privacy policy page")
       eventually {
-        pageTitle should be("Privacy policy")
+        pageTitle should be("Privacy policy – GOV.UK")
       }
 
       And("I am shown privacy related content")
@@ -52,7 +52,7 @@ class HelpFeature extends BaseSpec {
 
       Then("I am shown the terms and conditions page")
       eventually {
-        pageTitle should be("Terms and conditions")
+        pageTitle should be("Terms and conditions – GOV.UK")
       }
 
       And("I am shown terms and conditions related content")
