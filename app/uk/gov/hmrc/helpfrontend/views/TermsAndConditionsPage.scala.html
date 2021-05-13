@@ -23,7 +23,7 @@
 @()(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 @privacyLink = { <a class="govuk-link" href="@routes.HelpController.privacy.url">@messages("help.links.privacy_policy.text.lower_case")</a> }
 @layout(pageTitle = Some(messages("help.terms_and_conditions.title"))) {
- <h1 class="govuk-heading-xl">@messages("help.terms_and_conditions.title")</h1>
+ <h1 class="govuk-heading-xl">@messages("help.terms_and_conditions.heading")</h1>
  <h2 class="govuk-heading-l" id="disclaimer">@messages("help.terms_and_conditions.disclaimer.heading")</h2>
  <p class="govuk-body">
    @messages("help.terms_and_conditions.disclaimer.paragraph.1")
