@@ -397,7 +397,7 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
   "The page footer" must {
     "include a link to the 'Is this page not working properly?' form" in new Fixture {
       val links: Elements =
-        view.select("a[href~=problem_reports_nonjs]")
+        view.select("a[href~=report-technical-problem]")
 
       links                    must have size 1
       links.first.attr("href") must include("service=help-frontend")
