@@ -18,7 +18,6 @@ package uk.gov.hmrc.helpfrontend.config
 
 import javax.inject.{Inject, Singleton}
 import play.api.Configuration
-import play.api.i18n.Lang
 import uk.gov.hmrc.hmrcfrontend.config.TrackingConsentConfig
 
 @Singleton
