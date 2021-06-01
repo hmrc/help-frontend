@@ -30,19 +30,10 @@ lazy val acceptanceTestSettings =
       addTestReportOption(AcceptanceTest, "acceptance-test-reports")
     )
 
-lazy val ZapTest         = config("zap") extend Test
-lazy val zapTestSettings =
-  inConfig(ZapTest)(Defaults.testTasks) ++
-    Seq(
-      // Required for the ZAP test to accept the -D parameters passed to it
-      fork in ZapTest := false,
-      testOptions in ZapTest := Seq(Tests.Filter(_ startsWith "zap"))
-    )
-
 lazy val microservice = Project(appName, file("."))
   .enablePlugins(play.sbt.PlayScala, SbtDistributablesPlugin)
   .disablePlugins(JUnitXmlReportPlugin) // Required to prevent https://github.com/scalatest/scalatest/issues/1427
-  .configs(AcceptanceTest, IntegrationTest, ZapTest)
+  .configs(AcceptanceTest, IntegrationTest)
   .settings(
     majorVersion := 4,
     PlayKeys.playDefaultPort := 9240,
@@ -69,7 +60,6 @@ lazy val microservice = Project(appName, file("."))
     publishingSettings,
     unitTestSettings,
     integrationTestSettings,
-    zapTestSettings,
     acceptanceTestSettings,
     resolvers += Resolver.jcenterRepo
   )
