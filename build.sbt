@@ -60,6 +60,5 @@ lazy val microservice = Project(appName, file("."))
     publishingSettings,
     unitTestSettings,
     integrationTestSettings,
-    acceptanceTestSettings,
-    resolvers += Resolver.jcenterRepo
+    acceptanceTestSettings
   )
