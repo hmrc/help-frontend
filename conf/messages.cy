@@ -1,3 +1,6 @@
+service.name=Help
+service.homePageUrl = /help
+
 help.links.hmrc_privacy_policy.text=Hysbysiad Preifatrwydd CThEM
 help.links.hmrc_privacy_policy.url=http://www.hmrc.gov.uk/about/privacy.htm
 help.links.online_security.text=Diogelwch ar-lein – gwneud eich profiad ar-lein mor ddiogel â phosibl

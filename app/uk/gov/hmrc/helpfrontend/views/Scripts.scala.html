@@ -1,0 +1,7 @@
+@import views.html.helper.CSPNonce
+
+@this()
+
+@()(implicit request: RequestHeader)
+<script @{CSPNonce.attr} src='@routes.Assets.versioned("lib/govuk-frontend/govuk/all.js")'></script>
+<script @{CSPNonce.attr} src='@routes.Assets.versioned("javascripts/application.js")'></script>
