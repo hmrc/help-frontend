@@ -18,13 +18,8 @@
 @import views.html.helper.CSPNonce
 
 @this(
-        govukLayout: GovukLayout,
-        hmrcHead: HmrcHead,
-        hmrcScripts: HmrcScripts,
-        hmrcStandardHeader: HmrcStandardHeader,
-        hmrcStandardFooter: HmrcStandardFooter,
-        hmrcLanguageSelectHelper: HmrcLanguageSelectHelper,
-        hmrcReportTechnicalIssueHelper: HmrcReportTechnicalIssueHelper
+        hmrcReportTechnicalIssueHelper: HmrcReportTechnicalIssueHelper,
+        hmrcLayout: HmrcLayout
 )
 @(pageTitle: Option[String] = None)(contentBlock: Html)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 
@@ -33,15 +28,10 @@
   @hmrcReportTechnicalIssueHelper()
 }
 
-@govukLayout(
-  pageTitle = pageTitle,
-  headBlock = Some(hmrcHead(nonce = CSPNonce.get)),
-  headerBlock = Some(hmrcStandardHeader(
-    displayHmrcBanner = true
-  )),
-  scriptsBlock = Some(hmrcScripts(nonce = CSPNonce.get)),
-  beforeContentBlock = Some(hmrcLanguageSelectHelper()),
-  footerBlock = Some(hmrcStandardFooter(
+@hmrcLayout(
+    pageTitle = pageTitle,
+    displayHmrcBanner = true,
+    nonce = CSPNonce.get,
+    isWelshTranslationAvailable = true,
     accessibilityStatementUrl = appConfig.accessibilityStatementUrl
-  ))
 )(content)
