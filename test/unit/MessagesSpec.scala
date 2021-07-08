@@ -51,7 +51,7 @@ class MessagesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite {
 
     "have messages for default and cy only" in {
       messagesApi.messages("en").size mustBe 0
-      val englishMessageCount = messagesApi.messages("default").size - frameworkProvidedKeys.size
+      val englishMessageCount = messagesApi.messages("default").size
       messagesApi.messages("cy").size mustBe englishMessageCount
       messagesApi.messages("default.play").size mustBe 44
     }
@@ -109,7 +109,7 @@ class MessagesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite {
 
   private lazy val defaultMessages = getExpectedMessages("default") -- providedKeys
 
-  private lazy val welshMessages = getExpectedMessages("cy") -- commonProvidedKeys
+  private lazy val welshMessages = getExpectedMessages("cy") -- providedKeys
 
   private def getExpectedMessages(languageCode: String) =
     messagesApi.messages.getOrElse(languageCode, throw new Exception(s"Missing messages for $languageCode"))
@@ -123,19 +123,6 @@ class MessagesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite {
         welshKeySet -- defaultKeySet
       )
 
-  private val commonProvidedKeys = Set("error.address.invalid.character")
+  private val providedKeys = Set("error.address.invalid.character")
 
-  private val frameworkProvidedKeys = Set(
-    "global.error.InternalServerError500.heading",
-    "global.error.InternalServerError500.message",
-    "global.error.InternalServerError500.title",
-    "global.error.badRequest400.heading",
-    "global.error.badRequest400.message",
-    "global.error.badRequest400.title",
-    "global.error.pageNotFound404.heading",
-    "global.error.pageNotFound404.message",
-    "global.error.pageNotFound404.title"
-  )
-
-  private val providedKeys = commonProvidedKeys ++ frameworkProvidedKeys
 }
