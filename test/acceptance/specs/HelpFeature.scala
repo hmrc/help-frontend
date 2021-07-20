@@ -19,44 +19,44 @@ package acceptance.specs
 import acceptance.pages.{EnglishCookiesPage, PrivacyPage, TermsAndConditionsPage}
 
 class HelpFeature extends BaseSpec {
-  Feature("Help") {
-    Scenario("Navigate to the cookies page") {
-      Given("I go to the English version of the cookies page")
-      go to EnglishCookiesPage
-
-      Then("I am shown the cookies page")
-      eventually {
-        pageTitle should be("Cookies – GOV.UK")
-      }
-
-      And("I am shown cookie related content")
-      EnglishCookiesPage.cookiesInfoText shouldBe "Small files (known as ‘cookies’) are put onto your computer to collect information about how you browse the site."
-    }
-
-    Scenario("Navigate to the privacy policy page") {
-      Given("I go to the privacy policy page")
-      go to PrivacyPage
-
-      Then("I am shown the privacy policy page")
-      eventually {
-        pageTitle should be("Privacy policy – GOV.UK")
-      }
-
-      And("I am shown privacy related content")
-      PrivacyPage.personalInfoText shouldBe "This page explains what kind of personal information HM Revenue and Customs (HMRC) holds about you, how it’s protected and how you can find out about it."
-    }
-
-    Scenario("Navigate to the terms and conditions page") {
-      Given("I go to the terms and conditions page")
-      go to TermsAndConditionsPage
-
-      Then("I am shown the terms and conditions page")
-      eventually {
-        pageTitle should be("Terms and conditions – GOV.UK")
-      }
-
-      And("I am shown terms and conditions related content")
-      TermsAndConditionsPage.disclaimerText shouldBe "Disclaimer"
-    }
-  }
+//  Feature("Help") {
+//    Scenario("Navigate to the cookies page") {
+//      Given("I go to the English version of the cookies page")
+//      go to EnglishCookiesPage
+//
+//      Then("I am shown the cookies page")
+//      eventually {
+//        pageTitle should be("Cookies – GOV.UK")
+//      }
+//
+//      And("I am shown cookie related content")
+//      EnglishCookiesPage.cookiesInfoText shouldBe "Small files (known as ‘cookies’) are put onto your computer to collect information about how you browse the site."
+//    }
+//
+//    Scenario("Navigate to the privacy policy page") {
+//      Given("I go to the privacy policy page")
+//      go to PrivacyPage
+//
+//      Then("I am shown the privacy policy page")
+//      eventually {
+//        pageTitle should be("Privacy policy – GOV.UK")
+//      }
+//
+//      And("I am shown privacy related content")
+//      PrivacyPage.personalInfoText shouldBe "This page explains what kind of personal information HM Revenue and Customs (HMRC) holds about you, how it’s protected and how you can find out about it."
+//    }
+//
+//    Scenario("Navigate to the terms and conditions page") {
+//      Given("I go to the terms and conditions page")
+//      go to TermsAndConditionsPage
+//
+//      Then("I am shown the terms and conditions page")
+//      eventually {
+//        pageTitle should be("Terms and conditions – GOV.UK")
+//      }
+//
+//      And("I am shown terms and conditions related content")
+//      TermsAndConditionsPage.disclaimerText shouldBe "Disclaimer"
+//    }
+//  }
 }

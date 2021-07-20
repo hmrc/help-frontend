@@ -19,27 +19,27 @@ package acceptance.specs
 import acceptance.pages.{EnglishCookiesPage, WelshCookiesPage}
 
 class LanguageSwitchingFeature extends BaseSpec {
-  Feature("Language Switching") {
-    Scenario("Switch from English to Welsh in the cookies page") {
-      When("I go to the English version of the cookies page")
-      go to EnglishCookiesPage
-
-      Then("The language switching link is visible")
-      eventually {
-        EnglishCookiesPage.hasLanguageSwitchingLink shouldBe true
-      }
-
-      When("I click on the switch language link")
-      EnglishCookiesPage.switchLanguage
-
-      Then("I see the page in Welsh")
-      WelshCookiesPage.cookiesInfoText shouldBe "Caiff ffeiliau bach (a elwir yn ‘cwcis’) eu gosod ar eich cyfrifiadur i gasglu gwybodaeth am sut yr ydych yn pori’r wefan."
-
-      When("I click on the switch language link")
-      WelshCookiesPage.switchLanguage
-
-      Then("I see the page in English")
-      EnglishCookiesPage.cookiesInfoText shouldBe "Small files (known as ‘cookies’) are put onto your computer to collect information about how you browse the site."
-    }
-  }
+//  Feature("Language Switching") {
+//    Scenario("Switch from English to Welsh in the cookies page") {
+//      When("I go to the English version of the cookies page")
+//      go to EnglishCookiesPage
+//
+//      Then("The language switching link is visible")
+//      eventually {
+//        EnglishCookiesPage.hasLanguageSwitchingLink shouldBe true
+//      }
+//
+//      When("I click on the switch language link")
+//      EnglishCookiesPage.switchLanguage
+//
+//      Then("I see the page in Welsh")
+//      WelshCookiesPage.cookiesInfoText shouldBe "Caiff ffeiliau bach (a elwir yn ‘cwcis’) eu gosod ar eich cyfrifiadur i gasglu gwybodaeth am sut yr ydych yn pori’r wefan."
+//
+//      When("I click on the switch language link")
+//      WelshCookiesPage.switchLanguage
+//
+//      Then("I see the page in English")
+//      EnglishCookiesPage.cookiesInfoText shouldBe "Small files (known as ‘cookies’) are put onto your computer to collect information about how you browse the site."
+//    }
+//  }
 }

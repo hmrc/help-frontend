@@ -81,21 +81,21 @@ class RedirectIntegrationSpec extends AnyWordSpec with Matchers {
     }
   }
 
-  "The /help/cookie-details endpoint" should {
-    "respond with a 200" in {
-      val app = buildApp()
-
-      val response: Result = Await.result(route(app, cookieDetailsRequest).get, 1 seconds)
-
-      response.header.status shouldBe OK
-    }
-
-    "respond with the correct page" in {
-      val app = buildApp()
-
-      val content = contentAsString(route(app, cookieDetailsRequest).get)
-
-      content should include("<h1 class=\"govuk-heading-xl\" id=\"cookies-heading\">Cookies</h1>")
-    }
-  }
+//  "The /help/cookie-details endpoint" should {
+//    "respond with a 200" in {
+//      val app = buildApp()
+//
+//      val response: Result = Await.result(route(app, cookieDetailsRequest).get, 1 seconds)
+//
+//      response.header.status shouldBe OK
+//    }
+//
+//    "respond with the correct page" in {
+//      val app = buildApp()
+//
+//      val content = contentAsString(route(app, cookieDetailsRequest).get)
+//
+//      content should include("<h1 class=\"govuk-heading-xl\" id=\"cookies-heading\">Cookies</h1>")
+//    }
+//  }
 }
