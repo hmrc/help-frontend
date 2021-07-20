@@ -52,6 +52,6 @@ class HelpController @Inject() (
 
   val cookieDetails: Action[AnyContent] = Action { implicit request =>
     throw new Exception("This is an exception for testing")
-    //Ok(cookiesPage())
+  //Ok(cookiesPage())
   }
 }
