@@ -1,6 +1,5 @@
 # microservice specific routes
 
-->         /govuk-frontend            govuk.Routes
 ->         /hmrc-frontend             hmrcfrontend.Routes
 GET        /cookies                   uk.gov.hmrc.helpfrontend.controllers.HelpController.cookies
 GET        /cookie-details            uk.gov.hmrc.helpfrontend.controllers.HelpController.cookieDetails
