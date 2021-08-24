@@ -29,8 +29,15 @@ import play.twirl.api.HtmlFormat
 import uk.gov.hmrc.helpfrontend.config.AppConfig
 import uk.gov.hmrc.helpfrontend.views.html.CookiesPage
 import unit.helpers.JsoupHelpers
+import uk.gov.hmrc.sbtaccessibilitylinter.AccessibilityLintersAndMatchers
 
-class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite with MockitoSugar with JsoupHelpers {
+class CookiesSpec
+    extends AnyWordSpec
+    with Matchers
+    with GuiceOneAppPerSuite
+    with MockitoSugar
+    with JsoupHelpers
+    with AccessibilityLintersAndMatchers {
   override def fakeApplication(): Application =
     new GuiceApplicationBuilder()
       .configure(
@@ -40,6 +47,10 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
       .build()
 
   "Cookies section" must {
+    "pass accessibility tests" in new Fixture {
+      view.body must passAccessibilityChecks
+    }
+
     "have a heading of 'Cookies'" in new Fixture {
       view.select("#cookies-heading").text mustBe "Cookies"
     }
