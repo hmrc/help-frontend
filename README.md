@@ -20,8 +20,12 @@ http://localhost:9240/help/cookies
 ## Running the unit tests
 
 ```
-sbt test
+sbt a11yTest
 ```
+
+The above tests include accessibility checks via the
+[sbt-accessibility-linter](https://www.github.com/hmrc/sbt-accessibility-linter)
+plugin.
 
 ## Running the UI acceptance/integration tests
 
