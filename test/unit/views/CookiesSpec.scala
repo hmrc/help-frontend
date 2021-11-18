@@ -47,9 +47,6 @@ class CookiesSpec
       .build()
 
   "Cookies section" must {
-    "pass accessibility checks" in new Fixture {
-      view.toString() must passAccessibilityChecks
-    }
 
     "have a heading of 'Cookies'" in new Fixture {
       view.select("#cookies-heading").text mustBe "Cookies"
