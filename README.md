@@ -17,15 +17,21 @@ and then access the application at
 http://localhost:9240/help/cookies
 ```
 
-## Running the unit tests
+## Running unit tests
 
 ```
-sbt a11yTest
+sbt test
 ```
 
-The above tests include accessibility checks via the
+## Running accessibility tests
+
+```
+sbt a11y:test
+```
+
+The above tests are run via the
 [sbt-accessibility-linter](https://www.github.com/hmrc/sbt-accessibility-linter)
-plugin.
+plugin. This plugin requires Node.js v12 or above to be installed locally.
 
 ## Running the UI acceptance/integration tests
 
