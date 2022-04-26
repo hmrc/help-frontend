@@ -87,329 +87,203 @@ class CookiesSpec
   }
 
   "How cookies are used section" should {
-    "Google Analytics"             should {
-      "have a heading of 'How cookies are used'" in new Fixture {
-        view.select("#cookies-are-used").text mustBe "How cookies are used"
-      }
-      "have a heading of 'Measuring website usage (Google Analytics)'" in new Fixture {
+
+    "Google Analytics" should {
+      "have the heading 'Measuring website usage (Google Analytics)'" in new Fixture {
         view.select("#cookies-website-usage").text mustBe "Measuring website usage (Google Analytics)"
       }
-      "have a paragraph of 'Google Analytics software collects information about how you use the site. " +
-        "This is done to help make sure the site is meeting the needs of its users and to help make improvements.'" in new Fixture {
-          val paragraph: String = "Google Analytics software collects information about how you use the site." +
-            " This is done to help make sure the site is meeting the needs of its users and to help make improvements."
 
-          view.select("#cookies-analytics-paragraph-1").text mustBe paragraph
-        }
-      "have a paragraph of 'Google Analytics stores information about:' and have the following bullets " +
-        "'the pages you visit - how long you spend on each page', 'how you got to the site', " +
-        "'what you click on while you’re visiting the site'" in new Fixture {
-          val paragraph = "Google Analytics stores information about:"
-          val bullet1   = "the pages you visit - how long you spend on each page"
-          val bullet2   = "how you got to the site"
-          val bullet3   = "what you click on while you’re visiting the site"
-
-          view.select("#cookies-analytics-paragraph-2").text mustBe paragraph
-          view.select("#cookies-analytics-bullets1").text mustBe bullet1
-          view.select("#cookies-analytics-bullets2").text mustBe bullet2
-          view.select("#cookies-analytics-bullets3").text mustBe bullet3
-        }
-
-      "have a paragraph of 'We don’t collect or store your personal information'" +
-        "(eg your name or address) so this information can’t be used to identify who you are.' " +
-        "and have the following text 'Google isn’t allowed to use or share our analytics data.'" in new Fixture {
-          val paragraph: String = "We don’t collect or store your personal information " +
-            "(eg your name or address) so this information can’t be used to identify who you are."
-
-          view.select("#cookies-analytics-paragraph-3").text mustBe paragraph
-          view
-            .select("#cookies-analytics-inset-text")
-            .first
-            .text mustBe "Google isn’t allowed to use or share our analytics data."
-        }
-
-      "have a table of 'The following cookies are used:' with the table headings 'Name', 'Purpose', 'Expires'" in new Fixture {
-        val table: Elements = view.select("#cookies-analytics-table")
-        table.select("caption").text mustBe "The following cookies are used:"
-        view.verifyTableHeadings(tableId = "cookies-analytics-table", expectedTableHeadingsText)
+      "have a paragraph of descriptive text" in new Fixture {
+        view.select("#cookies-analytics-paragraph-1").size() mustBe 1
       }
 
-      "have the following answers in the table '_gat', 'This helps us identify how you " +
-        "use GOV.UK so we can make the site better', '10 minutes'" in new Fixture {
-          val expectedTableAnswersText: List[String] =
-            List("_gat", "This helps us identify how you use GOV.UK so we can make the site better", "10 minutes")
-
-          view.verifyTableRowText(tableId = "cookies-analytics-table", expectedTableAnswersText, rowNumber = 1)
-        }
-      "have the following answers in the table 'GDS_successEvents and GDS_analyticsTokens', " +
-        "'These help us identify how you use GOV.UK so we can make the site better', '4 months'" in new Fixture {
-          val expectedTableAnswersText: List[String] = List(
-            "GDS_successEvents and GDS_analyticsTokens",
-            "These help us identify how you use GOV.UK so we can make the site better",
-            "4 months"
-          )
-
-          view.verifyTableRowText(tableId = "cookies-analytics-table", expectedTableAnswersText, rowNumber = 2)
-        }
-      "have the following answers in the table '_ga', " +
-        "'This helps us identify how you use GOV.UK so we can make the site better', '2 years'" in new Fixture {
-          val expectedTableAnswersText: List[String] =
-            List("_ga", "This helps us identify how you use GOV.UK so we can make the site better", "2 years")
-
-          view.verifyTableRowText(tableId = "cookies-analytics-table", expectedTableAnswersText, rowNumber = 3)
-        }
-      "have the following answers in the table 'ga_nextpage_params', " +
-        "'This stores data to be sent to Google on the next page you request', 'When you close your browser'" in new Fixture {
-          val expectedTableAnswersText: List[String] = List(
-            "ga_nextpage_params",
-            "This stores data to be sent to Google on the next page you request",
-            "When you close your browser"
-          )
-
-          view.verifyTableRowText(tableId = "cookies-analytics-table", expectedTableAnswersText, rowNumber = 4)
-        }
-      "have a pragraph of 'You can opt out of Google Analytics cookies (opens in new tab).'" in new Fixture {
-        view
-          .select("#cookies-analytics-opt-out")
-          .text mustBe "You can opt out of Google Analytics cookies (opens in new tab)."
+      "have a table with the following headings 'Name', 'Purpose', 'Expires'" in new Fixture {
+        view.verifyTableHeadings("cookies-analytics-table", expectedTableHeadingsText)
       }
-      "have a link of 'https://tools.google.com/dlpage/gaoptout'" in new Fixture {
-        view.select("a[href*=\"tools.google\"]").first.attr("href") mustBe "https://tools.google.com/dlpage/gaoptout"
+
+      "have the expected cookies listed in the table" in new Fixture {
+        val expectedCookies: List[String] = List(
+          "_gat",
+          "GDS_successEvents and GDS_analyticsTokens",
+          "_ga",
+          "ga_nextpage_params"
+        )
+
+        view.verifyTableContainsCookieName("cookies-analytics-table", expectedCookies)
       }
     }
+
     "Comparing different versions" should {
-      "have a heading of 'Comparing different versions of a webpage (Optimizely)'" in new Fixture {
+      "have the heading 'Comparing different versions of a webpage (Optimizely)'" in new Fixture {
         view.select("#cookies-versions-heading").text mustBe "Comparing different versions of a webpage (Optimizely)"
       }
 
-      "have a paragraph of 'Optimizely software is used to test different versions of a webpage (or webpages) " +
-        "to see which performs better. This is done to help make improvements and ensure the site is " +
-        "meeting the needs of its users.'" in new Fixture {
-
-          val paragraph: String = "Optimizely software is used to test different versions of a webpage (or webpages) " +
-            "to see which performs better. This is done to help make improvements and ensure the site is meeting the needs of its users."
-
-          view.select("#cookies-versions-paragraph-1").text mustBe paragraph
-        }
-      "have a table of 'The following cookies are used:' and have the following headings" in new Fixture {
-        val table: Elements = view.select("#cookies-versions-table")
-
-        table.select("caption").text mustBe "The following cookies are used:"
-        view.verifyTableHeadings(tableId = "cookies-versions-table", expectedTableHeadingsText)
+      "have a paragraph of descriptive text" in new Fixture {
+        view.select("#cookies-versions-paragraph-1").size() mustBe 1
       }
 
-      "have the following answers in the table 'optimizelyEndUserId', " +
-        "'This helps us identify how you use GOV.UK so we can make the site better', '6 months'" in new Fixture {
-          val expectedTableAnswersText: List[String] = List(
-            "optimizelyEndUserId",
-            "This helps us identify how you use GOV.UK so we can make the site better",
-            "6 months"
-          )
+      "have a table with the following headings 'Name', 'Purpose', 'Expires'" in new Fixture {
+        view.verifyTableHeadings("cookies-versions-table", expectedTableHeadingsText)
+      }
 
-          view.verifyTableRowText(tableId = "cookies-versions-table", expectedTableAnswersText, rowNumber = 1)
-        }
-      "have the following answers in the table 'optimizelyRedirectData', " +
-        "'This helps us identify how you use GOV.UK so we can make the site better', '5 seconds'" in new Fixture {
-          val expectedTableAnswersText: List[String] = List(
-            "optimizelyRedirectData",
-            "This helps us identify how you use GOV.UK so we can make the site better",
-            "5 seconds"
-          )
+      "have the expected cookies listed in the table" in new Fixture {
+        val expectedCookies: List[String] = List(
+          "optimizelyEndUserId",
+          "optimizelyRedirectData"
+        )
 
-          view.verifyTableRowText(tableId = "cookies-versions-table", expectedTableAnswersText, rowNumber = 2)
-        }
+        view.verifyTableContainsCookieName("cookies-versions-table", expectedCookies)
+      }
     }
 
     "Allow additional cookies" should {
-      "have the expected heading" in new Fixture {
+      "have the heading 'Sessions'" in new Fixture {
         view.select("#cookies-consent-heading").text mustBe "Cookies message"
       }
 
-      "have the expected paragraph of description" in new Fixture {
-        val paragraph: String =
-          "You may see a banner when you visit HMRC inviting you to accept cookies or review your " +
-            "settings. We will set a cookie so that your computer knows you have seen it and not to show it again, and also" +
-            " to store your settings."
-        view.select("#cookies-consent-paragraph-1").text mustBe paragraph
+      "have a paragraph of descriptive text" in new Fixture {
+        view.select("#cookies-consent-paragraph-1").size() mustBe 1
       }
 
-      "have a table with expected headings" in new Fixture {
-        val table: Elements = view.select("#cookies-consent-table")
-        view.verifyTableHeadings(tableId = "cookies-consent-table", expectedTableHeadingsText)
+      "have a table with the following headings 'Name', 'Purpose', 'Expires'" in new Fixture {
+        view.verifyTableHeadings("cookies-consent-table", expectedTableHeadingsText)
       }
 
-      "have the expected content in the table 'userConsent'" in new Fixture {
-        val expectedTableAnswersText: List[String] = List(
-          "userConsent",
-          "Saves your cookie consent settings",
-          "1 year"
-        )
-        view.verifyTableRowText(tableId = "cookies-consent-table", expectedTableAnswersText, rowNumber = 1)
+      "have the expected cookies listed in the table" in new Fixture {
+        val expectedCookies: List[String] = List("userConsent")
+
+        view.verifyTableContainsCookieName("cookies-consent-table", expectedCookies)
       }
     }
 
-    "Sessions"                 should {
-      val storesSession: String     = "Stores session data"
-      val whenBrowserCloses: String = "When you close your browser"
-
-      "have a heading of 'Sessions'" in new Fixture {
+    "Sessions" should {
+      "have the heading 'Sessions'" in new Fixture {
         view.select("#cookies-sessions-heading").text mustBe "Sessions"
       }
-      "have a table of 'A cookie is set to record your session activity.' " +
-        "with the following headings 'Name', 'Purpose', 'Expires'" in new Fixture {
-          view.select("#cookies-sessions-paragraph").text mustBe "A cookie is set to record your session activity."
-          view.verifyTableHeadings("cookies-sessions-table", expectedTableHeadingsText)
-        }
 
-      "have the following table answers in the table 'mdtp', 'Stores session data', 'When you close your browser'" in new Fixture {
-        val expectedTableAnswersText: List[String] = List("mdtp", storesSession, whenBrowserCloses)
-
-        view.verifyTableRowText("cookies-sessions-table", expectedTableAnswersText, rowNumber = 1)
+      "have a paragraph of descriptive text" in new Fixture {
+        view.select("#cookies-sessions-paragraph").size() mustBe 1
       }
-      "have the following table answers in the table 'mdtpp', 'Stores session data', 'When you close your browser'" in new Fixture {
-        val expectedTableAnswersText: List[String] = List("mdtpp", storesSession, whenBrowserCloses)
 
-        view.verifyTableRowText("cookies-sessions-table", expectedTableAnswersText, rowNumber = 2)
+      "have a table with the following headings 'Name', 'Purpose', 'Expires'" in new Fixture {
+        view.verifyTableHeadings("cookies-sessions-table", expectedTableHeadingsText)
       }
-      "have the following table answers in the table 'mdtpdf', 'Stores session data', 'When you close your browser'" in new Fixture {
-        val expectedTableAnswersText: List[String] = List("mdtpdf", storesSession, whenBrowserCloses)
 
-        view.verifyTableRowText("cookies-sessions-table", expectedTableAnswersText, rowNumber = 3)
-      }
-      "have the following table answers in the table 'PLAY_FLASH', 'Stores session data', 'When you close your browser'" in new Fixture {
-        val expectedTableAnswersText: List[String] = List("PLAY_FLASH", storesSession, whenBrowserCloses)
-
-        view.verifyTableRowText("cookies-sessions-table", expectedTableAnswersText, rowNumber = 4)
-      }
-      "have the following table answers in the table 'remme', 'This is used to uniquely identify a user on a device trying to go through the 2SV challenge', '7 days'" in new Fixture {
-        val expectedTableAnswersText: List[String] = List(
-          "remme",
-          "This is used to uniquely identify a user on a device trying to go through the 2SV challenge",
-          "7 days"
+      "have the expected cookies listed in the table" in new Fixture {
+        val expectedCookies: List[String] = List(
+          "mdtp",
+          "mdtpp",
+          "mdtpdf",
+          "PLAY_FLASH",
+          "remme"
         )
 
-        view.verifyTableRowText("cookies-sessions-table", expectedTableAnswersText, rowNumber = 5)
+        view.verifyTableContainsCookieName("cookies-sessions-table", expectedCookies)
       }
     }
+
     "Our introductory message" should {
-      "have the following heading" in new Fixture {
+      "have the heading 'Our introductory message" in new Fixture {
         view.select("#cookies-introductory-heading").text mustBe "Our introductory message"
       }
 
-      "have the following paragraph 'You may see a pop-up welcome message when you first visit. " +
-        "A cookie is stored so that your computer knows you’ve seen it and knows not to show it again.' " +
-        "and have the following headings 'Name', 'Purpose', 'Expires'" in new Fixture {
-          val paragraph: String = "You may see a pop-up welcome message when you first visit. " +
-            "A cookie is stored so that your computer knows you’ve seen it and knows not to show it again."
+      "have a paragraph of descriptive text" in new Fixture {
+        view.select("#cookies-introductory-paragraph").size() mustBe 1
+      }
 
-          view.select("#cookies-introductory-paragraph").text mustBe paragraph
-          view.verifyTableHeadings("cookies-introductory-table", expectedTableHeadingsText)
-        }
-      "have the following table answers in the table 'seen_cookie_message', " +
-        "'Saves a message to let us know that you have seen our cookie message', '1 month'" in new Fixture {
-          val expectedTableAnswersText: List[String] = List(
-            "seen_cookie_message",
-            "Saves a message to let us know that you have seen our cookie message",
-            "1 month"
-          )
+      "have a table with the following headings 'Name', 'Purpose', 'Expires'" in new Fixture {
+        view.verifyTableHeadings("cookies-introductory-table", expectedTableHeadingsText)
+      }
 
-          view.verifyTableRowText("cookies-introductory-table", expectedTableAnswersText, rowNumber = 1)
-        }
+      "have the expected cookies listed in the table" in new Fixture {
+        val expectedCookies: List[String] = List("seen_cookie_message")
+
+        view.verifyTableContainsCookieName("cookies-introductory-table", expectedCookies)
+      }
     }
-    "User research banner"     should {
-      "have the following heading" in new Fixture {
+
+    "User research banner" should {
+      "have the heading 'User research banner" in new Fixture {
         view.select("#cookies-user-research-heading").text mustBe "User research banner"
       }
-      "have the following paragraph 'You may see a banner about user research when you visit. " +
-        "A cookie is stored so that your computer knows when you have chosen not to see it again.' " +
-        "and have the following headings 'Name', 'Purpose', 'Expires'" in new Fixture {
-          val paragraph: String = "You may see a banner about user research when you visit. " +
-            "A cookie is stored so that your computer knows when you have chosen not to see it again."
 
-          view.select("#cookies-user-research-paragraph").text mustBe paragraph
-          view.verifyTableHeadings("cookies-user-research-table", expectedTableHeadingsText)
-        }
-      "have the following table answers in the table 'mdtpurr', " +
-        "'Saves a message to let us know that you no longer want to see it again.', '1 month'" in new Fixture {
-          val expectedTableAnswersText: List[String] =
-            List("mdtpurr", "Saves a message to let us know that you no longer want to see it again.", "1 month")
+      "have a paragraph of descriptive text" in new Fixture {
+        view.select("#cookies-user-research-paragraph").size() mustBe 1
+      }
 
-          view.verifyTableRowText("cookies-user-research-table", expectedTableAnswersText, rowNumber = 1)
-        }
+      "have a table with the following headings 'Name', 'Purpose', 'Expires'" in new Fixture {
+        view.verifyTableHeadings("cookies-user-research-table", expectedTableHeadingsText)
+      }
+
+      "have the expected cookies listed in the table" in new Fixture {
+        val expectedCookies: List[String] = List("mdtpurr")
+
+        view.verifyTableContainsCookieName("cookies-user-research-table", expectedCookies)
+      }
     }
-    "Our satisfaction survey"  should {
-      "have the following heading 'Our satisfaction survey'" in new Fixture {
+
+    "Our satisfaction survey" should {
+      "have the heading 'Our satisfaction survey'" in new Fixture {
         view.select("#cookies-satisfaction-survey-heading").text mustBe "Our satisfaction survey"
       }
-      "have a link of 'http://www.surveymonkey.com/'" in new Fixture {
-        view.select("a[href*=\"surveymonkey\"]").first.attr("href") mustBe "http://www.surveymonkey.com/"
+
+      "have a paragraph of descriptive text" in new Fixture {
+        view.select("#cookies-satisfaction-survey-paragraph").size() mustBe 1
       }
-      "have the following paragraph 'SurveyMonkey (opens in new tab) is used to collect responses to the survey." +
-        "If you take part, SurveyMonkey will save extra cookies to your computer to track your progress through it.'" +
-        "and have the following headings 'Name', 'Purpose', 'Expires'" in new Fixture {
-          val paragraph: String = "SurveyMonkey (opens in new tab) is used to collect responses to the survey. " +
-            "If you take part, SurveyMonkey will save extra cookies to your computer to track your progress through it."
 
-          view.select("#cookies-satisfaction-survey-paragraph").text mustBe paragraph
-          view.verifyTableHeadings("cookies-satisfaction-survey-table", expectedTableHeadingsText)
-        }
-      "have the following table answers in the table 'mbox', " +
-        "'This is used to keep your progress through the survey', '30 minutes'" in new Fixture {
-          val expectedTableAnswersText: List[String] =
-            List("mbox", "This is used to keep your progress through the survey", "30 minutes")
+      "have a table with the following headings 'Name', 'Purpose', 'Expires'" in new Fixture {
+        view.verifyTableHeadings("cookies-satisfaction-survey-table", expectedTableHeadingsText)
+      }
 
-          view.verifyTableRowText("cookies-satisfaction-survey-table", expectedTableAnswersText, rowNumber = 1)
-        }
-      "have the following table answers in the table 'SSOE', " +
-        "'This is used for testing different content and features on the survey website to help make it better', " +
-        "'When you close your browser'" in new Fixture {
-          val expectedTableAnswersText: List[String] = List(
-            "SSOE",
-            "This is used for testing different content and features on the survey " +
-              "website to help make it better",
-            "When you close your browser"
-          )
+      "have the expected cookies listed in the table" in new Fixture {
+        val expectedCookies: List[String] = List(
+          "mbox",
+          "SSOE",
+          "TS5159a2 and TSd0b041",
+          "ep201",
+          "ep202"
+        )
 
-          view.verifyTableRowText("cookies-satisfaction-survey-table", expectedTableAnswersText, rowNumber = 2)
-        }
-      "have the following table answers in the table 'TS5159a2 and TSd0b041', " +
-        "'These are used to manage survey traffic by sending your computer to a specific server', " +
-        "'When you close your browser'" in new Fixture {
-          val expectedTableAnswersText: List[String] = List(
-            "TS5159a2 and TSd0b041",
-            "These are used to manage survey traffic by sending your computer to a " +
-              "specific server",
-            "When you close your browser"
-          )
-          view.verifyTableRowText("cookies-satisfaction-survey-table", expectedTableAnswersText, rowNumber = 3)
-        }
-      "have the following table answers in the table 'ep201', " +
-        "'This is used to help us identify how you use the survey', " +
-        "'30 minutes'" in new Fixture {
-          val expectedTableAnswersText: List[String] =
-            List("ep201", "This is used to help us identify how you use the survey", "30 minutes")
-
-          view.verifyTableRowText("cookies-satisfaction-survey-table", expectedTableAnswersText, rowNumber = 4)
-        }
-      "have the following table answers in the table 'ep202', " +
-        "'This works with ep201 to help us identify how you use the survey', " +
-        "'1 year'" in new Fixture {
-          val expectedTableAnswersText: List[String] =
-            List("ep202", "This works with ep201 to help us identify how you use the survey", "1 year")
-
-          view.verifyTableRowText("cookies-satisfaction-survey-table", expectedTableAnswersText, rowNumber = 5)
-        }
+        view.verifyTableContainsCookieName("cookies-satisfaction-survey-table", expectedCookies)
+      }
     }
-  }
 
-  "The page footer" must {
-    "include a link to the 'Is this page not working properly?' form" in new Fixture {
-      val links: Elements =
-        view.select("a[href~=report-technical-problem]")
+    "Digital assistant cookies" should {
+      "have the heading 'Digital assistant cookies'" in new Fixture {
+        view.select("#cookies-digital-assistant-heading").text mustBe "Digital assistant cookies"
+      }
 
-      links                    must have size 1
-      links.first.attr("href") must include("service=help-frontend")
-      links.first.text mustBe "Is this page not working properly? (opens in new tab)"
+      "have a paragraph of descriptive text" in new Fixture {
+        view.select("#cookies-digital-assistant-paragraph").size() mustBe 1
+      }
+
+      "have a table with the following headings 'Name', 'Purpose', 'Expires'" in new Fixture {
+        view.verifyTableHeadings("cookies-digital-assistant-table", expectedTableHeadingsText)
+      }
+
+      "have the expected cookies listed in the table" in new Fixture {
+        val expectedCookies: List[String] = List(
+          "inqCA_10006330",
+          "inqVital_10006330",
+          "tcSrv_10006330",
+          "inqSession_10006330",
+          "inqState_10006330",
+          "JSESSIONID"
+        )
+
+        view.verifyTableContainsCookieName("cookies-digital-assistant-table", expectedCookies)
+      }
+    }
+
+    "The page footer" must {
+      "include a link to the 'Is this page not working properly?' form" in new Fixture {
+        val links: Elements =
+          view.select("a[href~=report-technical-problem]")
+
+        links                    must have size 1
+        links.first.attr("href") must include("service=help-frontend")
+        links.first.text mustBe "Is this page not working properly? (opens in new tab)"
+      }
     }
   }
 
@@ -428,4 +302,5 @@ class CookiesSpec
 
     val view: HtmlFormat.Appendable = cookiesPage()
   }
+
 }

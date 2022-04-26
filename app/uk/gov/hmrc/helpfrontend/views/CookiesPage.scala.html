@@ -214,4 +214,44 @@
       )
     )
   )
+
+  <h3 class="govuk-heading-m" id="cookies-digital-assistant-heading">@messages("help.cookies.how_used.digital_assistant.heading")</h3>
+  <p class="govuk-body" id="cookies-digital-assistant-paragraph">
+  @Html(messages("help.cookies.how_used.digital_assistant.info", surveyLink))
+  </p>
+  @cookiesTable(
+    id = "cookies-digital-assistant-table",
+    cookies = Seq(
+      Cookie(
+        messages("help.cookies.how_used.digital_assistant.table.inqCA.name"),
+        messages("help.cookies.how_used.digital_assistant.table.inqCA.purpose"),
+        messages("help.cookies.how_used.digital_assistant.table.inqCA.expires")
+      ),
+      Cookie(
+        messages("help.cookies.how_used.digital_assistant.table.inqVital.name"),
+        messages("help.cookies.how_used.digital_assistant.table.inqVital.purpose"),
+        messages("help.cookies.how_used.digital_assistant.table.inqVital.expires")
+      ),
+      Cookie(
+        messages("help.cookies.how_used.digital_assistant.table.tcSrv.name"),
+        messages("help.cookies.how_used.digital_assistant.table.tcSrv.purpose"),
+        messages("help.cookies.how_used.digital_assistant.table.tcSrv.expires")
+      ),
+      Cookie(
+        messages("help.cookies.how_used.digital_assistant.table.inqSession.name"),
+        messages("help.cookies.how_used.digital_assistant.table.inqSession.purpose"),
+        messages("help.cookies.how_used.digital_assistant.table.inqSession.expires")
+      ),
+      Cookie(
+        messages("help.cookies.how_used.digital_assistant.table.inqState.name"),
+        messages("help.cookies.how_used.digital_assistant.table.inqState.purpose"),
+        messages("help.cookies.how_used.digital_assistant.table.inqState.expires")
+      ),
+      Cookie(
+        messages("help.cookies.how_used.digital_assistant.table.JSESSIONID.name"),
+        messages("help.cookies.how_used.digital_assistant.table.JSESSIONID.purpose"),
+        messages("help.cookies.how_used.digital_assistant.table.JSESSIONID.expires")
+      )
+    )
+  )
 }

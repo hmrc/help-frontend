@@ -197,6 +197,27 @@ help.cookies.how_used.satisfaction_survey.table.ep202.name=ep202
 help.cookies.how_used.satisfaction_survey.table.ep202.purpose=This works with ep201 to help us identify how you use the survey
 help.cookies.how_used.satisfaction_survey.table.ep202.expires=1 year
 
+help.cookies.how_used.digital_assistant.heading=Digital assistant cookies
+help.cookies.how_used.digital_assistant.info=The HMRC digital assistant and webchat can be found on various HMRC services pages. For the digital assistant and website to work correctly, the following cookies are required:
+help.cookies.how_used.digital_assistant.table.inqCA.name=inqCA_10006330
+help.cookies.how_used.digital_assistant.table.inqCA.purpose=Chat activity flag, required for restoring functionality of web chat if (during a chat engagement) the user reloads the page, navigates to a new page within the HMRC site or leaves the HMRC site and returns before the session timeout.
+help.cookies.how_used.digital_assistant.table.inqCA.expires=When you close your browser
+help.cookies.how_used.digital_assistant.table.inqVital.name=inqVital_10006330
+help.cookies.how_used.digital_assistant.table.inqVital.purpose=Persistent data about the customer. This cookie stores information about the customer (unique Nuance ID), last chat activity, past purchases, etc. This cookie is used to set the state of sale after the chat and to link chats from the same customer.
+help.cookies.how_used.digital_assistant.table.inqVital.expires=When you close your browser
+help.cookies.how_used.digital_assistant.table.tcSrv.name=tcSrv_10006330
+help.cookies.how_used.digital_assistant.table.tcSrv.purpose=A survey show flag required to show whether the post chat survey used for web chat have been presented to the user.
+help.cookies.how_used.digital_assistant.table.tcSrv.expires=When you close your browser
+help.cookies.how_used.digital_assistant.table.inqSession.name=inqSession_10006330
+help.cookies.how_used.digital_assistant.table.inqSession.purpose=Session data for current chat. The information stored in this cookie can be used to drive the business rules and to restore chat (e.g. after page reload). Most part of the data is deleted when chat is closed.
+help.cookies.how_used.digital_assistant.table.inqSession.expires=When you close your browser
+help.cookies.how_used.digital_assistant.table.inqState.name=inqState_10006330
+help.cookies.how_used.digital_assistant.table.inqState.purpose=Information about customer actions for ETL events (Extract, Transform & Load – process of logging data used for reporting). Example: count of chats on site, page markers, count of assisted, etc.
+help.cookies.how_used.digital_assistant.table.inqState.expires=When you close your browser
+help.cookies.how_used.digital_assistant.table.JSESSIONID.name=JSESSIONID
+help.cookies.how_used.digital_assistant.table.JSESSIONID.purpose=Cookie used in session tracking. Since HTTP is a stateless protocol, the cookie is created to enable the web chat application to keep the state of the session on the server side.
+help.cookies.how_used.digital_assistant.table.JSESSIONID.expires=When you close your browser
+
 help.links.privacy_policy.text.lower_case=privacy policy
 help.links.terms_and_conditions.text.lower_case=terms and conditions
 help.links.hmrc.terms_and_conditions.url=https://online.hmrc.gov.uk/information/terms

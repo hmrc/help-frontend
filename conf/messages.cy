@@ -197,6 +197,27 @@ help.cookies.how_used.satisfaction_survey.table.ep202.name=ep202
 help.cookies.how_used.satisfaction_survey.table.ep202.purpose=Mae hyn yn gweithio gyda ep201 i’n helpu i ddarganfod sut yr ydych yn defnyddio’r arolwg
 help.cookies.how_used.satisfaction_survey.table.ep202.expires=1 flwyddyn
 
+help.cookies.how_used.digital_assistant.heading=Cwcis cynorthwyydd digidol
+help.cookies.how_used.digital_assistant.info=Gellir cael hyd i gynorthwyydd digidol a chyfleuster sgwrs dros y we CThEM ar wahanol dudalennau gwasanaethau CThEM. Er mwyn i’r cynorthwyydd digidol a’r wefan weithio’n gywir, mae angen y cwcis canlynol:
+help.cookies.how_used.digital_assistant.table.inqCA.name=inqCA_10006330
+help.cookies.how_used.digital_assistant.table.inqCA.purpose=Baner gweithgarwch sgwrsio, sy’n ofynnol ar gyfer adfer swyddogaeth sgwrs dros y we os yw’r defnyddiwr (wrth sgwrsio) yn ail-lwytho’r dudalen, yn llywio i dudalen newydd o fewn safle CThEM neu’n gadael safle CThEM ac yn dychwelyd cyn terfyn amser y sesiwn.
+help.cookies.how_used.digital_assistant.table.inqCA.expires=Pan fyddwch yn cau eich porwr
+help.cookies.how_used.digital_assistant.table.inqVital.name=inqVital_10006330
+help.cookies.how_used.digital_assistant.table.inqVital.purpose=Data parhaus am y cwsmer. Mae’r cwci hwn yn storio gwybodaeth am y cwsmer (dynodydd ‘Nuance’ unigryw), gweithgaredd sgwrsio diwethaf, pryniannau yn y gorffennol ac ati. Defnyddir y cwci hwn i osod cyflwr y gwerthiant ar ôl y sgwrs ac i gysylltu sgyrsiau gan yr un cwsmer.
+help.cookies.how_used.digital_assistant.table.inqVital.expires=Pan fyddwch yn cau eich porwr
+help.cookies.how_used.digital_assistant.table.tcSrv.name=tcSrv_10006330
+help.cookies.how_used.digital_assistant.table.tcSrv.purpose=Baner ‘dangos arolwg’, sy’n ofynnol i ddangos a yw’r arolwg ar ôl y sgwrs a ddefnyddir ar gyfer sgyrsiau dros y we wedi’i gyflwyno i’r defnyddiwr.
+help.cookies.how_used.digital_assistant.table.tcSrv.expires=Pan fyddwch yn cau eich porwr
+help.cookies.how_used.digital_assistant.table.inqSession.name=inqSession_10006330
+help.cookies.how_used.digital_assistant.table.inqSession.purpose=Data’r sesiwn ar gyfer sgwrs bresennol. Gellir defnyddio’r wybodaeth sy’n cael ei storio yn y cwci hwn i yrru’r rheolau busnes ac i adfer sgwrs (e.e. ar ôl ail-lwytho’r dudalen). Mae’r rhan fwyaf o’r data’n cael ei ddileu pan fydd sgwrs ar gau.
+help.cookies.how_used.digital_assistant.table.inqSession.expires=Pan fyddwch yn cau eich porwr
+help.cookies.how_used.digital_assistant.table.inqState.name=inqState_10006330
+help.cookies.how_used.digital_assistant.table.inqState.purpose=Gwybodaeth am weithredoedd cwsmeriaid ar gyfer digwyddiadau ETL (Echdynnu, Trawsnewid a Llwytho – proses o logio data a ddefnyddir ar gyfer adrodd). Enghraifft: cyfrif sgyrsiau ar y safle, marcwyr tudalennau, cyfrif y cymorth, ac ati.
+help.cookies.how_used.digital_assistant.table.inqState.expires=Pan fyddwch yn cau eich porwr
+help.cookies.how_used.digital_assistant.table.JSESSIONID.name=JSESSIONID
+help.cookies.how_used.digital_assistant.table.JSESSIONID.purpose=Cwci a ddefnyddir wrth olrhain sesiwn. Gan fod HTTP yn brotocol heb gyflwr, mae’r cwci’n cael ei greu i alluogi’r rhaglen sgwrsio dros y we i gadw cyflwr y sesiwn ar ochr y gweinydd.
+help.cookies.how_used.digital_assistant.table.JSESSIONID.expires=Pan fyddwch yn cau eich porwr
+
 help.links.privacy_policy.text.lower_case=polisi preifatrwydd
 help.links.terms_and_conditions.text.lower_case=telerau ac amodau
 help.links.hmrc.terms_and_conditions.url=https://online.hmrc.gov.uk/information/terms
