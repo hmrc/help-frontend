@@ -22,6 +22,7 @@ import org.jsoup.nodes.{Document, Element}
 import org.jsoup.select.Elements
 import play.twirl.api.Html
 import org.scalatest.matchers.must.Matchers
+import scala.collection.JavaConverters._
 
 trait JsoupHelpers extends Matchers {
   implicit class RichHtml(html: Html) {
@@ -31,14 +32,10 @@ trait JsoupHelpers extends Matchers {
     def getElementById(id: String): Element =
       parseNoPrettyPrinting(html).getElementById(id)
 
-    def verifyTableRowText(tableId: String, expectedTableAnswersText: List[String], rowNumber: Int): Unit = {
-      val actualTableAnswers = html.getElementById(tableId).getElementsByTag("tr").get(rowNumber).getElementsByTag("td")
-
-      for (rowTextNumber <- 0 until actualTableAnswers.size) {
-
-        val rowText = actualTableAnswers.get(rowTextNumber).text()
-
-        rowText mustBe expectedTableAnswersText(rowTextNumber)
+    def verifyTableContainsCookieName(tableId: String, cookieNames: List[String]): Unit = {
+      val rows = html.getElementById(tableId).getElementsByTag("tr").asScala.toList
+      cookieNames.foreach { cookieName =>
+        rows.exists(_.toString.contains("<td class=\"govuk-table__cell\">" + cookieName + "</td>")) mustBe true
       }
     }
 
