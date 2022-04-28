@@ -1,0 +1,243 @@
+@import uk.gov.hmrc.helpfrontend.config.AppConfig
+@import uk.gov.hmrc.helpfrontend.views.html.{NewTabLink, Layout}
+
+@this(layout: Layout, newTabLink: NewTabLink)
+
+@()(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
+@layout(pageTitle = Some(messages("help.online_terms.title")), isTranslated = appConfig.enableOnlineTAndCLanguageToggle) {
+ <h1 class="govuk-heading-xl" id="online-services-terms-heading">@messages("help.online_terms.heading")</h1>
+
+ <h2 class="govuk-heading-l" id="all-individuals-organisations-agents">@messages("help.online_terms.all.heading")</h2>
+ <p class="govuk-body">
+ @messages("help.online_terms.all.para_1.part_1")
+  <a href="http://www.hmrc.gov.uk/online/index.htm">@messages("help.online_terms.all.para_1.link_text")</a>
+  @messages("help.online_terms.all.para_1.part_2")
+ </p>
+ <p class="govuk-body">@messages("help.online_terms.all.para_2")</p>
+ <p class="govuk-body">@messages("help.online_terms.all.para_3")</p>
+ <p class="govuk-body">@messages("help.online_terms.all.para_4")</p>
+ <p class="govuk-body">@messages("help.online_terms.all.para_5")</p>
+ <p class="govuk-body">
+ @messages("help.online_terms.all.para_6.part_1")
+ <a href="http://www.hmrc.gov.uk/about/privacy.htm">@messages("help.online_terms.all.para_6.link_text")</a>
+ @messages("help.online_terms.all.para_6.part_2")
+ </p>
+
+ <h3 class="govuk-heading-m">@messages("help.online_terms.all.user_id.heading")</h3>
+ <p class="govuk-body">@messages("help.online_terms.all.user_id.para_1")</p>
+ <p class="govuk-body">@messages("help.online_terms.all.user_id.para_2")</p>
+
+ <h3 class="govuk-heading-m">@messages("help.online_terms.all.deregistration.heading")</h3>
+ <p class="govuk-body">@messages("help.online_terms.all.deregistration.para_1")</p>
+
+ <h3 class="govuk-heading-m">@messages("help.online_terms.all.login.heading")</h3>
+ <p class="govuk-body">@messages("help.online_terms.all.login.para_1")</p>
+
+ <h3 class="govuk-heading-m">@messages("help.online_terms.all.security.heading")</h3>
+ <p class="govuk-body">@messages("help.online_terms.all.security.para_1")</p>
+ <p class="govuk-body">@messages("help.online_terms.all.security.para_2")</p>
+ <p class="govuk-body">
+  @messages("help.online_terms.all.security.para_3.part_1")
+  <a href="https://online.hmrc.gov.uk/information/helpdesk">@messages("help.online_terms.all.security.para_3.link_text")</a>
+  @messages("help.online_terms.all.security.para_3.part_2")
+ </p>
+ <p class="govuk-body">
+  @messages("help.online_terms.all.security.para_4.part_1")
+  <a href="http://www.hmrc.gov.uk/security/index.htm">@messages("help.online_terms.all.security.para_4.link_text")</a>@messages("help.online_terms.all.security.para_4.part_2")
+ </p>
+
+ <h3 class="govuk-heading-m">@messages("help.online_terms.all.secure_mailbox.heading")</h3>
+ <p class="govuk-body">@messages("help.online_terms.all.secure_mailbox.para_1")</p>
+ <p class="govuk-body">@messages("help.online_terms.all.secure_mailbox.para_2")</p>
+
+ <h3 class="govuk-heading-m">@messages("help.online_terms.all.online_filing.heading")</h3>
+ <p class="govuk-body">@messages("help.online_terms.all.online_filing.para_1")</p>
+ <p class="govuk-body">@messages("help.online_terms.all.online_filing.para_2")</p>
+ <p class="govuk-body">@messages("help.online_terms.all.online_filing.para_3")</p>
+ <p class="govuk-body">@messages("help.online_terms.all.online_filing.para_4")</p>
+
+ <h3 class="govuk-heading-m">@messages("help.online_terms.all.general.heading")</h3>
+ <p class="govuk-body">@messages("help.online_terms.all.general.para_1")</p>
+ <ul class="govuk-list govuk-list--bullet">
+  <li>@messages("help.online_terms.all.general.para_1.bullet_1")</li>
+  <li>@messages("help.online_terms.all.general.para_1.bullet_2")</li>
+ </ul>
+ <p class="govuk-body">@messages("help.online_terms.all.general.para_2")</p>
+
+ <h3 class="govuk-heading-m">@messages("help.online_terms.all.authorised_use.heading")</h3>
+ <p class="govuk-body">@messages("help.online_terms.all.authorised_use.para_1")</p>
+ <p class="govuk-body">
+  @messages("help.online_terms.all.authorised_use.para_2.part_1")
+  <a href="http://www.hmrc.gov.uk/copyright/">@messages("help.online_terms.all.authorised_use.para_2.link_text")</a>@messages("help.online_terms.all.authorised_use.para_2.part_2")
+ </p>
+
+ <h3 class="govuk-heading-m">@messages("help.online_terms.all.service_access.heading")</h3>
+ <p class="govuk-body">@messages("help.online_terms.all.service_access.para_1")</p>
+ <p class="govuk-body">@messages("help.online_terms.all.service_access.para_2")</p>
+
+ <h3 class="govuk-heading-m">@messages("help.online_terms.all.statutory_obligations.heading")</h3>
+ <p class="govuk-body">@messages("help.online_terms.all.statutory_obligations.para_1")</p>
+ <p class="govuk-body">
+  @messages("help.online_terms.all.statutory_obligations.para_2.part_1")
+  <a href="http://customs.hmrc.gov.uk/channelsPortalWebApp/channelsPortalWebApp.portal?_nfpb=true&_pageLabel=pageOnlineServices_FAQs&propertyType=document&columns=1&id=HMCE_PROD1_026374">@messages("help.online_terms.all.statutory_obligations.para_2.link_text")</a>
+  @messages("help.online_terms.all.statutory_obligations.para_2.part_2")
+ </p>
+
+ <h3 class="govuk-heading-m">@messages("help.online_terms.all.liability.heading")</h3>
+ <p class="govuk-body">@messages("help.online_terms.all.liability.para_1")</p>
+ <p class="govuk-body">@messages("help.online_terms.all.liability.para_2")</p>
+ <p class="govuk-body">@messages("help.online_terms.all.liability.para_3")</p>
+ <p class="govuk-body">@messages("help.online_terms.all.liability.para_4")</p>
+
+ <h3 class="govuk-heading-m">@messages("help.online_terms.all.data_management.heading")</h3>
+ <p class="govuk-body">@messages("help.online_terms.all.data_management.para_1")</p>
+
+ <h3 class="govuk-heading-m">@messages("help.online_terms.all.applicable_law.heading")</h3>
+ <p class="govuk-body">@messages("help.online_terms.all.applicable_law.para_1")</p>
+
+ <h2 class="govuk-heading-l" id="individuals">@messages("help.online_terms.individuals.heading")</h2>
+ <h3 class="govuk-heading-m">@messages("help.online_terms.individuals.secure_mailbox.heading")</h3>
+ <p class="govuk-body">@messages("help.online_terms.individuals.secure_mailbox.para_1")</p>
+
+ <h3 class="govuk-heading-m">@messages("help.online_terms.individuals.statutory_notice.heading")</h3>
+ <p class="govuk-body">@messages("help.online_terms.individuals.statutory_notice.para_1")</p>
+ <p class="govuk-body">@messages("help.online_terms.individuals.statutory_notice.para_2")</p>
+ <p class="govuk-body">@messages("help.online_terms.individuals.statutory_notice.para_3")</p>
+ <p class="govuk-body">@messages("help.online_terms.individuals.statutory_notice.para_4")</p>
+
+ <h3 class="govuk-heading-m">@messages("help.online_terms.individuals.direct_debit.heading")</h3>
+ <p class="govuk-body">@messages("help.online_terms.individuals.direct_debit.para_1")</p>
+ <ul class="govuk-list govuk-list--bullet">
+  <li>@messages("help.online_terms.individuals.direct_debit.para_1.bullet_1")</li>
+  <li>@messages("help.online_terms.individuals.direct_debit.para_1.bullet_2")</li>
+  <li>@messages("help.online_terms.individuals.direct_debit.para_1.bullet_3")</li>
+  <li>@messages("help.online_terms.individuals.direct_debit.para_1.bullet_4")</li>
+ </ul>
+ <p class="govuk-body">@messages("help.online_terms.individuals.direct_debit.para_2")</p>
+
+ <h3 class="govuk-heading-m">@messages("help.online_terms.individuals.vat_direct_debit.heading")</h3>
+ <p class="govuk-body">@messages("help.online_terms.individuals.vat_direct_debit.para_1")</p>
+ <p class="govuk-body">@messages("help.online_terms.individuals.vat_direct_debit.para_2")</p>
+ <p class="govuk-body">@messages("help.online_terms.individuals.vat_direct_debit.para_3")</p>
+ <p class="govuk-body">@messages("help.online_terms.individuals.vat_direct_debit.para_4")</p>
+ <p class="govuk-body">@messages("help.online_terms.individuals.vat_direct_debit.para_5")</p>
+ <p class="govuk-body">@messages("help.online_terms.individuals.vat_direct_debit.para_6")</p>
+ <p class="govuk-body">@messages("help.online_terms.individuals.vat_direct_debit.para_7")</p>
+ <p class="govuk-body">@messages("help.online_terms.individuals.vat_direct_debit.para_8")</p>
+ <p class="govuk-body">@messages("help.online_terms.individuals.vat_direct_debit.para_9")</p>
+ <p class="govuk-body">@messages("help.online_terms.individuals.vat_direct_debit.para_10")</p>
+ <p class="govuk-body">@messages("help.online_terms.individuals.vat_direct_debit.para_11")</p>
+ <p class="govuk-body">@messages("help.online_terms.individuals.vat_direct_debit.para_12")</p>
+ <p class="govuk-body">@messages("help.online_terms.individuals.vat_direct_debit.para_13")</p>
+
+ <h2 class="govuk-heading-l" id="organisations">@messages("help.online_terms.organisations.heading")</h2>
+ <h3 class="govuk-heading-m">@messages("help.online_terms.organisations.statutory_notice.heading")</h3>
+ <p class="govuk-body">@messages("help.online_terms.organisations.statutory_notice.para_1")</p>
+ <p class="govuk-body">@messages("help.online_terms.organisations.statutory_notice.para_2")</p>
+ <p class="govuk-body">@messages("help.online_terms.organisations.statutory_notice.para_3")</p>
+
+ <h3 class="govuk-heading-m">@messages("help.online_terms.organisations.services.heading")</h3>
+ <p class="govuk-body">@messages("help.online_terms.organisations.services.para_1")</p>
+
+ <h3 class="govuk-heading-m">@messages("help.online_terms.organisations.authorised_use.heading")</h3>
+ <p class="govuk-body">@messages("help.online_terms.organisations.authorised_use.para_1")</p>
+
+ <h3 class="govuk-heading-m">@messages("help.online_terms.organisations.direct_debit.heading")</h3>
+ <p class="govuk-body">@messages("help.online_terms.organisations.direct_debit.para_1")</p>
+ <ul class="govuk-list govuk-list--bullet">
+  <li>@messages("help.online_terms.organisations.direct_debit.para_1.bullet_1")</li>
+  <li>@messages("help.online_terms.organisations.direct_debit.para_1.bullet_2")</li>
+  <li>@messages("help.online_terms.organisations.direct_debit.para_1.bullet_3")</li>
+  <li>@messages("help.online_terms.organisations.direct_debit.para_1.bullet_4")</li>
+ </ul>
+ <p class="govuk-body">@messages("help.online_terms.organisations.direct_debit.para_2")</p>
+
+ <h3 class="govuk-heading-m">@messages("help.online_terms.organisations.vat_direct_debit.heading")</h3>
+ <p class="govuk-body">@messages("help.online_terms.organisations.vat_direct_debit.para_1")</p>
+ <p class="govuk-body">@messages("help.online_terms.organisations.vat_direct_debit.para_2")</p>
+ <p class="govuk-body">@messages("help.online_terms.organisations.vat_direct_debit.para_3")</p>
+ <p class="govuk-body">@messages("help.online_terms.organisations.vat_direct_debit.para_4")</p>
+ <p class="govuk-body">@messages("help.online_terms.organisations.vat_direct_debit.para_5")</p>
+ <p class="govuk-body">@messages("help.online_terms.organisations.vat_direct_debit.para_6")</p>
+ <p class="govuk-body">@messages("help.online_terms.organisations.vat_direct_debit.para_7")</p>
+ <p class="govuk-body">@messages("help.online_terms.organisations.vat_direct_debit.para_8")</p>
+ <p class="govuk-body">@messages("help.online_terms.organisations.vat_direct_debit.para_9")</p>
+ <p class="govuk-body">@messages("help.online_terms.organisations.vat_direct_debit.para_10")</p>
+ <p class="govuk-body">@messages("help.online_terms.organisations.vat_direct_debit.para_11")</p>
+ <p class="govuk-body">@messages("help.online_terms.organisations.vat_direct_debit.para_12")</p>
+ <p class="govuk-body">@messages("help.online_terms.organisations.vat_direct_debit.para_13")</p>
+
+ <h3 class="govuk-heading-m">@messages("help.online_terms.organisations.secure_file_transfer.heading")</h3>
+ <p class="govuk-body">@messages("help.online_terms.organisations.secure_file_transfer.para_1")</p>
+ <p class="govuk-body">@messages("help.online_terms.organisations.secure_file_transfer.para_2")</p>
+ <ul class="govuk-list govuk-list--bullet">
+  <li>@messages("help.online_terms.organisations.secure_file_transfer.para_2.bullet_1")</li>
+  <li>@messages("help.online_terms.organisations.secure_file_transfer.para_2.bullet_2")</li>
+  <li>@messages("help.online_terms.organisations.secure_file_transfer.para_2.bullet_3")</li>
+  <li>@messages("help.online_terms.organisations.secure_file_transfer.para_2.bullet_4")</li>
+  <li>@messages("help.online_terms.organisations.secure_file_transfer.para_2.bullet_5")</li>
+ </ul>
+ <p class="govuk-body">@messages("help.online_terms.organisations.secure_file_transfer.para_3")</p>
+ <ul class="govuk-list govuk-list--bullet">
+  <li>@messages("help.online_terms.organisations.secure_file_transfer.para_3.bullet_1")</li>
+  <li>@messages("help.online_terms.organisations.secure_file_transfer.para_3.bullet_2")</li>
+  <li>@messages("help.online_terms.organisations.secure_file_transfer.para_3.bullet_3")</li>
+  <li>@messages("help.online_terms.organisations.secure_file_transfer.para_3.bullet_4")</li>
+  <li>@messages("help.online_terms.organisations.secure_file_transfer.para_3.bullet_5")</li>
+ </ul>
+ <p class="govuk-body">
+  @messages("help.online_terms.organisations.secure_file_transfer.para_4.part_1")
+  <a href="https://online.hmrc.gov.uk/information/helpdesk">@messages("help.online_terms.organisations.secure_file_transfer.para_4.link_text")</a>@messages("help.online_terms.organisations.secure_file_transfer.para_4.part_2")
+ </p>
+
+ <h2 class="govuk-heading-l" id="agents">@messages("help.online_terms.agents.heading")</h2>
+ <p class="govuk-body">@messages("help.online_terms.agents.para_1")</p>
+
+ <h3 class="govuk-heading-m">@messages("help.online_terms.agents.authorisation.heading")</h3>
+ <p class="govuk-body">@messages("help.online_terms.agents.authorisation.para_1")</p>
+ <p class="govuk-body">@messages("help.online_terms.agents.authorisation.para_2")</p>
+ <p class="govuk-body">@messages("help.online_terms.agents.authorisation.para_3")</p>
+
+ <h3 class="govuk-heading-m">@messages("help.online_terms.agents.online_filing.heading")</h3>
+ <p class="govuk-body">@messages("help.online_terms.agents.online_filing.para_1")</p>
+ <p class="govuk-body">@messages("help.online_terms.agents.online_filing.para_2")</p>
+ <p class="govuk-body">@messages("help.online_terms.agents.online_filing.para_3")</p>
+
+ <h3 class="govuk-heading-m">@messages("help.online_terms.agents.service_access.heading")</h3>
+ <p class="govuk-body">@messages("help.online_terms.agents.service_access.para_1")</p>
+
+ <h2 class="govuk-heading-l" id="shared-workspace">@messages("help.online_terms.shared_workspace.heading")</h2>
+ <p class="govuk-body">@messages("help.online_terms.shared_workspace.para_1")</p>
+ <p class="govuk-body">@messages("help.online_terms.shared_workspace.para_2")</p>
+ <p class="govuk-body">@messages("help.online_terms.shared_workspace.para_3")</p>
+ <ul class="govuk-list govuk-list--bullet">
+  <li>@messages("help.online_terms.shared_workspace.para_3.bullet_1")</li>
+  <li>@messages("help.online_terms.shared_workspace.para_3.bullet_2")</li>
+  <li>@messages("help.online_terms.shared_workspace.para_3.bullet_3")</li>
+  <li>@messages("help.online_terms.shared_workspace.para_3.bullet_4")</li>
+  <li>@messages("help.online_terms.shared_workspace.para_3.bullet_5")</li>
+  <li>@messages("help.online_terms.shared_workspace.para_3.bullet_6")</li>
+  <li>@messages("help.online_terms.shared_workspace.para_3.bullet_7")</li>
+  <li>@messages("help.online_terms.shared_workspace.para_3.bullet_8")</li>
+  <li>@messages("help.online_terms.shared_workspace.para_3.bullet_9")</li>
+ </ul>
+ <p class="govuk-body">@messages("help.online_terms.shared_workspace.para_4")</p>
+ <p class="govuk-body">
+  @messages("help.online_terms.shared_workspace.para_5.part_1")
+  <a href="http://www.hmrc.gov.uk/manuals/swmanual/SW03370.htm">@messages("help.online_terms.shared_workspace.para_5.link_text")</a>
+  @messages("help.online_terms.shared_workspace.para_5.part_2")
+ </p>
+ <p class="govuk-body">@messages("help.online_terms.shared_workspace.para_6")</p>
+ <p class="govuk-body">@messages("help.online_terms.shared_workspace.para_7")</p>
+ <ul class="govuk-list govuk-list--bullet">
+  <li>@messages("help.online_terms.shared_workspace.para_7.bullet_1")</li>
+  <li>@messages("help.online_terms.shared_workspace.para_7.bullet_2")</li>
+  <li>@messages("help.online_terms.shared_workspace.para_7.bullet_3")</li>
+ </ul>
+ <p class="govuk-body">@messages("help.online_terms.shared_workspace.para_8")</p>
+ <p class="govuk-body">@messages("help.online_terms.shared_workspace.para_9")</p>
+ <p class="govuk-body">
+  @messages("help.online_terms.shared_workspace.para_10.part_1")
+  <a href="http://www.hmrc.gov.uk/terms/">@messages("help.online_terms.shared_workspace.para_10.link_text")</a>@messages("help.online_terms.shared_workspace.para_10.part_2")
+ </p>
+}

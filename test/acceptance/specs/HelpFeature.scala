@@ -16,7 +16,7 @@
 
 package acceptance.specs
 
-import acceptance.pages.{EnglishCookiesPage, PrivacyPage, TermsAndConditionsPage}
+import acceptance.pages.{EnglishCookiesPage, OnlineServicesTermsPage, PrivacyPage, TermsAndConditionsPage}
 
 class HelpFeature extends BaseSpec {
   Feature("Help") {
@@ -57,6 +57,25 @@ class HelpFeature extends BaseSpec {
 
       And("I am shown terms and conditions related content")
       TermsAndConditionsPage.disclaimerText shouldBe "Disclaimer"
+    }
+
+    Scenario("Navigate to the online services terms and conditions page") {
+      Given("I go to the online services terms and conditions page")
+      go to OnlineServicesTermsPage
+
+      Then("I am shown the online services terms and conditions page")
+      eventually {
+        pageTitle should be("HMRC Online Services Terms & conditions – GOV.UK")
+      }
+
+      And("I am shown online services terms and conditions related content")
+      OnlineServicesTermsPage.subHeadings.toList shouldBe List(
+        "All individuals, organisations and agents",
+        "Additional points for individuals",
+        "Additional points for organisations",
+        "Additional points for agents, accountant and representatives",
+        "All Shared Workspace users"
+      )
     }
   }
 }

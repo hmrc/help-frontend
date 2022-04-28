@@ -29,37 +29,103 @@ import uk.gov.hmrc.helpfrontend.controllers.HelpController
 import unit.helpers.JsoupHelpers
 
 class HelpControllerSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite with JsoupHelpers {
-  override def fakeApplication(): Application =
+  def applicationFromConfig(pageEnabled: Boolean = true) =
     new GuiceApplicationBuilder()
       .configure(
-        "metrics.jvm"     -> false,
-        "metrics.enabled" -> false
+        "metrics.jvm"                         -> false,
+        "metrics.enabled"                     -> false,
+        "onlineTermsAndConditions.enablePage" -> pageEnabled
       )
       .build()
 
   private val fakeRequest = FakeRequest("GET", "/")
 
-  private val controller = app.injector.instanceOf[HelpController]
-
   "GET /" should {
     "return 200" in {
-      val result = controller.cookieDetails(fakeRequest)
+      val app        = applicationFromConfig(true)
+      val controller = app.injector.instanceOf[HelpController]
+      val result     = controller.cookieDetails(fakeRequest)
+
       status(result) mustBe Status.OK
     }
 
     "return HTML" in {
-      val result = controller.cookieDetails(fakeRequest)
+      val app        = applicationFromConfig()
+      val controller = app.injector.instanceOf[HelpController]
+      val result     = controller.cookieDetails(fakeRequest)
+
       contentType(result) mustBe Some("text/html")
       charset(result) mustBe Some("utf-8")
     }
 
     "return the correct content" in {
-      val result  = controller.cookieDetails(fakeRequest)
-      val content = Jsoup.parse(contentAsString(result))
+      val app        = applicationFromConfig()
+      val controller = app.injector.instanceOf[HelpController]
+      val result     = controller.cookieDetails(fakeRequest)
+      val content    = Jsoup.parse(contentAsString(result))
 
       val headers = content.select("h1")
       headers.size mustBe 1
       headers.first.text mustBe "Cookies"
     }
   }
+
+  "GET /terms-and-conditions/online-services" should {
+    "return 200 if enabled in config" in {
+      val app        = applicationFromConfig()
+      val controller = app.injector.instanceOf[HelpController]
+      val result     = controller.onlineServicesTerms(fakeRequest)
+
+      status(result) mustBe Status.OK
+    }
+
+    "return HTML if enabled in config" in {
+      val app        = applicationFromConfig()
+      val controller = app.injector.instanceOf[HelpController]
+      val result     = controller.onlineServicesTerms(fakeRequest)
+
+      contentType(result) mustBe Some("text/html")
+      charset(result) mustBe Some("utf-8")
+    }
+
+    "return the correct content if enabled in config" in {
+      val app        = applicationFromConfig()
+      val controller = app.injector.instanceOf[HelpController]
+      val result     = controller.onlineServicesTerms(fakeRequest)
+      val content    = Jsoup.parse(contentAsString(result))
+
+      val headers = content.select("h1")
+      headers.size mustBe 1
+      headers.first.text mustBe "HMRC Online Services Terms & conditions"
+    }
+
+    "return 404 if disabled in config" in {
+      val app        = applicationFromConfig(pageEnabled = false)
+      val controller = app.injector.instanceOf[HelpController]
+      val result     = controller.onlineServicesTerms(fakeRequest)
+
+      status(result) mustBe Status.NOT_FOUND
+    }
+
+    "return HTML if disabled in config" in {
+      val app        = applicationFromConfig(pageEnabled = false)
+      val controller = app.injector.instanceOf[HelpController]
+      val result     = controller.onlineServicesTerms(fakeRequest)
+
+      contentType(result) mustBe Some("text/html")
+      charset(result) mustBe Some("utf-8")
+    }
+
+    "return the correct content if disabled in config" in {
+      val app        = applicationFromConfig(pageEnabled = false)
+      val controller = app.injector.instanceOf[HelpController]
+      val result     = controller.onlineServicesTerms(fakeRequest)
+      val content    = Jsoup.parse(contentAsString(result))
+
+      val headers = content.select("h1")
+      headers.size mustBe 1
+      headers.first.text mustBe "Page not found"
+    }
+  }
+
 }
