@@ -218,6 +218,8 @@ help.cookies.how_used.digital_assistant.table.JSESSIONID.name=JSESSIONID
 help.cookies.how_used.digital_assistant.table.JSESSIONID.purpose=Cwci a ddefnyddir wrth olrhain sesiwn. Gan fod HTTP yn brotocol heb gyflwr, mae’r cwci’n cael ei greu i alluogi’r rhaglen sgwrsio dros y we i gadw cyflwr y sesiwn ar ochr y gweinydd.
 help.cookies.how_used.digital_assistant.table.JSESSIONID.expires=Pan fyddwch yn cau eich porwr
 
+help.online_terms.heading=Welsh title T&C placeholder
+
 help.links.privacy_policy.text.lower_case=polisi preifatrwydd
 help.links.terms_and_conditions.text.lower_case=telerau ac amodau
 help.links.hmrc.terms_and_conditions.url=https://online.hmrc.gov.uk/information/terms

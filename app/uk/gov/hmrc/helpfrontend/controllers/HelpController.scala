@@ -16,15 +16,16 @@
 
 package uk.gov.hmrc.helpfrontend.controllers
 
-import javax.inject.{Inject, Singleton}
+import play.api.i18n.I18nSupport
 import play.api.mvc._
-import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
+import play.i18n.MessagesApi
 import uk.gov.hmrc.helpfrontend.config.AppConfig
-import uk.gov.hmrc.helpfrontend.views.html.OnlineServicesTermsPage
-import uk.gov.hmrc.helpfrontend.views.html.TermsAndConditionsPage
-import uk.gov.hmrc.helpfrontend.views.html.NotFoundPage
-import uk.gov.hmrc.helpfrontend.views.html.PrivacyPage
-import uk.gov.hmrc.helpfrontend.views.html.CookiesPage
+import uk.gov.hmrc.helpfrontend.views.html._
+import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
+
+import javax.inject.{Inject, Singleton}
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.util.{Failure, Success, Try};
 
 @Singleton
 class HelpController @Inject() (
@@ -34,8 +35,10 @@ class HelpController @Inject() (
   onlineServicesTermsPage: OnlineServicesTermsPage,
   privacyPage: PrivacyPage,
   cookiesPage: CookiesPage,
-  notFoundPage: NotFoundPage
-) extends FrontendController(mcc) {
+  notFoundPage: NotFoundPage,
+  messagesApi: MessagesApi
+) extends FrontendController(mcc)
+    with I18nSupport {
 
   implicit val config: AppConfig = appConfig
 
@@ -58,11 +61,21 @@ class HelpController @Inject() (
     Ok(cookiesPage())
   }
 
-  val onlineServicesTerms: Action[AnyContent] = Action { implicit request =>
-    if (appConfig.enableOnlineTAndCPage) {
-      Ok(onlineServicesTermsPage())
-    } else {
-      NotFound(notFoundPage())
+  def maybeOverrideLang[A](newLang: Option[String])(action: Action[A]): Action[A] = Action.async(action.parser) {
+    initialRequest =>
+      Try(initialRequest.withTransientLang(newLang.get)) match {
+        case Success(changedRequest) => action(changedRequest).map(_.withLang(changedRequest.lang))
+        case Failure(_)              => action(initialRequest)
+      }
+  }
+
+  def onlineServicesTerms(lang: Option[String] = None): Action[AnyContent] = maybeOverrideLang(lang.map(_.take(2))) {
+    Action { implicit request =>
+      if (appConfig.enableOnlineTAndCPage) {
+        Ok(onlineServicesTermsPage())
+      } else {
+        NotFound(notFoundPage())
+      }
     }
   }
 }

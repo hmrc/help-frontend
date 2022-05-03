@@ -4,6 +4,6 @@
 GET        /cookies                                 uk.gov.hmrc.helpfrontend.controllers.HelpController.cookies
 GET        /cookie-details                          uk.gov.hmrc.helpfrontend.controllers.HelpController.cookieDetails
 GET        /privacy                                 uk.gov.hmrc.helpfrontend.controllers.HelpController.privacy
-GET        /terms-and-conditions/online-services    uk.gov.hmrc.helpfrontend.controllers.HelpController.onlineServicesTerms
+GET        /terms-and-conditions/online-services    uk.gov.hmrc.helpfrontend.controllers.HelpController.onlineServicesTerms(lang: Option[String])
 GET        /terms-and-conditions                    uk.gov.hmrc.helpfrontend.controllers.HelpController.termsAndConditions
 
