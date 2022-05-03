@@ -30,8 +30,9 @@ trait AcceptanceTestServer extends TestSuiteMixin with GuiceFakeApplicationFacto
   implicit lazy val app: Application = new GuiceApplicationBuilder()
     .configure(
       Map(
-        "metrics.enabled"  -> false,
-        "auditing.enabled" -> false
+        "metrics.enabled"                     -> false,
+        "auditing.enabled"                    -> false,
+        "onlineTermsAndConditions.enablePage" -> true
       )
     )
     .disable[com.kenshoo.play.metrics.PlayModule]

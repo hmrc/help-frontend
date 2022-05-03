@@ -227,4 +227,9 @@ language-switcher.english.hover=Use this account in English
 language-switcher.welsh=Cymraeg
 language-switcher.welsh.hover=Defnyddio’r cyfrif hwn yn Cymraeg
 
+notFound.pageTitle=Heb ddod o hyd i’r dudalen – GOV.UK
+notFound.heading=Heb ddod o hyd i’r dudalen
+notFound.paragraph1=Os gwnaethoch deipio’r cyfeiriad gwe, dylech wirio ei fod yn gywir.
+notFound.paragraph2=Os gwnaethoch bastio’r cyfeiriad gwe, dylech wirio’ch bod wedi copïo’r cyfeiriad yn llawn.
+
 general.fullstop=.

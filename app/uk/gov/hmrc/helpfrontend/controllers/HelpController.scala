@@ -20,7 +20,9 @@ import javax.inject.{Inject, Singleton}
 import play.api.mvc._
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 import uk.gov.hmrc.helpfrontend.config.AppConfig
+import uk.gov.hmrc.helpfrontend.views.html.OnlineServicesTermsPage
 import uk.gov.hmrc.helpfrontend.views.html.TermsAndConditionsPage
+import uk.gov.hmrc.helpfrontend.views.html.NotFoundPage
 import uk.gov.hmrc.helpfrontend.views.html.PrivacyPage
 import uk.gov.hmrc.helpfrontend.views.html.CookiesPage
 
@@ -29,8 +31,10 @@ class HelpController @Inject() (
   appConfig: AppConfig,
   mcc: MessagesControllerComponents,
   termsAndConditionsPage: TermsAndConditionsPage,
+  onlineServicesTermsPage: OnlineServicesTermsPage,
   privacyPage: PrivacyPage,
-  cookiesPage: CookiesPage
+  cookiesPage: CookiesPage,
+  notFoundPage: NotFoundPage
 ) extends FrontendController(mcc) {
 
   implicit val config: AppConfig = appConfig
@@ -52,5 +56,13 @@ class HelpController @Inject() (
 
   val cookieDetails: Action[AnyContent] = Action { implicit request =>
     Ok(cookiesPage())
+  }
+
+  val onlineServicesTerms: Action[AnyContent] = Action { implicit request =>
+    if (appConfig.enableOnlineTAndCPage) {
+      Ok(onlineServicesTermsPage())
+    } else {
+      NotFound(notFoundPage())
+    }
   }
 }
