@@ -18,51 +18,44 @@ package unit.controllers
 
 import org.jsoup.Jsoup
 import org.scalatest.matchers.must.Matchers
-import play.api.http.Status
-import play.api.test.Helpers._
-import org.scalatestplus.play.guice.GuiceOneAppPerSuite
 import org.scalatest.wordspec.AnyWordSpec
-import play.api.Application
+import org.scalatestplus.play.guice.GuiceOneAppPerSuite
+import play.api.http.Status
+import play.api.mvc.Cookie
 import play.api.inject.guice.GuiceApplicationBuilder
+import play.api.mvc.AnyContentAsEmpty
 import play.api.test.FakeRequest
+import play.api.test.Helpers._
 import uk.gov.hmrc.helpfrontend.controllers.HelpController
 import unit.helpers.JsoupHelpers
 
-class HelpControllerSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite with JsoupHelpers {
-  def applicationFromConfig(pageEnabled: Boolean = true) =
-    new GuiceApplicationBuilder()
-      .configure(
-        "metrics.jvm"                         -> false,
-        "metrics.enabled"                     -> false,
-        "onlineTermsAndConditions.enablePage" -> pageEnabled
-      )
-      .build()
+import scala.concurrent.Await
+import scala.concurrent.duration.DurationInt
+import scala.language.postfixOps
 
-  private val fakeRequest = FakeRequest("GET", "/")
+class HelpControllerSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite with JsoupHelpers {
+  private val fakeRequest: FakeRequest[AnyContentAsEmpty.type] = FakeRequest("GET", "/")
+
+  private val fakeRequestWithLang: FakeRequest[AnyContentAsEmpty.type] =
+    FakeRequest("GET", "/").withCookies(Cookie("PLAY_LANG", "cy"))
 
   "GET /" should {
-    "return 200" in {
-      val app        = applicationFromConfig(true)
-      val controller = app.injector.instanceOf[HelpController]
-      val result     = controller.cookieDetails(fakeRequest)
+    "return 200" in new ControllerContext() {
+      val result = controller.cookieDetails(fakeRequest)
 
       status(result) mustBe Status.OK
     }
 
-    "return HTML" in {
-      val app        = applicationFromConfig()
-      val controller = app.injector.instanceOf[HelpController]
-      val result     = controller.cookieDetails(fakeRequest)
+    "return HTML" in new ControllerContext() {
+      val result = controller.cookieDetails(fakeRequest)
 
       contentType(result) mustBe Some("text/html")
       charset(result) mustBe Some("utf-8")
     }
 
-    "return the correct content" in {
-      val app        = applicationFromConfig()
-      val controller = app.injector.instanceOf[HelpController]
-      val result     = controller.cookieDetails(fakeRequest)
-      val content    = Jsoup.parse(contentAsString(result))
+    "return the correct content" in new ControllerContext() {
+      val result  = controller.cookieDetails(fakeRequest)
+      val content = Jsoup.parse(contentAsString(result))
 
       val headers = content.select("h1")
       headers.size mustBe 1
@@ -71,61 +64,104 @@ class HelpControllerSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSu
   }
 
   "GET /terms-and-conditions/online-services" should {
-    "return 200 if enabled in config" in {
-      val app        = applicationFromConfig()
-      val controller = app.injector.instanceOf[HelpController]
-      val result     = controller.onlineServicesTerms(fakeRequest)
+    "return 200 if enabled in config" in new ControllerContext() {
+      val result = controller.onlineServicesTerms()(fakeRequest)
 
       status(result) mustBe Status.OK
     }
 
-    "return HTML if enabled in config" in {
-      val app        = applicationFromConfig()
-      val controller = app.injector.instanceOf[HelpController]
-      val result     = controller.onlineServicesTerms(fakeRequest)
+    "return HTML if enabled in config" in new ControllerContext() {
+      val result = controller.onlineServicesTerms()(fakeRequest)
 
       contentType(result) mustBe Some("text/html")
       charset(result) mustBe Some("utf-8")
     }
 
-    "return the correct content if enabled in config" in {
-      val app        = applicationFromConfig()
-      val controller = app.injector.instanceOf[HelpController]
-      val result     = controller.onlineServicesTerms(fakeRequest)
-      val content    = Jsoup.parse(contentAsString(result))
+    "return the correct content if enabled in config" in new ControllerContext() {
+      val result  = controller.onlineServicesTerms()(fakeRequest)
+      val content = Jsoup.parse(contentAsString(result))
 
       val headers = content.select("h1")
       headers.size mustBe 1
       headers.first.text mustBe "HMRC Online Services Terms & conditions"
     }
 
-    "return 404 if disabled in config" in {
-      val app        = applicationFromConfig(pageEnabled = false)
-      val controller = app.injector.instanceOf[HelpController]
-      val result     = controller.onlineServicesTerms(fakeRequest)
+    "return 404 if disabled in config" in new ControllerContext(pageEnabled = false) {
+      val result = controller.onlineServicesTerms()(fakeRequest)
 
       status(result) mustBe Status.NOT_FOUND
     }
 
-    "return HTML if disabled in config" in {
-      val app        = applicationFromConfig(pageEnabled = false)
-      val controller = app.injector.instanceOf[HelpController]
-      val result     = controller.onlineServicesTerms(fakeRequest)
+    "return HTML if disabled in config" in new ControllerContext(pageEnabled = false) {
+      val result = controller.onlineServicesTerms()(fakeRequest)
 
       contentType(result) mustBe Some("text/html")
       charset(result) mustBe Some("utf-8")
     }
 
-    "return the correct content if disabled in config" in {
-      val app        = applicationFromConfig(pageEnabled = false)
-      val controller = app.injector.instanceOf[HelpController]
-      val result     = controller.onlineServicesTerms(fakeRequest)
-      val content    = Jsoup.parse(contentAsString(result))
+    "return the correct content if disabled in config" in new ControllerContext(pageEnabled = false) {
+      val result  = controller.onlineServicesTerms()(fakeRequest)
+      val content = Jsoup.parse(contentAsString(result))
 
       val headers = content.select("h1")
       headers.size mustBe 1
       headers.first.text mustBe "Page not found"
     }
+
+    "return 200 if a lang parameter is included in the request" in new ControllerContext() {
+      val result = controller.onlineServicesTerms(Some("cym"))(fakeRequest)
+
+      status(result) mustBe Status.OK
+    }
+
+    "set the language cookie and render content in English when the url parameter is lang=eng" in new ControllerContext() {
+      val result  = controller.onlineServicesTerms(Some("eng"))(fakeRequest)
+      val content = Jsoup.parse(contentAsString(result))
+
+      val headers = content.select("h1")
+      headers.size mustBe 1
+      headers.first.text mustBe "HMRC Online Services Terms & conditions"
+
+      val awaitResult = Await.result(result, 2 second)
+      awaitResult.newCookies.find(_.name == "PLAY_LANG").map(_.value) mustBe Some("en")
+    }
+
+    "set the language cookie and render content in Welsh when the url parameter is lang=cym" in new ControllerContext() {
+      val result  = controller.onlineServicesTerms(Some("cym"))(fakeRequest)
+      val content = Jsoup.parse(contentAsString(result))
+
+      val headers = content.select("h1")
+      headers.size mustBe 1
+      headers.first.text mustBe "Welsh title T&C placeholder"
+
+      val awaitResult = Await.result(result, 2 second)
+      awaitResult.newCookies.find(_.name == "PLAY_LANG").map(_.value) mustBe Some("cy")
+    }
+
+    "render content in current language if the lang parameter value is unsupported" in new ControllerContext() {
+      val result  = controller.onlineServicesTerms(Some("foo"))(fakeRequestWithLang)
+      val content = Jsoup.parse(contentAsString(result))
+
+      val headers = content.select("h1")
+      headers.size mustBe 1
+      headers.first.text mustBe "Welsh title T&C placeholder"
+
+      val awaitResult = Await.result(result, 2 second)
+      awaitResult.newCookies.find(_.name == "PLAY_LANG").map(_.value) mustBe Some("cy")
+    }
+  }
+
+  private class ControllerContext(pageEnabled: Boolean = true) {
+
+    val applicationFromContext = new GuiceApplicationBuilder()
+      .configure(
+        "metrics.jvm"                         -> false,
+        "metrics.enabled"                     -> false,
+        "onlineTermsAndConditions.enablePage" -> pageEnabled
+      )
+      .build()
+    val controller             = applicationFromContext.injector.instanceOf[HelpController]
+
   }
 
 }
