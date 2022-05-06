@@ -65,7 +65,7 @@ class HelpFeature extends BaseSpec {
 
       Then("I am shown the online services terms and conditions page")
       eventually {
-        pageTitle should be("HMRC Online Services Terms & conditions – GOV.UK")
+        pageTitle should be("HMRC Online Services Terms & Conditions – GOV.UK")
       }
 
       And("I am shown online services terms and conditions related content")

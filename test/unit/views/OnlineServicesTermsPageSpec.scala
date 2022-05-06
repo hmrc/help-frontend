@@ -51,12 +51,12 @@ class OnlineServicesTermsPageSpec
       .build()
 
   "Online Services Terms and conditions" must {
-    "have a title of 'HMRC Online Services Terms & conditions – GOV.UK'" in new Fixture {
-      view.select("title").text mustBe "HMRC Online Services Terms & conditions – GOV.UK"
+    "have a title of 'HMRC Online Services Terms & Conditions – GOV.UK'" in new Fixture {
+      view.select("title").text mustBe "HMRC Online Services Terms & Conditions – GOV.UK"
     }
 
-    "have a heading of 'HMRC Online Services Terms & conditions'" in new Fixture {
-      view.select("#online-services-terms-heading").text mustBe "HMRC Online Services Terms & conditions"
+    "have a heading of 'HMRC Online Services Terms & Conditions'" in new Fixture {
+      view.select("#online-services-terms-heading").text mustBe "HMRC Online Services Terms & Conditions"
     }
 
     "have the expected section headings" in new Fixture {
