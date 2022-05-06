@@ -395,7 +395,7 @@ help.online_terms.shared_workspace.para_8=Defnyddir unrhyw wybodaeth a gesglir d
 help.online_terms.shared_workspace.para_9=Caiff pob risg Technoleg Gwybodaeth (TG) eu canfod, rheoli a’u cymeradwyo gan uwch swyddog CThEM. Cyflawnir asesiadau risg yn rheolaidd ac yn annibynnol ar gyfer Gweithle sy’n cael ei Rannu.
 help.online_terms.shared_workspace.para_10.part_1=Mae unrhyw gyfrifoldebau a rhwymedigaethau sydd gan CThEM tuag atoch wrth ddarparu’r gwasanaeth hwn ac unrhyw wasanaethau cysylltiedig wedi’u cyfyngu fel sydd wedi’u nodi yn
 help.online_terms.shared_workspace.para_10.link_text=Ymwadiad
-help.online_terms.shared_workspace.para_10.part_2=CThEM.
+help.online_terms.shared_workspace.para_10.part_2=' CThEM.'
 
 help.links.privacy_policy.text.lower_case=polisi preifatrwydd
 help.links.terms_and_conditions.text.lower_case=telerau ac amodau
