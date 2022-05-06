@@ -83,7 +83,7 @@ class HelpControllerSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSu
 
       val headers = content.select("h1")
       headers.size mustBe 1
-      headers.first.text mustBe "HMRC Online Services Terms & conditions"
+      headers.first.text mustBe "HMRC Online Services Terms & Conditions"
     }
 
     "return 404 if disabled in config" in new ControllerContext(pageEnabled = false) {
@@ -120,7 +120,7 @@ class HelpControllerSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSu
 
       val headers = content.select("h1")
       headers.size mustBe 1
-      headers.first.text mustBe "HMRC Online Services Terms & conditions"
+      headers.first.text mustBe "HMRC Online Services Terms & Conditions"
 
       val awaitResult = Await.result(result, 2 second)
       awaitResult.newCookies.find(_.name == "PLAY_LANG").map(_.value) mustBe Some("en")

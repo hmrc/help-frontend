@@ -218,8 +218,8 @@ help.cookies.how_used.digital_assistant.table.JSESSIONID.name=JSESSIONID
 help.cookies.how_used.digital_assistant.table.JSESSIONID.purpose=Cookie used in session tracking. Since HTTP is a stateless protocol, the cookie is created to enable the web chat application to keep the state of the session on the server side.
 help.cookies.how_used.digital_assistant.table.JSESSIONID.expires=When you close your browser
 
-help.online_terms.title=HMRC Online Services Terms & conditions – GOV.UK
-help.online_terms.heading=HMRC Online Services Terms & conditions
+help.online_terms.title=HMRC Online Services Terms & Conditions – GOV.UK
+help.online_terms.heading=HMRC Online Services Terms & Conditions
 help.online_terms.all.heading=All individuals, organisations and agents
 help.online_terms.all.para_1.part_1=HM Revenue and Customs (HMRC) Online Services allow Individuals to send information over the Internet (for example Self Assessment tax return, application for VAT Registration), view records online (for example Self Assessment Statement) and make payments. In the future, additional services and features may be added. You will find full details of the services that are currently available on the HMRC
 help.online_terms.all.para_1.link_text=Online Services
