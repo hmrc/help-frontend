@@ -49,23 +49,20 @@ class MessagesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite {
       messagesApi.messages.keys must contain theSameElementsAs Vector("en", "cy", "default", "default.play")
     }
 
-    /* Temporarily disabled as part of PLATUI-1708 whilst waiting Welsh translations    "have messages for default and cy only" in {
+    "have messages for default and cy only" in {
       messagesApi.messages("en").size mustBe 0
       val englishMessageCount = messagesApi.messages("default").size
       messagesApi.messages("cy").size mustBe englishMessageCount
       messagesApi.messages("default.play").size mustBe 44
     }
-     */
   }
 
   "All message files" should {
-    /* Temporarily disabled as part of PLATUI-1708 whilst waiting Welsh translations
     "have the same set of keys" in {
       withClue(describeMismatch(defaultMessages.keySet, welshMessages.keySet)) {
         welshMessages.keySet mustBe defaultMessages.keySet
       }
     }
-     */
     "have a non-empty message for each key" in {
       assertNonEmptyValuesForDefaultMessages()
       assertNonEmptyValuesForWelshMessages()

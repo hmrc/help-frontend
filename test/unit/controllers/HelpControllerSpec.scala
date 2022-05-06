@@ -132,7 +132,7 @@ class HelpControllerSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSu
 
       val headers = content.select("h1")
       headers.size mustBe 1
-      headers.first.text mustBe "Welsh title T&C placeholder"
+      headers.first.text mustBe "Telerau ac Amodau Gwasanaethau ar-lein CThEM"
 
       val awaitResult = Await.result(result, 2 second)
       awaitResult.newCookies.find(_.name == "PLAY_LANG").map(_.value) mustBe Some("cy")
@@ -144,7 +144,7 @@ class HelpControllerSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSu
 
       val headers = content.select("h1")
       headers.size mustBe 1
-      headers.first.text mustBe "Welsh title T&C placeholder"
+      headers.first.text mustBe "Telerau ac Amodau Gwasanaethau ar-lein CThEM"
 
       val awaitResult = Await.result(result, 2 second)
       awaitResult.newCookies.find(_.name == "PLAY_LANG").map(_.value) mustBe Some("cy")
