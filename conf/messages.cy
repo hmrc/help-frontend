@@ -399,7 +399,7 @@ help.online_terms.shared_workspace.para_10.part_2=' CThEM.'
 
 help.links.privacy_policy.text.lower_case=polisi preifatrwydd
 help.links.terms_and_conditions.text.lower_case=telerau ac amodau
-help.links.hmrc.terms_and_conditions.url=https://online.hmrc.gov.uk/information/terms
+help.links.hmrc.terms_and_conditions.url=/help/terms-and-conditions/online-services
 
 language-switcher.english=English
 language-switcher.english.hover=Use this account in English

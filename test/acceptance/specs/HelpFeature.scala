@@ -59,6 +59,18 @@ class HelpFeature extends BaseSpec {
 
       And("I am shown terms and conditions related content")
       TermsAndConditionsPage.disclaimerText shouldBe "Disclaimer"
+
+      And("I am shown links to related content")
+      OnlineServicesTermsPage.links.map(url => new URI(url)).map(_.getPath) shouldBe List(
+        "/help/privacy",
+        "/help/terms-and-conditions",
+        "/help/terms-and-conditions/online-services",
+        "/security/index.htm",
+        "/copyright/index.htm",
+        "/terms/agents.htm",
+        "/help/privacy",
+        "/contact/report-technical-problem"
+      )
     }
 
     Scenario("Navigate to the online services terms and conditions page") {
