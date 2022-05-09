@@ -18,14 +18,13 @@ package uk.gov.hmrc.helpfrontend.controllers
 
 import play.api.i18n.I18nSupport
 import play.api.mvc._
-import play.i18n.MessagesApi
 import uk.gov.hmrc.helpfrontend.config.AppConfig
 import uk.gov.hmrc.helpfrontend.views.html._
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 
 import javax.inject.{Inject, Singleton}
 import scala.concurrent.ExecutionContext.Implicits.global
-import scala.util.{Failure, Success, Try};
+import scala.util.{Failure, Success, Try}
 
 @Singleton
 class HelpController @Inject() (
@@ -34,9 +33,7 @@ class HelpController @Inject() (
   termsAndConditionsPage: TermsAndConditionsPage,
   onlineServicesTermsPage: OnlineServicesTermsPage,
   privacyPage: PrivacyPage,
-  cookiesPage: CookiesPage,
-  notFoundPage: NotFoundPage,
-  messagesApi: MessagesApi
+  cookiesPage: CookiesPage
 ) extends FrontendController(mcc)
     with I18nSupport {
 
@@ -61,21 +58,17 @@ class HelpController @Inject() (
     Ok(cookiesPage())
   }
 
-  def maybeOverrideLang[A](newLang: Option[String])(action: Action[A]): Action[A] = Action.async(action.parser) {
-    initialRequest =>
+  private def maybeOverrideLang[A](newLang: Option[String])(action: Action[A]): Action[A] =
+    Action.async(action.parser) { initialRequest =>
       Try(initialRequest.withTransientLang(newLang.get)) match {
         case Success(changedRequest) => action(changedRequest).map(_.withLang(changedRequest.lang))
         case Failure(_)              => action(initialRequest)
       }
-  }
+    }
 
   def onlineServicesTerms(lang: Option[String] = None): Action[AnyContent] = maybeOverrideLang(lang.map(_.take(2))) {
     Action { implicit request =>
-      if (appConfig.enableOnlineTAndCPage) {
-        Ok(onlineServicesTermsPage())
-      } else {
-        NotFound(notFoundPage())
-      }
+      Ok(onlineServicesTermsPage())
     }
   }
 }

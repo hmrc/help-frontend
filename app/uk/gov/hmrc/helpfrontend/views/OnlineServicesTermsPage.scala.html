@@ -4,7 +4,7 @@
 @this(layout: Layout, newTabLink: NewTabLink)
 
 @()(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
-@layout(pageTitle = Some(messages("help.online_terms.title")), isTranslated = appConfig.enableOnlineTAndCLanguageToggle) {
+@layout(pageTitle = Some(messages("help.online_terms.title"))) {
  <h1 class="govuk-heading-xl" id="online-services-terms-heading">@messages("help.online_terms.heading")</h1>
 
  <h2 class="govuk-heading-l" id="all-individuals-organisations-agents">@messages("help.online_terms.all.heading")</h2>

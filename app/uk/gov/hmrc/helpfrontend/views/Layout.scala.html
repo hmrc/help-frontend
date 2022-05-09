@@ -21,7 +21,7 @@
         hmrcReportTechnicalIssueHelper: HmrcReportTechnicalIssueHelper,
         hmrcLayout: HmrcLayout
 )
-@(pageTitle: Option[String] = None, isTranslated: Boolean = true)(contentBlock: Html)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
+@(pageTitle: Option[String] = None)(contentBlock: Html)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 
 @content = {
   @contentBlock
@@ -32,6 +32,6 @@
     pageTitle = pageTitle,
     displayHmrcBanner = true,
     nonce = CSPNonce.get,
-    isWelshTranslationAvailable = isTranslated,
+    isWelshTranslationAvailable = true,
     accessibilityStatementUrl = appConfig.accessibilityStatementUrl
 )(content)
