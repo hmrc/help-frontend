@@ -22,8 +22,13 @@ import org.scalatest.wordspec.AnyWordSpec
 import org.scalatestplus.play.guice.GuiceOneAppPerSuite
 import play.api.Application
 import play.api.inject.guice.GuiceApplicationBuilder
+import play.api.http.Status
 import play.api.test.FakeRequest
 import play.api.test.Helpers._
+
+import scala.concurrent.Await
+import scala.concurrent.duration.DurationInt
+import scala.language.postfixOps
 
 class OnlineServicesTermsSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite {
 
@@ -45,7 +50,7 @@ class OnlineServicesTermsSpec extends AnyWordSpec with Matchers with GuiceOneApp
 
       val headers = content.select("h1")
       headers.size mustBe 1
-      headers.first.text mustBe "HMRC Online Services Terms & conditions"
+      headers.first.text mustBe "HMRC Online Services Terms & Conditions"
     }
 
     "switch language using 'lang' query parameter" in {
@@ -53,11 +58,10 @@ class OnlineServicesTermsSpec extends AnyWordSpec with Matchers with GuiceOneApp
 
       val result = route(fakeApplication, request).get
 
-      val content = Jsoup.parse(contentAsString(result))
-
-      val headers = content.select("h1")
-      headers.size mustBe 1
-      headers.first.text mustBe "Welsh title T&C placeholder"
+      status(result) mustBe Status.SEE_OTHER
+      redirectLocation(result) mustBe Some(request.path)
+      val awaitResult = Await.result(result, 2 second)
+      awaitResult.newCookies.find(_.name == "PLAY_LANG").map(_.value) mustBe Some("cy")
     }
 
     "default language to English if unknown query parameter is provided" in {
@@ -69,7 +73,7 @@ class OnlineServicesTermsSpec extends AnyWordSpec with Matchers with GuiceOneApp
 
       val headers = content.select("h1")
       headers.size mustBe 1
-      headers.first.text mustBe "HMRC Online Services Terms & conditions"
+      headers.first.text mustBe "HMRC Online Services Terms & Conditions"
     }
   }
 }

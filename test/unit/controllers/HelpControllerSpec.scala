@@ -86,32 +86,20 @@ class HelpControllerSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSu
       headers.first.text mustBe "HMRC Online Services Terms & Conditions"
     }
 
-    "return 200 if a lang parameter is included in the request" in new ControllerContext() {
-      val result = controller.onlineServicesTerms(Some("cym"))(fakeRequest)
+    "redirect back to the same path without the lang query param and set the language cookie to English when the url parameter is lang=eng" in new ControllerContext() {
+      val result = controller.onlineServicesTerms(Some("eng"))(fakeRequest)
 
-      status(result) mustBe Status.OK
-    }
-
-    "set the language cookie and render content in English when the url parameter is lang=eng" in new ControllerContext() {
-      val result  = controller.onlineServicesTerms(Some("eng"))(fakeRequest)
-      val content = Jsoup.parse(contentAsString(result))
-
-      val headers = content.select("h1")
-      headers.size mustBe 1
-      headers.first.text mustBe "HMRC Online Services Terms & Conditions"
-
+      status(result) mustBe Status.SEE_OTHER
+      redirectLocation(result) mustBe Some(fakeRequest.path)
       val awaitResult = Await.result(result, 2 second)
       awaitResult.newCookies.find(_.name == "PLAY_LANG").map(_.value) mustBe Some("en")
     }
 
-    "set the language cookie and render content in Welsh when the url parameter is lang=cym" in new ControllerContext() {
-      val result  = controller.onlineServicesTerms(Some("cym"))(fakeRequest)
-      val content = Jsoup.parse(contentAsString(result))
+    "redirect back to the same path without the lang query param and set the language cookie to Welsh when the url parameter is lang=cym" in new ControllerContext() {
+      val result = controller.onlineServicesTerms(Some("cym"))(fakeRequest)
 
-      val headers = content.select("h1")
-      headers.size mustBe 1
-      headers.first.text mustBe "Telerau ac Amodau Gwasanaethau ar-lein CThEM"
-
+      status(result) mustBe Status.SEE_OTHER
+      redirectLocation(result) mustBe Some(fakeRequest.path)
       val awaitResult = Await.result(result, 2 second)
       awaitResult.newCookies.find(_.name == "PLAY_LANG").map(_.value) mustBe Some("cy")
     }
@@ -123,9 +111,6 @@ class HelpControllerSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSu
       val headers = content.select("h1")
       headers.size mustBe 1
       headers.first.text mustBe "Telerau ac Amodau Gwasanaethau ar-lein CThEM"
-
-      val awaitResult = Await.result(result, 2 second)
-      awaitResult.newCookies.find(_.name == "PLAY_LANG").map(_.value) mustBe Some("cy")
     }
   }
 
