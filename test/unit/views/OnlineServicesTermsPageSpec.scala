@@ -16,9 +16,7 @@
 
 package unit.views
 
-import org.jsoup.nodes.Element
 import org.mockito.scalatest.MockitoSugar
-import org.openqa.selenium.By
 import org.scalatest.matchers.must.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 import org.scalatestplus.play.guice.GuiceOneAppPerSuite
@@ -43,10 +41,8 @@ class OnlineServicesTermsPageSpec
   override def fakeApplication(): Application =
     new GuiceApplicationBuilder()
       .configure(
-        "metrics.jvm"                                   -> false,
-        "metrics.enabled"                               -> false,
-        "onlineTermsAndConditions.enablePage"           -> true,
-        "onlineTermsAndConditions.enableLanguageToggle" -> true
+        "metrics.jvm"     -> false,
+        "metrics.enabled" -> false
       )
       .build()
 
@@ -69,7 +65,7 @@ class OnlineServicesTermsPageSpec
       )
     }
 
-    "display a Welsh language toggle when enabled in config" in new Fixture {
+    "display a Welsh language toggle" in new Fixture {
       view.select(".hmrc-language-select").size() mustBe 1
     }
   }

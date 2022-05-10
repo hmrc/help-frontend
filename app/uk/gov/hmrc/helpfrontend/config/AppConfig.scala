@@ -31,10 +31,4 @@ class AppConfig @Inject() (config: Configuration, trackingConsentConfig: Trackin
 
   lazy val cookieSettingsUrl: String =
     s"$trackingConsentHost$cookieSettingsPath"
-
-  lazy val enableOnlineTAndCPage: Boolean =
-    config.get[Boolean]("onlineTermsAndConditions.enablePage")
-
-  lazy val enableOnlineTAndCLanguageToggle: Boolean =
-    config.get[Boolean]("onlineTermsAndConditions.enableLanguageToggle")
 }

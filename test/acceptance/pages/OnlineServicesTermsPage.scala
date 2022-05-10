@@ -24,8 +24,16 @@ object OnlineServicesTermsPage extends BasePage {
   override val url: String =
     TestConfiguration.url("help-frontend") + "/terms-and-conditions/online-services"
 
-  def subHeadings(implicit webDriver: WebDriver) = {
+  def subHeadings(implicit webDriver: WebDriver): Seq[String] = {
     val subHeadingElements = webDriver.findElements(By.className("govuk-heading-l")).asScala
     subHeadingElements.map(_.getText)
+  }
+
+  def links(implicit webDriver: WebDriver): Seq[String] = {
+    val linkElements = webDriver
+      .findElement(By.className("govuk-main-wrapper"))
+      .findElements(By.className("govuk-link"))
+      .asScala
+    linkElements.map(_.getAttribute("href"))
   }
 }

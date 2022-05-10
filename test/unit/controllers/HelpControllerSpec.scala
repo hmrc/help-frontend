@@ -86,28 +86,6 @@ class HelpControllerSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSu
       headers.first.text mustBe "HMRC Online Services Terms & Conditions"
     }
 
-    "return 404 if disabled in config" in new ControllerContext(pageEnabled = false) {
-      val result = controller.onlineServicesTerms()(fakeRequest)
-
-      status(result) mustBe Status.NOT_FOUND
-    }
-
-    "return HTML if disabled in config" in new ControllerContext(pageEnabled = false) {
-      val result = controller.onlineServicesTerms()(fakeRequest)
-
-      contentType(result) mustBe Some("text/html")
-      charset(result) mustBe Some("utf-8")
-    }
-
-    "return the correct content if disabled in config" in new ControllerContext(pageEnabled = false) {
-      val result  = controller.onlineServicesTerms()(fakeRequest)
-      val content = Jsoup.parse(contentAsString(result))
-
-      val headers = content.select("h1")
-      headers.size mustBe 1
-      headers.first.text mustBe "Page not found"
-    }
-
     "return 200 if a lang parameter is included in the request" in new ControllerContext() {
       val result = controller.onlineServicesTerms(Some("cym"))(fakeRequest)
 
@@ -151,13 +129,12 @@ class HelpControllerSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSu
     }
   }
 
-  private class ControllerContext(pageEnabled: Boolean = true) {
+  private class ControllerContext {
 
     val applicationFromContext = new GuiceApplicationBuilder()
       .configure(
-        "metrics.jvm"                         -> false,
-        "metrics.enabled"                     -> false,
-        "onlineTermsAndConditions.enablePage" -> pageEnabled
+        "metrics.jvm"     -> false,
+        "metrics.enabled" -> false
       )
       .build()
     val controller             = applicationFromContext.injector.instanceOf[HelpController]

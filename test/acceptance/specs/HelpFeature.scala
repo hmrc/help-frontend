@@ -18,6 +18,8 @@ package acceptance.specs
 
 import acceptance.pages.{EnglishCookiesPage, OnlineServicesTermsPage, PrivacyPage, TermsAndConditionsPage}
 
+import java.net.URI
+
 class HelpFeature extends BaseSpec {
   Feature("Help") {
     Scenario("Navigate to the cookies page") {
@@ -57,6 +59,18 @@ class HelpFeature extends BaseSpec {
 
       And("I am shown terms and conditions related content")
       TermsAndConditionsPage.disclaimerText shouldBe "Disclaimer"
+
+      And("I am shown links to related content")
+      OnlineServicesTermsPage.links.map(url => new URI(url)).map(_.getPath) shouldBe List(
+        "/help/privacy",
+        "/help/terms-and-conditions",
+        "/help/terms-and-conditions/online-services",
+        "/security/index.htm",
+        "/copyright/index.htm",
+        "/terms/agents.htm",
+        "/help/privacy",
+        "/contact/report-technical-problem"
+      )
     }
 
     Scenario("Navigate to the online services terms and conditions page") {
@@ -75,6 +89,20 @@ class HelpFeature extends BaseSpec {
         "Additional points for organisations",
         "Additional points for agents, accountant and representatives",
         "All Shared Workspace users"
+      )
+
+      And("I am shown links to related content")
+      OnlineServicesTermsPage.links.map(url => new URI(url)).map(_.getPath) shouldBe List(
+        "/online/index.htm",
+        "/about/privacy.htm",
+        "/information/helpdesk",
+        "/security/index.htm",
+        "/copyright/",
+        "/channelsPortalWebApp/channelsPortalWebApp.portal",
+        "/information/helpdesk",
+        "/manuals/swmanual/SW03370.htm",
+        "/terms/",
+        "/contact/report-technical-problem"
       )
     }
   }

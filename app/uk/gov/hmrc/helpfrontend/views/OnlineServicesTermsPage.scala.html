@@ -4,13 +4,13 @@
 @this(layout: Layout, newTabLink: NewTabLink)
 
 @()(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
-@layout(pageTitle = Some(messages("help.online_terms.title")), isTranslated = appConfig.enableOnlineTAndCLanguageToggle) {
+@layout(pageTitle = Some(messages("help.online_terms.title"))) {
  <h1 class="govuk-heading-xl" id="online-services-terms-heading">@messages("help.online_terms.heading")</h1>
 
  <h2 class="govuk-heading-l" id="all-individuals-organisations-agents">@messages("help.online_terms.all.heading")</h2>
  <p class="govuk-body">
  @messages("help.online_terms.all.para_1.part_1")
-  <a href="http://www.hmrc.gov.uk/online/index.htm">@messages("help.online_terms.all.para_1.link_text")</a>
+  <a class=govuk-link href="http://www.hmrc.gov.uk/online/index.htm">@messages("help.online_terms.all.para_1.link_text")</a>
   @messages("help.online_terms.all.para_1.part_2")
  </p>
  <p class="govuk-body">@messages("help.online_terms.all.para_2")</p>
@@ -18,7 +18,7 @@
  <p class="govuk-body">@messages("help.online_terms.all.para_4")</p>
  <p class="govuk-body">
  @messages("help.online_terms.all.para_5.part_1")
- <a href="http://www.hmrc.gov.uk/about/privacy.htm">@messages("help.online_terms.all.para_5.link_text")</a>
+ <a class=govuk-link href="http://www.hmrc.gov.uk/about/privacy.htm">@messages("help.online_terms.all.para_5.link_text")</a>
  @messages("help.online_terms.all.para_5.part_2")
  </p>
 
@@ -37,12 +37,12 @@
  <p class="govuk-body">@messages("help.online_terms.all.security.para_2")</p>
  <p class="govuk-body">
   @messages("help.online_terms.all.security.para_3.part_1")
-  <a href="https://online.hmrc.gov.uk/information/helpdesk">@messages("help.online_terms.all.security.para_3.link_text")</a>
+  <a class=govuk-link href="https://online.hmrc.gov.uk/information/helpdesk">@messages("help.online_terms.all.security.para_3.link_text")</a>
   @messages("help.online_terms.all.security.para_3.part_2")
  </p>
  <p class="govuk-body">
   @messages("help.online_terms.all.security.para_4.part_1")
-  <a href="http://www.hmrc.gov.uk/security/index.htm">@messages("help.online_terms.all.security.para_4.link_text")</a>@messages("help.online_terms.all.security.para_4.part_2")
+  <a class=govuk-link href="http://www.hmrc.gov.uk/security/index.htm">@messages("help.online_terms.all.security.para_4.link_text")</a>@messages("help.online_terms.all.security.para_4.part_2")
  </p>
 
  <h3 class="govuk-heading-m">@messages("help.online_terms.all.secure_mailbox.heading")</h3>
@@ -67,7 +67,7 @@
  <p class="govuk-body">@messages("help.online_terms.all.authorised_use.para_1")</p>
  <p class="govuk-body">
   @messages("help.online_terms.all.authorised_use.para_2.part_1")
-  <a href="http://www.hmrc.gov.uk/copyright/">@messages("help.online_terms.all.authorised_use.para_2.link_text")</a>@messages("help.online_terms.all.authorised_use.para_2.part_2")
+  <a class=govuk-link href="http://www.hmrc.gov.uk/copyright/">@messages("help.online_terms.all.authorised_use.para_2.link_text")</a>@messages("help.online_terms.all.authorised_use.para_2.part_2")
  </p>
 
  <h3 class="govuk-heading-m">@messages("help.online_terms.all.service_access.heading")</h3>
@@ -78,7 +78,7 @@
  <p class="govuk-body">@messages("help.online_terms.all.statutory_obligations.para_1")</p>
  <p class="govuk-body">
   @messages("help.online_terms.all.statutory_obligations.para_2.part_1")
-  <a href="http://customs.hmrc.gov.uk/channelsPortalWebApp/channelsPortalWebApp.portal?_nfpb=true&_pageLabel=pageOnlineServices_FAQs&propertyType=document&columns=1&id=HMCE_PROD1_026374">@messages("help.online_terms.all.statutory_obligations.para_2.link_text")</a>
+  <a class=govuk-link href="http://customs.hmrc.gov.uk/channelsPortalWebApp/channelsPortalWebApp.portal?_nfpb=true&_pageLabel=pageOnlineServices_FAQs&propertyType=document&columns=1&id=HMCE_PROD1_026374">@messages("help.online_terms.all.statutory_obligations.para_2.link_text")</a>
   @messages("help.online_terms.all.statutory_obligations.para_2.part_2")
  </p>
 
@@ -186,7 +186,7 @@
  </ul>
  <p class="govuk-body">
   @messages("help.online_terms.organisations.secure_file_transfer.para_4.part_1")
-  <a href="https://online.hmrc.gov.uk/information/helpdesk">@messages("help.online_terms.organisations.secure_file_transfer.para_4.link_text")</a>@messages("help.online_terms.organisations.secure_file_transfer.para_4.part_2")
+  <a class=govuk-link href="https://online.hmrc.gov.uk/information/helpdesk">@messages("help.online_terms.organisations.secure_file_transfer.para_4.link_text")</a>@messages("help.online_terms.organisations.secure_file_transfer.para_4.part_2")
  </p>
 
  <h2 class="govuk-heading-l" id="agents">@messages("help.online_terms.agents.heading")</h2>
@@ -223,7 +223,7 @@
  <p class="govuk-body">@messages("help.online_terms.shared_workspace.para_4")</p>
  <p class="govuk-body">
   @messages("help.online_terms.shared_workspace.para_5.part_1")
-  <a href="http://www.hmrc.gov.uk/manuals/swmanual/SW03370.htm">@messages("help.online_terms.shared_workspace.para_5.link_text")</a>
+  <a class=govuk-link href="http://www.hmrc.gov.uk/manuals/swmanual/SW03370.htm">@messages("help.online_terms.shared_workspace.para_5.link_text")</a>
   @messages("help.online_terms.shared_workspace.para_5.part_2")
  </p>
  <p class="govuk-body">@messages("help.online_terms.shared_workspace.para_6")</p>
@@ -237,6 +237,6 @@
  <p class="govuk-body">@messages("help.online_terms.shared_workspace.para_9")</p>
  <p class="govuk-body">
   @messages("help.online_terms.shared_workspace.para_10.part_1")
-  <a href="http://www.hmrc.gov.uk/terms/">@messages("help.online_terms.shared_workspace.para_10.link_text")</a>@messages("help.online_terms.shared_workspace.para_10.part_2")
+  <a class=govuk-link href="http://www.hmrc.gov.uk/terms/">@messages("help.online_terms.shared_workspace.para_10.link_text")</a>@messages("help.online_terms.shared_workspace.para_10.part_2")
  </p>
 }
