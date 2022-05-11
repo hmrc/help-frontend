@@ -18,11 +18,18 @@ package acceptance.pages
 
 import acceptance.conf.TestConfiguration
 import org.openqa.selenium.{By, WebDriver}
+import org.scalatestplus.selenium.Page
+
 import collection.JavaConverters._
 
 object OnlineServicesTermsPage extends BasePage {
   override val url: String =
     TestConfiguration.url("help-frontend") + "/terms-and-conditions/online-services"
+
+  def withLang(lang: String): Page = new Page {
+    override val url: String =
+      TestConfiguration.url("help-frontend") + s"/terms-and-conditions/online-services?lang=$lang"
+  }
 
   def subHeadings(implicit webDriver: WebDriver): Seq[String] = {
     val subHeadingElements = webDriver.findElements(By.className("govuk-heading-l")).asScala
@@ -36,4 +43,14 @@ object OnlineServicesTermsPage extends BasePage {
       .asScala
     linkElements.map(_.getAttribute("href"))
   }
+
+  def languageOfPage(implicit webDriver: WebDriver): String = webDriver
+    .findElement(By.tagName("html"))
+    .getAttribute("lang")
+
+  def switchLanguageToEnglish(implicit webDriver: WebDriver): Unit =
+    webDriver.findElement(By.partialLinkText("English")).click()
+
+  def switchLanguageToWelsh(implicit webDriver: WebDriver): Unit =
+    webDriver.findElement(By.partialLinkText("Cymraeg")).click()
 }

@@ -18,13 +18,15 @@ package uk.gov.hmrc.helpfrontend.controllers
 
 import play.api.i18n.I18nSupport
 import play.api.mvc._
+import play.api.i18n.Lang
 import uk.gov.hmrc.helpfrontend.config.AppConfig
 import uk.gov.hmrc.helpfrontend.views.html._
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 
 import javax.inject.{Inject, Singleton}
 import scala.concurrent.ExecutionContext.Implicits.global
-import scala.util.{Failure, Success, Try}
+import scala.concurrent.Future
+import scala.util.{Success, Try}
 
 @Singleton
 class HelpController @Inject() (
@@ -58,15 +60,15 @@ class HelpController @Inject() (
     Ok(cookiesPage())
   }
 
-  private def maybeOverrideLang[A](newLang: Option[String])(action: Action[A]): Action[A] =
-    Action.async(action.parser) { initialRequest =>
-      Try(initialRequest.withTransientLang(newLang.get)) match {
-        case Success(changedRequest) => action(changedRequest).map(_.withLang(changedRequest.lang))
-        case Failure(_)              => action(initialRequest)
+  private def maybeChangeLang[A](newLang: Option[String])(action: Action[A]): Action[A] =
+    Action.async(action.parser) { request =>
+      Try(Lang(newLang.get)) match {
+        case Success(lang) if supportedLangs.availables.contains(lang) => Future(Redirect(request.path).withLang(lang))
+        case _                                                         => action(request)
       }
     }
 
-  def onlineServicesTerms(lang: Option[String] = None): Action[AnyContent] = maybeOverrideLang(lang.map(_.take(2))) {
+  def onlineServicesTerms(lang: Option[String] = None): Action[AnyContent] = maybeChangeLang(lang.map(_.take(2))) {
     Action { implicit request =>
       Ok(onlineServicesTermsPage())
     }

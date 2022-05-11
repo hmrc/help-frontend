@@ -16,7 +16,7 @@
 
 package acceptance.specs
 
-import acceptance.pages.{EnglishCookiesPage, WelshCookiesPage}
+import acceptance.pages.{EnglishCookiesPage, OnlineServicesTermsPage, WelshCookiesPage}
 
 class LanguageSwitchingFeature extends BaseSpec {
   Feature("Language Switching") {
@@ -40,6 +40,34 @@ class LanguageSwitchingFeature extends BaseSpec {
 
       Then("I see the page in English")
       EnglishCookiesPage.cookiesInfoText shouldBe "Small files (known as ‘cookies’) are put onto your computer to collect information about how you browse the site."
+    }
+
+    Scenario(
+      "Switch from English to Welsh on the online services T&Cs page which was opened with ?lang=eng query param"
+    ) {
+      Given("I go to the English version of the online services T&Cs page using the lang query param")
+      go to OnlineServicesTermsPage.withLang("eng")
+      OnlineServicesTermsPage.languageOfPage shouldBe "en"
+
+      When("I switch language to Welsh")
+      OnlineServicesTermsPage.switchLanguageToWelsh
+
+      Then("I see the page in Welsh")
+      OnlineServicesTermsPage.languageOfPage shouldBe "cy"
+    }
+
+    Scenario(
+      "Switch from Welsh to English on the online services T&Cs page which was opened with ?lang=cym query param"
+    ) {
+      Given("I go to the Welsh version of the online services T&Cs page using the lang query param")
+      go to OnlineServicesTermsPage.withLang("cym")
+      OnlineServicesTermsPage.languageOfPage shouldBe "cy"
+
+      When("I switch language to English")
+      OnlineServicesTermsPage.switchLanguageToEnglish
+
+      Then("I see the page in English")
+      OnlineServicesTermsPage.languageOfPage shouldBe "en"
     }
   }
 }
