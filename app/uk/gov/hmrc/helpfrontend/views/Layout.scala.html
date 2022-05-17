@@ -16,11 +16,14 @@
 
 @import uk.gov.hmrc.helpfrontend.config.AppConfig
 @import views.html.helper.CSPNonce
+@import uk.gov.hmrc.hmrcfrontend.config.ContactFrontendConfig
+@import uk.gov.hmrc.hmrcfrontend.views.config.StandardBetaBanner
 
 @this(
         hmrcReportTechnicalIssueHelper: HmrcReportTechnicalIssueHelper,
-        hmrcLayout: HmrcLayout
-)
+        hmrcLayout: HmrcLayout,
+        standardBetaBanner: StandardBetaBanner
+)(implicit contactFrontendConfig: ContactFrontendConfig)
 @(pageTitle: Option[String] = None)(contentBlock: Html)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 
 @content = {
@@ -33,5 +36,6 @@
     displayHmrcBanner = true,
     nonce = CSPNonce.get,
     isWelshTranslationAvailable = true,
-    accessibilityStatementUrl = appConfig.accessibilityStatementUrl
+    accessibilityStatementUrl = appConfig.accessibilityStatementUrl,
+    phaseBanner = Some(standardBetaBanner())
 )(content)
