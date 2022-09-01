@@ -6,4 +6,12 @@ GET        /cookie-details                          uk.gov.hmrc.helpfrontend.con
 GET        /privacy                                 uk.gov.hmrc.helpfrontend.controllers.HelpController.privacy
 GET        /terms-and-conditions/online-services    uk.gov.hmrc.helpfrontend.controllers.HelpController.onlineServicesTerms(lang: Option[String])
 GET        /terms-and-conditions                    uk.gov.hmrc.helpfrontend.controllers.HelpController.termsAndConditions
-
+GET        /manifest.json                           controllers.Assets.at(path="/public", file="manifest.json")
+GET        /app-install-prompt.js                   controllers.Assets.at(path="/public", file="app-install-prompt.js")
+GET        /icon-0-75x.png                          controllers.Assets.at(path="/public", file="icon-0-75x.png")
+GET        /icon-1x.png                             controllers.Assets.at(path="/public", file="icon-1x.png")
+GET        /icon-1-5x.png                           controllers.Assets.at(path="/public", file="icon-1-5x.png")
+GET        /icon-2x.png                             controllers.Assets.at(path="/public", file="icon-2x.png")
+GET        /icon-3x.png                             controllers.Assets.at(path="/public", file="icon-3x.png")
+GET        /icon-4x.png                             controllers.Assets.at(path="/public", file="icon-4x.png")
+GET        /icon-5x.png                             controllers.Assets.at(path="/public", file="icon-5x.png")
