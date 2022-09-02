@@ -19,13 +19,22 @@
 
 @this(
         hmrcReportTechnicalIssueHelper: HmrcReportTechnicalIssueHelper,
-        hmrcLayout: HmrcLayout
+        hmrcLayout: HmrcLayout,
+        govukButton: GovukButton
 )
 @(pageTitle: Option[String] = None)(contentBlock: Html)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
+
+@installButton = {
+  @govukButton(Button(
+    content = Text("Install App"),
+    inputType = Some("submit"), classes = "install-prompt", attributes = Map("style" -> "display:none")
+ ))
+}
 
 @content = {
   @contentBlock
   @hmrcReportTechnicalIssueHelper()
+  @installButton
 }
 
 @iosAppBanner = {
