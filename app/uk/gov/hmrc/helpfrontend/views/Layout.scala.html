@@ -19,13 +19,51 @@
 
 @this(
         hmrcReportTechnicalIssueHelper: HmrcReportTechnicalIssueHelper,
-        hmrcLayout: HmrcLayout
+        hmrcLayout: HmrcLayout,
+        govukButton: GovukButton,
+        govukNotificationBanner: GovukNotificationBanner
 )
 @(pageTitle: Option[String] = None)(contentBlock: Html)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 
+@installButton = {
+  @govukButton(Button(
+    content = Text("Install App"),
+    inputType = Some("submit"), classes = "install-prompt", attributes = Map("style" -> "display:none")
+ ))
+}
+
+@bannerContent = {
+  <p class="govuk-notification-banner__heading">
+    The HMRC App is available to download.
+    <a class="govuk-notification-banner__link" href="#">Install now.</a>.
+  </p>
+}
+@installBanner = {
+  @govukNotificationBanner(NotificationBanner(
+    content = HtmlContent(bannerContent),
+    classes = "install-prompt",
+    attributes = Map("style" -> "display:none")
+  ))
+}
+
 @content = {
+  @installBanner
   @contentBlock
   @hmrcReportTechnicalIssueHelper()
+}
+
+@iosAppBanner = {
+  <meta name="apple-itunes-app" content="app-id=514561561">
+}
+
+@androidAppBanner = {
+  <script src="app-install-prompt.js" nonce="@{CSPNonce.get}"></script>
+  <link rel="manifest" href="manifest.json">
+}
+
+@appBanners = {
+  @iosAppBanner
+  @androidAppBanner
 }
 
 @hmrcLayout(
@@ -33,5 +71,6 @@
     displayHmrcBanner = true,
     nonce = CSPNonce.get,
     isWelshTranslationAvailable = true,
-    accessibilityStatementUrl = appConfig.accessibilityStatementUrl
+    accessibilityStatementUrl = appConfig.accessibilityStatementUrl,
+    additionalHeadBlock = Some(appBanners)
 )(content)
