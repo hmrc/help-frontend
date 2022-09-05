@@ -6,4 +6,4 @@ GET        /cookie-details                          uk.gov.hmrc.helpfrontend.con
 GET        /privacy                                 uk.gov.hmrc.helpfrontend.controllers.HelpController.privacy
 GET        /terms-and-conditions/online-services    uk.gov.hmrc.helpfrontend.controllers.HelpController.onlineServicesTerms(lang: Option[String])
 GET        /terms-and-conditions                    uk.gov.hmrc.helpfrontend.controllers.HelpController.termsAndConditions
-
+GET        /manifest.json                           controllers.Assets.at(path="/public", file="manifest.json")
