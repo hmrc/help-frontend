@@ -20,29 +20,23 @@
 @this(
         hmrcReportTechnicalIssueHelper: HmrcReportTechnicalIssueHelper,
         hmrcLayout: HmrcLayout,
-        govukButton: GovukButton,
         govukNotificationBanner: GovukNotificationBanner
 )
 @(pageTitle: Option[String] = None)(contentBlock: Html)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 
-@installButton = {
-  @govukButton(Button(
-    content = Text("Install App"),
-    inputType = Some("submit"), classes = "install-prompt", attributes = Map("style" -> "display:none")
- ))
-}
-
 @bannerContent = {
   <p class="govuk-notification-banner__heading">
     The HMRC App is available to download.
-    <a class="govuk-notification-banner__link" href="#">Install now.</a>.
+    <a class="govuk-notification-banner__link" href="#">Install now</a>.
   </p>
 }
+
 @installBanner = {
   @govukNotificationBanner(NotificationBanner(
     content = HtmlContent(bannerContent),
     classes = "install-prompt",
-    attributes = Map("style" -> "display:none")
+    attributes = Map("style" -> "display:none"),
+    title = Text("HMRC for Android")
   ))
 }
 
