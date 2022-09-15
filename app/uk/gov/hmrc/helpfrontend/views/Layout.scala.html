@@ -19,6 +19,7 @@
 
 @this(
         hmrcReportTechnicalIssueHelper: HmrcReportTechnicalIssueHelper,
+        hmrcTimeoutDialogHelper: HmrcTimeoutDialogHelper,
         hmrcLayout: HmrcLayout
 )
 @(pageTitle: Option[String] = None)(contentBlock: Html)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
@@ -33,5 +34,6 @@
     displayHmrcBanner = true,
     nonce = CSPNonce.get,
     isWelshTranslationAvailable = true,
+    additionalHeadBlock = Some(hmrcTimeoutDialogHelper(signOutUrl = "/some/url")),
     accessibilityStatementUrl = appConfig.accessibilityStatementUrl
 )(content)
