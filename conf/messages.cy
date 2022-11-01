@@ -164,6 +164,9 @@ help.cookies.how_used.sessions.table.PLAY_FLASH.expires=Pan fyddwch yn cau eich 
 help.cookies.how_used.sessions.table.remme.name=remme
 help.cookies.how_used.sessions.table.remme.purpose=Mae hwn yn cael ei ddefnyddio i adnabod defnyddiwr ar ddyfais sy’n ceisio mynd drwy her y Dull Gwirio 2-gam
 help.cookies.how_used.sessions.table.remme.expires=7 diwrnod
+help.cookies.how_used.sessions.table.mdtpdi.name=mdtpdi
+help.cookies.how_used.sessions.table.mdtpdi.purpose=Defnyddir hyn er mwyn adnabod dyfais benodol sydd wedi rhyngweithio â gwasanaethau treth, a hynny at ddiben archwiliadau diogelwch mewnol
+help.cookies.how_used.sessions.table.mdtpdi.expires=10 mlynedd
 
 help.cookies.how_used.user.research.banner.heading=Baner ymchwil defnyddwyr
 help.cookies.how_used.user.research.banner.info=Efallai y gwelwch faner am ymchwil defnyddwyr pan fyddwch yn ymweld. Er mwyn i’ch cyfrifiadur wybod eich bod wedi dewis peidio â’i weld eto, caiff cwci ei storio.
