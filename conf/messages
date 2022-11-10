@@ -221,6 +221,12 @@ help.cookies.how_used.digital_assistant.table.JSESSIONID.name=JSESSIONID
 help.cookies.how_used.digital_assistant.table.JSESSIONID.purpose=Cookie used in session tracking. Since HTTP is a stateless protocol, the cookie is created to enable the web chat application to keep the state of the session on the server side.
 help.cookies.how_used.digital_assistant.table.JSESSIONID.expires=When you close your browser
 
+help.cookies.how_used.javascript_detection.heading=JavaScript detection
+help.cookies.how_used.javascript_detection.info=Some pages can provide an enhanced experience when JavaScript is enabled and may use a cookie to detect this.
+help.cookies.how_used.javascript_detection.table.js_detection.name=JS‑Detection
+help.cookies.how_used.javascript_detection.table.js_detection.purpose=This tells us if you are browsing tax.service.gov.uk while running JavaScript.
+help.cookies.how_used.javascript_detection.table.js_detection.expires=1 year
+
 help.online_terms.title=HMRC Online Services Terms & Conditions – GOV.UK
 help.online_terms.heading=HMRC Online Services Terms & Conditions
 help.online_terms.all.heading=All individuals, organisations and agents

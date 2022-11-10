@@ -221,6 +221,12 @@ help.cookies.how_used.digital_assistant.table.JSESSIONID.name=JSESSIONID
 help.cookies.how_used.digital_assistant.table.JSESSIONID.purpose=Cwci a ddefnyddir wrth olrhain sesiwn. Gan fod HTTP yn brotocol heb gyflwr, mae’r cwci’n cael ei greu i alluogi’r rhaglen sgwrsio dros y we i gadw cyflwr y sesiwn ar ochr y gweinydd.
 help.cookies.how_used.digital_assistant.table.JSESSIONID.expires=Pan fyddwch yn cau eich porwr
 
+help.cookies.how_used.javascript_detection.heading=Canfod JavaScript
+help.cookies.how_used.javascript_detection.info=Gall rhai tudalennau ddarparu profiad gwell pan gaiff JavaScript ei alluogi, a gallant ddefnyddio cwci i ganfod hyn.
+help.cookies.how_used.javascript_detection.table.js_detection.name=JS‑Detection
+help.cookies.how_used.javascript_detection.table.js_detection.purpose=Mae hyn yn rhoi gwybod i ni a ydych yn pori tax.service.gov.uk wrth redeg JavaScript.
+help.cookies.how_used.javascript_detection.table.js_detection.expires=1 flwyddyn
+
 help.online_terms.title=Telerau ac Amodau Gwasanaethau ar-lein CThEM – GOV.UK
 help.online_terms.heading=Telerau ac Amodau Gwasanaethau ar-lein CThEM
 help.online_terms.all.heading=Unigolion, sefydliadau ac asiantau

@@ -259,4 +259,19 @@
       )
     )
   )
+
+  <h3 class="govuk-heading-m" id="cookies-javascript-detection-heading">@messages("help.cookies.how_used.javascript_detection.heading")</h3>
+  <p class="govuk-body" id="cookies-javascript-detection-paragraph">
+  @Html(messages("help.cookies.how_used.javascript_detection.info", surveyLink))
+  </p>
+  @cookiesTable(
+    id = "cookies-javascript-detection-table",
+    cookies = Seq(
+      Cookie(
+        messages("help.cookies.how_used.javascript_detection.table.js_detection.name"),
+        messages("help.cookies.how_used.javascript_detection.table.js_detection.purpose"),
+        messages("help.cookies.how_used.javascript_detection.table.js_detection.expires")
+      )
+    )
+  )
 }
