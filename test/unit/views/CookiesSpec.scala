@@ -276,6 +276,28 @@ class CookiesSpec
       }
     }
 
+    "JavaScript detection cookies" should {
+      "have the heading 'JavaScript detection'" in new Fixture {
+        view.select("#cookies-javascript-detection-heading").text mustBe "JavaScript detection"
+      }
+
+      "have a paragraph of descriptive text" in new Fixture {
+        view.select("#cookies-javascript-detection-paragraph").size() mustBe 1
+      }
+
+      "have a table with the following headings 'Name', 'Purpose', 'Expires'" in new Fixture {
+        view.verifyTableHeadings("cookies-javascript-detection-table", expectedTableHeadingsText)
+      }
+
+      "have the expected cookies listed in the table" in new Fixture {
+        val expectedCookies: List[String] = List(
+          "JS‑Detection"
+        )
+
+        view.verifyTableContainsCookieName("cookies-javascript-detection-table", expectedCookies)
+      }
+    }
+
     "The page footer" must {
       "include a link to the 'Is this page not working properly?' form" in new Fixture {
         val links: Elements =
