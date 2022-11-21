@@ -15,7 +15,6 @@
  *@
 
 @import uk.gov.hmrc.helpfrontend.config.AppConfig
-@import uk.gov.hmrc.helpfrontend.viewmodels.Cookie
 @import uk.gov.hmrc.helpfrontend.views.html.{NewTabLink, Layout, CookiesTable}
 
 @this(layout: Layout, newTabLink: NewTabLink, cookiesTable: CookiesTable)
@@ -47,6 +46,7 @@
     )@messages("general.fullstop")
   </p>
   <h2 class="govuk-heading-l" id="cookies-are-used">@messages("help.cookies.how_used.heading")</h2>
+
   <h3 class="govuk-heading-m" id="cookies-website-usage">@messages("help.cookies.how_used.measuring_usage.heading")</h3>
   <p class="govuk-body" id="cookies-analytics-paragraph-1">@messages("help.cookies.how_used.measuring_usage.info")</p>
   <p class="govuk-body" id="cookies-analytics-paragraph-2">@messages("help.cookies.how_used.measuring_usage.list_info")</p>
@@ -61,29 +61,8 @@
   </div>
   @cookiesTable(
     id = "cookies-analytics-table",
-    caption = Some(messages("help.cookies.how_used.measuring_usage.cookies_used.table.caption")),
-    cookies = Seq(
-      Cookie(
-        messages("help.cookies.how_used.measuring_usage.cookies_used.table.gat.name"),
-        messages("help.cookies.how_used.measuring_usage.cookies_used.table.gat.purpose"),
-        messages("help.cookies.how_used.measuring_usage.cookies_used.table.gat.expires")
-      ),
-      Cookie(
-        messages("help.cookies.how_used.measuring_usage.cookies_used.table.gds.name"),
-        messages("help.cookies.how_used.measuring_usage.cookies_used.table.gds.purpose"),
-        messages("help.cookies.how_used.measuring_usage.cookies_used.table.gds.expires")
-      ),
-      Cookie(
-        messages("help.cookies.how_used.measuring_usage.cookies_used.table.ga.name"),
-        messages("help.cookies.how_used.measuring_usage.cookies_used.table.ga.purpose"),
-        messages("help.cookies.how_used.measuring_usage.cookies_used.table.ga.expires")
-      ),
-      Cookie(
-        messages("help.cookies.how_used.measuring_usage.cookies_used.table.nextpage.name"),
-        messages("help.cookies.how_used.measuring_usage.cookies_used.table.nextpage.purpose"),
-        messages("help.cookies.how_used.measuring_usage.cookies_used.table.nextpage.expires")
-      )
-    )
+    section = "measuring_usage",
+    cookieIds = Seq("gat", "gds", "ga", "nextpage")
   )
   <p class="govuk-body" id="cookies-analytics-opt-out">
     @messages("help.cookies.how_used.measuring_usage.opt_out.info")
@@ -92,97 +71,45 @@
       content = Text(messages("help.cookies.how_used.measuring_usage.opt_out.link.text"))
     )@messages("general.fullstop")
   </p>
+
   <h3 class="govuk-heading-m" id="cookies-versions-heading">@messages("help.cookies.how_used.optimizely.heading")</h3>
   <p class="govuk-body" id="cookies-versions-paragraph-1">@messages("help.cookies.how_used.optimizely.info")</p>
   @cookiesTable(
     id = "cookies-versions-table",
-    caption = Some(messages("help.cookies.how_used.measuring_usage.cookies_used.table.caption")),
-    cookies = Seq(
-      Cookie(
-        messages("help.cookies.how_used.optimizely.table.optimizelyEndUserId.name"),
-        messages("help.cookies.how_used.optimizely.table.optimizelyEndUserId.purpose"),
-        messages("help.cookies.how_used.optimizely.table.optimizelyEndUserId.expires")
-      ),
-      Cookie(
-        messages("help.cookies.how_used.optimizely.table.optimizelyRedirectData.name"),
-        messages("help.cookies.how_used.optimizely.table.optimizelyRedirectData.purpose"),
-        messages("help.cookies.how_used.optimizely.table.optimizelyRedirectData.expires")
-      )
-    )
+    section = "optimizely",
+    cookieIds = Seq("optimizelyEndUserId", "optimizelyRedirectData")
   )
+
   <h3 class="govuk-heading-m" id="cookies-consent-heading">@messages("help.cookies.how_used.userconsent.heading")</h3>
   <p class="govuk-body" id="cookies-consent-paragraph-1">@messages("help.cookies.how_used.userconsent.info")</p>
   @cookiesTable(
     id = "cookies-consent-table",
-    cookies = Seq(
-      Cookie(
-        messages("help.cookies.how_used.userconsent.table.userConsent.name"),
-        messages("help.cookies.how_used.userconsent.table.userConsent.purpose"),
-        messages("help.cookies.how_used.userconsent.table.userConsent.expires")
-      )
-    )
+    section = "userconsent",
+    cookieIds = Seq("userConsent")
   )
+
   <h3 class="govuk-heading-m" id="cookies-sessions-heading">@messages("help.cookies.how_used.sessions.heading")</h3>
   <p class="govuk-body" id="cookies-sessions-paragraph">@messages("help.cookies.how_used.sessions.info")</p>
   @cookiesTable(
     id = "cookies-sessions-table",
-    cookies = Seq(
-      Cookie(
-        messages("help.cookies.how_used.sessions.table.mdtp.name"),
-        messages("help.cookies.how_used.sessions.table.mdtp.purpose"),
-        messages("help.cookies.how_used.sessions.table.mdtp.expires")
-      ),
-      Cookie(
-        messages("help.cookies.how_used.sessions.table.mdtpp.name"),
-        messages("help.cookies.how_used.sessions.table.mdtpp.purpose"),
-        messages("help.cookies.how_used.sessions.table.mdtpp.expires")
-      ),
-      Cookie(
-        messages("help.cookies.how_used.sessions.table.mdtpdf.name"),
-        messages("help.cookies.how_used.sessions.table.mdtpdf.purpose"),
-        messages("help.cookies.how_used.sessions.table.mdtpdf.expires")
-      ),
-      Cookie(
-        messages("help.cookies.how_used.sessions.table.PLAY_FLASH.name"),
-        messages("help.cookies.how_used.sessions.table.PLAY_FLASH.purpose"),
-        messages("help.cookies.how_used.sessions.table.PLAY_FLASH.expires")
-      ),
-      Cookie(
-        messages("help.cookies.how_used.sessions.table.remme.name"),
-        messages("help.cookies.how_used.sessions.table.remme.purpose"),
-        messages("help.cookies.how_used.sessions.table.remme.expires")
-      ),
-      Cookie(
-        messages("help.cookies.how_used.sessions.table.mdtpdi.name"),
-        messages("help.cookies.how_used.sessions.table.mdtpdi.purpose"),
-        messages("help.cookies.how_used.sessions.table.mdtpdi.expires")
-      )
-    )
+    section = "sessions",
+    cookieIds = Seq("mdtp", "mdtpp", "mdtpdf", "PLAY_FLASH", "remme", "mdtpdi")
   )
 
   <h3 class="govuk-heading-m" id="cookies-introductory-heading">@messages("help.cookies.how_used.intro_message.heading")</h3>
   <p class="govuk-body" id="cookies-introductory-paragraph">@messages("help.cookies.how_used.intro_message.info")</p>
   @cookiesTable(
     id = "cookies-introductory-table",
-    cookies = Seq(
-      Cookie(
-        messages("help.cookies.how_used.intro_message.table.seen_message.name"),
-        messages("help.cookies.how_used.intro_message.table.seen_message.purpose"),
-        messages("help.cookies.how_used.intro_message.table.seen_message.expires")
-      )
-    )
+    section = "intro_message",
+    cookieIds = Seq("seen_message")
   )
-  <h3 class="govuk-heading-m" id="cookies-user-research-heading">@messages("help.cookies.how_used.user.research.banner.heading")</h3>
-  <p class="govuk-body" id="cookies-user-research-paragraph">@messages("help.cookies.how_used.user.research.banner.info")</p>
+
+  <h3 class="govuk-heading-m" id="cookies-user-research-heading">@messages("help.cookies.how_used.user_research_banner.heading")</h3>
+  <p class="govuk-body" id="cookies-user-research-paragraph">@messages("help.cookies.how_used.user_research_banner.info")</p>
   @cookiesTable(
     id = "cookies-user-research-table",
-    cookies = Seq(
-      Cookie(
-        messages("help.cookies.how_used.user.research.banner.table.mdtpurr.name"),
-        messages("help.cookies.how_used.user.research.banner.table.mdtpurr.purpose"),
-        messages("help.cookies.how_used.user.research.banner.table.mdtpurr.expires")
-      )
-    )
+    section = "user_research_banner",
+    cookieIds = Seq("mdtpurr")
   )
 
   <h3 class="govuk-heading-m" id="cookies-satisfaction-survey-heading">@messages("help.cookies.how_used.satisfaction_survey.heading")</h3>
@@ -191,87 +118,24 @@
   </p>
   @cookiesTable(
     id = "cookies-satisfaction-survey-table",
-    cookies = Seq(
-      Cookie(
-        messages("help.cookies.how_used.satisfaction_survey.table.mbox.name"),
-        messages("help.cookies.how_used.satisfaction_survey.table.mbox.purpose"),
-        messages("help.cookies.how_used.satisfaction_survey.table.mbox.expires")
-      ),
-      Cookie(
-        messages("help.cookies.how_used.satisfaction_survey.table.ssoe.name"),
-        messages("help.cookies.how_used.satisfaction_survey.table.ssoe.purpose"),
-        messages("help.cookies.how_used.satisfaction_survey.table.ssoe.expires")
-      ),
-      Cookie(
-        messages("help.cookies.how_used.satisfaction_survey.table.ts.name"),
-        messages("help.cookies.how_used.satisfaction_survey.table.ts.purpose"),
-        messages("help.cookies.how_used.satisfaction_survey.table.ts.expires")
-      ),
-      Cookie(
-        messages("help.cookies.how_used.satisfaction_survey.table.ep201.name"),
-        messages("help.cookies.how_used.satisfaction_survey.table.ep201.purpose"),
-        messages("help.cookies.how_used.satisfaction_survey.table.ep201.expires")
-      ),
-      Cookie(
-        messages("help.cookies.how_used.satisfaction_survey.table.ep202.name"),
-        messages("help.cookies.how_used.satisfaction_survey.table.ep202.purpose"),
-        messages("help.cookies.how_used.satisfaction_survey.table.ep202.expires")
-      )
-    )
+    section = "satisfaction_survey",
+    cookieIds = Seq("mbox", "ssoe", "ts", "ep201", "ep202")
   )
 
   <h3 class="govuk-heading-m" id="cookies-digital-assistant-heading">@messages("help.cookies.how_used.digital_assistant.heading")</h3>
-  <p class="govuk-body" id="cookies-digital-assistant-paragraph">
-  @Html(messages("help.cookies.how_used.digital_assistant.info", surveyLink))
-  </p>
+  <p class="govuk-body" id="cookies-digital-assistant-paragraph">@messages("help.cookies.how_used.digital_assistant.info")</p>
   @cookiesTable(
     id = "cookies-digital-assistant-table",
-    cookies = Seq(
-      Cookie(
-        messages("help.cookies.how_used.digital_assistant.table.inqCA.name"),
-        messages("help.cookies.how_used.digital_assistant.table.inqCA.purpose"),
-        messages("help.cookies.how_used.digital_assistant.table.inqCA.expires")
-      ),
-      Cookie(
-        messages("help.cookies.how_used.digital_assistant.table.inqVital.name"),
-        messages("help.cookies.how_used.digital_assistant.table.inqVital.purpose"),
-        messages("help.cookies.how_used.digital_assistant.table.inqVital.expires")
-      ),
-      Cookie(
-        messages("help.cookies.how_used.digital_assistant.table.tcSrv.name"),
-        messages("help.cookies.how_used.digital_assistant.table.tcSrv.purpose"),
-        messages("help.cookies.how_used.digital_assistant.table.tcSrv.expires")
-      ),
-      Cookie(
-        messages("help.cookies.how_used.digital_assistant.table.inqSession.name"),
-        messages("help.cookies.how_used.digital_assistant.table.inqSession.purpose"),
-        messages("help.cookies.how_used.digital_assistant.table.inqSession.expires")
-      ),
-      Cookie(
-        messages("help.cookies.how_used.digital_assistant.table.inqState.name"),
-        messages("help.cookies.how_used.digital_assistant.table.inqState.purpose"),
-        messages("help.cookies.how_used.digital_assistant.table.inqState.expires")
-      ),
-      Cookie(
-        messages("help.cookies.how_used.digital_assistant.table.JSESSIONID.name"),
-        messages("help.cookies.how_used.digital_assistant.table.JSESSIONID.purpose"),
-        messages("help.cookies.how_used.digital_assistant.table.JSESSIONID.expires")
-      )
-    )
+    section = "digital_assistant",
+    cookieIds = Seq("inqCA", "inqVital", "tcSrv", "inqSession", "inqState", "JSESSIONID"),
+    caption = None
   )
 
   <h3 class="govuk-heading-m" id="cookies-javascript-detection-heading">@messages("help.cookies.how_used.javascript_detection.heading")</h3>
-  <p class="govuk-body" id="cookies-javascript-detection-paragraph">
-  @Html(messages("help.cookies.how_used.javascript_detection.info", surveyLink))
-  </p>
+  <p class="govuk-body" id="cookies-javascript-detection-paragraph">@messages("help.cookies.how_used.javascript_detection.info")</p>
   @cookiesTable(
     id = "cookies-javascript-detection-table",
-    cookies = Seq(
-      Cookie(
-        messages("help.cookies.how_used.javascript_detection.table.js_detection.name"),
-        messages("help.cookies.how_used.javascript_detection.table.js_detection.purpose"),
-        messages("help.cookies.how_used.javascript_detection.table.js_detection.expires")
-      )
-    )
+    section = "javascript_detection",
+    cookieIds = Seq("js_detection")
   )
 }
