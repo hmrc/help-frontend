@@ -46,6 +46,12 @@ trait JsoupHelpers extends Matchers {
 
       actualListOfAllHeadingAnswers mustBe expectedTableHeadingsText
     }
+
+    def verifyTableCaption(tableId: String, expectedTableCaptionText: Option[String]): Unit = {
+      val actualTableCaptionText = Option(html.getElementById(tableId).getElementsByTag("caption").text())
+        .filter(_.nonEmpty)
+      actualTableCaptionText mustBe expectedTableCaptionText
+    }
   }
 
   // otherwise Jsoup inserts linefeed https://stackoverflow.com/questions/12503117/jsoup-line-feed

@@ -111,6 +111,10 @@ class CookiesSpec
 
         view.verifyTableContainsCookieName("cookies-analytics-table", expectedCookies)
       }
+
+      "have the expected table caption" in new Fixture {
+        view.verifyTableCaption("cookies-analytics-table", defaultTableCaption)
+      }
     }
 
     "Comparing different versions" should {
@@ -134,6 +138,10 @@ class CookiesSpec
 
         view.verifyTableContainsCookieName("cookies-versions-table", expectedCookies)
       }
+
+      "have the expected table caption" in new Fixture {
+        view.verifyTableCaption("cookies-versions-table", defaultTableCaption)
+      }
     }
 
     "Allow additional cookies" should {
@@ -153,6 +161,10 @@ class CookiesSpec
         val expectedCookies: List[String] = List("userConsent")
 
         view.verifyTableContainsCookieName("cookies-consent-table", expectedCookies)
+      }
+
+      "have the expected table caption" in new Fixture {
+        view.verifyTableCaption("cookies-consent-table", defaultTableCaption)
       }
     }
 
@@ -181,6 +193,10 @@ class CookiesSpec
 
         view.verifyTableContainsCookieName("cookies-sessions-table", expectedCookies)
       }
+
+      "have the expected table caption" in new Fixture {
+        view.verifyTableCaption("cookies-sessions-table", defaultTableCaption)
+      }
     }
 
     "Our introductory message" should {
@@ -201,6 +217,10 @@ class CookiesSpec
 
         view.verifyTableContainsCookieName("cookies-introductory-table", expectedCookies)
       }
+
+      "have the expected table caption" in new Fixture {
+        view.verifyTableCaption("cookies-introductory-table", defaultTableCaption)
+      }
     }
 
     "User research banner" should {
@@ -220,6 +240,10 @@ class CookiesSpec
         val expectedCookies: List[String] = List("mdtpurr")
 
         view.verifyTableContainsCookieName("cookies-user-research-table", expectedCookies)
+      }
+
+      "have the expected table caption" in new Fixture {
+        view.verifyTableCaption("cookies-user-research-table", defaultTableCaption)
       }
     }
 
@@ -246,6 +270,10 @@ class CookiesSpec
         )
 
         view.verifyTableContainsCookieName("cookies-satisfaction-survey-table", expectedCookies)
+      }
+
+      "have the expected table caption" in new Fixture {
+        view.verifyTableCaption("cookies-satisfaction-survey-table", defaultTableCaption)
       }
     }
 
@@ -274,6 +302,10 @@ class CookiesSpec
 
         view.verifyTableContainsCookieName("cookies-digital-assistant-table", expectedCookies)
       }
+
+      "have no table caption" in new Fixture {
+        view.verifyTableCaption("cookies-digital-assistant-table", None)
+      }
     }
 
     "JavaScript detection cookies" should {
@@ -295,6 +327,10 @@ class CookiesSpec
         )
 
         view.verifyTableContainsCookieName("cookies-javascript-detection-table", expectedCookies)
+      }
+
+      "have the expected table caption" in new Fixture {
+        view.verifyTableCaption("cookies-javascript-detection-table", defaultTableCaption)
       }
     }
 
@@ -320,6 +356,8 @@ class CookiesSpec
     implicit val messages: Messages = messagesApi.preferred(fakeRequest)
 
     val expectedTableHeadingsText: List[String] = List("Name", "Purpose", "Expires")
+
+    val defaultTableCaption: Option[String] = Some("The following cookies are used:")
 
     val cookiesPage: CookiesPage = app.injector.instanceOf[CookiesPage]
 
