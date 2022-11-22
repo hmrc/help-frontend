@@ -18,7 +18,15 @@
 
 @this(govukTable: GovukTable)
 
-@(id: String, cookies: Seq[Cookie], caption: Option[String] = None, captionClasses: String = "")(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
+@(id: String, section: String, cookieIds: Seq[String], caption: Option[String] = None, captionClasses: String = "")(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
+@cookies = @{
+  for (cookieId <- cookieIds) yield
+    Cookie(
+        messages(s"help.cookies.how_used.$section.table.$cookieId.name"),
+        messages(s"help.cookies.how_used.$section.table.$cookieId.purpose"),
+        messages(s"help.cookies.how_used.$section.table.$cookieId.expires")
+    )
+}
 @govukTable(Table(
   attributes = Map("id" -> id),
   rows = for (cookie <- cookies) yield Seq(
@@ -31,6 +39,6 @@
    HeadCell(content = Text(messages("help.cookies.table.header.purpose"))),
    HeadCell(content = Text(messages("help.cookies.table.header.expires")))
  )),
- caption = caption,
+ caption = caption.orElse(Some(messages("help.cookies.how_used.default.table.caption"))),
  captionClasses = captionClasses
 ))
