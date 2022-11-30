@@ -40,6 +40,15 @@ class HelpControllerSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSu
     FakeRequest("GET", "/").withCookies(Cookie("PLAY_LANG", "cy"))
 
   "GET /" should {
+    "return 303 and redirect to URL from configuration" in new ControllerContext() {
+      val result = controller.index(fakeRequest)
+
+      status(result) mustBe Status.SEE_OTHER
+      redirectLocation(result) mustBe Some("http://my-test-help.url")
+    }
+  }
+
+  "GET /cookie-details" should {
     "return 200" in new ControllerContext() {
       val result = controller.cookieDetails(fakeRequest)
 
@@ -119,7 +128,8 @@ class HelpControllerSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSu
     val applicationFromContext = new GuiceApplicationBuilder()
       .configure(
         "metrics.jvm"     -> false,
-        "metrics.enabled" -> false
+        "metrics.enabled" -> false,
+        "urls.help"       -> "http://my-test-help.url"
       )
       .build()
     val controller             = applicationFromContext.injector.instanceOf[HelpController]
