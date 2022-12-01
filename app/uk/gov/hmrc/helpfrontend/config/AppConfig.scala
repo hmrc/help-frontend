@@ -22,6 +22,9 @@ import uk.gov.hmrc.hmrcfrontend.config.TrackingConsentConfig
 
 @Singleton
 class AppConfig @Inject() (config: Configuration, trackingConsentConfig: TrackingConsentConfig) {
+
+  lazy val helpPageUrl: String = config.get[String]("urls.help")
+
   lazy val accessibilityStatementUrl: Option[String] = config.getOptional[String]("urls.accessibility-statement")
 
   lazy val trackingConsentHost: String = trackingConsentConfig.trackingConsentHost.getOrElse("")

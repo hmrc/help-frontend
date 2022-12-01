@@ -41,6 +41,13 @@ class HelpController @Inject() (
 
   implicit val config: AppConfig = appConfig
 
+  val index: Action[AnyContent] = Action { implicit request =>
+    Redirect(
+      appConfig.helpPageUrl,
+      SEE_OTHER
+    )
+  }
+
   val termsAndConditions: Action[AnyContent] = Action { implicit request =>
     Ok(termsAndConditionsPage())
   }
