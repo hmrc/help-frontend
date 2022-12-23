@@ -2,7 +2,7 @@ help-frontend
 =============
 
 A frontend service which provides common help pages for services on tax.service.gov.uk,
-including cookie details, terms & conditions and privacy policy.
+including cookie details and terms & conditions.
 
 ## Adding details of new cookies
 To comply with GDPR and related regulations, we are required to document all cookies which

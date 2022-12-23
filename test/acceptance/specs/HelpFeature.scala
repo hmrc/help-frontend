@@ -16,7 +16,7 @@
 
 package acceptance.specs
 
-import acceptance.pages.{EnglishCookiesPage, OnlineServicesTermsPage, PrivacyPage, TermsAndConditionsPage}
+import acceptance.pages.{EnglishCookiesPage, OnlineServicesTermsPage, TermsAndConditionsPage}
 
 import java.net.URI
 
@@ -33,19 +33,6 @@ class HelpFeature extends BaseSpec {
 
       And("I am shown cookie related content")
       EnglishCookiesPage.cookiesInfoText shouldBe "Small files (known as ‘cookies’) are put onto your computer to collect information about how you browse the site."
-    }
-
-    Scenario("Navigate to the privacy policy page") {
-      Given("I go to the privacy policy page")
-      go to PrivacyPage
-
-      Then("I am shown the privacy policy page")
-      eventually {
-        pageTitle should be("Privacy policy – GOV.UK")
-      }
-
-      And("I am shown privacy related content")
-      PrivacyPage.personalInfoText shouldBe "This page explains what kind of personal information HM Revenue and Customs (HMRC) holds about you, how it’s protected and how you can find out about it."
     }
 
     Scenario("Navigate to the terms and conditions page") {
