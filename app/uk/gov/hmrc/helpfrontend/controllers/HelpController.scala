@@ -24,8 +24,7 @@ import uk.gov.hmrc.helpfrontend.views.html._
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 
 import javax.inject.{Inject, Singleton}
-import scala.concurrent.ExecutionContext.Implicits.global
-import scala.concurrent.Future
+import scala.concurrent.{ExecutionContext, Future}
 import scala.util.{Success, Try}
 
 @Singleton
@@ -34,9 +33,9 @@ class HelpController @Inject() (
   mcc: MessagesControllerComponents,
   termsAndConditionsPage: TermsAndConditionsPage,
   onlineServicesTermsPage: OnlineServicesTermsPage,
-  privacyPage: PrivacyPage,
   cookiesPage: CookiesPage
-) extends FrontendController(mcc)
+)(implicit val executionContext: ExecutionContext)
+    extends FrontendController(mcc)
     with I18nSupport {
 
   implicit val config: AppConfig = appConfig
@@ -50,10 +49,6 @@ class HelpController @Inject() (
 
   val termsAndConditions: Action[AnyContent] = Action { implicit request =>
     Ok(termsAndConditionsPage())
-  }
-
-  val privacy: Action[AnyContent] = Action { implicit request =>
-    Ok(privacyPage())
   }
 
   val cookies: Action[AnyContent] = Action { implicit request =>
