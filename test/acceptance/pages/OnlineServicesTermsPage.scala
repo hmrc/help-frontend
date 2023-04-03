@@ -20,7 +20,7 @@ import acceptance.conf.TestConfiguration
 import org.openqa.selenium.{By, WebDriver}
 import org.scalatestplus.selenium.Page
 
-import collection.JavaConverters._
+import scala.jdk.CollectionConverters._
 
 object OnlineServicesTermsPage extends BasePage {
   override val url: String =
@@ -33,7 +33,7 @@ object OnlineServicesTermsPage extends BasePage {
 
   def subHeadings(implicit webDriver: WebDriver): Seq[String] = {
     val subHeadingElements = webDriver.findElements(By.className("govuk-heading-l")).asScala
-    subHeadingElements.map(_.getText)
+    subHeadingElements.toSeq.map(_.getText)
   }
 
   def links(implicit webDriver: WebDriver): Seq[String] = {
@@ -41,7 +41,7 @@ object OnlineServicesTermsPage extends BasePage {
       .findElement(By.className("govuk-main-wrapper"))
       .findElements(By.className("govuk-link"))
       .asScala
-    linkElements.map(_.getAttribute("href"))
+    linkElements.toSeq.map(_.getAttribute("href"))
   }
 
   def languageOfPage(implicit webDriver: WebDriver): String = webDriver

@@ -15,7 +15,6 @@
  *@
 
 @import uk.gov.hmrc.helpfrontend.config.AppConfig
-@import views.html.helper.CSPNonce
 
 @this(
         hmrcReportTechnicalIssueHelper: HmrcReportTechnicalIssueHelper,
@@ -31,7 +30,6 @@
 @hmrcLayout(
     pageTitle = pageTitle,
     displayHmrcBanner = true,
-    nonce = CSPNonce.get,
     isWelshTranslationAvailable = true,
     accessibilityStatementUrl = appConfig.accessibilityStatementUrl
 )(content)

@@ -24,7 +24,7 @@ import play.api.test.FakeRequest
 import play.api.test.Helpers._
 
 import scala.concurrent.Await
-import scala.concurrent.duration._
+import scala.concurrent.duration.{SECONDS, _}
 
 class RedirectIntegrationSpec extends AnyWordSpec with Matchers {
 
@@ -49,7 +49,7 @@ class RedirectIntegrationSpec extends AnyWordSpec with Matchers {
     "respond with a 301 redirect" in {
       val app = buildApp()
 
-      val response: Result = Await.result(route(app, cookiesRequest).get, 1 seconds)
+      val response: Result = Await.result(route(app, cookiesRequest).get, Duration(1, SECONDS))
 
       response.header.status shouldBe MOVED_PERMANENTLY
     }
@@ -57,7 +57,7 @@ class RedirectIntegrationSpec extends AnyWordSpec with Matchers {
     "redirect to tracking consent running locally" in {
       val app = buildApp()
 
-      val response: Result = Await.result(route(app, cookiesRequest).get, 1 seconds)
+      val response: Result = Await.result(route(app, cookiesRequest).get, Duration(1, SECONDS))
 
       val headers = response.header.headers
 
@@ -71,7 +71,7 @@ class RedirectIntegrationSpec extends AnyWordSpec with Matchers {
         Map("platform.frontend.host" -> "https://example.com")
       )
 
-      val response: Result = Await.result(route(app, cookiesRequest).get, 1 seconds)
+      val response: Result = Await.result(route(app, cookiesRequest).get, Duration(1, SECONDS))
 
       val headers = response.header.headers
 
@@ -85,7 +85,7 @@ class RedirectIntegrationSpec extends AnyWordSpec with Matchers {
     "respond with a 200" in {
       val app = buildApp()
 
-      val response: Result = Await.result(route(app, cookieDetailsRequest).get, 1 seconds)
+      val response: Result = Await.result(route(app, cookieDetailsRequest).get, Duration(1, SECONDS))
 
       response.header.status shouldBe OK
     }
