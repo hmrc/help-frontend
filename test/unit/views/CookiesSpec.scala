@@ -187,6 +187,7 @@ class CookiesSpec
           "mdtpp",
           "mdtpdf",
           "PLAY_FLASH",
+          "PLAY_LANG",
           "remme",
           "mdtpdi"
         )
