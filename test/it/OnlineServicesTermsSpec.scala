@@ -44,7 +44,7 @@ class OnlineServicesTermsSpec extends AnyWordSpec with Matchers with GuiceOneApp
     "default language to English when there is no query parameter" in {
       val request = FakeRequest(GET, "/help/terms-and-conditions/online-services")
 
-      val result = route(fakeApplication, request).get
+      val result = route(fakeApplication(), request).get
 
       val content = Jsoup.parse(contentAsString(result))
 
@@ -56,7 +56,7 @@ class OnlineServicesTermsSpec extends AnyWordSpec with Matchers with GuiceOneApp
     "switch language using 'lang' query parameter" in {
       val request = FakeRequest(GET, "/help/terms-and-conditions/online-services?lang=cym&foo=bar")
 
-      val result = route(fakeApplication, request).get
+      val result = route(fakeApplication(), request).get
 
       status(result) mustBe Status.SEE_OTHER
       redirectLocation(result) mustBe Some(request.path)
@@ -67,7 +67,7 @@ class OnlineServicesTermsSpec extends AnyWordSpec with Matchers with GuiceOneApp
     "default language to English if unknown query parameter is provided" in {
       val request = FakeRequest(GET, "/help/terms-and-conditions/online-services?xxx=cym")
 
-      val result = route(fakeApplication, request).get
+      val result = route(fakeApplication(), request).get
 
       val content = Jsoup.parse(contentAsString(result))
 

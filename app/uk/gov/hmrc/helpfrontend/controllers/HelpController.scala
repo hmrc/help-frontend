@@ -40,7 +40,7 @@ class HelpController @Inject() (
 
   implicit val config: AppConfig = appConfig
 
-  val index: Action[AnyContent] = Action { implicit request =>
+  val index: Action[AnyContent] = Action {
     Redirect(
       appConfig.helpPageUrl,
       SEE_OTHER
@@ -51,7 +51,7 @@ class HelpController @Inject() (
     Ok(termsAndConditionsPage())
   }
 
-  val cookies: Action[AnyContent] = Action { implicit request =>
+  val cookies: Action[AnyContent] = Action {
     Redirect(
       appConfig.cookieSettingsUrl,
       MOVED_PERMANENTLY

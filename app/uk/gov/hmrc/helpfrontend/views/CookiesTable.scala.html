@@ -19,7 +19,7 @@
 @this(govukTable: GovukTable)
 
 @(id: String, section: String, cookieIds: Seq[String], captionKey: Option[String] = Some("help.cookies.how_used.default.table.caption"),
-        captionClasses: String = "")(implicit request: Request[_], messages: Messages)
+        captionClasses: String = "")(implicit messages: Messages)
 @cookies = @{
   for (cookieId <- cookieIds) yield
     Cookie(
