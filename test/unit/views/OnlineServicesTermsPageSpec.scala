@@ -29,7 +29,7 @@ import uk.gov.hmrc.helpfrontend.config.AppConfig
 import uk.gov.hmrc.helpfrontend.views.html.OnlineServicesTermsPage
 import unit.helpers.JsoupHelpers
 
-import collection.JavaConverters._
+import scala.jdk.CollectionConverters._
 
 class OnlineServicesTermsPageSpec
     extends AnyWordSpec

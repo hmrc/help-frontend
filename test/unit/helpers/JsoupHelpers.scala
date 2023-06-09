@@ -22,7 +22,7 @@ import org.jsoup.nodes.{Document, Element}
 import org.jsoup.select.Elements
 import play.twirl.api.Html
 import org.scalatest.matchers.must.Matchers
-import scala.collection.JavaConverters._
+import scala.jdk.CollectionConverters._
 
 trait JsoupHelpers extends Matchers {
   implicit class RichHtml(html: Html) {

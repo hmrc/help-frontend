@@ -36,9 +36,8 @@ trait BaseSpec
     with AcceptanceTestServer
     with BrowserDriver
     with Eventually {
-  override def afterAll() {
-    Try(SingletonDriver.closeInstance)
-  }
+  override def afterAll(): Unit =
+    Try(SingletonDriver.closeInstance())
 
   override def withFixture(test: NoArgTest): Outcome = {
     val fixture = super.withFixture(test)
