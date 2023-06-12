@@ -8,7 +8,7 @@ including cookie details and terms & conditions.
 To comply with GDPR and related regulations, we are required to document all cookies which
 could be set by services running on the platform, so that users can make an informed decision on consent.
 If your service uses a cookie not already documented on the [cookie details page](https://www.tax.service.gov.uk/help/cookie-details),
-you should raise a PR on this repo to document it and share it with us in #team-plat-ui on Slack.
+you should **fork this repo and raise a PR** to document it and share it with us in #team-plat-ui on Slack.
 
 If your cookie falls under one of the existing categories of cookie usage,
 you should add its details to the relevant section in [`CookiesPage.scala.html`](app/uk/gov/hmrc/helpfrontend/views/CookiesPage.scala.html),
