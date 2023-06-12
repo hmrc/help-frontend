@@ -189,7 +189,8 @@ class CookiesSpec
           "PLAY_FLASH",
           "PLAY_LANG",
           "remme",
-          "mdtpdi"
+          "mdtpdi",
+          "mdtprc"
         )
 
         view.verifyTableContainsCookieName("cookies-sessions-table", expectedCookies)
