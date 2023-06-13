@@ -131,6 +131,9 @@ help.cookies.how_used.sessions.table.remme.expires=7 diwrnod
 help.cookies.how_used.sessions.table.mdtpdi.name=mdtpdi
 help.cookies.how_used.sessions.table.mdtpdi.purpose=Defnyddir hyn er mwyn adnabod dyfais benodol sydd wedi rhyngweithio â gwasanaethau treth, a hynny at ddiben archwiliadau diogelwch mewnol
 help.cookies.how_used.sessions.table.mdtpdi.expires=10 mlynedd
+help.cookies.how_used.sessions.table.mdtprc.name=mdtprc
+help.cookies.how_used.sessions.table.mdtprc.purpose=Yn storio data’r sesiwn
+help.cookies.how_used.sessions.table.mdtprc.expires=Pan fyddwch yn cau eich porwr
 
 help.cookies.how_used.user_research_banner.heading=Baner ymchwil defnyddwyr
 help.cookies.how_used.user_research_banner.info=Efallai y gwelwch faner am ymchwil defnyddwyr pan fyddwch yn ymweld. Er mwyn i’ch cyfrifiadur wybod eich bod wedi dewis peidio â’i weld eto, caiff cwci ei storio.
