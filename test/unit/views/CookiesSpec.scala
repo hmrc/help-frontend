@@ -186,11 +186,11 @@ class CookiesSpec
           "mdtp",
           "mdtpp",
           "mdtpdf",
+          "mdtprc",
           "PLAY_FLASH",
           "PLAY_LANG",
           "remme",
-          "mdtpdi",
-          "mdtprc"
+          "mdtpdi"
         )
 
         view.verifyTableContainsCookieName("cookies-sessions-table", expectedCookies)
