@@ -133,7 +133,8 @@ class CookiesSpec
       "have the expected cookies listed in the table" in new Fixture {
         val expectedCookies: List[String] = List(
           "optimizelyEndUserId",
-          "optimizelyRedirectData"
+          "optimizelyRedirectData",
+          "optimizelyOptOut"
         )
 
         view.verifyTableContainsCookieName("cookies-versions-table", expectedCookies)

@@ -101,6 +101,9 @@ help.cookies.how_used.optimizely.table.optimizelyEndUserId.expires=10 mlynedd
 help.cookies.how_used.optimizely.table.optimizelyRedirectData.name=optimizelyRedirectData
 help.cookies.how_used.optimizely.table.optimizelyRedirectData.purpose=Mae hyn yn ein helpu i weld sut yr ydych yn defnyddio GOV.UK er mwyn i ni allu gwella’r wefan
 help.cookies.how_used.optimizely.table.optimizelyRedirectData.expires=5 eiliad
+help.cookies.how_used.optimizely.table.optimizelyOptOut.name=optimizelyOptOut
+help.cookies.how_used.optimizely.table.optimizelyOptOut.purpose=Yn storio dewisiadau caniatâd cwci
+help.cookies.how_used.optimizely.table.optimizelyOptOut.expires=10 mlynedd
 
 help.cookies.how_used.userconsent.heading=Neges ynghylch cwcis
 help.cookies.how_used.userconsent.info=Efallai y byddwch yn gweld baner wrth ymweld â thudalennau gwe CThEM yn gofyn i chi dderbyn cwcis neu adolygu’ch gosodiadau. Byddwn yn gosod cwci fel bod eich cyfrifiadur yn gwybod eich bod wedi gweld y faner ac na ddylid ei dangos eto, a hefyd er mwyn cadw’ch gosodiadau.
