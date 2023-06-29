@@ -18,7 +18,7 @@ by adding
   * `help.cookies.how_used.<section>.table.<cookieId>.name` - cookie name as it is set in the response
   * `help.cookies.how_used.<section>.table.<cookieId>.purpose` - how the cookie is used
   * `help.cookies.how_used.<section>.table.<cookieId>.expires` - when the cookie expires
-* corresponding Welsh content for these properties to [`messages.cy`](conf/messages.cy)
+* corresponding Welsh content (which you must request from the Welsh Language Unit, do not use automated translation tools) for these properties to [`messages.cy`](conf/messages.cy)
 
 If your cookie does not fit one of these existing categories, please contact the PlatUI team to discuss adding a new section.
 
