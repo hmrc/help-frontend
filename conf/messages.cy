@@ -102,7 +102,7 @@ help.cookies.how_used.optimizely.table.optimizelyRedirectData.name=optimizelyRed
 help.cookies.how_used.optimizely.table.optimizelyRedirectData.purpose=Mae hyn yn ein helpu i weld sut yr ydych yn defnyddio GOV.UK er mwyn i ni allu gwella’r wefan
 help.cookies.how_used.optimizely.table.optimizelyRedirectData.expires=5 eiliad
 help.cookies.how_used.optimizely.table.optimizelyOptOut.name=optimizelyOptOut
-help.cookies.how_used.optimizely.table.optimizelyOptOut.purpose=Yn storio dewisiadau caniatâd cwci
+help.cookies.how_used.optimizely.table.optimizelyOptOut.purpose=Rhowch wybod i ni nad ydych am fod yn rhan o brofi ein tudalennau gwe fel defnyddwyr
 help.cookies.how_used.optimizely.table.optimizelyOptOut.expires=10 mlynedd
 
 help.cookies.how_used.userconsent.heading=Neges ynghylch cwcis

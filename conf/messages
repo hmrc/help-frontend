@@ -102,7 +102,7 @@ help.cookies.how_used.optimizely.table.optimizelyRedirectData.name=optimizelyRed
 help.cookies.how_used.optimizely.table.optimizelyRedirectData.purpose=This helps us identify how you use GOV.UK so we can make the site better
 help.cookies.how_used.optimizely.table.optimizelyRedirectData.expires=5 seconds
 help.cookies.how_used.optimizely.table.optimizelyOptOut.name=optimizelyOptOut
-help.cookies.how_used.optimizely.table.optimizelyOptOut.purpose=Stores cookie consent preferences
+help.cookies.how_used.optimizely.table.optimizelyOptOut.purpose=Tells us that you do not want to take part in user testing on our web pages
 help.cookies.how_used.optimizely.table.optimizelyOptOut.expires=10 years
 
 help.cookies.how_used.userconsent.heading=Cookies message
