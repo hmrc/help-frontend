@@ -138,4 +138,13 @@
     section = "javascript_detection",
     cookieIds = Seq("js_detection")
   )
+
+  <h3 class="govuk-heading-m" id="cookies-tracking-consent-settings-heading">@messages("help.cookies.settings.heading")</h3>
+  <p class="govuk-body" id="cookies-tracking-consent-settings-paragraph">
+    @messages("help.cookies.settings.info")
+    @newTabLink(
+      url = messages("help.cookies.settings.tracking_consent.url"),
+      content = Text(messages("help.cookies.settings.tracking_consent.text"))
+    )@messages("general.fullstop")
+  </p>
 }
