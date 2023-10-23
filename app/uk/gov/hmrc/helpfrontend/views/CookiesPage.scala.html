@@ -15,15 +15,17 @@
  *@
 
 @import uk.gov.hmrc.helpfrontend.config.AppConfig
-@import uk.gov.hmrc.helpfrontend.views.html.{NewTabLink, Layout, CookiesTable}
+@import uk.gov.hmrc.helpfrontend.views.html.{CookiesTable, Layout}
+@import uk.gov.hmrc.hmrcfrontend.views.html.helpers.HmrcNewTabLinkHelper
+@import uk.gov.hmrc.hmrcfrontend.views.viewmodels.newtablinkhelper.NewTabLinkHelper
 
-@this(layout: Layout, newTabLink: NewTabLink, cookiesTable: CookiesTable)
+@this(layout: Layout, newTabLinkHelper: HmrcNewTabLinkHelper, cookiesTable: CookiesTable)
 
 @()(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 @surveyLink = {
-  @newTabLink(
-    url = messages("help.cookies.how_used.satisfaction_survey.link.url"),
-    content = Text(messages("help.cookies.how_used.satisfaction_survey.link.text"))
+  @newTabLinkHelper(NewTabLinkHelper(
+    href = Some(messages("help.cookies.how_used.satisfaction_survey.link.url")),
+    text = messages("help.cookies.how_used.satisfaction_survey.link.text"))
   )
 }
 @layout(pageTitle = Some(messages("help.cookies.title"))) {
@@ -40,10 +42,10 @@
   <p class="govuk-body" id="cookies-paragraph-1">@messages("help.cookies.paragraph.1")</p>
   <p class="govuk-body" id="cookies-more-about">
     @messages("help.cookies.paragraph.2")
-    @newTabLink(
-      url = messages("help.cookies.link.manage_cookies.url"),
-      content = Text(messages("help.cookies.link.manage_cookies.text"))
-    )@messages("general.fullstop")
+    @newTabLinkHelper(NewTabLinkHelper(
+      href = Some(messages("help.cookies.link.manage_cookies.url")),
+      text = messages("help.cookies.link.manage_cookies.text")
+    ))@messages("general.fullstop")
   </p>
   <h2 class="govuk-heading-l" id="cookies-are-used">@messages("help.cookies.how_used.heading")</h2>
 
@@ -66,10 +68,10 @@
   )
   <p class="govuk-body" id="cookies-analytics-opt-out">
     @messages("help.cookies.how_used.measuring_usage.opt_out.info")
-    @newTabLink(
-      url = messages("help.cookies.how_used.measuring_usage.opt_out.link.url"),
-      content = Text(messages("help.cookies.how_used.measuring_usage.opt_out.link.text"))
-    )@messages("general.fullstop")
+    @newTabLinkHelper(NewTabLinkHelper(
+      href = Some(messages("help.cookies.how_used.measuring_usage.opt_out.link.url")),
+      text = messages("help.cookies.how_used.measuring_usage.opt_out.link.text")
+    ))@messages("general.fullstop")
   </p>
 
   <h3 class="govuk-heading-m" id="cookies-versions-heading">@messages("help.cookies.how_used.optimizely.heading")</h3>
@@ -142,9 +144,9 @@
   <h3 class="govuk-heading-m" id="cookies-tracking-consent-settings-heading">@messages("help.cookies.settings.heading")</h3>
   <p class="govuk-body" id="cookies-tracking-consent-settings-paragraph">
     @messages("help.cookies.settings.info")
-    @newTabLink(
-      url = messages("help.cookies.settings.tracking_consent.url"),
-      content = Text(messages("help.cookies.settings.tracking_consent.text"))
-    )@messages("general.fullstop")
+    @newTabLinkHelper(NewTabLinkHelper(
+      href = Some(messages("help.cookies.settings.tracking_consent.url")),
+      text = messages("help.cookies.settings.tracking_consent.text")
+    ))@messages("general.fullstop")
   </p>
 }

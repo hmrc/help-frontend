@@ -199,7 +199,7 @@ help.cookies.how_used.javascript_detection.table.js_detection.expires=1 flwyddyn
 
 help.cookies.settings.heading=Newid eich gosodiadau
 help.cookies.settings.info=Gallwch
-help.cookies.settings.tracking_consent.text=newid y cwcis yr ydych yn fodlon i ni eu cadw
+help.cookies.settings.tracking_consent.text=newid y cwcis yr ydych yn fodlon i ni eu cadw.
 help.cookies.settings.tracking_consent.url=/tracking-consent/cookie-settings
 
 help.online_terms.title=Telerau ac Amodau Gwasanaethau ar-lein CThEM – GOV.UK
