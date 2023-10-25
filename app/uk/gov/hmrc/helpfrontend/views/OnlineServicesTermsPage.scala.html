@@ -15,9 +15,9 @@
  *@
 
 @import uk.gov.hmrc.helpfrontend.config.AppConfig
-@import uk.gov.hmrc.helpfrontend.views.html.{NewTabLink, Layout}
+@import uk.gov.hmrc.helpfrontend.views.html.Layout
 
-@this(layout: Layout, newTabLink: NewTabLink)
+@this(layout: Layout)
 
 @()(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 @layout(pageTitle = Some(messages("help.online_terms.title"))) {

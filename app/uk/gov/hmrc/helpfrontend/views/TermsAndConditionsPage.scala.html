@@ -16,9 +16,11 @@
 
 @import uk.gov.hmrc.helpfrontend.config.AppConfig
 @import uk.gov.hmrc.helpfrontend.controllers.routes
-@import uk.gov.hmrc.helpfrontend.views.html.{NewTabLink, Layout}
+@import uk.gov.hmrc.helpfrontend.views.html.Layout
+@import uk.gov.hmrc.hmrcfrontend.views.html.helpers.HmrcNewTabLinkHelper
+@import uk.gov.hmrc.hmrcfrontend.views.viewmodels.newtablinkhelper.NewTabLinkHelper
 
-@this(layout: Layout, newTabLink: NewTabLink)
+@this(layout: Layout, hmrcNewTabLinkHelper: HmrcNewTabLinkHelper)
 
 @()(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 @* Privacy policy is no longer part of this service, but is served via a redirect in MDTP frontend routes *@
@@ -43,32 +45,32 @@
  </p>
  <h2 class="govuk-heading-l" id="online-services">@messages("help.terms_and_conditions.online_services.heading")</h2>
  <p class="govuk-body">
-   @Html(messages("help.terms_and_conditions.online_services.paragraph.1", newTabLink(
-     url = messages("help.links.hmrc.terms_and_conditions.url"),
-     content = Text(messages("help.links.terms_and_conditions.text.lower_case"))
-   )))
+   @Html(messages("help.terms_and_conditions.online_services.paragraph.1", hmrcNewTabLinkHelper(NewTabLinkHelper(
+     href = Some(messages("help.links.hmrc.terms_and_conditions.url")),
+     text = messages("help.links.terms_and_conditions.text.lower_case")
+   ))))
  </p>
  <p class="govuk-body">
    @messages("help.terms_and_conditions.online_services.paragraph.2")
-   @newTabLink(
-     url = messages("help.links.online_security.url"),
-     content = Text(messages("help.links.online_security.text"))
-   )@messages("general.fullstop")
+   @hmrcNewTabLinkHelper(NewTabLinkHelper(
+     href = Some(messages("help.links.online_security.url")),
+     text = messages("help.links.online_security.text")
+   ))@messages("general.fullstop")
  <h2 class="govuk-heading-l" id="copyright">@messages("help.terms_and_conditions.copyright.heading")</h2>
  <p class="govuk-body">
    @messages("help.terms_and_conditions.copyright.paragraph.1")
-   @newTabLink(
-     url = messages("help.links.copyright_notice.url"),
-     content = Text(messages("help.links.copyright_notice.text"))
-   )@messages("general.fullstop")
+   @hmrcNewTabLinkHelper(NewTabLinkHelper(
+     href = Some(messages("help.links.copyright_notice.url")),
+     text = messages("help.links.copyright_notice.text")
+   ))@messages("general.fullstop")
  </p>
  <p class="govuk-body">@messages("help.terms_and_conditions.copyright.paragraph.2")</p>
  <p class="govuk-body">@messages("help.terms_and_conditions.copyright.paragraph.3")</p>
  <p class="govuk-body">
-   @newTabLink(
-     url = messages("help.links.agents_as_authorised.url"),
-     content = Text(messages("help.links.agents_as_authorised.text"))
-   )
+   @hmrcNewTabLinkHelper(NewTabLinkHelper(
+     href = Some(messages("help.links.agents_as_authorised.url")),
+     text = messages("help.links.agents_as_authorised.text")
+   ))
  </p>
  <h2 class="govuk-heading-l" id="linking">@messages("help.terms_and_conditions.linking.heading")</h2>
  <p class="govuk-body">@messages("help.terms_and_conditions.linking.paragraph.1")</p>
