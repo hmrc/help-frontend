@@ -199,7 +199,7 @@ help.cookies.how_used.javascript_detection.table.js_detection.expires=1 year
 
 help.cookies.settings.heading=Change your settings
 help.cookies.settings.info=You can
-help.cookies.settings.tracking_consent.text=change which cookies you’re happy for us to store.
+help.cookies.settings.tracking_consent.text=change which cookies you’re happy for us to store
 help.cookies.settings.tracking_consent.url=/tracking-consent/cookie-settings
 
 help.online_terms.title=HMRC Online Services Terms & Conditions – GOV.UK
