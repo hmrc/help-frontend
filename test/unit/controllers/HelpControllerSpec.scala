@@ -119,7 +119,7 @@ class HelpControllerSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSu
 
       val headers = content.select("h1")
       headers.size mustBe 1
-      headers.first.text mustBe "Telerau ac Amodau Gwasanaethau ar-lein CThEM"
+      headers.first.text mustBe "Telerau ac Amodau Gwasanaethau ar-lein CThEF"
     }
   }
 
