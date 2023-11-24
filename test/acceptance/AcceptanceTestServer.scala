@@ -34,7 +34,6 @@ trait AcceptanceTestServer extends TestSuiteMixin with GuiceFakeApplicationFacto
         "auditing.enabled" -> false
       )
     )
-    .disable[com.kenshoo.play.metrics.PlayModule]
     .build()
 
   private def runSuiteWithTestServer(testName: Option[String], args: Args): Status = {
