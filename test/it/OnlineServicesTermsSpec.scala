@@ -35,8 +35,9 @@ class OnlineServicesTermsSpec extends AnyWordSpec with Matchers with GuiceOneApp
   override def fakeApplication(): Application =
     new GuiceApplicationBuilder()
       .configure(
-        "metrics.jvm"     -> false,
-        "metrics.enabled" -> false
+        "metrics.jvm"      -> false,
+        "metrics.enabled"  -> false,
+        "auditing.enabled" -> false
       )
       .build()
 
