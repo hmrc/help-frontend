@@ -17,7 +17,8 @@ object AppDependencies {
     "org.scalatestplus"      %% "selenium-4-12"                % "3.2.17.0"       % Test,
     "org.jsoup"               % "jsoup"                        % "1.13.1"         % Test,
     "org.mockito"            %% "mockito-scala-scalatest"      % "1.14.8"         % Test,
-    "uk.gov.hmrc"            %% "webdriver-factory"            % "0.46.0"         % Test,
+//    "uk.gov.hmrc"            %% "webdriver-factory"            % "0.46.0"         % Test,
+    "uk.gov.hmrc"            %% "ui-test-runner"               % "0.17.0"         % Test,
     "com.vladsch.flexmark"    % "flexmark-all"                 % "0.62.2"         % Test,
     "org.scalatestplus.play" %% "scalatestplus-play"           % "7.0.0"          % Test
   )
