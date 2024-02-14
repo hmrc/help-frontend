@@ -52,17 +52,11 @@ plugin. This plugin requires Node.js v12 or above to be installed locally.
 
 ## Running the UI acceptance/integration tests
 
-The UI and ZAP tests are based on the template at https://github.com/hmrc/platform-example-ui-journey-tests
-with some modifications to allow them to be run as part of the microservice
-repository.
+The UI and ZAP tests are based on the template at https://github.com/hmrc/platform-test-example-ui-journey-tests.
 
-To run the UI acceptance tests locally, you will need a copy of Chrome
-and the Chrome browser driver installed at /usr/local/bin/chromedriver
 ```
 ./run_acceptance_tests.sh
 ```
-
-The Chrome driver is available at https://chromedriver.chromium.org/
 
 ## Running ZAP scan locally
 
