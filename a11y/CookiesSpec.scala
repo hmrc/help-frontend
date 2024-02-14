@@ -5,7 +5,6 @@ import play.api.Application
 import play.api.i18n.{Messages, MessagesApi}
 import play.api.inject.guice.GuiceApplicationBuilder
 import play.api.test.FakeRequest
-import play.twirl.api.HtmlFormat
 import uk.gov.hmrc.helpfrontend.config.AppConfig
 import uk.gov.hmrc.helpfrontend.views.html.CookiesPage
 import uk.gov.hmrc.scalatestaccessibilitylinter.AccessibilityMatchers
