@@ -17,36 +17,30 @@
 package acceptance.specs
 
 import acceptance.AcceptanceTestServer
-import org.scalatest._
+import acceptance.driver.BrowserDriver
 import org.scalatest.concurrent.Eventually
 import org.scalatest.featurespec.AnyFeatureSpec
 import org.scalatest.matchers.should.Matchers
+import org.scalatest.{BeforeAndAfterEach, GivenWhenThen}
 import org.scalatestplus.selenium.WebBrowser
-import acceptance.driver.BrowserDriver
-import uk.gov.hmrc.webdriver.SingletonDriver
-
-import scala.util.Try
+import uk.gov.hmrc.selenium.webdriver.{Browser, ScreenshotOnFailure}
 
 trait BaseSpec
     extends AnyFeatureSpec
     with GivenWhenThen
-    with BeforeAndAfterAll
     with Matchers
+    with BeforeAndAfterEach
+    with Browser
+    with ScreenshotOnFailure
     with WebBrowser
     with AcceptanceTestServer
     with BrowserDriver
     with Eventually {
-  override def afterAll(): Unit =
-    Try(SingletonDriver.closeInstance())
 
-  override def withFixture(test: NoArgTest): Outcome = {
-    val fixture = super.withFixture(test)
-    if (!fixture.isSucceeded) {
-      val screenshotName = test.name.replaceAll(" ", "_").replaceAll(":", "") + ".png"
-      setCaptureDir("./target/acceptance-test-reports/html-report/screenshots/")
-      capture to screenshotName
-      markup(s"<img src='screenshots/$screenshotName' />")
-    }
-    fixture
-  }
+  override def beforeEach(): Unit =
+    startBrowser()
+
+  override def afterEach(): Unit =
+    quitBrowser()
+
 }
