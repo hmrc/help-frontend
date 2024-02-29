@@ -50,10 +50,9 @@ The above tests are run via the
 [sbt-accessibility-linter](https://www.github.com/hmrc/sbt-accessibility-linter)
 plugin. This plugin requires Node.js v12 or above to be installed locally.
 
-## Running the UI acceptance/integration tests
+## Running the UI acceptance tests
 
-The UI and ZAP tests are based on the template at https://github.com/hmrc/platform-test-example-ui-journey-tests.
-
+To execute the UI acceptance tests on your local machine, ensure that you have [local-selenium-grid](https://github.com/hmrc/local-selenium-grid) installed and running. Once set up, you can proceed with running the tests with.
 ```
 ./run_acceptance_tests.sh
 ```
