@@ -48,7 +48,7 @@ class OnlineServicesTermsPageSpec
 
   "Online Services Terms and conditions" must {
     "have a title of 'HMRC Online Services Terms & Conditions – GOV.UK'" in new Fixture {
-      view.select("title").text mustBe "HMRC Online Services Terms & Conditions – GOV.UK"
+      view.select("title").first().text mustBe "HMRC Online Services Terms & Conditions – GOV.UK"
     }
 
     "have a heading of 'HMRC Online Services Terms & Conditions'" in new Fixture {
