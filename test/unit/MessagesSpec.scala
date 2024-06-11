@@ -36,7 +36,7 @@ class MessagesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite {
       )
       .build()
 
-  implicit val messagesApi: MessagesApi = app.injector.instanceOf[MessagesApi]
+  given messagesApi: MessagesApi = app.injector.instanceOf[MessagesApi]
 
   val languageEnglish: Lang         = Lang.get("en").getOrElse(throw new Exception())
   val languageWelsh: Lang           = Lang.get("cy").getOrElse(throw new Exception())

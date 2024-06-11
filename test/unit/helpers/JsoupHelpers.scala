@@ -22,10 +22,10 @@ import org.jsoup.nodes.{Document, Element}
 import org.jsoup.select.Elements
 import play.twirl.api.Html
 import org.scalatest.matchers.must.Matchers
-import scala.jdk.CollectionConverters._
+import scala.jdk.CollectionConverters.*
 
 trait JsoupHelpers extends Matchers {
-  implicit class RichHtml(html: Html) {
+  extension (html: Html) {
     def select(cssQuery: String): Elements =
       parseNoPrettyPrinting(html).select(cssQuery)
 

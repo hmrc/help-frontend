@@ -36,13 +36,13 @@ lazy val microservice = Project(appName, file("."))
   .settings(
     majorVersion := 4,
     PlayKeys.playDefaultPort := 9240,
-    scalaVersion := "2.13.12",
+    scalaVersion := "3.3.3",
     libraryDependencies ++= AppDependencies.compile ++ AppDependencies.test,
     TwirlKeys.templateImports ++= Seq(
       "uk.gov.hmrc.helpfrontend.config.AppConfig",
-      "uk.gov.hmrc.govukfrontend.views.html.components._",
-      "uk.gov.hmrc.hmrcfrontend.views.html.components._",
-      "uk.gov.hmrc.hmrcfrontend.views.html.helpers._"
+      "uk.gov.hmrc.govukfrontend.views.html.components.*",
+      "uk.gov.hmrc.hmrcfrontend.views.html.components.*",
+      "uk.gov.hmrc.hmrcfrontend.views.html.helpers.*"
     ),
     scalacOptions += "-Wconf:src=routes/.*:s",
     scalacOptions += "-Wconf:cat=unused-imports&src=html/.*:s",

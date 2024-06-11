@@ -20,10 +20,10 @@ class TermsAndConditionsSpec extends AnyWordSpec with Matchers with Accessibilit
 
   "Terms and conditions page" must {
     "pass accessibility checks" in {
-      implicit val appConfig: AppConfig = app.injector.instanceOf[AppConfig]
-      implicit val fakeRequest: FakeRequest[_] = FakeRequest()
-      implicit val messagesApi: MessagesApi = app.injector.instanceOf[MessagesApi]
-      implicit val messages: Messages = messagesApi.preferred(fakeRequest)
+      given AppConfig = app.injector.instanceOf[AppConfig]
+      given fakeRequest: FakeRequest[?] = FakeRequest()
+      given messagesApi: MessagesApi = app.injector.instanceOf[MessagesApi]
+      given Messages = messagesApi.preferred(fakeRequest)
 
       val termsAndConditionsPage: TermsAndConditionsPage = app.injector.instanceOf[TermsAndConditionsPage]
 

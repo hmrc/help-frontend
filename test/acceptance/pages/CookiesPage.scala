@@ -27,12 +27,12 @@ sealed trait CookiesPage extends BasePage {
 
   def cookiesHeading: String
 
-  def cookiesInfoText(implicit webDriver: WebDriver): String = webDriver.findElement(By.id("cookies-info")).getText
+  def cookiesInfoText(using webDriver: WebDriver): String = webDriver.findElement(By.id("cookies-info")).getText
 
-  def switchLanguage(implicit webDriver: WebDriver): Unit =
+  def switchLanguage(using webDriver: WebDriver): Unit =
     webDriver.findElement(By.partialLinkText(otherLanguage)).click()
 
-  def hasLanguageSwitchingLink(implicit webDriver: WebDriver): Boolean =
+  def hasLanguageSwitchingLink(using webDriver: WebDriver): Boolean =
     !webDriver.findElements(By.partialLinkText(otherLanguage)).isEmpty
 }
 
