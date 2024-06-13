@@ -17,10 +17,10 @@
 package uk.gov.hmrc.helpfrontend.controllers
 
 import play.api.i18n.I18nSupport
-import play.api.mvc._
+import play.api.mvc.*
 import play.api.i18n.Lang
 import uk.gov.hmrc.helpfrontend.config.AppConfig
-import uk.gov.hmrc.helpfrontend.views.html._
+import uk.gov.hmrc.helpfrontend.views.html.*
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 
 import javax.inject.{Inject, Singleton}
@@ -34,11 +34,11 @@ class HelpController @Inject() (
   termsAndConditionsPage: TermsAndConditionsPage,
   onlineServicesTermsPage: OnlineServicesTermsPage,
   cookiesPage: CookiesPage
-)(implicit val executionContext: ExecutionContext)
+)(using ExecutionContext)
     extends FrontendController(mcc)
     with I18nSupport {
 
-  implicit val config: AppConfig = appConfig
+  given AppConfig = appConfig
 
   val index: Action[AnyContent] = Action {
     Redirect(
@@ -47,7 +47,8 @@ class HelpController @Inject() (
     )
   }
 
-  val termsAndConditions: Action[AnyContent] = Action { implicit request =>
+  val termsAndConditions: Action[AnyContent] = Action { request =>
+    given Request[AnyContent] = request
     Ok(termsAndConditionsPage())
   }
 
@@ -58,7 +59,8 @@ class HelpController @Inject() (
     )
   }
 
-  val cookieDetails: Action[AnyContent] = Action { implicit request =>
+  val cookieDetails: Action[AnyContent] = Action { request =>
+    given Request[AnyContent] = request
     Ok(cookiesPage())
   }
 
@@ -71,7 +73,8 @@ class HelpController @Inject() (
     }
 
   def onlineServicesTerms(lang: Option[String] = None): Action[AnyContent] = maybeChangeLang(lang.map(_.take(2))) {
-    Action { implicit request =>
+    Action { request =>
+      given Request[AnyContent] = request
       Ok(onlineServicesTermsPage())
     }
   }

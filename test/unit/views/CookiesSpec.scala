@@ -17,7 +17,7 @@
 package unit.views
 
 import org.jsoup.select.Elements
-import org.mockito.scalatest.MockitoSugar
+import org.scalatestplus.mockito.MockitoSugar
 import org.scalatest.matchers.must.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 import org.scalatestplus.play.guice.GuiceOneAppPerSuite
@@ -350,13 +350,13 @@ class CookiesSpec
   }
 
   trait Fixture {
-    implicit val fakeRequest: FakeRequest[_] = FakeRequest()
+    given fakeRequest: FakeRequest[?] = FakeRequest()
 
-    implicit val messagesApi: MessagesApi = app.injector.instanceOf[MessagesApi]
+    given messagesApi: MessagesApi = app.injector.instanceOf[MessagesApi]
 
-    implicit val appConfig: AppConfig = app.injector.instanceOf[AppConfig]
+    given AppConfig = app.injector.instanceOf[AppConfig]
 
-    implicit val messages: Messages = messagesApi.preferred(fakeRequest)
+    given Messages = messagesApi.preferred(fakeRequest)
 
     val expectedTableHeadingsText: List[String] = List("Name", "Purpose", "Expires")
 

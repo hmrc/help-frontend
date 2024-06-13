@@ -16,7 +16,7 @@
 
 package unit.views
 
-import org.mockito.scalatest.MockitoSugar
+import org.scalatestplus.mockito.MockitoSugar
 import org.scalatest.matchers.must.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 import org.scalatestplus.play.guice.GuiceOneAppPerSuite
@@ -29,7 +29,7 @@ import uk.gov.hmrc.helpfrontend.config.AppConfig
 import uk.gov.hmrc.helpfrontend.views.html.OnlineServicesTermsPage
 import unit.helpers.JsoupHelpers
 
-import scala.jdk.CollectionConverters._
+import scala.jdk.CollectionConverters.*
 
 class OnlineServicesTermsPageSpec
     extends AnyWordSpec
@@ -72,13 +72,13 @@ class OnlineServicesTermsPageSpec
 
   trait Fixture {
 
-    implicit val fakeRequest: FakeRequest[_] = FakeRequest()
+    given fakeRequest: FakeRequest[?] = FakeRequest()
 
-    implicit val messagesApi: MessagesApi = app.injector.instanceOf[MessagesApi]
+    given messagesApi: MessagesApi = app.injector.instanceOf[MessagesApi]
 
-    implicit val appConfig: AppConfig = app.injector.instanceOf[AppConfig]
+    given AppConfig = app.injector.instanceOf[AppConfig]
 
-    implicit val messages: Messages = messagesApi.preferred(fakeRequest)
+    given Messages = messagesApi.preferred(fakeRequest)
 
     val page: OnlineServicesTermsPage = app.injector.instanceOf[OnlineServicesTermsPage]
 

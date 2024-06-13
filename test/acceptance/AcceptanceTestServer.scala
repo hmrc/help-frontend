@@ -22,12 +22,12 @@ import org.scalatestplus.play.guice.GuiceFakeApplicationFactory
 import play.api.Application
 import play.api.inject.guice.GuiceApplicationBuilder
 import play.api.test.TestServer
-import acceptance.conf.TestConfiguration._
+import acceptance.conf.TestConfiguration.*
 
 trait AcceptanceTestServer extends TestSuiteMixin with GuiceFakeApplicationFactory { this: TestSuite =>
   lazy val port: Int = servicePort("help-frontend").toInt
 
-  implicit lazy val app: Application = new GuiceApplicationBuilder()
+  given app: Application = new GuiceApplicationBuilder()
     .configure(
       Map(
         "metrics.enabled"  -> false,
@@ -52,9 +52,7 @@ trait AcceptanceTestServer extends TestSuiteMixin with GuiceFakeApplicationFacto
     }
   }
 
-  /**
-    * Invoke suite with a test server if running locally.
-    * See org.scalatest.SuiteMixin.run
+  /** Invoke suite with a test server if running locally. See org.scalatest.SuiteMixin.run
     */
   abstract override def run(testName: Option[String], args: Args): Status =
     if (env == "local") {

@@ -20,7 +20,7 @@ import acceptance.conf.TestConfiguration
 import org.openqa.selenium.{By, WebDriver}
 import org.scalatestplus.selenium.Page
 
-import scala.jdk.CollectionConverters._
+import scala.jdk.CollectionConverters.*
 
 object OnlineServicesTermsPage extends BasePage {
   override val url: String =
@@ -31,12 +31,12 @@ object OnlineServicesTermsPage extends BasePage {
       TestConfiguration.url("help-frontend") + s"/terms-and-conditions/online-services?lang=$lang"
   }
 
-  def subHeadings(implicit webDriver: WebDriver): Seq[String] = {
+  def subHeadings(using webDriver: WebDriver): Seq[String] = {
     val subHeadingElements = webDriver.findElements(By.className("govuk-heading-l")).asScala
     subHeadingElements.toSeq.map(_.getText)
   }
 
-  def links(implicit webDriver: WebDriver): Seq[String] = {
+  def links(using webDriver: WebDriver): Seq[String] = {
     val linkElements = webDriver
       .findElement(By.className("govuk-main-wrapper"))
       .findElements(By.className("govuk-link"))
@@ -44,13 +44,13 @@ object OnlineServicesTermsPage extends BasePage {
     linkElements.toSeq.map(_.getAttribute("href"))
   }
 
-  def languageOfPage(implicit webDriver: WebDriver): String = webDriver
+  def languageOfPage(using webDriver: WebDriver): String = webDriver
     .findElement(By.tagName("html"))
     .getAttribute("lang")
 
-  def switchLanguageToEnglish(implicit webDriver: WebDriver): Unit =
+  def switchLanguageToEnglish(using webDriver: WebDriver): Unit =
     webDriver.findElement(By.partialLinkText("English")).click()
 
-  def switchLanguageToWelsh(implicit webDriver: WebDriver): Unit =
+  def switchLanguageToWelsh(using webDriver: WebDriver): Unit =
     webDriver.findElement(By.partialLinkText("Cymraeg")).click()
 }

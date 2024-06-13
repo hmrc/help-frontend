@@ -24,9 +24,9 @@ import play.twirl.api.HtmlFormat
 trait Fixture extends Matchers {
   def view: HtmlFormat.Appendable
 
-  lazy val html: String           = view.body
-  implicit lazy val doc: Document = Jsoup.parse(html)
-  lazy val form: Element          = doc.getElementsByTag("form").first()
-  lazy val heading: Element       = doc.getElementsByTag("h1").first()
-  lazy val subHeading: Element    = doc.getElementsByClass("heading-secondary").first()
+  lazy val html: String        = view.body
+  given doc: Document          = Jsoup.parse(html)
+  lazy val form: Element       = doc.getElementsByTag("form").first()
+  lazy val heading: Element    = doc.getElementsByTag("h1").first()
+  lazy val subHeading: Element = doc.getElementsByClass("heading-secondary").first()
 }
