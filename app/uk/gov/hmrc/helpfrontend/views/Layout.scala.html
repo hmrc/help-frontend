@@ -15,10 +15,11 @@
  *@
 
 @import uk.gov.hmrc.helpfrontend.config.AppConfig
-@import uk.gov.hmrc.hmrcfrontend.views.viewmodels.hmrcstandardpage.{HmrcStandardPageParams, Banners, ServiceURLs}
+@import uk.gov.hmrc.hmrcfrontend.views.viewmodels.hmrcstandardpage.{HmrcStandardPageParams, Banners, ServiceURLs, TemplateOverrides}
 
 @this(
         hmrcReportTechnicalIssueHelper: HmrcReportTechnicalIssueHelper,
+        hmrcTimeoutDialogHelper: HmrcTimeoutDialogHelper,
         hmrcLayout: HmrcStandardPage
 )
 @(pageTitle: Option[String] = None)(contentBlock: Html)(implicit request: RequestHeader, messages: Messages, appConfig: AppConfig)
@@ -32,5 +33,8 @@
     pageTitle = pageTitle,
     banners = Banners(displayHmrcBanner = true),
     isWelshTranslationAvailable = true,
-    serviceURLs = ServiceURLs(accessibilityStatementUrl = appConfig.accessibilityStatementUrl)
+    serviceURLs = ServiceURLs(accessibilityStatementUrl = appConfig.accessibilityStatementUrl),
+    templateOverrides = TemplateOverrides(
+        additionalHeadBlock = Some(hmrcTimeoutDialogHelper(signOutUrl = "https://www.gov.uk"))
+    )
 ))(content)
