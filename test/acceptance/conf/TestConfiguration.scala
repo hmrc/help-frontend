@@ -17,12 +17,17 @@
 package acceptance.conf
 
 import com.typesafe.config.{Config, ConfigFactory}
+import uk.gov.hmrc.zap.GlobalZapProxy
 
 object TestConfiguration {
   val config: Config        = ConfigFactory.load()
   val env: String           = config.getString("environment")
   val defaultConfig: Config = config.getConfig("local")
   val envConfig: Config     = config.getConfig(env).withFallback(defaultConfig)
+
+  if (sys.props.get("security.assessment").contains("true")) {
+    GlobalZapProxy.startProxy()
+  }
 
   def url(service: String): String = {
     val host = env match {
