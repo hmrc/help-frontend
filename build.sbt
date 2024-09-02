@@ -1,3 +1,4 @@
+import uk.gov.hmrc.DefaultBuildSettings
 import uk.gov.hmrc.DefaultBuildSettings.addTestReportOption
 
 val appName = "help-frontend"
@@ -11,14 +12,6 @@ lazy val unitTestSettings =
       addTestReportOption(Test, "test-reports")
     )
 
-lazy val IntegrationTest         = config("it") extend Test
-lazy val integrationTestSettings =
-  inConfig(IntegrationTest)(Defaults.testTasks) ++
-    Seq(
-      (IntegrationTest / testOptions) := Seq(Tests.Filter(_ startsWith "it")),
-      addTestReportOption(IntegrationTest, "it-test-reports")
-    )
-
 lazy val AcceptanceTest         = config("acceptance") extend Test
 lazy val acceptanceTestSettings =
   inConfig(AcceptanceTest)(Defaults.testTasks) ++
@@ -29,15 +22,19 @@ lazy val acceptanceTestSettings =
       addTestReportOption(AcceptanceTest, "acceptance-test-reports")
     )
 
+lazy val sharedSettings = Seq(
+  libraryDependencies ++= AppDependencies.compile ++ AppDependencies.test,
+  majorVersion := 4,
+  scalaVersion := "3.3.3"
+)
+
 lazy val microservice = Project(appName, file("."))
   .enablePlugins(play.sbt.PlayScala, SbtDistributablesPlugin)
   .disablePlugins(JUnitXmlReportPlugin) // Required to prevent https://github.com/scalatest/scalatest/issues/1427
-  .configs(AcceptanceTest, IntegrationTest)
+  .configs(AcceptanceTest)
   .settings(
-    majorVersion := 4,
+    sharedSettings,
     PlayKeys.playDefaultPort := 9240,
-    scalaVersion := "3.3.3",
-    libraryDependencies ++= AppDependencies.compile ++ AppDependencies.test,
     TwirlKeys.templateImports ++= Seq(
       "uk.gov.hmrc.helpfrontend.config.AppConfig",
       "uk.gov.hmrc.govukfrontend.views.html.components.*",
@@ -49,6 +46,11 @@ lazy val microservice = Project(appName, file("."))
     Assets / pipelineStages := Seq(gzip),
     PlayKeys.devSettings ++= Seq("metrics.enabled" -> "false"),
     unitTestSettings,
-    integrationTestSettings,
     acceptanceTestSettings
   )
+
+lazy val it = project
+  .enablePlugins(PlayScala)
+  .dependsOn(microservice % "test->test")
+  .settings(DefaultBuildSettings.itSettings())
+  .settings(sharedSettings)
