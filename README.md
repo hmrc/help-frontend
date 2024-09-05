@@ -52,7 +52,7 @@ Accessibility tests are run in Jenkins or locally via the journey tests.
 
 ## UI Journey Tests
 
-UI Journey Testscan be found at https://github.com/hmrc/help-frontend-ui-tests
+UI Journey Tests can be found at https://github.com/hmrc/help-frontend-ui-tests
 
 ## Running ZAP scan locally
 
