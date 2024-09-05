@@ -40,6 +40,12 @@ http://localhost:9240/help/cookie-details
 sbt test
 ```
 
+## Integration Tests
+
+```
+sbt it/test
+```
+
 ## Accessibility
 
 Accessibility tests are run in Jenkins or locally via the journey tests.

@@ -28,7 +28,6 @@ import play.api.test.FakeRequest
 import play.twirl.api.HtmlFormat
 import uk.gov.hmrc.helpfrontend.config.AppConfig
 import uk.gov.hmrc.helpfrontend.views.html.CookiesPage
-import uk.gov.hmrc.scalatestaccessibilitylinter.AccessibilityMatchers
 import unit.helpers.JsoupHelpers
 
 class CookiesSpec
@@ -36,8 +35,7 @@ class CookiesSpec
     with Matchers
     with GuiceOneAppPerSuite
     with MockitoSugar
-    with JsoupHelpers
-    with AccessibilityMatchers {
+    with JsoupHelpers {
   override def fakeApplication(): Application =
     new GuiceApplicationBuilder()
       .configure(
