@@ -30,12 +30,7 @@ import uk.gov.hmrc.helpfrontend.config.AppConfig
 import uk.gov.hmrc.helpfrontend.views.html.CookiesPage
 import unit.helpers.JsoupHelpers
 
-class CookiesSpec
-    extends AnyWordSpec
-    with Matchers
-    with GuiceOneAppPerSuite
-    with MockitoSugar
-    with JsoupHelpers {
+class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite with MockitoSugar with JsoupHelpers {
   override def fakeApplication(): Application =
     new GuiceApplicationBuilder()
       .configure(
