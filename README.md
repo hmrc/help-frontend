@@ -40,22 +40,19 @@ http://localhost:9240/help/cookie-details
 sbt test
 ```
 
-## Running accessibility tests
+## Integration Tests
 
 ```
-sbt a11y:test
+sbt it/test
 ```
 
-The above tests are run via the
-[sbt-accessibility-linter](https://www.github.com/hmrc/sbt-accessibility-linter)
-plugin. This plugin requires Node.js v12 or above to be installed locally.
+## Accessibility
 
-## Running the UI acceptance tests
+Accessibility tests are run in Jenkins or locally via the journey tests.
 
-To execute the UI acceptance tests on your local machine, ensure that you have [local-selenium-grid](https://github.com/hmrc/local-selenium-grid) installed and running. Once set up, you can proceed with running the tests with.
-```
-./run_acceptance_tests.sh
-```
+## UI Journey Tests
+
+UI Journey Tests can be found at https://github.com/hmrc/help-frontend-ui-tests
 
 ## Running ZAP scan locally
 
