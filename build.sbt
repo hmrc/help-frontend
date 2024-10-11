@@ -15,7 +15,7 @@ lazy val unitTestSettings =
 lazy val sharedSettings = Seq(
   libraryDependencies ++= AppDependencies.compile ++ AppDependencies.test,
   majorVersion := 4,
-  scalaVersion := "3.3.3"
+  scalaVersion := "3.3.4"
 )
 
 lazy val microservice = Project(appName, file("."))
@@ -31,7 +31,7 @@ lazy val microservice = Project(appName, file("."))
       "uk.gov.hmrc.hmrcfrontend.views.html.helpers.*"
     ),
     scalacOptions += "-Wconf:src=routes/.*:s",
-    scalacOptions += "-Wconf:cat=unused-imports&src=html/.*:s",
+    scalacOptions += "-Wconf:msg=unused-imports&src=html/.*:s",
     Assets / pipelineStages := Seq(gzip),
     PlayKeys.devSettings ++= Seq("metrics.enabled" -> "false"),
     unitTestSettings
