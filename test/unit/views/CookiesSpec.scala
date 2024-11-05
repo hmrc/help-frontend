@@ -330,6 +330,37 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
       }
     }
 
+    "Pega cookies" should {
+      "have the heading 'Pega cookies'" in new Fixture {
+        view.select("#cookies-pega-heading").text mustBe "Pega cookies"
+      }
+
+      "have a first paragraph of descriptive text" in new Fixture {
+        view.select("#cookies-pega-paragraph-1").size() mustBe 1
+      }
+
+      "have a list of two bullet points" in new Fixture {
+        val ul: Elements = view.select("#cookies-pega-bullet")
+        ul.size() mustBe 1
+
+        ul.first().className() mustBe "govuk-list govuk-list--bullet"
+        ul.first().children().size() mustBe 2
+      }
+
+      "have a second paragraph of descriptive text" in new Fixture {
+        view.select("#cookies-pega-paragraph-2").size() mustBe 1
+      }
+
+      "have a link to more information about Pega cookies" in new Fixture {
+        val paragraph = view.select("#cookies-pega-more-info")
+        paragraph.size() mustBe 1
+
+        val link = paragraph.first().child(0)
+        link.attr("href") mustBe "/some-fake-url"
+        link.text mustBe "Find out more about cookies on Pega Services (opens in new tab)"
+      }
+    }
+
     "The page footer" must {
       "include a link to the 'Is this page not working properly?' form" in new Fixture {
         val links: Elements =

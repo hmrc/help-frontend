@@ -197,6 +197,14 @@ help.cookies.how_used.javascript_detection.table.js_detection.name=JS‑Detectio
 help.cookies.how_used.javascript_detection.table.js_detection.purpose=Mae hyn yn rhoi gwybod i ni a ydych yn pori tax.service.gov.uk wrth redeg JavaScript.
 help.cookies.how_used.javascript_detection.table.js_detection.expires=1 flwyddyn
 
+help.cookies.how_used.pega.heading=Cwcis Pega
+help.cookies.how_used.pega.info.1=Math o dechnoleg yw Pega. Rydym yn ei defnyddio i greu gwasanaethau digidol. Pan fyddwch yn defnyddio gwasanaeth Pega, byddwn yn storio cwcis hanfodol. Mae’r cwcis hyn yn gwneud y canlynol:
+help.cookies.how_used.pega.bullet.1=cadw’ch gwybodaeth yn ddiogel
+help.cookies.how_used.pega.bullet.2=sicrhau bod y gwasanaeth yn gweithio’n iawn
+help.cookies.how_used.pega.info.2=Nid oes angen i ni ofyn am ganiatâd i ddefnyddio’r mathau hyn o gwcis.
+help.cookies.how_used.pega.link.text=Dysgwch ragor am gwcis ar wasanaethau Pega
+help.cookies.how_used.pega.link.url=/some-fake-url
+
 help.cookies.settings.heading=Newid eich gosodiadau
 help.cookies.settings.info=Gallwch
 help.cookies.settings.tracking_consent.text=newid y cwcis yr ydych yn fodlon i ni eu cadw
