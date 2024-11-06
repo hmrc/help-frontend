@@ -197,6 +197,14 @@ help.cookies.how_used.javascript_detection.table.js_detection.name=JS‑Detectio
 help.cookies.how_used.javascript_detection.table.js_detection.purpose=This tells us if you are browsing tax.service.gov.uk while running JavaScript.
 help.cookies.how_used.javascript_detection.table.js_detection.expires=1 year
 
+help.cookies.how_used.pega.heading=Pega cookies
+help.cookies.how_used.pega.info.1=Pega is a type of technology we use to build digital services. When you use a Pega service we store essential cookies. These:
+help.cookies.how_used.pega.bullet.1=keep your information secure
+help.cookies.how_used.pega.bullet.2=make sure the service works properly
+help.cookies.how_used.pega.info.2=We do not need to ask permission to use these types of cookies.
+help.cookies.how_used.pega.link.text=Find out more about cookies on Pega Services
+help.cookies.how_used.pega.link.url=https://account.hmrc.gov.uk/services/debt/cookies
+
 help.cookies.settings.heading=Change your settings
 help.cookies.settings.info=You can
 help.cookies.settings.tracking_consent.text=change which cookies you’re happy for us to store

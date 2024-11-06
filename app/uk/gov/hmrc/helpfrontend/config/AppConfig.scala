@@ -34,4 +34,6 @@ class AppConfig @Inject() (config: Configuration, trackingConsentConfig: Trackin
 
   lazy val cookieSettingsUrl: String =
     s"$trackingConsentHost$cookieSettingsPath"
+
+  lazy val showPegaContent: Boolean = config.getOptional[Boolean]("flags.show-pega-content").getOrElse(false)
 }

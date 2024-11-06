@@ -34,8 +34,9 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
   override def fakeApplication(): Application =
     new GuiceApplicationBuilder()
       .configure(
-        "metrics.jvm"     -> false,
-        "metrics.enabled" -> false
+        "metrics.jvm"             -> false,
+        "metrics.enabled"         -> false,
+        "flags.show-pega-content" -> true
       )
       .build()
 
@@ -327,6 +328,55 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
 
       "have the expected table caption" in new Fixture {
         view.verifyTableCaption("cookies-javascript-detection-table", defaultTableCaption)
+      }
+    }
+
+    "Pega cookies" should {
+      "have the heading 'Pega cookies'" in new Fixture {
+        view.select("#cookies-pega-heading").text mustBe "Pega cookies"
+      }
+
+      "have a first paragraph of descriptive text" in new Fixture {
+        view.select("#cookies-pega-paragraph-1").size() mustBe 1
+      }
+
+      "have a list of two bullet points" in new Fixture {
+        val ul: Elements = view.select("#cookies-pega-bullet")
+        ul.size() mustBe 1
+
+        ul.first().className() mustBe "govuk-list govuk-list--bullet"
+        ul.first().children().size() mustBe 2
+      }
+
+      "have a second paragraph of descriptive text" in new Fixture {
+        view.select("#cookies-pega-paragraph-2").size() mustBe 1
+      }
+
+      "have a link to more information about Pega cookies" in new Fixture {
+        val paragraph = view.select("#cookies-pega-more-info")
+        paragraph.size() mustBe 1
+
+        val link = paragraph.first().child(0)
+        link.attr("href") mustBe "https://account.hmrc.gov.uk/services/debt/cookies"
+        link.text mustBe "Find out more about cookies on Pega Services (opens in new tab)"
+      }
+
+      "not be displayed if feature flag is set to false" in new Fixture {
+        def appWithFlag(): Application =
+          new GuiceApplicationBuilder()
+            .configure(
+              "metrics.jvm"             -> false,
+              "metrics.enabled"         -> false,
+              "flags.show-pega-content" -> false
+            )
+            .build()
+
+        val configWithFlag: AppConfig           = appWithFlag().injector.instanceOf[AppConfig]
+        val cookiesPageWithFlag: CookiesPage    = appWithFlag().injector.instanceOf[CookiesPage]
+        val viewWithFlag: HtmlFormat.Appendable =
+          cookiesPageWithFlag()(fakeRequest, messagesApi.preferred(fakeRequest), configWithFlag)
+
+        viewWithFlag.select("#cookies-pega-heading").size() mustBe 0
       }
     }
 
