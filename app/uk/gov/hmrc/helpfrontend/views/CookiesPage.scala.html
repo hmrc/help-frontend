@@ -141,20 +141,21 @@
     cookieIds = Seq("js_detection")
   )
 
-  <h3 class="govuk-heading-m" id="cookies-pega-heading">@messages("help.cookies.how_used.pega.heading")</h3>
-  <p class="govuk-body" id="cookies-pega-paragraph-1">@messages("help.cookies.how_used.pega.info.1")</p>
-  <ul class="govuk-list govuk-list--bullet" id="cookies-pega-bullet">
-    <li>@messages("help.cookies.how_used.pega.bullet.1")</li>
-    <li>@messages("help.cookies.how_used.pega.bullet.2")</li>
-  </ul>
-  <p class="govuk-body" id="cookies-pega-paragraph-2">@messages("help.cookies.how_used.pega.info.2")</p>
-  <p class="govuk-body" id="cookies-pega-more-info">
-    @newTabLinkHelper(NewTabLinkHelper(
-      href = Some(messages("help.cookies.how_used.pega.link.url")),
-      text = messages("help.cookies.how_used.pega.link.text")
-    ))@messages("general.fullstop")
-  </p>
-
+  @if(appConfig.showPegaContent) {
+    <h3 class="govuk-heading-m" id="cookies-pega-heading">@messages("help.cookies.how_used.pega.heading")</h3>
+    <p class="govuk-body" id="cookies-pega-paragraph-1">@messages("help.cookies.how_used.pega.info.1")</p>
+    <ul class="govuk-list govuk-list--bullet" id="cookies-pega-bullet">
+      <li>@messages("help.cookies.how_used.pega.bullet.1")</li>
+      <li>@messages("help.cookies.how_used.pega.bullet.2")</li>
+    </ul>
+    <p class="govuk-body" id="cookies-pega-paragraph-2">@messages("help.cookies.how_used.pega.info.2")</p>
+    <p class="govuk-body" id="cookies-pega-more-info">
+      @newTabLinkHelper(NewTabLinkHelper(
+        href = Some(messages("help.cookies.how_used.pega.link.url")),
+        text = messages("help.cookies.how_used.pega.link.text")
+      ))@messages("general.fullstop")
+    </p>
+  }
 
   <h3 class="govuk-heading-m" id="cookies-tracking-consent-settings-heading">@messages("help.cookies.settings.heading")</h3>
   <p class="govuk-body" id="cookies-tracking-consent-settings-paragraph">
