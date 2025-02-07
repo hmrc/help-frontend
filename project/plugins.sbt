@@ -11,3 +11,6 @@ addSbtPlugin("org.playframework" % "sbt-plugin"         % "3.0.5")
 addSbtPlugin("com.typesafe.sbt"  % "sbt-gzip"           % "1.0.2")
 addSbtPlugin("org.scalameta"     % "sbt-scalafmt"       % "2.4.0")
 addSbtPlugin("uk.gov.hmrc"       % "sbt-test-report"    % "0.26.0")
+
+//addSbtPlugin("uk.gov.hmrc" % "sbt-sass-compiler" % "0.8.0")
+addSbtPlugin("io.github.irundaia" % "sbt-sassify" % "1.5.2")
