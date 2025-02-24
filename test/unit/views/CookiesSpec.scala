@@ -357,7 +357,7 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
         paragraph.size() mustBe 1
 
         val link = paragraph.first().child(0)
-        link.attr("href") mustBe "https://account.hmrc.gov.uk/services/debt/cookies"
+        link.attr("href") mustBe "https://account.hmrc.gov.uk/debt/cookies"
         link.text mustBe "Find out more about cookies on Pega Services (opens in new tab)"
       }
 

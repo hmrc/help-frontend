@@ -203,7 +203,7 @@ help.cookies.how_used.pega.bullet.1=keep your information secure
 help.cookies.how_used.pega.bullet.2=make sure the service works properly
 help.cookies.how_used.pega.info.2=We do not need to ask permission to use these types of cookies.
 help.cookies.how_used.pega.link.text=Find out more about cookies on Pega Services
-help.cookies.how_used.pega.link.url=https://account.hmrc.gov.uk/services/debt/cookies
+help.cookies.how_used.pega.link.url=https://account.hmrc.gov.uk/debt/cookies
 
 help.cookies.settings.heading=Change your settings
 help.cookies.settings.info=You can
