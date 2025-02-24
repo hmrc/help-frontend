@@ -203,7 +203,7 @@ help.cookies.how_used.pega.bullet.1=cadw’ch gwybodaeth yn ddiogel
 help.cookies.how_used.pega.bullet.2=sicrhau bod y gwasanaeth yn gweithio’n iawn
 help.cookies.how_used.pega.info.2=Nid oes angen i ni ofyn am ganiatâd i ddefnyddio’r mathau hyn o gwcis.
 help.cookies.how_used.pega.link.text=Dysgwch ragor am gwcis ar wasanaethau Pega
-help.cookies.how_used.pega.link.url=https://account.hmrc.gov.uk/services/debt/cookies
+help.cookies.how_used.pega.link.url=https://account.hmrc.gov.uk/debt/cookies
 
 help.cookies.settings.heading=Newid eich gosodiadau
 help.cookies.settings.info=Gallwch
