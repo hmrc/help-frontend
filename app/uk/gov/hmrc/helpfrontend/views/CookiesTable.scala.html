@@ -18,7 +18,7 @@
 
 @this(govukTable: GovukTable)
 
-@(id: String, section: String, cookieIds: Seq[String], captionKey: String, captionClasses: String = "")(implicit messages: Messages)
+@(id: String, section: String, cookieIds: Seq[String], caption: String, captionClasses: String = "")(implicit messages: Messages)
 @cookies = @{
   for (cookieId <- cookieIds) yield
     Cookie(
@@ -39,6 +39,6 @@
    HeadCell(content = Text(messages("help.cookies.table.header.purpose"))),
    HeadCell(content = Text(messages("help.cookies.table.header.expires")))
  )),
- caption = Some(messages(captionKey)),
+ caption = Some(caption),
  captionClasses = captionClasses
 ))
