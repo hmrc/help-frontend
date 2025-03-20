@@ -75,7 +75,6 @@ help.cookies.how_used.measuring_usage.list_item.2=how you got to the site
 help.cookies.how_used.measuring_usage.list_item.3=what you click on while you’re visiting the site
 help.cookies.how_used.measuring_usage.paragraph.1=We don’t collect or store your personal information (eg your name or address) so this information can’t be used to identify who you are.
 help.cookies.how_used.measuring_usage.notice=Google isn’t allowed to use or share our analytics data.
-
 help.cookies.how_used.measuring_usage.table.caption=Cookies for measuring website usage
 help.cookies.how_used.measuring_usage.table.ga.name=_ga
 help.cookies.how_used.measuring_usage.table.ga.purpose=This helps us identify how you use GOV.UK so we can make the site better

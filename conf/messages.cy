@@ -62,6 +62,11 @@ help.cookies.paragraph.2=Rhagor o wybodaeth am
 help.cookies.link.manage_cookies.text=sut i reoli cwcis
 help.cookies.link.manage_cookies.url=http://www.aboutcookies.org/
 
+help.cookies.how_used.heading=Sut y mae cwcis yn cael eu defnyddio
+help.cookies.table.header.name=Enw
+help.cookies.table.header.purpose=Pwrpas
+help.cookies.table.header.expires=Yn dod i ben
+
 help.cookies.how_used.measuring_usage.heading=Yn mesur defnydd o’r wefan (Google Analytics)
 help.cookies.how_used.measuring_usage.info=Mae meddalwedd Google Analytics yn casglu gwybodaeth am sut yr ydych yn defnyddio’r wefan. Caiff hyn ei wneud er mwyn helpu i sicrhau bod y wefan yn diwallu anghenion ei defnyddwyr, ac er mwyn helpu i’w gwella.
 help.cookies.how_used.measuring_usage.list_info=Mae Google Analytics yn storio gwybodaeth am:
@@ -70,12 +75,6 @@ help.cookies.how_used.measuring_usage.list_item.2=sut y gwnaethoch gyrraedd y we
 help.cookies.how_used.measuring_usage.list_item.3=yr hyn yr ydych yn clicio arno wrth ymweld â’r wefan
 help.cookies.how_used.measuring_usage.paragraph.1=Nid ydym yn casglu neu’n storio eich gwybodaeth bersonol (er enghraifft, eich enw neu’ch cyfeiriad). Felly, nid oes modd defnyddio’r wybodaeth hon i’ch enwi.
 help.cookies.how_used.measuring_usage.notice=Ni chaiff Google ddefnyddio neu rannu ein data dadansoddi.
-
-help.cookies.how_used.heading=Sut y mae cwcis yn cael eu defnyddio
-help.cookies.table.header.name=Enw
-help.cookies.table.header.purpose=Pwrpas
-help.cookies.table.header.expires=Yn dod i ben
-
 help.cookies.how_used.measuring_usage.table.caption=Cwcis ar gyfer mesur defnydd o’r wefan
 help.cookies.how_used.measuring_usage.table.ga.name=_ga
 help.cookies.how_used.measuring_usage.table.ga.purpose=Mae hyn yn ein helpu i ddarganfod sut yr ydych yn defnyddio GOV.UK er mwyn i ni allu gwella’r wefan
