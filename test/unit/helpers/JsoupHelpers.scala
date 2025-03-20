@@ -47,9 +47,8 @@ trait JsoupHelpers extends Matchers {
       actualListOfAllHeadingAnswers mustBe expectedTableHeadingsText
     }
 
-    def verifyTableCaption(tableId: String, expectedTableCaptionText: Option[String]): Unit = {
-      val actualTableCaptionText = Option(html.getElementById(tableId).getElementsByTag("caption").text())
-        .filter(_.nonEmpty)
+    def verifyTableCaption(tableId: String, expectedTableCaptionText: String): Unit = {
+      val actualTableCaptionText = html.getElementById(tableId).getElementsByTag("caption").text()
       actualTableCaptionText mustBe expectedTableCaptionText
     }
   }

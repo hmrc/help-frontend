@@ -107,7 +107,7 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
       }
 
       "have the expected table caption" in new Fixture {
-        view.verifyTableCaption("cookies-analytics-table", defaultTableCaption)
+        view.verifyTableCaption("cookies-analytics-table", "Cookies for measuring website usage")
       }
     }
 
@@ -135,7 +135,7 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
       }
 
       "have the expected table caption" in new Fixture {
-        view.verifyTableCaption("cookies-versions-table", defaultTableCaption)
+        view.verifyTableCaption("cookies-versions-table", "Cookies for comparing different versions of a webpage")
       }
     }
 
@@ -159,7 +159,7 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
       }
 
       "have the expected table caption" in new Fixture {
-        view.verifyTableCaption("cookies-consent-table", defaultTableCaption)
+        view.verifyTableCaption("cookies-consent-table", "Cookies for cookies message")
       }
     }
 
@@ -192,7 +192,7 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
       }
 
       "have the expected table caption" in new Fixture {
-        view.verifyTableCaption("cookies-sessions-table", defaultTableCaption)
+        view.verifyTableCaption("cookies-sessions-table", "Session cookies")
       }
     }
 
@@ -216,7 +216,7 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
       }
 
       "have the expected table caption" in new Fixture {
-        view.verifyTableCaption("cookies-introductory-table", defaultTableCaption)
+        view.verifyTableCaption("cookies-introductory-table", "Cookies for introductory message")
       }
     }
 
@@ -240,7 +240,7 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
       }
 
       "have the expected table caption" in new Fixture {
-        view.verifyTableCaption("cookies-user-research-table", defaultTableCaption)
+        view.verifyTableCaption("cookies-user-research-table", "Cookies for user research banner")
       }
     }
 
@@ -270,7 +270,7 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
       }
 
       "have the expected table caption" in new Fixture {
-        view.verifyTableCaption("cookies-satisfaction-survey-table", defaultTableCaption)
+        view.verifyTableCaption("cookies-satisfaction-survey-table", "Cookies for satisfaction survey")
       }
     }
 
@@ -300,8 +300,8 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
         view.verifyTableContainsCookieName("cookies-digital-assistant-table", expectedCookies)
       }
 
-      "have no table caption" in new Fixture {
-        view.verifyTableCaption("cookies-digital-assistant-table", None)
+      "have the expected table caption" in new Fixture {
+        view.verifyTableCaption("cookies-digital-assistant-table", "Cookies for Digital Assistance")
       }
     }
 
@@ -327,7 +327,7 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
       }
 
       "have the expected table caption" in new Fixture {
-        view.verifyTableCaption("cookies-javascript-detection-table", defaultTableCaption)
+        view.verifyTableCaption("cookies-javascript-detection-table", "Cookies for JavaScript detection")
       }
     }
 
@@ -402,8 +402,6 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
     given Messages = messagesApi.preferred(fakeRequest)
 
     val expectedTableHeadingsText: List[String] = List("Name", "Purpose", "Expires")
-
-    val defaultTableCaption: Option[String] = Some("The following cookies are used:")
 
     val cookiesPage: CookiesPage = app.injector.instanceOf[CookiesPage]
 
