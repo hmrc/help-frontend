@@ -3,7 +3,7 @@ import sbt.*
 object AppDependencies {
 
   private val bootstrapVersion = "9.11.0"
-  private val frontendVersion  = "11.13.0"
+  private val frontendVersion  = "12.0.0"
   private val playVersion      = "play-30"
 
   val compile = Seq(

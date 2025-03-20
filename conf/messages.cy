@@ -62,7 +62,6 @@ help.cookies.paragraph.2=Rhagor o wybodaeth am
 help.cookies.link.manage_cookies.text=sut i reoli cwcis
 help.cookies.link.manage_cookies.url=http://www.aboutcookies.org/
 
-help.cookies.how_used.heading=Sut y mae cwcis yn cael eu defnyddio
 help.cookies.how_used.measuring_usage.heading=Yn mesur defnydd o’r wefan (Google Analytics)
 help.cookies.how_used.measuring_usage.info=Mae meddalwedd Google Analytics yn casglu gwybodaeth am sut yr ydych yn defnyddio’r wefan. Caiff hyn ei wneud er mwyn helpu i sicrhau bod y wefan yn diwallu anghenion ei defnyddwyr, ac er mwyn helpu i’w gwella.
 help.cookies.how_used.measuring_usage.list_info=Mae Google Analytics yn storio gwybodaeth am:
@@ -71,12 +70,13 @@ help.cookies.how_used.measuring_usage.list_item.2=sut y gwnaethoch gyrraedd y we
 help.cookies.how_used.measuring_usage.list_item.3=yr hyn yr ydych yn clicio arno wrth ymweld â’r wefan
 help.cookies.how_used.measuring_usage.paragraph.1=Nid ydym yn casglu neu’n storio eich gwybodaeth bersonol (er enghraifft, eich enw neu’ch cyfeiriad). Felly, nid oes modd defnyddio’r wybodaeth hon i’ch enwi.
 help.cookies.how_used.measuring_usage.notice=Ni chaiff Google ddefnyddio neu rannu ein data dadansoddi.
-help.cookies.how_used.default.table.caption=Caiff y cwcis canlynol eu defnyddio:
 
+help.cookies.how_used.heading=Sut y mae cwcis yn cael eu defnyddio
 help.cookies.table.header.name=Enw
 help.cookies.table.header.purpose=Pwrpas
 help.cookies.table.header.expires=Yn dod i ben
 
+help.cookies.how_used.measuring_usage.table.caption=Cwcis ar gyfer mesur defnydd o’r wefan
 help.cookies.how_used.measuring_usage.table.ga.name=_ga
 help.cookies.how_used.measuring_usage.table.ga.purpose=Mae hyn yn ein helpu i ddarganfod sut yr ydych yn defnyddio GOV.UK er mwyn i ni allu gwella’r wefan
 help.cookies.how_used.measuring_usage.table.ga.expires=2 flynedd
@@ -95,6 +95,7 @@ help.cookies.how_used.measuring_usage.opt_out.link.url=https://tools.google.com/
 
 help.cookies.how_used.optimizely.heading=Cymharu fersiynau gwahanol o dudalen we (Optimizely)
 help.cookies.how_used.optimizely.info=Defnyddir meddalwedd Optimizely i brofi fersiynau gwahanol o dudalen we (neu dudalennau gwe) er mwyn gweld pa un sy’n perfformio orau. Caiff hyn ei wneud er mwyn helpu i wella’r wefan a sicrhau ei bod yn diwallu anghenion ei defnyddwyr.
+help.cookies.how_used.optimizely.table.caption=Cwcis ar gyfer cymharu fersiynau gwahanol o dudalen we
 help.cookies.how_used.optimizely.table.optimizelyEndUserId.name=optimizelyEndUserId
 help.cookies.how_used.optimizely.table.optimizelyEndUserId.purpose=Mae hyn yn ein helpu i weld sut yr ydych yn defnyddio GOV.UK er mwyn i ni allu gwella’r wefan
 help.cookies.how_used.optimizely.table.optimizelyEndUserId.expires=10 mlynedd
@@ -107,12 +108,14 @@ help.cookies.how_used.optimizely.table.optimizelyOptOut.expires=10 mlynedd
 
 help.cookies.how_used.userconsent.heading=Neges ynghylch cwcis
 help.cookies.how_used.userconsent.info=Efallai y byddwch yn gweld baner wrth ymweld â thudalennau gwe CThEF yn gofyn i chi dderbyn cwcis neu adolygu’ch gosodiadau. Byddwn yn gosod cwci fel bod eich cyfrifiadur yn gwybod eich bod wedi gweld y faner ac na ddylid ei dangos eto, a hefyd er mwyn cadw’ch gosodiadau.
+help.cookies.how_used.userconsent.table.caption=Cwcis ar gyfer neges ynghylch cwcis
 help.cookies.how_used.userconsent.table.userConsent.name=userConsent
 help.cookies.how_used.userconsent.table.userConsent.purpose=Cadw’ch gosodiadau o ran caniatâd ar gyfer cwcis
 help.cookies.how_used.userconsent.table.userConsent.expires=1 flwyddyn
 
 help.cookies.how_used.sessions.heading=Sesiynau
 help.cookies.how_used.sessions.info=Caiff cwci ei osod i gofnodi eich gweithgarwch yn ystod y sesiwn.
+help.cookies.how_used.sessions.table.caption=Cwcis sesiwn
 help.cookies.how_used.sessions.table.mdtp.name=mdtp
 help.cookies.how_used.sessions.table.mdtp.purpose=Yn storio data’r sesiwn
 help.cookies.how_used.sessions.table.mdtp.expires=Pan fyddwch yn cau eich porwr
@@ -140,12 +143,14 @@ help.cookies.how_used.sessions.table.mdtprc.expires=Pan fyddwch yn cau eich porw
 
 help.cookies.how_used.user_research_banner.heading=Baner ymchwil defnyddwyr
 help.cookies.how_used.user_research_banner.info=Efallai y gwelwch faner am ymchwil defnyddwyr pan fyddwch yn ymweld. Er mwyn i’ch cyfrifiadur wybod eich bod wedi dewis peidio â’i weld eto, caiff cwci ei storio.
+help.cookies.how_used.user_research_banner.table.caption.name=Cwcis ar gyfer baner ymchwil defnyddwyr
 help.cookies.how_used.user_research_banner.table.mdtpurr.name=mdtpurr
 help.cookies.how_used.user_research_banner.table.mdtpurr.purpose=Yn cadw neges er mwyn rhoi gwybod i ni nad ydych am ei weld eto.
 help.cookies.how_used.user_research_banner.table.mdtpurr.expires=1 mis
 
 help.cookies.how_used.intro_message.heading=Ein neges ragarweiniol
 help.cookies.how_used.intro_message.info=Efallai y gwelwch neges naid sy’n eich croesawu pan fyddwch yn ymweld â’r wefan am y tro cyntaf. Er mwyn i’ch cyfrifiadur wybod eich bod wedi gweld y neges, a gwybod peidio â’i dangos eto, caiff cwci ei storio.
+help.cookies.how_used.intro_message.table.caption=Cwcis ar gyfer neges ragarweiniol
 help.cookies.how_used.intro_message.table.seen_message.name=seen_cookie_message
 help.cookies.how_used.intro_message.table.seen_message.purpose=Yn cadw neges er mwyn rhoi gwybod i ni eich bod wedi gweld ein neges am gwcis
 help.cookies.how_used.intro_message.table.seen_message.expires=1 mis
@@ -154,6 +159,7 @@ help.cookies.how_used.satisfaction_survey.heading=Ein harolwg boddhad
 help.cookies.how_used.satisfaction_survey.info=Defnyddir {0} i gasglu atebion i’r arolwg. Os cymerwch ran, bydd SurveyMonkey yn cadw cwcis ychwanegol ar eich cyfrifiadur i ddilyn eich cynnydd.
 help.cookies.how_used.satisfaction_survey.link.text=SurveyMonkey
 help.cookies.how_used.satisfaction_survey.link.url=http://www.surveymonkey.com/
+help.cookies.how_used.satisfaction_survey.table.caption=Cwcis ar gyfer arolwg boddhad
 help.cookies.how_used.satisfaction_survey.table.mbox.name=mbox
 help.cookies.how_used.satisfaction_survey.table.mbox.purpose=Caiff hyn ei ddefnyddio i gadw eich cynnydd drwy gydol yr arolwg
 help.cookies.how_used.satisfaction_survey.table.mbox.expires=30 munud
@@ -172,6 +178,7 @@ help.cookies.how_used.satisfaction_survey.table.ep202.expires=1 flwyddyn
 
 help.cookies.how_used.digital_assistant.heading=Cwcis cynorthwyydd digidol
 help.cookies.how_used.digital_assistant.info=Gellir cael hyd i gynorthwyydd digidol a chyfleuster sgwrs dros y we CThEF ar wahanol dudalennau gwasanaethau CThEF. Er mwyn i’r cynorthwyydd digidol a’r wefan weithio’n gywir, mae angen y cwcis canlynol:
+help.cookies.how_used.digital_assistant.table.caption=Cwcis ar gyfer Cymorth Digidol
 help.cookies.how_used.digital_assistant.table.inqCA.name=inqCA_10006330
 help.cookies.how_used.digital_assistant.table.inqCA.purpose=Baner gweithgarwch sgwrsio, sy’n ofynnol ar gyfer adfer swyddogaeth sgwrs dros y we os yw’r defnyddiwr (wrth sgwrsio) yn ail-lwytho’r dudalen, yn llywio i dudalen newydd o fewn safle CThEF neu’n gadael safle CThEF ac yn dychwelyd cyn terfyn amser y sesiwn.
 help.cookies.how_used.digital_assistant.table.inqCA.expires=Pan fyddwch yn cau eich porwr
@@ -193,6 +200,7 @@ help.cookies.how_used.digital_assistant.table.JSESSIONID.expires=Pan fyddwch yn 
 
 help.cookies.how_used.javascript_detection.heading=Canfod JavaScript
 help.cookies.how_used.javascript_detection.info=Gall rhai tudalennau ddarparu profiad gwell pan gaiff JavaScript ei alluogi, a gallant ddefnyddio cwci i ganfod hyn.
+help.cookies.how_used.javascript_detection.table.caption=Cwcis ar gyfer canfod JavaScript
 help.cookies.how_used.javascript_detection.table.js_detection.name=JS‑Detection
 help.cookies.how_used.javascript_detection.table.js_detection.purpose=Mae hyn yn rhoi gwybod i ni a ydych yn pori tax.service.gov.uk wrth redeg JavaScript.
 help.cookies.how_used.javascript_detection.table.js_detection.expires=1 flwyddyn
