@@ -142,7 +142,7 @@ help.cookies.how_used.sessions.table.mdtprc.expires=When you close your browser
 
 help.cookies.how_used.user_research_banner.heading=User research banner
 help.cookies.how_used.user_research_banner.info=You may see a banner about user research when you visit. A cookie is stored so that your computer knows when you have chosen not to see it again.
-help.cookies.how_used.user_research_banner.table.caption.name=Cookies for user research banner
+help.cookies.how_used.user_research_banner.table.caption=Cookies for user research banner
 help.cookies.how_used.user_research_banner.table.mdtpurr.name=mdtpurr
 help.cookies.how_used.user_research_banner.table.mdtpurr.purpose=Saves a message to let us know that you no longer want to see it again.
 help.cookies.how_used.user_research_banner.table.mdtpurr.expires=1 month

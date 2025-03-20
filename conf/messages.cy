@@ -142,7 +142,7 @@ help.cookies.how_used.sessions.table.mdtprc.expires=Pan fyddwch yn cau eich porw
 
 help.cookies.how_used.user_research_banner.heading=Baner ymchwil defnyddwyr
 help.cookies.how_used.user_research_banner.info=Efallai y gwelwch faner am ymchwil defnyddwyr pan fyddwch yn ymweld. Er mwyn i’ch cyfrifiadur wybod eich bod wedi dewis peidio â’i weld eto, caiff cwci ei storio.
-help.cookies.how_used.user_research_banner.table.caption.name=Cwcis ar gyfer baner ymchwil defnyddwyr
+help.cookies.how_used.user_research_banner.table.caption=Cwcis ar gyfer baner ymchwil defnyddwyr
 help.cookies.how_used.user_research_banner.table.mdtpurr.name=mdtpurr
 help.cookies.how_used.user_research_banner.table.mdtpurr.purpose=Yn cadw neges er mwyn rhoi gwybod i ni nad ydych am ei weld eto.
 help.cookies.how_used.user_research_banner.table.mdtpurr.expires=1 mis
