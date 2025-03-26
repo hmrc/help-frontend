@@ -140,7 +140,6 @@
     cookieIds = Seq("js_detection")
   )
 
-  @if(appConfig.showPegaContent) {
     <h3 class="govuk-heading-m" id="cookies-pega-heading">@messages("help.cookies.how_used.pega.heading")</h3>
     <p class="govuk-body" id="cookies-pega-paragraph-1">@messages("help.cookies.how_used.pega.info.1")</p>
     <ul class="govuk-list govuk-list--bullet" id="cookies-pega-bullet">
@@ -154,7 +153,6 @@
         text = messages("help.cookies.how_used.pega.link.text")
       ))@messages("general.fullstop")
     </p>
-  }
 
   <h3 class="govuk-heading-m" id="cookies-tracking-consent-settings-heading">@messages("help.cookies.settings.heading")</h3>
   <p class="govuk-body" id="cookies-tracking-consent-settings-paragraph">

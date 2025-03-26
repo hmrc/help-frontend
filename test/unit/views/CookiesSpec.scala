@@ -34,9 +34,8 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
   override def fakeApplication(): Application =
     new GuiceApplicationBuilder()
       .configure(
-        "metrics.jvm"             -> false,
-        "metrics.enabled"         -> false,
-        "flags.show-pega-content" -> true
+        "metrics.jvm"     -> false,
+        "metrics.enabled" -> false
       )
       .build()
 
@@ -359,24 +358,6 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
         val link = paragraph.first().child(0)
         link.attr("href") mustBe "https://account.hmrc.gov.uk/debt/cookies"
         link.text mustBe "Find out more about cookies on Pega Services (opens in new tab)"
-      }
-
-      "not be displayed if feature flag is set to false" in new Fixture {
-        def appWithFlag(): Application =
-          new GuiceApplicationBuilder()
-            .configure(
-              "metrics.jvm"             -> false,
-              "metrics.enabled"         -> false,
-              "flags.show-pega-content" -> false
-            )
-            .build()
-
-        val configWithFlag: AppConfig           = appWithFlag().injector.instanceOf[AppConfig]
-        val cookiesPageWithFlag: CookiesPage    = appWithFlag().injector.instanceOf[CookiesPage]
-        val viewWithFlag: HtmlFormat.Appendable =
-          cookiesPageWithFlag()(fakeRequest, messagesApi.preferred(fakeRequest), configWithFlag)
-
-        viewWithFlag.select("#cookies-pega-heading").size() mustBe 0
       }
     }
 
