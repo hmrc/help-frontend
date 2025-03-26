@@ -182,6 +182,7 @@ class CookiesSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite wit
           "mdtpp",
           "mdtpdf",
           "mdtprc",
+          "mdtpolpb",
           "PLAY_FLASH",
           "PLAY_LANG",
           "remme",

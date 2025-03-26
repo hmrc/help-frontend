@@ -139,6 +139,9 @@ help.cookies.how_used.sessions.table.mdtpdi.expires=10 mlynedd
 help.cookies.how_used.sessions.table.mdtprc.name=mdtprc
 help.cookies.how_used.sessions.table.mdtprc.purpose=Yn storio data’r sesiwn
 help.cookies.how_used.sessions.table.mdtprc.expires=Pan fyddwch yn cau eich porwr
+help.cookies.how_used.sessions.table.mdtpolpb.name=mdtpolpb
+help.cookies.how_used.sessions.table.mdtpolpb.purpose=Cyfnod Beta GOV.UK One Login
+help.cookies.how_used.sessions.table.mdtpolpb.expires=180 diwrnod
 
 help.cookies.how_used.user_research_banner.heading=Baner ymchwil defnyddwyr
 help.cookies.how_used.user_research_banner.info=Efallai y gwelwch faner am ymchwil defnyddwyr pan fyddwch yn ymweld. Er mwyn i’ch cyfrifiadur wybod eich bod wedi dewis peidio â’i weld eto, caiff cwci ei storio.
