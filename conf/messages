@@ -139,6 +139,9 @@ help.cookies.how_used.sessions.table.mdtpdi.expires=10 years
 help.cookies.how_used.sessions.table.mdtprc.name=mdtprc
 help.cookies.how_used.sessions.table.mdtprc.purpose=Stores session data
 help.cookies.how_used.sessions.table.mdtprc.expires=When you close your browser
+help.cookies.how_used.sessions.table.mdtpolpb.name=mdtpolpb
+help.cookies.how_used.sessions.table.mdtpolpb.purpose=Gives user access to GOV.UK One Login Beta
+help.cookies.how_used.sessions.table.mdtpolpb.expires=180 days
 
 help.cookies.how_used.user_research_banner.heading=User research banner
 help.cookies.how_used.user_research_banner.info=You may see a banner about user research when you visit. A cookie is stored so that your computer knows when you have chosen not to see it again.
