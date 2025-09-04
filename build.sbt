@@ -30,6 +30,7 @@ lazy val microservice = Project(appName, file("."))
       "uk.gov.hmrc.hmrcfrontend.views.html.components.*",
       "uk.gov.hmrc.hmrcfrontend.views.html.helpers.*"
     ),
+    scalacOptions += "-Wconf:src=views/.*:s",
     scalacOptions += "-Wconf:src=routes/.*:s",
     scalacOptions += "-Wconf:msg=unused-imports&src=html/.*:s",
     Assets / pipelineStages := Seq(gzip),
