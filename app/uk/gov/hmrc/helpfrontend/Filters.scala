@@ -24,4 +24,3 @@ import uk.gov.hmrc.helpfrontend.filters.LanguageChangeFilter
 class Filters @Inject() (
   languageChangeFilter: LanguageChangeFilter
 ) extends DefaultHttpFilters(languageChangeFilter)
-
