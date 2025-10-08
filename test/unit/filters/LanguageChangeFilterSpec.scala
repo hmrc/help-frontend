@@ -23,15 +23,10 @@ import play.api.mvc._
 import play.api.test._
 import play.api.test.Helpers._
 import org.scalatestplus.play.guice.GuiceOneAppPerSuite
-import scala.concurrent.ExecutionContext.Implicits.global
 import play.api.libs.streams.Accumulator
 
-import scala.concurrent.Future
-
 import uk.gov.hmrc.helpfrontend.filters.LanguageChangeFilter
-import play.api.i18n.MessagesApi
-import play.i18n.Langs
-import play.api.mvc.Action
+import play.api.i18n.{Langs, MessagesApi}
 
 class LanguageChangeFilterSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite with Results {
 
@@ -64,6 +59,48 @@ class LanguageChangeFilterSpec extends AnyWordSpec with Matchers with GuiceOneAp
       val request = FakeRequest("GET", "/some-path?lang=fr")
       val result  = filter.apply(okAction)(request)
       status(result) shouldBe OK
+    }
+
+    "redirect on the last lang param when multiple lang params are provided" in {
+      val request = FakeRequest("GET", "/some-path?lang=en&lang=cy")
+      val result  = filter.apply(okAction)(request)
+      status(result)                                shouldBe SEE_OTHER
+      cookies(result).get("PLAY_LANG").map(_.value) shouldBe Some("cy")
+      cookies(result).get("PLAY_LANG").map(_.value)   should not be Some("en")
+    }
+
+    "not redirect when no value is provided for the lang param" in {
+      val firstRequest  = FakeRequest("GET", "/some-path?lang=")
+      val secondRequest = FakeRequest("GET", "/some-path?lang")
+      val thirdRequest  = FakeRequest("GET", "/some-path?lang=&otherParam=value")
+      val fourthRequest = FakeRequest("GET", "/some-path?otherParam=value&lang")
+      val firstResult   = filter.apply(okAction)(firstRequest)
+      val secondResult  = filter.apply(okAction)(secondRequest)
+      val thirdResult   = filter.apply(okAction)(thirdRequest)
+      val fourthResult  = filter.apply(okAction)(fourthRequest)
+      status(firstResult)  shouldBe OK
+      status(secondResult) shouldBe OK
+      status(thirdResult)  shouldBe OK
+      status(fourthResult) shouldBe OK
+    }
+
+    "redirect when lang is passed with other query params" in {
+      val firstRequest  = FakeRequest("GET", "/some-path?lang=cy&otherParam=value")
+      val secondRequest = FakeRequest("GET", "/some-path?otherParam=value&lang=en")
+      val thirdRequest  = FakeRequest("GET", "/some-path?otherParam=value&lang=cy&favouriteFood=icecream")
+      val firstResult   = filter.apply(okAction)(firstRequest)
+      val secondResult  = filter.apply(okAction)(secondRequest)
+      val thirdResult   = filter.apply(okAction)(thirdRequest)
+
+      status(firstResult)                                 shouldBe SEE_OTHER
+      status(secondResult)                                shouldBe SEE_OTHER
+      status(thirdResult)                                 shouldBe SEE_OTHER
+      redirectLocation(firstResult)                       shouldBe Some("/some-path?otherParam=value")
+      redirectLocation(secondResult)                      shouldBe Some("/some-path?otherParam=value")
+      redirectLocation(thirdResult)                       shouldBe Some("/some-path?otherParam=value&favouriteFood=icecream")
+      cookies(firstResult).get("PLAY_LANG").map(_.value)  shouldBe Some("cy")
+      cookies(secondResult).get("PLAY_LANG").map(_.value) shouldBe Some("en")
+      cookies(thirdResult).get("PLAY_LANG").map(_.value)  shouldBe Some("cy")
     }
   }
 }
