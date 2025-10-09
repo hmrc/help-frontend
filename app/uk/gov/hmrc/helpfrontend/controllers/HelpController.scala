@@ -64,6 +64,7 @@ class HelpController @Inject() (
     Ok(cookiesPage())
   }
 
+// Do not remove - See docs/language-mechanism-for-online-services-page.md for context
   private def maybeChangeLang[A](newLang: Option[String])(action: Action[A]): Action[A] =
     Action.async(action.parser) { request =>
       Try(Lang(newLang.get)) match {
