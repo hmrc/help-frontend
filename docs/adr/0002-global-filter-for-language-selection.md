@@ -12,7 +12,7 @@ The `PLAY_LANG` cookie is set which determines which language is rendered. Howev
 ## Decision Drivers
 
 * Users being unable to choose the desired language without having been on hmrc pages previously.
-* We have one page in another repo where we set the language, so we had a precedent for doing this.
+* We have another page in help-frontend where we set the language, so we had a precedent for doing this.
 
 ## Considered Options
 
