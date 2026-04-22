@@ -18,8 +18,9 @@
 @import uk.gov.hmrc.helpfrontend.views.html.{CookiesTable, Layout}
 @import uk.gov.hmrc.hmrcfrontend.views.html.helpers.HmrcNewTabLinkHelper
 @import uk.gov.hmrc.hmrcfrontend.views.viewmodels.newtablinkhelper.NewTabLinkHelper
+@import uk.gov.hmrc.hmrcfrontend.config.ServiceNavigationConfig
 
-@this(layout: Layout, newTabLinkHelper: HmrcNewTabLinkHelper, cookiesTable: CookiesTable)
+@this(layout: Layout, newTabLinkHelper: HmrcNewTabLinkHelper, cookiesTable: CookiesTable, serviceNavigationConfig: ServiceNavigationConfig)
 
 @()(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 @surveyLink = {
@@ -149,8 +150,9 @@
     <p class="govuk-body" id="cookies-pega-paragraph-2">@messages("help.cookies.how_used.pega.info.2")</p>
     <p class="govuk-body" id="cookies-pega-more-info">
       @newTabLinkHelper(NewTabLinkHelper(
-        href = Some(messages("help.cookies.how_used.pega.link.url")),
-        text = messages("help.cookies.how_used.pega.link.text")
+        href = Some(serviceNavigationConfig.propagateViaQueryParam(messages("help.cookies.how_used.pega.link.url"))),
+        text = messages("help.cookies.how_used.pega.link.text"),
+        classList = Some("link-to-pega-cookie-details")
       ))@messages("general.fullstop")
     </p>
 
@@ -158,8 +160,9 @@
   <p class="govuk-body" id="cookies-tracking-consent-settings-paragraph">
     @messages("help.cookies.settings.info")
     @newTabLinkHelper(NewTabLinkHelper(
-      href = Some(messages("help.cookies.settings.tracking_consent.url")),
-      text = messages("help.cookies.settings.tracking_consent.text")
+      href = Some(serviceNavigationConfig.propagateViaQueryParam(messages("help.cookies.settings.tracking_consent.url"))),
+      text = messages("help.cookies.settings.tracking_consent.text"),
+      classList = Some("link-to-cookie-settings")
     ))@messages("general.fullstop")
   </p>
 }

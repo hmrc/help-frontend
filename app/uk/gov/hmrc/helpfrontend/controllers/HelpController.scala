@@ -21,6 +21,7 @@ import play.api.mvc.*
 import play.api.i18n.Lang
 import uk.gov.hmrc.helpfrontend.config.AppConfig
 import uk.gov.hmrc.helpfrontend.views.html.*
+import uk.gov.hmrc.hmrcfrontend.config.ServiceNavigationConfig
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 
 import javax.inject.{Inject, Singleton}
@@ -33,7 +34,8 @@ class HelpController @Inject() (
   mcc: MessagesControllerComponents,
   termsAndConditionsPage: TermsAndConditionsPage,
   onlineServicesTermsPage: OnlineServicesTermsPage,
-  cookiesPage: CookiesPage
+  cookiesPage: CookiesPage,
+  serviceNavigationConfig: ServiceNavigationConfig
 )(using ExecutionContext)
     extends FrontendController(mcc)
     with I18nSupport {
@@ -52,9 +54,9 @@ class HelpController @Inject() (
     Ok(termsAndConditionsPage())
   }
 
-  val cookies: Action[AnyContent] = Action {
+  val cookies: Action[AnyContent] = Action { implicit request =>
     Redirect(
-      appConfig.cookieSettingsUrl,
+      serviceNavigationConfig.propagateViaQueryParam(appConfig.cookieSettingsUrl),
       MOVED_PERMANENTLY
     )
   }
