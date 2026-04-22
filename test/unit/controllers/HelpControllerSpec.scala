@@ -17,6 +17,7 @@
 package unit.controllers
 
 import org.jsoup.Jsoup
+import org.scalatest.OptionValues
 import org.scalatest.matchers.must.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 import org.scalatestplus.play.guice.GuiceOneAppPerSuite
@@ -33,7 +34,12 @@ import scala.concurrent.Await
 import scala.concurrent.duration.DurationInt
 import scala.language.postfixOps
 
-class HelpControllerSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite with JsoupHelpers {
+class HelpControllerSpec
+    extends AnyWordSpec
+    with Matchers
+    with GuiceOneAppPerSuite
+    with JsoupHelpers
+    with OptionValues {
   private val fakeRequest: FakeRequest[AnyContentAsEmpty.type] = FakeRequest("GET", "/")
 
   private val fakeRequestWithLang: FakeRequest[AnyContentAsEmpty.type] =
@@ -69,6 +75,84 @@ class HelpControllerSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSu
       val headers = content.select("h1")
       headers.size mustBe 1
       headers.first.text mustBe "Cookies"
+    }
+
+    "have a link to pega cookie details" in {
+      val result = route(app, FakeRequest("GET", "/help/cookie-details")).value
+
+      val linkToPegaCookieDetails = Option(
+        Jsoup.parse(contentAsString(result)).getElementsByClass("link-to-pega-cookie-details").first()
+      ).map(_.attr("href"))
+
+      linkToPegaCookieDetails mustBe Some("https://account.hmrc.gov.uk/debt/cookies")
+    }
+
+    "propagate use of service navigation to link to pega cookie details" in {
+      val result = route(app, FakeRequest("GET", "/help/cookie-details?useServiceNavigation")).value
+
+      val linkToPegaCookieDetails = Option(
+        Jsoup.parse(contentAsString(result)).getElementsByClass("link-to-pega-cookie-details").first()
+      ).map(_.attr("href"))
+
+      linkToPegaCookieDetails mustBe Some("https://account.hmrc.gov.uk/debt/cookies?useServiceNavigation")
+    }
+
+    "have a link to cookie settings" in {
+      val result = route(app, FakeRequest("GET", "/help/cookie-details")).value
+
+      val linkToPegaCookieDetails = Option(
+        Jsoup.parse(contentAsString(result)).getElementsByClass("link-to-cookie-settings").first()
+      ).map(_.attr("href"))
+
+      linkToPegaCookieDetails mustBe Some("/tracking-consent/cookie-settings")
+    }
+
+    "propagate use of service navigation to link to cookie settings" in {
+      val result = route(app, FakeRequest("GET", "/help/cookie-details?useServiceNavigation")).value
+
+      val linkToPegaCookieDetails = Option(
+        Jsoup.parse(contentAsString(result)).getElementsByClass("link-to-cookie-settings").first()
+      ).map(_.attr("href"))
+
+      linkToPegaCookieDetails mustBe Some("/tracking-consent/cookie-settings?useServiceNavigation")
+    }
+  }
+
+  "GET /help/cookies" should {
+    "redirect to cookie settings page in tracking consent" in {
+      val result = route(app, FakeRequest("GET", "/help/cookies")).value
+      status(result) mustBe MOVED_PERMANENTLY
+      redirectLocation(result) mustBe Some("http://localhost:12345/tracking-consent/cookie-settings")
+    }
+
+    "propagate use of service navigation across the redirect" in {
+      val result = route(app, FakeRequest("GET", "/help/cookies?useServiceNavigation")).value
+      status(result) mustBe MOVED_PERMANENTLY
+      redirectLocation(result) mustBe Some(
+        "http://localhost:12345/tracking-consent/cookie-settings?useServiceNavigation"
+      )
+    }
+  }
+
+  "GET /terms-and-conditions" should {
+    "have a link to privacy policy" in {
+      val result = route(app, FakeRequest("GET", "/help/terms-and-conditions")).value
+
+      val linkToPrivacyPolicy = Option(
+        Jsoup.parse(contentAsString(result)).getElementById("link-to-privacy-policy")
+      ).map(_.attr("href"))
+
+      linkToPrivacyPolicy mustBe Some("/help/privacy")
+    }
+
+    "propagate use of service navigation to link to privacy policy" in {
+      val result = route(app, FakeRequest("GET", "/help/terms-and-conditions?useServiceNavigation")).value
+
+      val linkToPrivacyPolicy = Option(
+        Jsoup.parse(contentAsString(result)).getElementById("link-to-privacy-policy")
+      ).map(_.attr("href"))
+
+      linkToPrivacyPolicy mustBe Some("/help/privacy?useServiceNavigation")
     }
   }
 
