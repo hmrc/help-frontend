@@ -1,3 +1,4 @@
+import scoverage.ScoverageKeys
 import uk.gov.hmrc.DefaultBuildSettings
 import uk.gov.hmrc.DefaultBuildSettings.addTestReportOption
 
@@ -35,7 +36,12 @@ lazy val microservice = Project(appName, file("."))
     scalacOptions += "-Wconf:msg=unused-imports&src=html/.*:s",
     Assets / pipelineStages := Seq(gzip),
     PlayKeys.devSettings ++= Seq("metrics.enabled" -> "false"),
-    unitTestSettings
+    unitTestSettings,
+    ScoverageKeys.coverageExcludedFiles := "<empty>;Reverse.*;.*handlers.*;.*components.*;" +
+      ".*Routes.*;.*viewmodels.govuk.*;",
+    ScoverageKeys.coverageMinimumStmtTotal := 94,
+    ScoverageKeys.coverageFailOnMinimum := true,
+    ScoverageKeys.coverageHighlighting := true
   )
 
 lazy val it = project
