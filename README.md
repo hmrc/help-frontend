@@ -46,6 +46,12 @@ sbt test
 sbt it/test
 ```
 
+## Running tests with scoverage plugin
+
+```
+sbt clean coverage test it/test coverageReport
+```
+
 ## Accessibility
 
 Accessibility tests are run in Jenkins or locally via the journey tests.
